@@ -34,7 +34,8 @@ const byte buzzer = 11;
 const byte LED = 13;
 
 const byte currentSense = A0;
-const byte servoPositionButton = A1;
+// const byte servoPositionButton = A1;
+const byte servoPosition = A1;
 const byte displayLatch = A2;
 const byte displayClock = A3;
 const byte displayData = A4;
@@ -50,9 +51,14 @@ const byte displayData = A4;
 
 //Default settings for 1.2 cubic ft. safe
 //On the 2nd larger configuration, decreasing numbers cause handle to go down
-int servoRestingPosition = 100; //Position not pulling/testing on handle
-int servoTryPosition = 50; //Position when testing handle
-int servoHighPressurePosition = 40; //Position when doing indent measuring
+// int servoRestingPosition = 100; //Position not pulling/testing on handle
+// int servoTryPosition = 50; //Position when testing handle
+// int servoHighPressurePosition = 40; //Position when doing indent measuring
+
+//Settings for my personal white (?.?) cubic ft. safe
+const byte servoRestingPosition = 20; //Position not pulling/testing on handle. min/max = 17/217
+const byte servoPressurePosition = 55; //Position when doing indent measuring
+const byte servoTryPosition = 85; //Position when testing handle
 
 const int timeServoApply = 350;  //ms for servo to apply pressure. 350 works
 const int timeServoRelease = 250;  //Allow servo to release. 250 works
@@ -133,7 +139,8 @@ void setup()
   pinMode(LED, OUTPUT);
 
   pinMode(currentSense, INPUT);
-  pinMode(servoPositionButton, INPUT_PULLUP);
+  // pinMode(servoPositionButton, INPUT_PULLUP);
+  pinMode(servoPosition, INPUT);
 
   pinMode(photo, INPUT_PULLUP);
 

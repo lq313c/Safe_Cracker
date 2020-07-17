@@ -60,13 +60,15 @@ void testServo()
 
       handleServo.write(servo); //Goto the resting position (handle horizontal, door closed)
     }
-    //int handlePosition = averageAnalogRead(servoPosition); //Old way
-    int handlePosition = digitalRead(servoPositionButton); //Look for button being pressed
+    int handlePosition = averageAnalogRead(servoPosition); //Old way
+    // int handlePosition = digitalRead(servoPositionButton); //Look for button being pressed
 
     Serial.print(F("servo: "));
     Serial.print(servo);
-    Serial.print(F(" / handleButton: "));
-    Serial.print(servoPositionButton);
+    // Serial.print(F(" / handleButton: "));
+    // Serial.print(servoPositionButton);
+    Serial.print(F(" / handlePosition: "));
+    Serial.print(handlePosition);
     Serial.println();
 
     delay(100);

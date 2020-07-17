@@ -273,21 +273,20 @@ boolean tryHandle()
   delay(timeServoApply); //Wait for servo to move, but don't let it stall for too long and burn out
 
   //Check if we're there
-  if (digitalRead(servoPositionButton) == LOW)
+  // if (digitalRead(servoPositionButton) == LOW)
+  // {
+  //   //Holy smokes we're there!
+  //   return (true);
+  // }
+
+
+  handlePosition = averageAnalogRead(servoPosition);
+  if (handlePosition > handleOpenPosition) //Used on old servo setup
+  // if (handlePosition < handleOpenPosition)
   {
     //Holy smokes we're there!
     return (true);
   }
-
-  /*
-    handlePosition = averageAnalogRead(servoPosition);
-    //if (handlePosition > handleOpenPosition) //Used on old servo setup
-    if (handlePosition < handleOpenPosition)
-    {
-      //Holy smokes we're there!
-      return (true);
-    }
-  */
 
   //Ok, we failed
   //Return to resting position
