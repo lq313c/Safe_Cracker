@@ -56,16 +56,17 @@ const byte displayData = A4;
 // int servoHighPressurePosition = 40; //Position when doing indent measuring
 
 //Settings for my personal white (?.?) cubic ft. safe
-const byte servoRestingPosition = 20; //Position not pulling/testing on handle. min/max = 17/217
-const byte servoPressurePosition = 55; //Position when doing indent measuring
-const byte servoTryPosition = 85; //Position when testing handle
+int servoRestingPosition = 117; //Position not pulling/testing on handle. min/max = 17/217
+int servoTryPosition = 47; //Position when testing handle
+int servoHighPressurePosition = 57; //Position when doing indent measuring
+int handleOpenPosition = 200; // this will be set after servotesting
 
 const int timeServoApply = 350;  //ms for servo to apply pressure. 350 works
 const int timeServoRelease = 250;  //Allow servo to release. 250 works
 const int timeMotorStop = 125; //ms for motor to stop spinning after stop command. 200 works
 
 int handlePosition; //Used to see how far handle moved when pulled on
-//const int handleOpenPosition = 187; //Analog value. Must be less than analog value from servo testing.
+//const int handleOpenPosition = 200; //Analog value. Must be less than analog value from servo testing.
 
 #define CCW 0
 #define CW 1
@@ -471,7 +472,8 @@ void loop()
   }
   else if (incoming == '8')
   {
-    testHandleButton(); //Just pull down on handle and vary distance to hit open button
+    // testHandleButton(); //Just pull down on handle and vary distance to hit open button
+    Serial.println(F("Function disabled"));
   }
   else if (incoming == '9')
   {

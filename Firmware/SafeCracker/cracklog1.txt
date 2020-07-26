@@ -1,0 +1,839 @@
+
+
+Safe Cracker
+Home Offset: 78
+Indent data
+IndentNum[0] Encoder[8213] / Dial[98] / Width[0] / Depth[0] Test[Y]
+IndentNum[1] Encoder[481] / Dial[6] / Width[0] / Depth[0] Test[N]
+IndentNum[2] Encoder[1202] / Dial[14] / Width[0] / Depth[0] Test[N]
+IndentNum[3] Encoder[1891] / Dial[23] / Width[0] / Depth[0] Test[N]
+IndentNum[4] Encoder[2613] / Dial[31] / Width[0] / Depth[0] Test[N]
+IndentNum[5] Encoder[3315] / Dial[39] / Width[0] / Depth[0] Test[N]
+IndentNum[6] Encoder[4015] / Dial[48] / Width[0] / Depth[0] Test[N]
+IndentNum[7] Encoder[4708] / Dial[56] / Width[0] / Depth[0] Test[N]
+IndentNum[8] Encoder[5421] / Dial[65] / Width[0] / Depth[0] Test[N]
+IndentNum[9] Encoder[6119] / Dial[73] / Width[0] / Depth[0] Test[Y]
+IndentNum[10] Encoder[6796] / Dial[81] / Width[0] / Depth[0] Test[Y]
+IndentNum[11] Encoder[7554] / Dial[90] / Width[0] / Depth[0] Test[Y]
+servo: resting[117] try[49] HighPressure[59]
+
+Combo to start at: 0/97/0
+1) Go home and reset dial
+2) Test dial control
+3) View indent positions
+4) Measure indents
+5) Set indents to test
+6) Set starting combos
+7) Calibrate handle servo
+8) Test handle button
+9) Test indent centers
+s) Start cracking
+DiscA is at: 0
+DiscB is at: 97
+DiscC is at: 0
+20538, Combo, 0/97/98, attempt, 1, seconds per attempt, 7.49
+22842, Combo, 0/97/98, attempt, 2, seconds per attempt, 4.90
+25151, Combo, 0/97/98, attempt, 3, seconds per attempt, 4.03
+27451, Combo, 0/97/98, attempt, 4, seconds per attempt, 3.60
+28572, Combo, 0/94/98, attempt, 5, seconds per attempt, 3.10
+30853, Combo, 0/94/98, attempt, 6, seconds per attempt, 2.97
+33148, Combo, 0/94/98, attempt, 7, seconds per attempt, 2.87
+35460, Combo, 0/94/98, attempt, 8, seconds per attempt, 2.80
+36781, Combo, 0/91/98, attempt, 9, seconds per attempt, 2.64
+39095, Combo, 0/91/98, attempt, 10, seconds per attempt, 2.60
+41409, Combo, 0/91/98, attempt, 11, seconds per attempt, 2.58
+43726, Combo, 0/91/98, attempt, 12, seconds per attempt, 2.56
+45264, Combo, 0/88/98, attempt, 13, seconds per attempt, 2.48
+47571, Combo, 0/88/98, attempt, 14, seconds per attempt, 2.47
+49900, Combo, 0/88/98, attempt, 15, seconds per attempt, 2.46
+52235, Combo, 0/88/98, attempt, 16, seconds per attempt, 2.45
+54026, Combo, 0/85/98, attempt, 17, seconds per attempt, 2.41
+56329, Combo, 0/85/98, attempt, 18, seconds per attempt, 2.40
+58667, Combo, 0/85/98, attempt, 19, seconds per attempt, 2.40
+61012, Combo, 0/85/98, attempt, 20, seconds per attempt, 2.40
+62937, Combo, 0/82/98, attempt, 21, seconds per attempt, 2.38
+65257, Combo, 0/82/98, attempt, 22, seconds per attempt, 2.37
+67600, Combo, 0/82/98, attempt, 23, seconds per attempt, 2.37
+69958, Combo, 0/82/98, attempt, 24, seconds per attempt, 2.37
+71922, Combo, 0/79/98, attempt, 25, seconds per attempt, 2.35
+74263, Combo, 0/79/98, attempt, 26, seconds per attempt, 2.35
+76604, Combo, 0/79/98, attempt, 27, seconds per attempt, 2.35
+77333, Combo, 0/79/98, attempt, 28, seconds per attempt, 2.30
+79324, Combo, 0/76/98, attempt, 29, seconds per attempt, 2.29
+81644, Combo, 0/76/98, attempt, 30, seconds per attempt, 2.29
+83975, Combo, 0/76/98, attempt, 31, seconds per attempt, 2.29
+Cracking stopped
+
+Combo to start at: 0/76/98
+1) Go home and reset dial
+2) Test dial control
+3) View indent positions
+4) Measure indents
+5) Set indents to test
+6) Set starting combos
+7) Calibrate handle servo
+8) Test handle button
+9) Test indent centers
+s) Start cracking
+
+Combo to start at: 0/76/98
+1) Go home and reset dial
+2) Test dial control
+3) View indent positions
+4) Measure indents
+5) Set indents to test
+6) Set starting combos
+7) Calibrate handle servo
+8) Test handle button
+9) Test indent centers
+s) Start cracking
+Indents to test:
+0: Y / 98
+1: N / 6
+2: N / 14
+3: N / 23
+4: N / 31
+5: N / 39
+6: N / 48
+7: N / 56
+8: N / 65
+9: Y / 73
+10: Y / 81
+11: Y / 90
+Which indent to change?
+Type 99 to exit
+Indents to test:
+0: N / 98
+1: N / 6
+2: N / 14
+3: N / 23
+4: N / 31
+5: N / 39
+6: N / 48
+7: N / 56
+8: N / 65
+9: Y / 73
+10: Y / 81
+11: Y / 90
+Which indent to change?
+Type 99 to exit
+
+Combo to start at: 0/76/98
+1) Go home and reset dial
+2) Test dial control
+3) View indent positions
+4) Measure indents
+5) Set indents to test
+6) Set starting combos
+7) Calibrate handle servo
+8) Test handle button
+9) Test indent centers
+s) Start cracking
+
+Combo to start at: 0/76/98
+1) Go home and reset dial
+2) Test dial control
+3) View indent positions
+4) Measure indents
+5) Set indents to test
+6) Set starting combos
+7) Calibrate handle servo
+8) Test handle button
+9) Test indent centers
+s) Start cracking
+0: [98]
+1: [6]
+2: [14]
+3: [23]
+4: [31]
+5: [39]
+6: [48]
+7: [56]
+8: [65]
+9: [73]
+10: [81]
+11: [90]
+
+Combo to start at: 0/76/98
+1) Go home and reset dial
+2) Test dial control
+3) View indent positions
+4) Measure indents
+5) Set indents to test
+6) Set starting combos
+7) Calibrate handle servo
+8) Test handle button
+9) Test indent centers
+s) Start cracking
+
+Combo to start at: 0/76/98
+1) Go home and reset dial
+2) Test dial control
+3) View indent positions
+4) Measure indents
+5) Set indents to test
+6) Set starting combos
+7) Calibrate handle servo
+8) Test handle button
+9) Test indent centers
+s) Start cracking
+0: [98]
+1: [6]
+2: [14]
+3: [23]
+4: [31]
+5: [39]
+6: [48]
+7: [56]
+8: [65]
+9: [73]
+10: [81]
+11: [90]
+
+Combo to start at: 0/76/98
+1) Go home and reset dial
+2) Test dial control
+3) View indent positions
+4) Measure indents
+5) Set indents to test
+6) Set starting combos
+7) Calibrate handle servo
+8) Test handle button
+9) Test indent centers
+s) Start cracking
+
+Combo to start at: 0/76/98
+1) Go home and reset dial
+2) Test dial control
+3) View indent positions
+4) Measure indents
+5) Set indents to test
+6) Set starting combos
+7) Calibrate handle servo
+8) Test handle button
+9) Test indent centers
+s) Start cracking
+0: [98]
+1: [6]
+2: [14]
+3: [23]
+4: [31]
+5: [39]
+6: [48]
+7: [56]
+8: [65]
+9: [73]
+10: [81]
+11: [90]
+
+Combo to start at: 0/76/98
+1) Go home and reset dial
+2) Test dial control
+3) View indent positions
+4) Measure indents
+5) Set indents to test
+6) Set starting combos
+7) Calibrate handle servo
+8) Test handle button
+9) Test indent centers
+s) Start cracking
+
+Combo to start at: 0/76/98
+1) Go home and reset dial
+2) Test dial control
+3) View indent positions
+4) Measure indents
+5) Set indents to test
+6) Set starting combos
+7) Calibrate handle servo
+8) Test handle button
+9) Test indent centers
+s) Start cracking
+0: [98]
+1: [6]
+2: [14]
+3: [23]
+4: [31]
+5: [39]
+6: [48]
+7: [56]
+8: [65]
+9: [73]
+10: [81]
+11: [90]
+
+Combo to start at: 0/76/98
+1) Go home and reset dial
+2) Test dial control
+3) View indent positions
+4) Measure indents
+5) Set indents to test
+6) Set starting combos
+7) Calibrate handle servo
+8) Test handle button
+9) Test indent centers
+s) Start cracking
+
+Combo to start at: 0/76/98
+1) Go home and reset dial
+2) Test dial control
+3) View indent positions
+4) Measure indents
+5) Set indents to test
+6) Set starting combos
+7) Calibrate handle servo
+8) Test handle button
+9) Test indent centers
+s) Start cracking
+Indents to test:
+0: N / 98
+1: N / 6
+2: N / 14
+3: N / 23
+4: N / 31
+5: N / 39
+6: N / 48
+7: N / 56
+8: N / 65
+9: Y / 73
+10: Y / 81
+11: Y / 90
+Which indent to change?
+Type 99 to exit
+Indents to test:
+0: Y / 98
+1: N / 6
+2: N / 14
+3: N / 23
+4: N / 31
+5: N / 39
+6: N / 48
+7: N / 56
+8: N / 65
+9: Y / 73
+10: Y / 81
+11: Y / 90
+Which indent to change?
+Type 99 to exit
+Indents to test:
+0: Y / 98
+1: N / 6
+2: N / 14
+3: N / 23
+4: N / 31
+5: Y / 39
+6: N / 48
+7: N / 56
+8: N / 65
+9: Y / 73
+10: Y / 81
+11: Y / 90
+Which indent to change?
+Type 99 to exit
+Indents to test:
+0: N / 98
+1: N / 6
+2: N / 14
+3: N / 23
+4: N / 31
+5: Y / 39
+6: N / 48
+7: N / 56
+8: N / 65
+9: Y / 73
+10: Y / 81
+11: Y / 90
+Which indent to change?
+Type 99 to exit
+
+Combo to start at: 0/76/98
+1) Go home and reset dial
+2) Test dial control
+3) View indent positions
+4) Measure indents
+5) Set indents to test
+6) Set starting combos
+7) Calibrate handle servo
+8) Test handle button
+9) Test indent centers
+s) Start cracking
+
+Combo to start at: 0/76/98
+1) Go home and reset dial
+2) Test dial control
+3) View indent positions
+4) Measure indents
+5) Set indents to test
+6) Set starting combos
+7) Calibrate handle servo
+8) Test handle button
+9) Test indent centers
+s) Start cracking
+DiscA is at: 0
+DiscB is at: 76
+DiscC is at: 98
+241944, Combo, 0/76/39, attempt, 32, seconds per attempt, 0.24
+243358, Combo, 0/76/73, attempt, 33, seconds per attempt, 0.28
+244426, Combo, 0/76/81, attempt, 34, seconds per attempt, 0.30
+245553, Combo, 0/76/90, attempt, 35, seconds per attempt, 0.32
+247236, Combo, 0/73/81, attempt, 36, seconds per attempt, 0.36
+248315, Combo, 0/73/90, attempt, 37, seconds per attempt, 0.38
+249919, Combo, 0/73/39, attempt, 38, seconds per attempt, 0.41
+251396, Combo, 0/73/73, attempt, 39, seconds per attempt, 0.44
+252229, Combo, 0/70/73, attempt, 40, seconds per attempt, 0.45
+253412, Combo, 0/70/81, attempt, 41, seconds per attempt, 0.47
+254528, Combo, 0/70/90, attempt, 42, seconds per attempt, 0.48
+256116, Combo, 0/70/39, attempt, 43, seconds per attempt, 0.51
+258295, Combo, 0/67/73, attempt, 44, seconds per attempt, 0.55
+259352, Combo, 0/67/81, attempt, 45, seconds per attempt, 0.56
+260433, Combo, 0/67/90, attempt, 46, seconds per attempt, 0.57
+261974, Combo, 0/67/39, attempt, 47, seconds per attempt, 0.59
+264265, Combo, 0/64/73, attempt, 48, seconds per attempt, 0.63
+265320, Combo, 0/64/81, attempt, 49, seconds per attempt, 0.63
+266408, Combo, 0/64/90, attempt, 50, seconds per attempt, 0.64
+267954, Combo, 0/64/39, attempt, 51, seconds per attempt, 0.66
+270368, Combo, 0/61/73, attempt, 52, seconds per attempt, 0.70
+271421, Combo, 0/61/81, attempt, 53, seconds per attempt, 0.70
+272513, Combo, 0/61/90, attempt, 54, seconds per attempt, 0.71
+274066, Combo, 0/61/39, attempt, 55, seconds per attempt, 0.72
+276569, Combo, 0/58/73, attempt, 56, seconds per attempt, 0.76
+277621, Combo, 0/58/81, attempt, 57, seconds per attempt, 0.76
+278716, Combo, 0/58/90, attempt, 58, seconds per attempt, 0.77
+280267, Combo, 0/58/39, attempt, 59, seconds per attempt, 0.78
+282805, Combo, 0/55/73, attempt, 60, seconds per attempt, 0.81
+283862, Combo, 0/55/81, attempt, 61, seconds per attempt, 0.81
+284967, Combo, 0/55/90, attempt, 62, seconds per attempt, 0.82
+286520, Combo, 0/55/39, attempt, 63, seconds per attempt, 0.83
+289099, Combo, 0/52/73, attempt, 64, seconds per attempt, 0.86
+290152, Combo, 0/52/81, attempt, 65, seconds per attempt, 0.86
+291261, Combo, 0/52/90, attempt, 66, seconds per attempt, 0.86
+292815, Combo, 0/52/39, attempt, 67, seconds per attempt, 0.87
+295437, Combo, 0/49/73, attempt, 68, seconds per attempt, 0.90
+296475, Combo, 0/49/81, attempt, 69, seconds per attempt, 0.90
+297578, Combo, 0/49/90, attempt, 70, seconds per attempt, 0.91
+299133, Combo, 0/49/39, attempt, 71, seconds per attempt, 0.91
+301803, Combo, 0/46/73, attempt, 72, seconds per attempt, 0.94
+302842, Combo, 0/46/81, attempt, 73, seconds per attempt, 0.94
+303953, Combo, 0/46/90, attempt, 74, seconds per attempt, 0.94
+305513, Combo, 0/46/39, attempt, 75, seconds per attempt, 0.95
+308244, Combo, 0/43/73, attempt, 76, seconds per attempt, 0.97
+309278, Combo, 0/43/81, attempt, 77, seconds per attempt, 0.97
+310391, Combo, 0/43/90, attempt, 78, seconds per attempt, 0.98
+311955, Combo, 0/43/39, attempt, 79, seconds per attempt, 0.98
+314739, Combo, 0/40/73, attempt, 80, seconds per attempt, 1.01
+315774, Combo, 0/40/81, attempt, 81, seconds per attempt, 1.01
+316883, Combo, 0/40/90, attempt, 82, seconds per attempt, 1.01
+318455, Combo, 0/40/39, attempt, 83, seconds per attempt, 1.01
+319264, Combo, 0/37/39, attempt, 84, seconds per attempt, 1.01
+320710, Combo, 0/37/73, attempt, 85, seconds per attempt, 1.02
+321763, Combo, 0/37/81, attempt, 86, seconds per attempt, 1.02
+322886, Combo, 0/37/90, attempt, 87, seconds per attempt, 1.02
+324742, Combo, 0/34/39, attempt, 88, seconds per attempt, 1.03
+326115, Combo, 0/34/73, attempt, 89, seconds per attempt, 1.03
+327146, Combo, 0/34/81, attempt, 90, seconds per attempt, 1.03
+328240, Combo, 0/34/90, attempt, 91, seconds per attempt, 1.03
+330280, Combo, 0/31/39, attempt, 92, seconds per attempt, 1.04
+331664, Combo, 0/31/73, attempt, 93, seconds per attempt, 1.05
+332692, Combo, 0/31/81, attempt, 94, seconds per attempt, 1.05
+333778, Combo, 0/31/90, attempt, 95, seconds per attempt, 1.05
+335907, Combo, 0/28/39, attempt, 96, seconds per attempt, 1.06
+337293, Combo, 0/28/73, attempt, 97, seconds per attempt, 1.06
+338320, Combo, 0/28/81, attempt, 98, seconds per attempt, 1.06
+339402, Combo, 0/28/90, attempt, 99, seconds per attempt, 1.06
+341670, Combo, 0/25/39, attempt, 100, seconds per attempt, 1.07
+343058, Combo, 0/25/73, attempt, 101, seconds per attempt, 1.08
+344086, Combo, 0/25/81, attempt, 102, seconds per attempt, 1.08
+345170, Combo, 0/25/90, attempt, 103, seconds per attempt, 1.08
+347492, Combo, 0/22/39, attempt, 104, seconds per attempt, 1.09
+348883, Combo, 0/22/73, attempt, 105, seconds per attempt, 1.09
+349915, Combo, 0/22/81, attempt, 106, seconds per attempt, 1.09
+350997, Combo, 0/22/90, attempt, 107, seconds per attempt, 1.09
+353387, Combo, 0/19/39, attempt, 108, seconds per attempt, 1.10
+354781, Combo, 0/19/73, attempt, 109, seconds per attempt, 1.11
+355807, Combo, 0/19/81, attempt, 110, seconds per attempt, 1.11
+356888, Combo, 0/19/90, attempt, 111, seconds per attempt, 1.11
+359362, Combo, 0/16/39, attempt, 112, seconds per attempt, 1.12
+360759, Combo, 0/16/73, attempt, 113, seconds per attempt, 1.12
+361786, Combo, 0/16/81, attempt, 114, seconds per attempt, 1.12
+362858, Combo, 0/16/90, attempt, 115, seconds per attempt, 1.12
+365418, Combo, 0/13/39, attempt, 116, seconds per attempt, 1.13
+366813, Combo, 0/13/73, attempt, 117, seconds per attempt, 1.13
+367840, Combo, 0/13/81, attempt, 118, seconds per attempt, 1.13
+368914, Combo, 0/13/90, attempt, 119, seconds per attempt, 1.13
+371564, Combo, 0/10/39, attempt, 120, seconds per attempt, 1.14
+372968, Combo, 0/10/73, attempt, 121, seconds per attempt, 1.15
+373999, Combo, 0/10/81, attempt, 122, seconds per attempt, 1.15
+375075, Combo, 0/10/90, attempt, 123, seconds per attempt, 1.15
+Resetting dial...
+DiscA is at: 3
+DiscB is at: 0
+DiscC is at: 39
+381901, Combo, 3/0/39, attempt, 124, seconds per attempt, 1.19
+383411, Combo, 3/0/73, attempt, 125, seconds per attempt, 1.19
+384502, Combo, 3/0/81, attempt, 126, seconds per attempt, 1.19
+385629, Combo, 3/0/90, attempt, 127, seconds per attempt, 1.19
+388505, Combo, 3/97/39, attempt, 128, seconds per attempt, 1.21
+390006, Combo, 3/97/73, attempt, 129, seconds per attempt, 1.21
+391101, Combo, 3/97/81, attempt, 130, seconds per attempt, 1.21
+392218, Combo, 3/97/90, attempt, 131, seconds per attempt, 1.21
+395187, Combo, 3/94/39, attempt, 132, seconds per attempt, 1.22
+396685, Combo, 3/94/73, attempt, 133, seconds per attempt, 1.22
+397777, Combo, 3/94/81, attempt, 134, seconds per attempt, 1.22
+398897, Combo, 3/94/90, attempt, 135, seconds per attempt, 1.22
+401955, Combo, 3/91/39, attempt, 136, seconds per attempt, 1.23
+403436, Combo, 3/91/73, attempt, 137, seconds per attempt, 1.24
+404524, Combo, 3/91/81, attempt, 138, seconds per attempt, 1.23
+405643, Combo, 3/91/90, attempt, 139, seconds per attempt, 1.23
+406445, Combo, 3/88/90, attempt, 140, seconds per attempt, 1.23
+408095, Combo, 3/88/39, attempt, 141, seconds per attempt, 1.23
+409637, Combo, 3/88/73, attempt, 142, seconds per attempt, 1.24
+410761, Combo, 3/88/81, attempt, 143, seconds per attempt, 1.23
+413188, Combo, 3/85/90, attempt, 144, seconds per attempt, 1.24
+414749, Combo, 3/85/39, attempt, 145, seconds per attempt, 1.24
+416207, Combo, 3/85/73, attempt, 146, seconds per attempt, 1.25
+417290, Combo, 3/85/81, attempt, 147, seconds per attempt, 1.25
+419901, Combo, 3/82/90, attempt, 148, seconds per attempt, 1.25
+421477, Combo, 3/82/39, attempt, 149, seconds per attempt, 1.26
+422940, Combo, 3/82/73, attempt, 150, seconds per attempt, 1.26
+424025, Combo, 3/82/81, attempt, 151, seconds per attempt, 1.26
+424828, Combo, 3/79/81, attempt, 152, seconds per attempt, 1.25
+426009, Combo, 3/79/90, attempt, 153, seconds per attempt, 1.25
+427655, Combo, 3/79/39, attempt, 154, seconds per attempt, 1.26
+429185, Combo, 3/79/73, attempt, 155, seconds per attempt, 1.26
+431650, Combo, 3/76/81, attempt, 156, seconds per attempt, 1.27
+432748, Combo, 3/76/90, attempt, 157, seconds per attempt, 1.26
+434336, Combo, 3/76/39, attempt, 158, seconds per attempt, 1.27
+435802, Combo, 3/76/73, attempt, 159, seconds per attempt, 1.27
+437024, Combo, 3/73/81, attempt, 160, seconds per attempt, 1.27
+438173, Combo, 3/73/90, attempt, 161, seconds per attempt, 1.27
+439792, Combo, 3/73/39, attempt, 162, seconds per attempt, 1.27
+441282, Combo, 3/73/73, attempt, 163, seconds per attempt, 1.27
+442116, Combo, 3/70/73, attempt, 164, seconds per attempt, 1.27
+443307, Combo, 3/70/81, attempt, 165, seconds per attempt, 1.27
+444448, Combo, 3/70/90, attempt, 166, seconds per attempt, 1.27
+446066, Combo, 3/70/39, attempt, 167, seconds per attempt, 1.27
+448057, Combo, 3/67/73, attempt, 168, seconds per attempt, 1.27
+449124, Combo, 3/67/81, attempt, 169, seconds per attempt, 1.27
+450226, Combo, 3/67/90, attempt, 170, seconds per attempt, 1.27
+451793, Combo, 3/67/39, attempt, 171, seconds per attempt, 1.27
+454085, Combo, 3/64/73, attempt, 172, seconds per attempt, 1.28
+455150, Combo, 3/64/81, attempt, 173, seconds per attempt, 1.28
+456265, Combo, 3/64/90, attempt, 174, seconds per attempt, 1.28
+457829, Combo, 3/64/39, attempt, 175, seconds per attempt, 1.28
+460248, Combo, 3/61/73, attempt, 176, seconds per attempt, 1.28
+461316, Combo, 3/61/81, attempt, 177, seconds per attempt, 1.28
+462438, Combo, 3/61/90, attempt, 178, seconds per attempt, 1.28
+464004, Combo, 3/61/39, attempt, 179, seconds per attempt, 1.28
+466500, Combo, 3/58/73, attempt, 180, seconds per attempt, 1.29
+467563, Combo, 3/58/81, attempt, 181, seconds per attempt, 1.29
+468685, Combo, 3/58/90, attempt, 182, seconds per attempt, 1.29
+470254, Combo, 3/58/39, attempt, 183, seconds per attempt, 1.29
+472787, Combo, 3/55/73, attempt, 184, seconds per attempt, 1.30
+473853, Combo, 3/55/81, attempt, 185, seconds per attempt, 1.30
+474982, Combo, 3/55/90, attempt, 186, seconds per attempt, 1.29
+476554, Combo, 3/55/39, attempt, 187, seconds per attempt, 1.30
+479127, Combo, 3/52/73, attempt, 188, seconds per attempt, 1.30
+480192, Combo, 3/52/81, attempt, 189, seconds per attempt, 1.30
+481321, Combo, 3/52/90, attempt, 190, seconds per attempt, 1.30
+482893, Combo, 3/52/39, attempt, 191, seconds per attempt, 1.30
+485504, Combo, 3/49/73, attempt, 192, seconds per attempt, 1.31
+486558, Combo, 3/49/81, attempt, 193, seconds per attempt, 1.31
+487688, Combo, 3/49/90, attempt, 194, seconds per attempt, 1.31
+489251, Combo, 3/49/39, attempt, 195, seconds per attempt, 1.31
+491910, Combo, 3/46/73, attempt, 196, seconds per attempt, 1.31
+492952, Combo, 3/46/81, attempt, 197, seconds per attempt, 1.31
+494078, Combo, 3/46/90, attempt, 198, seconds per attempt, 1.31
+495650, Combo, 3/46/39, attempt, 199, seconds per attempt, 1.31
+498363, Combo, 3/43/73, attempt, 200, seconds per attempt, 1.32
+499406, Combo, 3/43/81, attempt, 201, seconds per attempt, 1.32
+500536, Combo, 3/43/90, attempt, 202, seconds per attempt, 1.32
+502114, Combo, 3/43/39, attempt, 203, seconds per attempt, 1.32
+504892, Combo, 3/40/73, attempt, 204, seconds per attempt, 1.33
+505930, Combo, 3/40/81, attempt, 205, seconds per attempt, 1.33
+507055, Combo, 3/40/90, attempt, 206, seconds per attempt, 1.32
+508648, Combo, 3/40/39, attempt, 207, seconds per attempt, 1.33
+509457, Combo, 3/37/39, attempt, 208, seconds per attempt, 1.32
+510904, Combo, 3/37/73, attempt, 209, seconds per attempt, 1.32
+511972, Combo, 3/37/81, attempt, 210, seconds per attempt, 1.32
+513122, Combo, 3/37/90, attempt, 211, seconds per attempt, 1.32
+514975, Combo, 3/34/39, attempt, 212, seconds per attempt, 1.32
+516357, Combo, 3/34/73, attempt, 213, seconds per attempt, 1.32
+517397, Combo, 3/34/81, attempt, 214, seconds per attempt, 1.32
+518514, Combo, 3/34/90, attempt, 215, seconds per attempt, 1.32
+520506, Combo, 3/31/39, attempt, 216, seconds per attempt, 1.33
+521896, Combo, 3/31/73, attempt, 217, seconds per attempt, 1.33
+522938, Combo, 3/31/81, attempt, 218, seconds per attempt, 1.32
+524054, Combo, 3/31/90, attempt, 219, seconds per attempt, 1.32
+526185, Combo, 3/28/39, attempt, 220, seconds per attempt, 1.33
+527582, Combo, 3/28/73, attempt, 221, seconds per attempt, 1.33
+528623, Combo, 3/28/81, attempt, 222, seconds per attempt, 1.33
+529731, Combo, 3/28/90, attempt, 223, seconds per attempt, 1.33
+532005, Combo, 3/25/39, attempt, 224, seconds per attempt, 1.33
+533407, Combo, 3/25/73, attempt, 225, seconds per attempt, 1.33
+534449, Combo, 3/25/81, attempt, 226, seconds per attempt, 1.33
+535558, Combo, 3/25/90, attempt, 227, seconds per attempt, 1.33
+537884, Combo, 3/22/39, attempt, 228, seconds per attempt, 1.33
+539292, Combo, 3/22/73, attempt, 229, seconds per attempt, 1.33
+540338, Combo, 3/22/81, attempt, 230, seconds per attempt, 1.33
+541451, Combo, 3/22/90, attempt, 231, seconds per attempt, 1.33
+543840, Combo, 3/19/39, attempt, 232, seconds per attempt, 1.33
+545251, Combo, 3/19/73, attempt, 233, seconds per attempt, 1.33
+546295, Combo, 3/19/81, attempt, 234, seconds per attempt, 1.33
+547398, Combo, 3/19/90, attempt, 235, seconds per attempt, 1.33
+549871, Combo, 3/16/39, attempt, 236, seconds per attempt, 1.34
+551284, Combo, 3/16/73, attempt, 237, seconds per attempt, 1.34
+552331, Combo, 3/16/81, attempt, 238, seconds per attempt, 1.34
+553427, Combo, 3/16/90, attempt, 239, seconds per attempt, 1.34
+556137, Combo, 3/13/39, attempt, 240, seconds per attempt, 1.34
+557553, Combo, 3/13/73, attempt, 241, seconds per attempt, 1.34
+558604, Combo, 3/13/81, attempt, 242, seconds per attempt, 1.34
+559705, Combo, 3/13/90, attempt, 243, seconds per attempt, 1.34
+Resetting dial...
+DiscA is at: 6
+DiscB is at: 3
+DiscC is at: 39
+566630, Combo, 6/3/39, attempt, 244, seconds per attempt, 1.36
+568164, Combo, 6/3/73, attempt, 245, seconds per attempt, 1.36
+569283, Combo, 6/3/81, attempt, 246, seconds per attempt, 1.36
+570424, Combo, 6/3/90, attempt, 247, seconds per attempt, 1.36
+573242, Combo, 6/0/39, attempt, 248, seconds per attempt, 1.37
+574764, Combo, 6/0/73, attempt, 249, seconds per attempt, 1.37
+575884, Combo, 6/0/81, attempt, 250, seconds per attempt, 1.37
+577024, Combo, 6/0/90, attempt, 251, seconds per attempt, 1.37
+579928, Combo, 6/97/39, attempt, 252, seconds per attempt, 1.37
+581439, Combo, 6/97/73, attempt, 253, seconds per attempt, 1.37
+582555, Combo, 6/97/81, attempt, 254, seconds per attempt, 1.37
+583695, Combo, 6/97/90, attempt, 255, seconds per attempt, 1.37
+586680, Combo, 6/94/39, attempt, 256, seconds per attempt, 1.38
+588184, Combo, 6/94/73, attempt, 257, seconds per attempt, 1.38
+589299, Combo, 6/94/81, attempt, 258, seconds per attempt, 1.38
+590444, Combo, 6/94/90, attempt, 259, seconds per attempt, 1.38
+593537, Combo, 6/91/39, attempt, 260, seconds per attempt, 1.38
+595038, Combo, 6/91/73, attempt, 261, seconds per attempt, 1.38
+596153, Combo, 6/91/81, attempt, 262, seconds per attempt, 1.38
+597306, Combo, 6/91/90, attempt, 263, seconds per attempt, 1.38
+598108, Combo, 6/88/90, attempt, 264, seconds per attempt, 1.38
+599782, Combo, 6/88/39, attempt, 265, seconds per attempt, 1.38
+601340, Combo, 6/88/73, attempt, 266, seconds per attempt, 1.38
+602462, Combo, 6/88/81, attempt, 267, seconds per attempt, 1.38
+604898, Combo, 6/85/90, attempt, 268, seconds per attempt, 1.38
+606477, Combo, 6/85/39, attempt, 269, seconds per attempt, 1.38
+607965, Combo, 6/85/73, attempt, 270, seconds per attempt, 1.38
+609054, Combo, 6/85/81, attempt, 271, seconds per attempt, 1.38
+611695, Combo, 6/82/90, attempt, 272, seconds per attempt, 1.39
+613285, Combo, 6/82/39, attempt, 273, seconds per attempt, 1.39
+614767, Combo, 6/82/73, attempt, 274, seconds per attempt, 1.39
+615860, Combo, 6/82/81, attempt, 275, seconds per attempt, 1.39
+616660, Combo, 6/79/81, attempt, 276, seconds per attempt, 1.39
+617844, Combo, 6/79/90, attempt, 277, seconds per attempt, 1.38
+619512, Combo, 6/79/39, attempt, 278, seconds per attempt, 1.39
+621051, Combo, 6/79/73, attempt, 279, seconds per attempt, 1.39
+623523, Combo, 6/76/81, attempt, 280, seconds per attempt, 1.39
+624641, Combo, 6/76/90, attempt, 281, seconds per attempt, 1.39
+626236, Combo, 6/76/39, attempt, 282, seconds per attempt, 1.39
+627708, Combo, 6/76/73, attempt, 283, seconds per attempt, 1.39
+628943, Combo, 6/73/81, attempt, 284, seconds per attempt, 1.39
+630132, Combo, 6/73/90, attempt, 285, seconds per attempt, 1.39
+631775, Combo, 6/73/39, attempt, 286, seconds per attempt, 1.39
+633280, Combo, 6/73/73, attempt, 287, seconds per attempt, 1.39
+634115, Combo, 6/70/73, attempt, 288, seconds per attempt, 1.39
+635322, Combo, 6/70/81, attempt, 289, seconds per attempt, 1.39
+636477, Combo, 6/70/90, attempt, 290, seconds per attempt, 1.39
+638099, Combo, 6/70/39, attempt, 291, seconds per attempt, 1.39
+640278, Combo, 6/67/73, attempt, 292, seconds per attempt, 1.39
+641361, Combo, 6/67/81, attempt, 293, seconds per attempt, 1.39
+642491, Combo, 6/67/90, attempt, 294, seconds per attempt, 1.39
+644055, Combo, 6/67/39, attempt, 295, seconds per attempt, 1.39
+646367, Combo, 6/64/73, attempt, 296, seconds per attempt, 1.39
+647450, Combo, 6/64/81, attempt, 297, seconds per attempt, 1.39
+648582, Combo, 6/64/90, attempt, 298, seconds per attempt, 1.39
+650147, Combo, 6/64/39, attempt, 299, seconds per attempt, 1.39
+652564, Combo, 6/61/73, attempt, 300, seconds per attempt, 1.39
+653639, Combo, 6/61/81, attempt, 301, seconds per attempt, 1.39
+654765, Combo, 6/61/90, attempt, 302, seconds per attempt, 1.39
+656336, Combo, 6/61/39, attempt, 303, seconds per attempt, 1.39
+658843, Combo, 6/58/73, attempt, 304, seconds per attempt, 1.40
+659920, Combo, 6/58/81, attempt, 305, seconds per attempt, 1.40
+661054, Combo, 6/58/90, attempt, 306, seconds per attempt, 1.39
+662628, Combo, 6/58/39, attempt, 307, seconds per attempt, 1.40
+665161, Combo, 6/55/73, attempt, 308, seconds per attempt, 1.40
+666233, Combo, 6/55/81, attempt, 309, seconds per attempt, 1.40
+667369, Combo, 6/55/90, attempt, 310, seconds per attempt, 1.40
+668940, Combo, 6/55/39, attempt, 311, seconds per attempt, 1.40
+671513, Combo, 6/52/73, attempt, 312, seconds per attempt, 1.40
+672581, Combo, 6/52/81, attempt, 313, seconds per attempt, 1.40
+673714, Combo, 6/52/90, attempt, 314, seconds per attempt, 1.40
+675290, Combo, 6/52/39, attempt, 315, seconds per attempt, 1.40
+677903, Combo, 6/49/73, attempt, 316, seconds per attempt, 1.40
+678960, Combo, 6/49/81, attempt, 317, seconds per attempt, 1.40
+680103, Combo, 6/49/90, attempt, 318, seconds per attempt, 1.40
+681688, Combo, 6/49/39, attempt, 319, seconds per attempt, 1.40
+684350, Combo, 6/46/73, attempt, 320, seconds per attempt, 1.41
+685405, Combo, 6/46/81, attempt, 321, seconds per attempt, 1.41
+686551, Combo, 6/46/90, attempt, 322, seconds per attempt, 1.40
+688141, Combo, 6/46/39, attempt, 323, seconds per attempt, 1.41
+690864, Combo, 6/43/73, attempt, 324, seconds per attempt, 1.41
+691914, Combo, 6/43/81, attempt, 325, seconds per attempt, 1.41
+693054, Combo, 6/43/90, attempt, 326, seconds per attempt, 1.41
+694653, Combo, 6/43/39, attempt, 327, seconds per attempt, 1.41
+697497, Combo, 6/40/73, attempt, 328, seconds per attempt, 1.41
+698546, Combo, 6/40/81, attempt, 329, seconds per attempt, 1.41
+699679, Combo, 6/40/90, attempt, 330, seconds per attempt, 1.41
+701289, Combo, 6/40/39, attempt, 331, seconds per attempt, 1.41
+702099, Combo, 6/37/39, attempt, 332, seconds per attempt, 1.41
+703553, Combo, 6/37/73, attempt, 333, seconds per attempt, 1.41
+704619, Combo, 6/37/81, attempt, 334, seconds per attempt, 1.41
+705768, Combo, 6/37/90, attempt, 335, seconds per attempt, 1.41
+707616, Combo, 6/34/39, attempt, 336, seconds per attempt, 1.41
+709003, Combo, 6/34/73, attempt, 337, seconds per attempt, 1.41
+710042, Combo, 6/34/81, attempt, 338, seconds per attempt, 1.41
+711153, Combo, 6/34/90, attempt, 339, seconds per attempt, 1.41
+713139, Combo, 6/31/39, attempt, 340, seconds per attempt, 1.41
+714508, Combo, 6/31/73, attempt, 341, seconds per attempt, 1.41
+715547, Combo, 6/31/81, attempt, 342, seconds per attempt, 1.41
+716652, Combo, 6/31/90, attempt, 343, seconds per attempt, 1.41
+718776, Combo, 6/28/39, attempt, 344, seconds per attempt, 1.41
+720186, Combo, 6/28/73, attempt, 345, seconds per attempt, 1.41
+721228, Combo, 6/28/81, attempt, 346, seconds per attempt, 1.41
+722335, Combo, 6/28/90, attempt, 347, seconds per attempt, 1.41
+724602, Combo, 6/25/39, attempt, 348, seconds per attempt, 1.41
+726024, Combo, 6/25/73, attempt, 349, seconds per attempt, 1.41
+727070, Combo, 6/25/81, attempt, 350, seconds per attempt, 1.41
+728172, Combo, 6/25/90, attempt, 351, seconds per attempt, 1.41
+730505, Combo, 6/22/39, attempt, 352, seconds per attempt, 1.41
+731930, Combo, 6/22/73, attempt, 353, seconds per attempt, 1.41
+732982, Combo, 6/22/81, attempt, 354, seconds per attempt, 1.41
+734090, Combo, 6/22/90, attempt, 355, seconds per attempt, 1.41
+736500, Combo, 6/19/39, attempt, 356, seconds per attempt, 1.41
+737930, Combo, 6/19/73, attempt, 357, seconds per attempt, 1.41
+738983, Combo, 6/19/81, attempt, 358, seconds per attempt, 1.41
+740085, Combo, 6/19/90, attempt, 359, seconds per attempt, 1.41
+742598, Combo, 6/16/39, attempt, 360, seconds per attempt, 1.41
+744027, Combo, 6/16/73, attempt, 361, seconds per attempt, 1.41
+745086, Combo, 6/16/81, attempt, 362, seconds per attempt, 1.41
+746185, Combo, 6/16/90, attempt, 363, seconds per attempt, 1.41
+Resetting dial...
+DiscA is at: 9
+DiscB is at: 6
+DiscC is at: 39
+752918, Combo, 9/6/39, attempt, 364, seconds per attempt, 1.42
+754453, Combo, 9/6/73, attempt, 365, seconds per attempt, 1.43
+755559, Combo, 9/6/81, attempt, 366, seconds per attempt, 1.42
+756690, Combo, 9/6/90, attempt, 367, seconds per attempt, 1.42
+759424, Combo, 9/3/39, attempt, 368, seconds per attempt, 1.43
+760954, Combo, 9/3/73, attempt, 369, seconds per attempt, 1.43
+762062, Combo, 9/3/81, attempt, 370, seconds per attempt, 1.43
+763198, Combo, 9/3/90, attempt, 371, seconds per attempt, 1.43
+766026, Combo, 9/0/39, attempt, 372, seconds per attempt, 1.43
+767553, Combo, 9/0/73, attempt, 373, seconds per attempt, 1.43
+768665, Combo, 9/0/81, attempt, 374, seconds per attempt, 1.43
+769803, Combo, 9/0/90, attempt, 375, seconds per attempt, 1.43
+772722, Combo, 9/97/39, attempt, 376, seconds per attempt, 1.43
+774247, Combo, 9/97/73, attempt, 377, seconds per attempt, 1.43
+775355, Combo, 9/97/81, attempt, 378, seconds per attempt, 1.43
+776498, Combo, 9/97/90, attempt, 379, seconds per attempt, 1.43
+779496, Combo, 9/94/39, attempt, 380, seconds per attempt, 1.43
+781016, Combo, 9/94/73, attempt, 381, seconds per attempt, 1.44
+782133, Combo, 9/94/81, attempt, 382, seconds per attempt, 1.43
+783282, Combo, 9/94/90, attempt, 383, seconds per attempt, 1.43
+786384, Combo, 9/91/39, attempt, 384, seconds per attempt, 1.44
+787888, Combo, 9/91/73, attempt, 385, seconds per attempt, 1.44
+788992, Combo, 9/91/81, attempt, 386, seconds per attempt, 1.44
+790135, Combo, 9/91/90, attempt, 387, seconds per attempt, 1.44
+790937, Combo, 9/88/90, attempt, 388, seconds per attempt, 1.43
+792601, Combo, 9/88/39, attempt, 389, seconds per attempt, 1.44
+794152, Combo, 9/88/73, attempt, 390, seconds per attempt, 1.44
+795290, Combo, 9/88/81, attempt, 391, seconds per attempt, 1.43
+797736, Combo, 9/85/90, attempt, 392, seconds per attempt, 1.44
+799310, Combo, 9/85/39, attempt, 393, seconds per attempt, 1.44
+800782, Combo, 9/85/73, attempt, 394, seconds per attempt, 1.44
+801889, Combo, 9/85/81, attempt, 395, seconds per attempt, 1.44
+804513, Combo, 9/82/90, attempt, 396, seconds per attempt, 1.44
+806093, Combo, 9/82/39, attempt, 397, seconds per attempt, 1.44
+807569, Combo, 9/82/73, attempt, 398, seconds per attempt, 1.44
+808667, Combo, 9/82/81, attempt, 399, seconds per attempt, 1.44
+809465, Combo, 9/79/81, attempt, 400, seconds per attempt, 1.44
+810659, Combo, 9/79/90, attempt, 401, seconds per attempt, 1.44
+812311, Combo, 9/79/39, attempt, 402, seconds per attempt, 1.44
+813848, Combo, 9/79/73, attempt, 403, seconds per attempt, 1.44
+816322, Combo, 9/76/81, attempt, 404, seconds per attempt, 1.44
+817451, Combo, 9/76/90, attempt, 405, seconds per attempt, 1.44
+819037, Combo, 9/76/39, attempt, 406, seconds per attempt, 1.44
+820502, Combo, 9/76/73, attempt, 407, seconds per attempt, 1.44
+821739, Combo, 9/73/81, attempt, 408, seconds per attempt, 1.44
+822920, Combo, 9/73/90, attempt, 409, seconds per attempt, 1.44
+824559, Combo, 9/73/39, attempt, 410, seconds per attempt, 1.44
+826048, Combo, 9/73/73, attempt, 411, seconds per attempt, 1.44
+826883, Combo, 9/70/73, attempt, 412, seconds per attempt, 1.44
+828089, Combo, 9/70/81, attempt, 413, seconds per attempt, 1.44
+829255, Combo, 9/70/90, attempt, 414, seconds per attempt, 1.44
+830888, Combo, 9/70/39, attempt, 415, seconds per attempt, 1.44
+833070, Combo, 9/67/73, attempt, 416, seconds per attempt, 1.44
+834145, Combo, 9/67/81, attempt, 417, seconds per attempt, 1.44
+835273, Combo, 9/67/90, attempt, 418, seconds per attempt, 1.44
+836847, Combo, 9/67/39, attempt, 419, seconds per attempt, 1.44
+839148, Combo, 9/64/73, attempt, 420, seconds per attempt, 1.44
+840218, Combo, 9/64/81, attempt, 421, seconds per attempt, 1.44
+841349, Combo, 9/64/90, attempt, 422, seconds per attempt, 1.44
+842923, Combo, 9/64/39, attempt, 423, seconds per attempt, 1.44
+845342, Combo, 9/61/73, attempt, 424, seconds per attempt, 1.44
+846401, Combo, 9/61/81, attempt, 425, seconds per attempt, 1.44
+847535, Combo, 9/61/90, attempt, 426, seconds per attempt, 1.44
+849108, Combo, 9/61/39, attempt, 427, seconds per attempt, 1.44
+851611, Combo, 9/58/73, attempt, 428, seconds per attempt, 1.44
+852667, Combo, 9/58/81, attempt, 429, seconds per attempt, 1.44
+853791, Combo, 9/58/90, attempt, 430, seconds per attempt, 1.44
+855369, Combo, 9/58/39, attempt, 431, seconds per attempt, 1.44
+857886, Combo, 9/55/73, attempt, 432, seconds per attempt, 1.44
+858943, Combo, 9/55/81, attempt, 433, seconds per attempt, 1.44
+860065, Combo, 9/55/90, attempt, 434, seconds per attempt, 1.44
+861639, Combo, 9/55/39, attempt, 435, seconds per attempt, 1.44
+864190, Combo, 9/52/73, attempt, 436, seconds per attempt, 1.44
+865239, Combo, 9/52/81, attempt, 437, seconds per attempt, 1.44
+866364, Combo, 9/52/90, attempt, 438, seconds per attempt, 1.44
+867947, Combo, 9/52/39, attempt, 439, seconds per attempt, 1.44
+870548, Combo, 9/49/73, attempt, 440, seconds per attempt, 1.45
+871590, Combo, 9/49/81, attempt, 441, seconds per attempt, 1.45
+872721, Combo, 9/49/90, attempt, 442, seconds per attempt, 1.44
+874312, Combo, 9/49/39, attempt, 443, seconds per attempt, 1.44
+876981, Combo, 9/46/73, attempt, 444, seconds per attempt, 1.45
+878021, Combo, 9/46/81, attempt, 445, seconds per attempt, 1.45
+879156, Combo, 9/46/90, attempt, 446, seconds per attempt, 1.45
+880757, Combo, 9/46/39, attempt, 447, seconds per attempt, 1.45
+883486, Combo, 9/43/73, attempt, 448, seconds per attempt, 1.45
+884523, Combo, 9/43/81, attempt, 449, seconds per attempt, 1.45
+885645, Combo, 9/43/90, attempt, 450, seconds per attempt, 1.45
+887254, Combo, 9/43/39, attempt, 451, seconds per attempt, 1.45
+890055, Combo, 9/40/73, attempt, 452, seconds per attempt, 1.45
+891089, Combo, 9/40/81, attempt, 453, seconds per attempt, 1.45
+892204, Combo, 9/40/90, attempt, 454, seconds per attempt, 1.45
+893821, Combo, 9/40/39, attempt, 455, seconds per attempt, 1.45
+894626, Combo, 9/37/39, attempt, 456, seconds per attempt, 1.45
+896063, Combo, 9/37/73, attempt, 457, seconds per attempt, 1.45
+897128, Combo, 9/37/81, attempt, 458, seconds per attempt, 1.45
+898280, Combo, 9/37/90, attempt, 459, seconds per attempt, 1.45
+900134, Combo, 9/34/39, attempt, 460, seconds per attempt, 1.45
+901516, Combo, 9/34/73, attempt, 461, seconds per attempt, 1.45
+902553, Combo, 9/34/81, attempt, 462, seconds per attempt, 1.45
+903668, Combo, 9/34/90, attempt, 463, seconds per attempt, 1.45
+905660, Combo, 9/31/39, attempt, 464, seconds per attempt, 1.45
+907058, Combo, 9/31/73, attempt, 465, seconds per attempt, 1.45
+908099, Combo, 9/31/81, attempt, 466, seconds per attempt, 1.45
+909204, Combo, 9/31/90, attempt, 467, seconds per attempt, 1.45
+911341, Combo, 9/28/39, attempt, 468, seconds per attempt, 1.45
+912749, Combo, 9/28/73, attempt, 469, seconds per attempt, 1.45
+913789, Combo, 9/28/81, attempt, 470, seconds per attempt, 1.45
+914898, Combo, 9/28/90, attempt, 471, seconds per attempt, 1.45
+917174, Combo, 9/25/39, attempt, 472, seconds per attempt, 1.45
+918581, Combo, 9/25/73, attempt, 473, seconds per attempt, 1.45
+919622, Combo, 9/25/81, attempt, 474, seconds per attempt, 1.45
+920730, Combo, 9/25/90, attempt, 475, seconds per attempt, 1.45
+923072, Combo, 9/22/39, attempt, 476, seconds per attempt, 1.45
+924481, Combo, 9/22/73, attempt, 477, seconds per attempt, 1.45
+925521, Combo, 9/22/81, attempt, 478, seconds per attempt, 1.45
+926624, Combo, 9/22/90, attempt, 479, seconds per attempt, 1.45
+929048, Combo, 9/19/39, attempt, 480, seconds per attempt, 1.45
+930459, Combo, 9/19/73, attempt, 481, seconds per attempt, 1.45
+931497, Combo, 9/19/81, attempt, 482, seconds per attempt, 1.45
+932597, Combo, 9/19/90, attempt, 483, seconds per attempt, 1.45
+Resetting dial...

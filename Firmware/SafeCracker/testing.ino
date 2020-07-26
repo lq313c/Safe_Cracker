@@ -5,11 +5,10 @@
 //Spins the motor while we tweak the servo up/down to detect binding force and servo position
 //Press x to exit
 //How to use: Attach cracker to safe.
-//As motor spins increase handle pressure using a/z until the gear
-//just begins to rub
-//Move 10 away and then exit. This will be stored as servoRestPosition
-//servoTryPosition is stored as servoRestPosition - 50
-//servoPressurePosition is stored as servoRestPosition - 70
+//Start the servo at the rest position. As motor spins increase handle pressure using a/z until the gear
+//just begins to rub. The gate will have set into one of the indents by now, and motor/dial will be stuck there.
+//This will be the servo highPressurePosition. Servo tryPosition will be 10 less than this position, and the 
+//openHandle position will be set 30 less than the handle position at servoHighPressurePosition.
 void testServo()
 {
   Serial.println(F("x to exit"));
@@ -18,6 +17,8 @@ void testServo()
 
   int servo = servoRestingPosition;
   handleServo.write(servo);
+
+  servoHighPressurePosition = servoRestingPosition;
 
   long timeSinceLastMovement = millis();
   int lastStep = steps;
@@ -38,7 +39,7 @@ void testServo()
     {
       setMotorSpeed(0); //Stop!
       Serial.println("Dial stuck");
-      while (1);
+      // while (1);
     }
 
     if (Serial.available())
@@ -63,6 +64,8 @@ void testServo()
     int handlePosition = averageAnalogRead(servoPosition); //Old way
     // int handlePosition = digitalRead(servoPositionButton); //Look for button being pressed
 
+    if (servo < servoHighPressurePosition) servoHighPressurePosition = servo;
+
     Serial.print(F("servo: "));
     Serial.print(servo);
     // Serial.print(F(" / handleButton: "));
@@ -75,13 +78,14 @@ void testServo()
   }
 
   //Record settings to EEPROM
-  servoRestingPosition = servo + 10; //We want some clearance 
-  servoTryPosition = servoRestingPosition - 60;
-  servoHighPressurePosition = servoRestingPosition - 60;
+  servoRestingPosition = servo; //At the end of calibration, servo position should be set at the desired resting psoition
+  servoTryPosition = servoHighPressurePosition - 10;
+  handleOpenPosition = handlePosition - 30; // hopefully 30 less is not too much to identify an opened handle
 
-  if (servoHighPressurePosition < 0 || servoTryPosition < 0)
+  //17 was found in testing to be the min servo position, with 217 the max
+  if (servoHighPressurePosition < 17 || servoTryPosition < 17)
   {
-    Serial.println(F("servoPressurePosition or servoTryPosition is negative. Adjust servo higher."));
+    Serial.println(F("servoHighPressurePosition or servoTryPosition is too small. Adjust servo higher."));
     Serial.println(F("Freezing"));
     while (1); //Freeze
   }
@@ -111,66 +115,66 @@ void testServo()
 //If button is pressed, it will print Pressed!!
 //Adjust button down just below level of being pressed when handle is normally pulled on
 //Press x to exit
-void testHandleButton(void)
-{
-  //Find the indent to test
-  int solutionDiscC = 0;
-  for (int x = 0 ; x < 12 ; x++)
-  {
-    if (indentsToTry[x] == true)
-      solutionDiscC = convertEncoderToDial(indentLocations[x]);
-  }
-  setDial(solutionDiscC, false); //Goto this dial location
+// void testHandleButton(void)
+// {
+//   //Find the indent to test
+//   int solutionDiscC = 0;
+//   for (int x = 0 ; x < 12 ; x++)
+//   {
+//     if (indentsToTry[x] == true)
+//       solutionDiscC = convertEncoderToDial(indentLocations[x]);
+//   }
+//   setDial(solutionDiscC, false); //Goto this dial location
 
-  Serial.println("x to exit");
-  Serial.println("a to pull on handle");
-  Serial.println("z to release handle");
+//   Serial.println("x to exit");
+//   Serial.println("a to pull on handle");
+//   Serial.println("z to release handle");
 
-  int pressedCounter = 0;
-  while (1)
-  {
-    if (Serial.available())
-    {
-      byte incoming = Serial.read();
-      if (incoming == 'x')
-      {
-        //Release handle
-        handleServo.write(servoRestingPosition); //Goto the resting position (handle horizontal, door closed)
-        delay(timeServoRelease); //Allow servo to release
+//   int pressedCounter = 0;
+//   while (1)
+//   {
+//     if (Serial.available())
+//     {
+//       byte incoming = Serial.read();
+//       if (incoming == 'x')
+//       {
+//         //Release handle
+//         handleServo.write(servoRestingPosition); //Goto the resting position (handle horizontal, door closed)
+//         delay(timeServoRelease); //Allow servo to release
 
-        return; //Exit
-      }
-      else if (incoming == 'a')
-      {
-        //Pull on handle
-        handleServo.write(servoTryPosition);
-        delay(timeServoApply); //Allow servo to move
-      }
-      else if (incoming == 'z')
-      {
-        //Release handle
-        handleServo.write(servoRestingPosition); //Goto the resting position (handle horizontal, door closed)
-        delay(timeServoRelease); //Allow servo to release
-      }
-    }
+//         return; //Exit
+//       }
+//       else if (incoming == 'a')
+//       {
+//         //Pull on handle
+//         handleServo.write(servoTryPosition);
+//         delay(timeServoApply); //Allow servo to move
+//       }
+//       else if (incoming == 'z')
+//       {
+//         //Release handle
+//         handleServo.write(servoRestingPosition); //Goto the resting position (handle horizontal, door closed)
+//         delay(timeServoRelease); //Allow servo to release
+//       }
+//     }
 
-    if (digitalRead(servoPositionButton) == LOW)
-    {
-      pressedCounter++;
-      Serial.print("Pressed! ");
-      Serial.println(pressedCounter); //To have something that changes
-      delay(100);
-    }
+//     if (digitalRead(servoPositionButton) == LOW)
+//     {
+//       pressedCounter++;
+//       Serial.print("Pressed! ");
+//       Serial.println(pressedCounter); //To have something that changes
+//       delay(100);
+//     }
 
-    //Hang out for 100ms but scan button during that time
-    for (byte x = 0 ; x < 100 ; x++)
-    {
-      if (digitalRead(servoPositionButton) == LOW) break;
-      delay(1);
-    }
-  }
+//     //Hang out for 100ms but scan button during that time
+//     for (byte x = 0 ; x < 100 ; x++)
+//     {
+//       if (digitalRead(servoPositionButton) == LOW) break;
+//       delay(1);
+//     }
+//   }
 
-}
+// }
 
 //Test to see if we can repeatably go to a dial position
 //Turns dial to random CW and CCW position and asks user to verify.

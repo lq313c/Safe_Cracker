@@ -1,0 +1,1049 @@
+servo: 117 / handlePosition: 334
+servo: 117 / handlePosition: 334
+servo: 117 / handlePosition: 334
+servo: 117 / handlePosition: 334
+servo: 117 / handlePosition: 334
+servo: 117 / handlePosition: 334
+servo: 117 / handlePosition: 334
+servo: 117 / handlePosition: 334
+servo: 117 / handlePosition: 334
+servo: 117 / handlePosition: 334
+servo: 117 / handlePosition: 334
+servo: 117 / handlePosition: 334
+servo: 117 / handlePosition: 334
+servo: 117 / handlePosition: 334
+servo: 117 / handlePosition: 334
+servo: 117 / handlePosition: 334
+servo: 117 / handlePosition: 334
+servo: 117 / handlePosition: 334
+servo: 117 / handlePosition: 334
+servo: 117 / handlePosition: 334
+servo: 117 / handlePosition: 334
+servo: 117 / handlePosition: 334
+servo: 116 / handlePosition: 334
+servo: 116 / handlePosition: 333
+servo: 116 / handlePosition: 333
+servo: 116 / handlePosition: 332
+servo: 115 / handlePosition: 332
+servo: 115 / handlePosition: 331
+servo: 115 / handlePosition: 331
+servo: 114 / handlePosition: 338
+servo: 114 / handlePosition: 383
+servo: 114 / handlePosition: 356
+servo: 113 / handlePosition: 331
+servo: 113 / handlePosition: 331
+servo: 113 / handlePosition: 331
+servo: 112 / handlePosition: 331
+servo: 112 / handlePosition: 330
+servo: 112 / handlePosition: 330
+servo: 111 / handlePosition: 330
+servo: 111 / handlePosition: 329
+servo: 111 / handlePosition: 329
+servo: 110 / handlePosition: 329
+servo: 110 / handlePosition: 328
+servo: 110 / handlePosition: 348
+servo: 109 / handlePosition: 381
+servo: 109 / handlePosition: 381
+servo: 109 / handlePosition: 356
+servo: 108 / handlePosition: 327
+servo: 108 / handlePosition: 326
+servo: 108 / handlePosition: 325
+servo: 107 / handlePosition: 325
+servo: 107 / handlePosition: 324
+servo: 106 / handlePosition: 324
+servo: 106 / handlePosition: 323
+servo: 106 / handlePosition: 322
+servo: 106 / handlePosition: 322
+servo: 105 / handlePosition: 322
+servo: 105 / handlePosition: 360
+servo: 105 / handlePosition: 375
+servo: 104 / handlePosition: 375
+servo: 104 / handlePosition: 372
+servo: 104 / handlePosition: 319
+servo: 103 / handlePosition: 319
+servo: 103 / handlePosition: 318
+servo: 103 / handlePosition: 317
+servo: 102 / handlePosition: 317
+servo: 102 / handlePosition: 315
+servo: 102 / handlePosition: 313
+servo: 101 / handlePosition: 313
+servo: 101 / handlePosition: 311
+servo: 101 / handlePosition: 310
+servo: 100 / handlePosition: 358
+servo: 100 / handlePosition: 364
+servo: 99 / handlePosition: 363
+servo: 99 / handlePosition: 313
+servo: 99 / handlePosition: 308
+servo: 98 / handlePosition: 308
+servo: 98 / handlePosition: 305
+servo: 98 / handlePosition: 305
+servo: 97 / handlePosition: 305
+servo: 97 / handlePosition: 304
+servo: 97 / handlePosition: 304
+servo: 96 / handlePosition: 305
+servo: 96 / handlePosition: 302
+servo: 96 / handlePosition: 302
+servo: 96 / handlePosition: 344
+servo: 95 / handlePosition: 357
+servo: 95 / handlePosition: 355
+servo: 95 / handlePosition: 322
+servo: 94 / handlePosition: 298
+servo: 94 / handlePosition: 297
+servo: 94 / handlePosition: 296
+servo: 93 / handlePosition: 296
+servo: 93 / handlePosition: 295
+servo: 93 / handlePosition: 295
+servo: 92 / handlePosition: 294
+servo: 92 / handlePosition: 294
+servo: 92 / handlePosition: 293
+servo: 91 / handlePosition: 293
+servo: 91 / handlePosition: 321
+servo: 91 / handlePosition: 346
+servo: 90 / handlePosition: 346
+servo: 90 / handlePosition: 344
+servo: 90 / handlePosition: 290
+servo: 90 / handlePosition: 289
+servo: 89 / handlePosition: 289
+servo: 89 / handlePosition: 289
+servo: 89 / handlePosition: 288
+servo: 88 / handlePosition: 289
+servo: 88 / handlePosition: 288
+servo: 88 / handlePosition: 287
+servo: 88 / handlePosition: 287
+servo: 88 / handlePosition: 287
+servo: 87 / handlePosition: 294
+servo: 87 / handlePosition: 336
+servo: 87 / handlePosition: 339
+servo: 86 / handlePosition: 338
+servo: 86 / handlePosition: 290
+servo: 86 / handlePosition: 281
+servo: 86 / handlePosition: 281
+servo: 85 / handlePosition: 280
+servo: 85 / handlePosition: 280
+servo: 85 / handlePosition: 279
+servo: 85 / handlePosition: 279
+servo: 85 / handlePosition: 279
+servo: 84 / handlePosition: 279
+servo: 84 / handlePosition: 278
+servo: 84 / handlePosition: 277
+servo: 84 / handlePosition: 321
+servo: 83 / handlePosition: 331
+servo: 83 / handlePosition: 329
+servo: 83 / handlePosition: 328
+servo: 83 / handlePosition: 275
+servo: 82 / handlePosition: 275
+servo: 82 / handlePosition: 274
+servo: 82 / handlePosition: 274
+servo: 82 / handlePosition: 274
+servo: 81 / handlePosition: 274
+servo: 81 / handlePosition: 272
+servo: 81 / handlePosition: 272
+servo: 81 / handlePosition: 272
+servo: 80 / handlePosition: 272
+servo: 80 / handlePosition: 295
+servo: 80 / handlePosition: 324
+servo: 80 / handlePosition: 322
+servo: 79 / handlePosition: 321
+servo: 79 / handlePosition: 267
+servo: 79 / handlePosition: 266
+servo: 79 / handlePosition: 266
+servo: 78 / handlePosition: 266
+servo: 78 / handlePosition: 265
+servo: 78 / handlePosition: 264
+servo: 77 / handlePosition: 264
+servo: 77 / handlePosition: 263
+servo: 77 / handlePosition: 262
+servo: 77 / handlePosition: 262
+servo: 77 / handlePosition: 266
+servo: 76 / handlePosition: 313
+servo: 76 / handlePosition: 314
+servo: 76 / handlePosition: 314
+servo: 75 / handlePosition: 259
+servo: 75 / handlePosition: 259
+servo: 75 / handlePosition: 258
+servo: 75 / handlePosition: 258
+servo: 75 / handlePosition: 258
+servo: 74 / handlePosition: 259
+servo: 74 / handlePosition: 257
+servo: 74 / handlePosition: 257
+servo: 74 / handlePosition: 256
+servo: 73 / handlePosition: 256
+servo: 73 / handlePosition: 254
+servo: 73 / handlePosition: 298
+servo: 73 / handlePosition: 309
+servo: 72 / handlePosition: 308
+servo: 72 / handlePosition: 275
+servo: 72 / handlePosition: 252
+servo: 72 / handlePosition: 251
+servo: 72 / handlePosition: 252
+servo: 71 / handlePosition: 252
+servo: 71 / handlePosition: 250
+servo: 71 / handlePosition: 249
+servo: 71 / handlePosition: 249
+servo: 70 / handlePosition: 249
+servo: 70 / handlePosition: 248
+servo: 70 / handlePosition: 247
+servo: 70 / handlePosition: 266
+servo: 69 / handlePosition: 301
+servo: 69 / handlePosition: 300
+servo: 69 / handlePosition: 299
+servo: 69 / handlePosition: 245
+servo: 68 / handlePosition: 245
+servo: 68 / handlePosition: 244
+servo: 68 / handlePosition: 243
+servo: 68 / handlePosition: 244
+servo: 67 / handlePosition: 244
+servo: 67 / handlePosition: 242
+servo: 67 / handlePosition: 242
+servo: 67 / handlePosition: 242
+servo: 67 / handlePosition: 242
+servo: 66 / handlePosition: 243
+servo: 66 / handlePosition: 288
+servo: 66 / handlePosition: 293
+servo: 66 / handlePosition: 293
+servo: 65 / handlePosition: 261
+servo: 65 / handlePosition: 239
+servo: 65 / handlePosition: 238
+servo: 65 / handlePosition: 237
+servo: 64 / handlePosition: 237
+servo: 64 / handlePosition: 236
+servo: 64 / handlePosition: 235
+servo: 64 / handlePosition: 236
+servo: 63 / handlePosition: 236
+servo: 63 / handlePosition: 235
+servo: 63 / handlePosition: 234
+servo: 63 / handlePosition: 275
+servo: 63 / handlePosition: 288
+servo: 62 / handlePosition: 288
+servo: 62 / handlePosition: 287
+servo: 62 / handlePosition: 244
+servo: 62 / handlePosition: 233
+servo: 62 / handlePosition: 233
+servo: 62 / handlePosition: 233
+servo: 62 / handlePosition: 233
+servo: 62 / handlePosition: 232
+servo: 62 / handlePosition: 232
+servo: 62 / handlePosition: 232
+servo: 62 / handlePosition: 233
+servo: 62 / handlePosition: 232
+servo: 62 / handlePosition: 240
+servo: 62 / handlePosition: 285
+servo: 62 / handlePosition: 287
+servo: 62 / handlePosition: 286
+servo: 61 / handlePosition: 285
+servo: 61 / handlePosition: 238
+servo: 61 / handlePosition: 231
+servo: 61 / handlePosition: 231
+servo: 60 / handlePosition: 231
+servo: 60 / handlePosition: 230
+servo: 60 / handlePosition: 230
+servo: 60 / handlePosition: 230
+servo: 60 / handlePosition: 230
+servo: 59 / handlePosition: 230
+servo: 59 / handlePosition: 230
+servo: 59 / handlePosition: 270
+servo: 59 / handlePosition: 281
+servo: 59 / handlePosition: 281
+servo: 58 / handlePosition: 280
+Dial stuck
+servo: 58 / handlePosition: 280
+servo: 58 / handlePosition: 227
+Dial stuck
+servo: 58 / handlePosition: 227
+Dial stuck
+servo: 58 / handlePosition: 227
+Dial stuck
+servo: 58 / handlePosition: 227
+Dial stuck
+servo: 57 / handlePosition: 227
+Dial stuck
+servo: 57 / handlePosition: 226
+Dial stuck
+servo: 57 / handlePosition: 226
+Dial stuck
+servo: 57 / handlePosition: 226
+Dial stuck
+servo: 57 / handlePosition: 228
+Dial stuck
+servo: 57 / handlePosition: 278
+Dial stuck
+servo: 57 / handlePosition: 281
+Dial stuck
+servo: 57 / handlePosition: 281
+Dial stuck
+servo: 57 / handlePosition: 280
+Dial stuck
+servo: 57 / handlePosition: 280
+Dial stuck
+servo: 57 / handlePosition: 227
+Dial stuck
+servo: 57 / handlePosition: 226
+Dial stuck
+servo: 57 / handlePosition: 226
+Dial stuck
+servo: 57 / handlePosition: 226
+Dial stuck
+servo: 57 / handlePosition: 226
+Dial stuck
+servo: 57 / handlePosition: 226
+Dial stuck
+servo: 57 / handlePosition: 226
+Dial stuck
+servo: 57 / handlePosition: 226
+Dial stuck
+servo: 57 / handlePosition: 251
+Dial stuck
+servo: 57 / handlePosition: 280
+Dial stuck
+servo: 57 / handlePosition: 280
+Dial stuck
+servo: 57 / handlePosition: 279
+Dial stuck
+servo: 57 / handlePosition: 278
+Dial stuck
+servo: 57 / handlePosition: 225
+Dial stuck
+servo: 57 / handlePosition: 225
+Dial stuck
+servo: 57 / handlePosition: 225
+Dial stuck
+servo: 57 / handlePosition: 224
+Dial stuck
+servo: 57 / handlePosition: 223
+Dial stuck
+servo: 57 / handlePosition: 223
+Dial stuck
+servo: 57 / handlePosition: 223
+Dial stuck
+servo: 57 / handlePosition: 223
+Dial stuck
+servo: 57 / handlePosition: 223
+Dial stuck
+servo: 57 / handlePosition: 269
+Dial stuck
+servo: 57 / handlePosition: 277
+Dial stuck
+servo: 57 / handlePosition: 276
+Dial stuck
+servo: 57 / handlePosition: 276
+Dial stuck
+servo: 57 / handlePosition: 223
+Dial stuck
+servo: 57 / handlePosition: 223
+Dial stuck
+servo: 57 / handlePosition: 223
+Dial stuck
+servo: 57 / handlePosition: 223
+Dial stuck
+servo: 57 / handlePosition: 223
+Dial stuck
+servo: 57 / handlePosition: 222
+Dial stuck
+servo: 57 / handlePosition: 222
+servo: 57 / handlePosition: 222
+Dial stuck
+servo: 57 / handlePosition: 221
+Dial stuck
+servo: 57 / handlePosition: 232
+Dial stuck
+servo: 57 / handlePosition: 274
+Dial stuck
+servo: 57 / handlePosition: 276
+Dial stuck
+servo: 57 / handlePosition: 275
+Dial stuck
+servo: 57 / handlePosition: 231
+Dial stuck
+servo: 57 / handlePosition: 222
+Dial stuck
+servo: 57 / handlePosition: 222
+Dial stuck
+servo: 57 / handlePosition: 221
+Dial stuck
+servo: 57 / handlePosition: 222
+Dial stuck
+servo: 57 / handlePosition: 222
+Dial stuck
+servo: 57 / handlePosition: 222
+Dial stuck
+servo: 57 / handlePosition: 222
+Dial stuck
+servo: 57 / handlePosition: 222
+Dial stuck
+servo: 57 / handlePosition: 222
+Dial stuck
+servo: 57 / handlePosition: 267
+Dial stuck
+servo: 57 / handlePosition: 274
+Dial stuck
+servo: 57 / handlePosition: 273
+Dial stuck
+servo: 57 / handlePosition: 231
+Dial stuck
+servo: 57 / handlePosition: 220
+Dial stuck
+servo: 57 / handlePosition: 220
+Dial stuck
+servo: 57 / handlePosition: 220
+Dial stuck
+servo: 57 / handlePosition: 220
+Dial stuck
+servo: 57 / handlePosition: 220
+Dial stuck
+servo: 57 / handlePosition: 220
+Dial stuck
+servo: 57 / handlePosition: 220
+Dial stuck
+servo: 57 / handlePosition: 220
+Dial stuck
+servo: 57 / handlePosition: 220
+Dial stuck
+servo: 57 / handlePosition: 226
+Dial stuck
+servo: 57 / handlePosition: 274
+Dial stuck
+servo: 57 / handlePosition: 276
+Dial stuck
+servo: 57 / handlePosition: 275
+Dial stuck
+servo: 57 / handlePosition: 242
+Dial stuck
+servo: 57 / handlePosition: 222
+Dial stuck
+servo: 57 / handlePosition: 221
+Dial stuck
+servo: 57 / handlePosition: 221
+Dial stuck
+servo: 57 / handlePosition: 220
+Dial stuck
+servo: 57 / handlePosition: 220
+Dial stuck
+servo: 57 / handlePosition: 220
+Dial stuck
+servo: 57 / handlePosition: 219
+Dial stuck
+servo: 57 / handlePosition: 219
+Dial stuck
+servo: 57 / handlePosition: 219
+Dial stuck
+servo: 57 / handlePosition: 252
+Dial stuck
+servo: 57 / handlePosition: 276
+Dial stuck
+servo: 57 / handlePosition: 275
+Dial stuck
+servo: 57 / handlePosition: 264
+Dial stuck
+servo: 57 / handlePosition: 221
+Dial stuck
+servo: 57 / handlePosition: 221
+Dial stuck
+servo: 57 / handlePosition: 221
+Dial stuck
+servo: 57 / handlePosition: 221
+Dial stuck
+servo: 57 / handlePosition: 221
+Dial stuck
+servo: 57 / handlePosition: 221
+Dial stuck
+servo: 57 / handlePosition: 221
+Dial stuck
+servo: 57 / handlePosition: 221
+Dial stuck
+servo: 57 / handlePosition: 221
+Dial stuck
+servo: 57 / handlePosition: 222
+Dial stuck
+servo: 57 / handlePosition: 269
+Dial stuck
+servo: 57 / handlePosition: 275
+Dial stuck
+servo: 58 / handlePosition: 274
+Dial stuck
+servo: 58 / handlePosition: 222
+Dial stuck
+servo: 59 / handlePosition: 222
+Dial stuck
+servo: 59 / handlePosition: 222
+Dial stuck
+servo: 59 / handlePosition: 222
+Dial stuck
+servo: 60 / handlePosition: 221
+Dial stuck
+servo: 60 / handlePosition: 222
+Dial stuck
+servo: 60 / handlePosition: 222
+Dial stuck
+servo: 61 / handlePosition: 222
+Dial stuck
+servo: 61 / handlePosition: 222
+Dial stuck
+servo: 61 / handlePosition: 221
+Dial stuck
+servo: 62 / handlePosition: 262
+Dial stuck
+servo: 62 / handlePosition: 274
+Dial stuck
+servo: 62 / handlePosition: 222
+Dial stuck
+servo: 63 / handlePosition: 222
+Dial stuck
+servo: 63 / handlePosition: 223
+Dial stuck
+servo: 63 / handlePosition: 223
+Dial stuck
+servo: 64 / handlePosition: 224
+Dial stuck
+servo: 64 / handlePosition: 224
+Dial stuck
+servo: 65 / handlePosition: 224
+Dial stuck
+servo: 65 / handlePosition: 226
+Dial stuck
+servo: 65 / handlePosition: 226
+Dial stuck
+servo: 66 / handlePosition: 226
+Dial stuck
+servo: 66 / handlePosition: 229
+Dial stuck
+servo: 66 / handlePosition: 229
+Dial stuck
+servo: 67 / handlePosition: 229
+Dial stuck
+servo: 67 / handlePosition: 229
+Dial stuck
+servo: 68 / handlePosition: 231
+Dial stuck
+servo: 68 / handlePosition: 233
+Dial stuck
+servo: 68 / handlePosition: 233
+Dial stuck
+servo: 69 / handlePosition: 233
+Dial stuck
+servo: 69 / handlePosition: 234
+Dial stuck
+servo: 69 / handlePosition: 234
+Dial stuck
+servo: 70 / handlePosition: 235
+Dial stuck
+servo: 70 / handlePosition: 236
+Dial stuck
+servo: 71 / handlePosition: 237
+Dial stuck
+servo: 71 / handlePosition: 238
+Dial stuck
+servo: 71 / handlePosition: 239
+Dial stuck
+servo: 72 / handlePosition: 239
+Dial stuck
+servo: 72 / handlePosition: 241
+Dial stuck
+servo: 72 / handlePosition: 241
+Dial stuck
+servo: 73 / handlePosition: 241
+Dial stuck
+servo: 73 / handlePosition: 242
+Dial stuck
+servo: 73 / handlePosition: 242
+Dial stuck
+servo: 74 / handlePosition: 242
+Dial stuck
+servo: 74 / handlePosition: 245
+Dial stuck
+servo: 74 / handlePosition: 245
+Dial stuck
+servo: 74 / handlePosition: 245
+Dial stuck
+servo: 75 / handlePosition: 245
+Dial stuck
+servo: 75 / handlePosition: 246
+Dial stuck
+servo: 75 / handlePosition: 247
+Dial stuck
+servo: 75 / handlePosition: 247
+Dial stuck
+servo: 76 / handlePosition: 247
+Dial stuck
+servo: 76 / handlePosition: 249
+Dial stuck
+servo: 76 / handlePosition: 249
+Dial stuck
+servo: 77 / handlePosition: 249
+Dial stuck
+servo: 77 / handlePosition: 251
+Dial stuck
+servo: 77 / handlePosition: 251
+Dial stuck
+servo: 78 / handlePosition: 251
+Dial stuck
+servo: 78 / handlePosition: 253
+Dial stuck
+servo: 78 / handlePosition: 253
+Dial stuck
+servo: 79 / handlePosition: 253
+Dial stuck
+servo: 79 / handlePosition: 255
+Dial stuck
+servo: 79 / handlePosition: 255
+Dial stuck
+servo: 79 / handlePosition: 256
+Dial stuck
+servo: 79 / handlePosition: 256
+Dial stuck
+servo: 79 / handlePosition: 256
+Dial stuck
+servo: 79 / handlePosition: 256
+Dial stuck
+servo: 79 / handlePosition: 256
+Dial stuck
+servo: 79 / handlePosition: 256
+Dial stuck
+servo: 79 / handlePosition: 256
+Dial stuck
+servo: 79 / handlePosition: 256
+Dial stuck
+servo: 79 / handlePosition: 256
+Dial stuck
+servo: 79 / handlePosition: 256
+Dial stuck
+servo: 79 / handlePosition: 256
+Dial stuck
+servo: 79 / handlePosition: 256
+Dial stuck
+servo: 79 / handlePosition: 256
+Dial stuck
+servo: 79 / handlePosition: 256
+Dial stuck
+servo: 79 / handlePosition: 256
+Dial stuck
+servo: 79 / handlePosition: 256
+Dial stuck
+servo: 79 / handlePosition: 256
+Dial stuck
+servo: 79 / handlePosition: 256
+Dial stuck
+servo: 79 / handlePosition: 256
+Dial stuck
+servo: 79 / handlePosition: 256
+Dial stuck
+servo: 79 / handlePosition: 257
+Dial stuck
+servo: 79 / handlePosition: 257
+Dial stuck
+servo: 79 / handlePosition: 256
+Dial stuck
+servo: 79 / handlePosition: 256
+Dial stuck
+servo: 79 / handlePosition: 256
+Dial stuck
+servo: 79 / handlePosition: 256
+Dial stuck
+servo: 79 / handlePosition: 256
+Dial stuck
+servo: 79 / handlePosition: 256
+Dial stuck
+servo: 79 / handlePosition: 256
+Dial stuck
+servo: 79 / handlePosition: 256
+Dial stuck
+servo: 79 / handlePosition: 257
+Dial stuck
+servo: 79 / handlePosition: 256
+Dial stuck
+servo: 79 / handlePosition: 256
+Dial stuck
+servo: 79 / handlePosition: 256
+Dial stuck
+servo: 80 / handlePosition: 256
+Dial stuck
+servo: 80 / handlePosition: 257
+Dial stuck
+servo: 80 / handlePosition: 257
+Dial stuck
+servo: 81 / handlePosition: 257
+Dial stuck
+servo: 81 / handlePosition: 259
+Dial stuck
+servo: 81 / handlePosition: 260
+Dial stuck
+servo: 82 / handlePosition: 260
+Dial stuck
+servo: 82 / handlePosition: 261
+Dial stuck
+servo: 83 / handlePosition: 262
+Dial stuck
+servo: 83 / handlePosition: 264
+Dial stuck
+servo: 83 / handlePosition: 264
+Dial stuck
+servo: 84 / handlePosition: 264
+Dial stuck
+servo: 84 / handlePosition: 265
+Dial stuck
+servo: 84 / handlePosition: 265
+Dial stuck
+servo: 85 / handlePosition: 265
+Dial stuck
+servo: 85 / handlePosition: 268
+Dial stuck
+servo: 86 / handlePosition: 268
+Dial stuck
+servo: 86 / handlePosition: 269
+Dial stuck
+servo: 86 / handlePosition: 269
+Dial stuck
+servo: 87 / handlePosition: 269
+Dial stuck
+servo: 87 / handlePosition: 271
+Dial stuck
+servo: 87 / handlePosition: 273
+Dial stuck
+servo: 88 / handlePosition: 273
+Dial stuck
+servo: 88 / handlePosition: 275
+Dial stuck
+servo: 88 / handlePosition: 275
+Dial stuck
+servo: 89 / handlePosition: 275
+Dial stuck
+servo: 89 / handlePosition: 276
+Dial stuck
+servo: 89 / handlePosition: 276
+Dial stuck
+servo: 90 / handlePosition: 276
+Dial stuck
+servo: 90 / handlePosition: 278
+Dial stuck
+servo: 90 / handlePosition: 279
+Dial stuck
+servo: 91 / handlePosition: 279
+Dial stuck
+servo: 91 / handlePosition: 280
+Dial stuck
+servo: 91 / handlePosition: 281
+Dial stuck
+servo: 92 / handlePosition: 281
+Dial stuck
+servo: 92 / handlePosition: 282
+Dial stuck
+servo: 92 / handlePosition: 282
+Dial stuck
+servo: 93 / handlePosition: 282
+Dial stuck
+servo: 93 / handlePosition: 284
+Dial stuck
+servo: 93 / handlePosition: 284
+Dial stuck
+servo: 94 / handlePosition: 284
+Dial stuck
+servo: 94 / handlePosition: 286
+Dial stuck
+servo: 94 / handlePosition: 286
+Dial stuck
+servo: 95 / handlePosition: 286
+Dial stuck
+servo: 95 / handlePosition: 288
+Dial stuck
+servo: 95 / handlePosition: 288
+Dial stuck
+servo: 96 / handlePosition: 288
+Dial stuck
+servo: 96 / handlePosition: 290
+Dial stuck
+servo: 96 / handlePosition: 290
+Dial stuck
+servo: 97 / handlePosition: 290
+Dial stuck
+servo: 97 / handlePosition: 292
+Dial stuck
+servo: 97 / handlePosition: 293
+Dial stuck
+servo: 98 / handlePosition: 293
+Dial stuck
+servo: 98 / handlePosition: 295
+Dial stuck
+servo: 99 / handlePosition: 295
+Dial stuck
+servo: 99 / handlePosition: 296
+Dial stuck
+servo: 99 / handlePosition: 296
+Dial stuck
+servo: 100 / handlePosition: 296
+Dial stuck
+servo: 100 / handlePosition: 298
+Dial stuck
+servo: 100 / handlePosition: 311
+Dial stuck
+servo: 101 / handlePosition: 299
+Dial stuck
+servo: 101 / handlePosition: 300
+Dial stuck
+servo: 101 / handlePosition: 300
+Dial stuck
+servo: 102 / handlePosition: 300
+Dial stuck
+servo: 102 / handlePosition: 302
+Dial stuck
+servo: 103 / handlePosition: 302
+Dial stuck
+servo: 103 / handlePosition: 304
+Dial stuck
+servo: 103 / handlePosition: 305
+Dial stuck
+servo: 104 / handlePosition: 305
+Dial stuck
+servo: 104 / handlePosition: 307
+Dial stuck
+servo: 104 / handlePosition: 307
+Dial stuck
+servo: 105 / handlePosition: 307
+Dial stuck
+servo: 105 / handlePosition: 309
+Dial stuck
+servo: 105 / handlePosition: 309
+Dial stuck
+servo: 106 / handlePosition: 309
+Dial stuck
+servo: 106 / handlePosition: 310
+Dial stuck
+servo: 106 / handlePosition: 310
+Dial stuck
+servo: 107 / handlePosition: 310
+Dial stuck
+servo: 107 / handlePosition: 312
+Dial stuck
+servo: 107 / handlePosition: 313
+Dial stuck
+servo: 108 / handlePosition: 313
+Dial stuck
+servo: 108 / handlePosition: 315
+Dial stuck
+servo: 108 / handlePosition: 315
+Dial stuck
+servo: 109 / handlePosition: 315
+Dial stuck
+servo: 109 / handlePosition: 317
+Dial stuck
+servo: 109 / handlePosition: 317
+Dial stuck
+servo: 110 / handlePosition: 317
+Dial stuck
+servo: 110 / handlePosition: 319
+Dial stuck
+servo: 110 / handlePosition: 319
+Dial stuck
+servo: 111 / handlePosition: 319
+Dial stuck
+servo: 111 / handlePosition: 321
+Dial stuck
+servo: 111 / handlePosition: 321
+Dial stuck
+servo: 112 / handlePosition: 321
+Dial stuck
+servo: 112 / handlePosition: 323
+Dial stuck
+servo: 112 / handlePosition: 323
+Dial stuck
+servo: 113 / handlePosition: 323
+Dial stuck
+servo: 113 / handlePosition: 324
+Dial stuck
+servo: 113 / handlePosition: 325
+Dial stuck
+servo: 113 / handlePosition: 325
+Dial stuck
+servo: 114 / handlePosition: 325
+Dial stuck
+servo: 114 / handlePosition: 327
+Dial stuck
+servo: 114 / handlePosition: 326
+Dial stuck
+servo: 115 / handlePosition: 326
+Dial stuck
+servo: 115 / handlePosition: 329
+Dial stuck
+servo: 115 / handlePosition: 329
+Dial stuck
+servo: 115 / handlePosition: 329
+Dial stuck
+servo: 115 / handlePosition: 329
+Dial stuck
+servo: 115 / handlePosition: 329
+Dial stuck
+servo: 115 / handlePosition: 329
+Dial stuck
+servo: 115 / handlePosition: 329
+Dial stuck
+servo: 115 / handlePosition: 329
+Dial stuck
+servo: 115 / handlePosition: 329
+Dial stuck
+servo: 115 / handlePosition: 329
+Dial stuck
+servo: 116 / handlePosition: 329
+Dial stuck
+servo: 116 / handlePosition: 331
+Dial stuck
+servo: 116 / handlePosition: 331
+Dial stuck
+servo: 117 / handlePosition: 331
+Dial stuck
+servo: 117 / handlePosition: 333
+Dial stuck
+servo: 117 / handlePosition: 333
+Dial stuck
+servo: 117 / handlePosition: 333
+Dial stuck
+servo: 117 / handlePosition: 333
+Dial stuck
+servo: 117 / handlePosition: 333
+Dial stuck
+servo: 117 / handlePosition: 333
+Dial stuck
+servo: 117 / handlePosition: 333
+Dial stuck
+servo: 117 / handlePosition: 333
+Dial stuck
+servo: 117 / handlePosition: 333
+Dial stuck
+servo: 117 / handlePosition: 333
+Dial stuck
+servo: 117 / handlePosition: 333
+Dial stuck
+servo: 117 / handlePosition: 333
+Dial stuck
+servo: 117 / handlePosition: 333
+Dial stuck
+servo: 117 / handlePosition: 333
+Dial stuck
+servo: 117 / handlePosition: 333
+Dial stuck
+servo: 117 / handlePosition: 333
+Dial stuck
+servo: 117 / handlePosition: 333
+Dial stuck
+servo: 117 / handlePosition: 333
+Dial stuck
+servo: 117 / handlePosition: 333
+Dial stuck
+servo: 117 / handlePosition: 333
+Dial stuck
+servo: 117 / handlePosition: 333
+Dial stuck
+servo: 117 / handlePosition: 333
+Dial stuck
+servo: 117 / handlePosition: 333
+Dial stuck
+servo: 117 / handlePosition: 333
+Dial stuck
+servo: 117 / handlePosition: 333
+Dial stuck
+servo: 117 / handlePosition: 333
+Dial stuck
+servo: 117 / handlePosition: 333
+Dial stuck
+servo: 117 / handlePosition: 333
+Dial stuck
+servo: 117 / handlePosition: 333
+Dial stuck
+servo: 117 / handlePosition: 333
+Dial stuck
+servo: 117 / handlePosition: 333
+Dial stuck
+servo: 117 / handlePosition: 333
+Dial stuck
+servo: 117 / handlePosition: 334
+Dial stuck
+servo: 117 / handlePosition: 335
+Dial stuck
+servo: 117 / handlePosition: 335
+Dial stuck
+servo: 117 / handlePosition: 335
+Dial stuck
+servo: 117 / handlePosition: 335
+Dial stuck
+servo: 117 / handlePosition: 335
+Dial stuck
+servo: 117 / handlePosition: 335
+Dial stuck
+servo: 117 / handlePosition: 335
+Dial stuck
+servo: 117 / handlePosition: 335
+Dial stuck
+servo: 117 / handlePosition: 335
+Dial stuck
+servo: 117 / handlePosition: 335
+Dial stuck
+servo: 117 / handlePosition: 335
+Dial stuck
+servo: 117 / handlePosition: 335
+Dial stuck
+servo: 117 / handlePosition: 335
+Dial stuck
+servo: 117 / handlePosition: 335
+Dial stuck
+servo: 117 / handlePosition: 335
+Dial stuck
+servo: 117 / handlePosition: 335
+Dial stuck
+servo: 117 / handlePosition: 335
+Dial stuck
+servo: 117 / handlePosition: 335
+Dial stuck
+servo: 117 / handlePosition: 335
+Dial stuck
+servo: 117 / handlePosition: 335
+Dial stuck
+servo: 117 / handlePosition: 335
+Dial stuck
+servo: 117 / handlePosition: 335
+Dial stuck
+servo: 117 / handlePosition: 334
+Dial stuck
+servo: 117 / handlePosition: 335
+Dial stuck
+servo: 117 / handlePosition: 335
+Dial stuck
+servo: 117 / handlePosition: 335
+Dial stuck
+servo: 117 / handlePosition: 335
+Dial stuck
+servo: 117 / handlePosition: 335
+Dial stuck
+servo: 117 / handlePosition: 335
+Dial stuck
+servo: 117 / handlePosition: 335
+Dial stuck
+servo: 117 / handlePosition: 335
+Dial stuck
+servo: 117 / handlePosition: 335
+Dial stuck
+servo: 117 / handlePosition: 335
+Dial stuck
+servo: 117 / handlePosition: 335
+Dial stuck
+servo: 117 / handlePosition: 335
+Dial stuck
+servo: 117 / handlePosition: 335
+Dial stuck
+servo: 117 / handlePosition: 335
+Dial stuck
+servo: 117 / handlePosition: 335
+Dial stuck
+servo: 117 / handlePosition: 335
+Dial stuck
+servo: 117 / handlePosition: 335
+Dial stuck
+servo: 117 / handlePosition: 335
+Dial stuck
+servo: 117 / handlePosition: 335
+Dial stuck
+servo: 117 / handlePosition: 335
+Dial stuck
+servo: 117 / handlePosition: 335
+Dial stuck
+servo: 117 / handlePosition: 335
+Dial stuck
+servo: 117 / handlePosition: 335
+Dial stuck
+servo: resting[117] try[47] Highpressure[57]

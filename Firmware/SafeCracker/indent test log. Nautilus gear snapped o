@@ -1,0 +1,50 @@
+Initial attempt. Nautilus gear snapped off after 10 measurements
+How many measurements would you like to take? (Start with 1)1
+Pausing. Press button to continue.Test 1 of 1. IndentNum[0] Encoder[8142] / Dial[97] / Width[629] / Depth[0]
+Pausing. Press button to continue.Test 1 of 1. IndentNum[1] Encoder[455] / Dial[5] / Width[651] / Depth[0]
+Pausing. Press button to continue.Test 1 of 1. IndentNum[2] Encoder[1143] / Dial[14] / Width[674] / Depth[0]
+Pausing. Press button to continue.Test 1 of 1. IndentNum[3] Encoder[1847] / Dial[22] / Width[714] / Depth[0]
+Pausing. Press button to continue.Test 1 of 1. IndentNum[4] Encoder[2543] / Dial[30] / Width[724] / Depth[0]
+Pausing. Press button to continue.Test 1 of 1. IndentNum[5] Encoder[3267] / Dial[39] / Width[711] / Depth[0]
+Pausing. Press button to continue.Test 1 of 1. IndentNum[6] Encoder[3997] / Dial[48] / Width[691] / Depth[0]
+Pausing. Press button to continue.Test 1 of 1. IndentNum[7] Encoder[4701] / Dial[56] / Width[677] / Depth[0]
+Pausing. Press button to continue.Test 1 of 1. IndentNum[8] Encoder[5425] / Dial[65] / Width[664] / Depth[0]
+Pausing. Press button to continue.Test 1 of 1. IndentNum[9] Encoder[6147] / Dial[73] / Width[636] / Depth[0]
+Pausing. Press button to continue.
+
+
+
+2nd attempt:
+How many measurements would you like to take? (Start with 1)0 out of bounds
+How many measurements would you like to take? (Start with 1)1
+Pausing. Press button to continue.Test 1 of 1. IndentNum[0] Encoder[8213] / Dial[98] / Width[639] / Depth[0]
+Pausing. Press button to continue.Test 1 of 1. IndentNum[1] Encoder[481] / Dial[6] / Width[702] / Depth[0]
+Pausing. Press button to continue.Test 1 of 1. IndentNum[2] Encoder[1202] / Dial[14] / Width[731] / Depth[0]
+Pausing. Press button to continue.Test 1 of 1. IndentNum[3] Encoder[1891] / Dial[23] / Width[753] / Depth[0]
+Pausing. Press button to continue.Test 1 of 1. IndentNum[4] Encoder[2613] / Dial[31] / Width[753] / Depth[0]
+Pausing. Press button to continue.Test 1 of 1. IndentNum[5] Encoder[3315] / Dial[39] / Width[741] / Depth[0]
+Pausing. Press button to continue.Test 1 of 1. IndentNum[6] Encoder[4015] / Dial[48] / Width[735] / Depth[0]
+Pausing. Press button to continue.Test 1 of 1. IndentNum[7] Encoder[4708] / Dial[56] / Width[704] / Depth[0]
+Pausing. Press button to continue.Test 1 of 1. IndentNum[8] Encoder[5421] / Dial[65] / Width[669] / Depth[0]
+Pausing. Press button to continue.Test 1 of 1. IndentNum[9] Encoder[6119] / Dial[73] / Width[613] / Depth[0]
+Pausing. Press button to continue.Test 1 of 1. IndentNum[10] Encoder[6796] / Dial[81] / Width[588] / Depth[0]
+Pausing. Press button to continue.Test 1 of 1. IndentNum[11] Encoder[7554] / Dial[90] / Width[633] / Depth[0]
+Largest indent number: 3
+Largest indent is now set to test
+Indent locations recorded to EEPROM
+
+3rd attempt:
+How many measurements would you like to take? (Start with 1)0 out of bounds
+How many measurements would you like to take? (Start with 1)1
+Pausing. Press button to continue.Test 1 of 1. IndentNum[0] Encoder[8202] / Dial[98] / Width[677] / Depth[0]
+Pausing. Press button to continue.Test 1 of 1. IndentNum[1] Encoder[501] / Dial[6] / Width[696] / Depth[0]
+Pausing. Press button to continue.Test 1 of 1. IndentNum[2] Encoder[1166] / Dial[14] / Width[740] / Depth[0]
+Pausing. Press button to continue.Test 1 of 1. IndentNum[3] Encoder[1869] / Dial[22] / Width[750] / Depth[0]
+Pausing. Press button to continue.Test 1 of 1. IndentNum[4] Encoder[2582] / Dial[31] / Width[749] / Depth[0]
+Pausing. Press button to continue.Test 1 of 1. IndentNum[5] Encoder[3190] / Dial[38] / Width[728] / Depth[0]
+Pausing. Press button to continue.Test 1 of 1. IndentNum[6] Encoder[3981] / Dial[47] / Width[733] / Depth[0]
+Pausing. Press button to continue.Test 1 of 1. IndentNum[7] Encoder[4689] / Dial[56] / Width[718] / Depth[0]
+Pausing. Press button to continue.Test 1 of 1. IndentNum[8] Encoder[5400] / Dial[64] / Width[684] / Depth[0]
+Pausing. Press button to continue.Test 1 of 1. IndentNum[9] Encoder[6027] / Dial[72] / Width[429] / Depth[0]
+Pausing. Press button to continue.Test 1 of 1. IndentNum[10] Encoder[6817] / Dial[81] / Width[667] / Depth[0]
+Pausing. Press button to continue.Test 1 of 1. IndentNum[11] Encoder[7554] / Dial[90] / Width[662] / Depth[0]
