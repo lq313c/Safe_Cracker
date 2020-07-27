@@ -111,7 +111,7 @@ void nextCombination()
     //Serial.println(discCIsAt);
   }
 
-  showCombination(discA, discB, discC); //Update display
+  //showCombination(discA, discB, discC); //Update display
 
   //Serial.print("Time, ");
   Serial.print(millis()); //Show timestamp

@@ -27,8 +27,8 @@ int gotoStep(int stepGoal, boolean addAFullRotation)
   //overshoot.
   int coarseSpeed = 200; //Speed at which we get to coarse window (0-255). 150, 200 works. 210, 230 fails
   int coarseWindow = 1250; //Once we are within this amount, switch to fine adjustment
-  int fineSpeed = 85; //Less than 50 may not have enough torque
-  int fineWindow = 32; //One we are within this amount, stop searching
+  int fineSpeed = 180; //Less than 50 may not have enough torque
+  int fineWindow = 22; //One we are within this amount, stop searching
 
   //Because we're switching directions we need to add extra steps to take
   //up the slack in the encoder

@@ -1,0 +1,939 @@
+Combo to start at: 24/20/72
+1) Go home and reset dial
+2) Test dial control
+3) View indent positions
+4) Measure indents
+5) Set indents to test
+6) Set starting combos
+7) Calibrate handle servo
+8) Test handle button
+9) Test indent centers
+s) Start cracking
+DiscA is at: 25
+DiscB is at: 19
+DiscC is at: 72
+34776, Combo, 24/20/72, lowest handlePosition, 223, attempt, 1, seconds per attempt, 6.92
+37183, Combo, 24/17/72, lowest handlePosition, 275, attempt, 2, seconds per attempt, 4.66
+39654, Combo, 24/14/72, lowest handlePosition, 278, attempt, 3, seconds per attempt, 3.93
+42188, Combo, 24/11/72, lowest handlePosition, 279, attempt, 4, seconds per attempt, 3.58
+44794, Combo, 24/8/72, lowest handlePosition, 278, attempt, 5, seconds per attempt, 3.39
+47495, Combo, 24/5/72, lowest handlePosition, 278, attempt, 6, seconds per attempt, 3.27
+50238, Combo, 24/2/72, lowest handlePosition, 227, attempt, 7, seconds per attempt, 3.20
+53048, Combo, 24/99/72, lowest handlePosition, 281, attempt, 8, seconds per attempt, 3.15
+55900, Combo, 24/96/72, lowest handlePosition, 222, attempt, 9, seconds per attempt, 3.12
+58854, Combo, 24/93/72, lowest handlePosition, 279, attempt, 10, seconds per attempt, 3.10
+61851, Combo, 24/90/72, lowest handlePosition, 276, attempt, 11, seconds per attempt, 3.09
+64945, Combo, 24/87/72, lowest handlePosition, 222, attempt, 12, seconds per attempt, 3.09
+68107, Combo, 24/84/72, lowest handlePosition, 221, attempt, 13, seconds per attempt, 3.10
+71327, Combo, 24/81/72, lowest handlePosition, 218, attempt, 14, seconds per attempt, 3.10
+74689, Combo, 24/78/72, lowest handlePosition, 241, attempt, 15, seconds per attempt, 3.12
+76668, Combo, 24/75/72, lowest handlePosition, 218, attempt, 16, seconds per attempt, 3.05
+77492, Combo, 24/72/72, lowest handlePosition, 276, attempt, 17, seconds per attempt, 2.92
+78318, Combo, 24/69/72, lowest handlePosition, 278, attempt, 18, seconds per attempt, 2.80
+79434, Combo, 24/66/72, lowest handlePosition, 275, attempt, 19, seconds per attempt, 2.71
+80779, Combo, 24/63/72, lowest handlePosition, 273, attempt, 20, seconds per attempt, 2.65
+82278, Combo, 24/60/72, lowest handlePosition, 273, attempt, 21, seconds per attempt, 2.59
+83888, Combo, 24/57/72, lowest handlePosition, 217, attempt, 22, seconds per attempt, 2.55
+85541, Combo, 24/54/72, lowest handlePosition, 277, attempt, 23, seconds per attempt, 2.51
+87247, Combo, 24/51/72, lowest handlePosition, 222, attempt, 24, seconds per attempt, 2.47
+89011, Combo, 24/48/72, lowest handlePosition, 227, attempt, 25, seconds per attempt, 2.45
+90811, Combo, 24/45/72, lowest handlePosition, 221, attempt, 26, seconds per attempt, 2.42
+92673, Combo, 24/42/72, lowest handlePosition, 263, attempt, 27, seconds per attempt, 2.40
+94583, Combo, 24/39/72, lowest handlePosition, 273, attempt, 28, seconds per attempt, 2.38
+96576, Combo, 24/36/72, lowest handlePosition, 280, attempt, 29, seconds per attempt, 2.37
+98624, Combo, 24/33/72, lowest handlePosition, 272, attempt, 30, seconds per attempt, 2.36
+Resetting dial...
+DiscA is at: 28
+DiscB is at: 23
+DiscC is at: 72
+105444, Combo, 27/24/72, lowest handlePosition, 271, attempt, 31, seconds per attempt, 2.50
+107754, Combo, 27/21/72, lowest handlePosition, 217, attempt, 32, seconds per attempt, 2.50
+110164, Combo, 27/18/72, lowest handlePosition, 278, attempt, 33, seconds per attempt, 2.49
+112595, Combo, 27/15/72, lowest handlePosition, 216, attempt, 34, seconds per attempt, 2.49
+115091, Combo, 27/12/72, lowest handlePosition, 215, attempt, 35, seconds per attempt, 2.49
+117690, Combo, 27/9/72, lowest handlePosition, 241, attempt, 36, seconds per attempt, 2.50
+120316, Combo, 27/6/72, lowest handlePosition, 215, attempt, 37, seconds per attempt, 2.50
+123012, Combo, 27/3/72, lowest handlePosition, 215, attempt, 38, seconds per attempt, 2.50
+125782, Combo, 27/0/72, lowest handlePosition, 272, attempt, 39, seconds per attempt, 2.51
+128664, Combo, 27/97/72, lowest handlePosition, 278, attempt, 40, seconds per attempt, 2.52
+131566, Combo, 27/94/72, lowest handlePosition, 270, attempt, 41, seconds per attempt, 2.53
+134557, Combo, 27/91/72, lowest handlePosition, 214, attempt, 42, seconds per attempt, 2.54
+137627, Combo, 27/88/72, lowest handlePosition, 270, attempt, 43, seconds per attempt, 2.55
+140770, Combo, 27/85/72, lowest handlePosition, 268, attempt, 44, seconds per attempt, 2.57
+144002, Combo, 27/82/72, lowest handlePosition, 235, attempt, 45, seconds per attempt, 2.58
+147298, Combo, 27/79/72, lowest handlePosition, 207, attempt, 46, seconds per attempt, 2.60
+150662, Combo, 27/76/72, lowest handlePosition, 207, attempt, 47, seconds per attempt, 2.61
+151391, Combo, 27/73/72, lowest handlePosition, 237, attempt, 48, seconds per attempt, 2.57
+152208, Combo, 27/70/72, lowest handlePosition, 276, attempt, 49, seconds per attempt, 2.54
+153288, Combo, 27/67/72, lowest handlePosition, 263, attempt, 50, seconds per attempt, 2.51
+154587, Combo, 27/64/72, lowest handlePosition, 264, attempt, 51, seconds per attempt, 2.48
+156037, Combo, 27/61/72, lowest handlePosition, 208, attempt, 52, seconds per attempt, 2.46
+157594, Combo, 27/58/72, lowest handlePosition, 207, attempt, 53, seconds per attempt, 2.45
+159251, Combo, 27/55/72, lowest handlePosition, 256, attempt, 54, seconds per attempt, 2.43
+160926, Combo, 27/52/72, lowest handlePosition, 263, attempt, 55, seconds per attempt, 2.42
+162667, Combo, 27/49/72, lowest handlePosition, 264, attempt, 56, seconds per attempt, 2.41
+164446, Combo, 27/46/72, lowest handlePosition, 219, attempt, 57, seconds per attempt, 2.40
+166313, Combo, 27/43/72, lowest handlePosition, 277, attempt, 58, seconds per attempt, 2.39
+168212, Combo, 27/40/72, lowest handlePosition, 262, attempt, 59, seconds per attempt, 2.38
+170168, Combo, 27/37/72, lowest handlePosition, 263, attempt, 60, seconds per attempt, 2.37
+Resetting dial...
+DiscA is at: 31
+DiscB is at: 26
+DiscC is at: 72
+177037, Combo, 30/27/72, lowest handlePosition, 277, attempt, 61, seconds per attempt, 2.45
+179296, Combo, 30/24/72, lowest handlePosition, 271, attempt, 62, seconds per attempt, 2.44
+181614, Combo, 30/21/72, lowest handlePosition, 271, attempt, 63, seconds per attempt, 2.44
+184000, Combo, 30/18/72, lowest handlePosition, 270, attempt, 64, seconds per attempt, 2.44
+186451, Combo, 30/15/72, lowest handlePosition, 274, attempt, 65, seconds per attempt, 2.44
+188980, Combo, 30/12/72, lowest handlePosition, 272, attempt, 66, seconds per attempt, 2.44
+191585, Combo, 30/9/72, lowest handlePosition, 215, attempt, 67, seconds per attempt, 2.44
+194229, Combo, 30/6/72, lowest handlePosition, 215, attempt, 68, seconds per attempt, 2.45
+196973, Combo, 30/3/72, lowest handlePosition, 267, attempt, 69, seconds per attempt, 2.45
+199786, Combo, 30/0/72, lowest handlePosition, 215, attempt, 70, seconds per attempt, 2.46
+202702, Combo, 30/97/72, lowest handlePosition, 270, attempt, 71, seconds per attempt, 2.46
+205606, Combo, 30/94/72, lowest handlePosition, 214, attempt, 72, seconds per attempt, 2.47
+208591, Combo, 30/91/72, lowest handlePosition, 213, attempt, 73, seconds per attempt, 2.48
+211660, Combo, 30/88/72, lowest handlePosition, 270, attempt, 74, seconds per attempt, 2.48
+214791, Combo, 30/85/72, lowest handlePosition, 213, attempt, 75, seconds per attempt, 2.49
+218021, Combo, 30/82/72, lowest handlePosition, 269, attempt, 76, seconds per attempt, 2.50
+221317, Combo, 30/79/72, lowest handlePosition, 258, attempt, 77, seconds per attempt, 2.51
+224718, Combo, 30/76/72, lowest handlePosition, 263, attempt, 78, seconds per attempt, 2.52
+226729, Combo, 30/73/72, lowest handlePosition, 213, attempt, 79, seconds per attempt, 2.52
+227557, Combo, 30/70/72, lowest handlePosition, 213, attempt, 80, seconds per attempt, 2.50
+228651, Combo, 30/67/72, lowest handlePosition, 213, attempt, 81, seconds per attempt, 2.48
+229945, Combo, 30/64/72, lowest handlePosition, 270, attempt, 82, seconds per attempt, 2.46
+231398, Combo, 30/61/72, lowest handlePosition, 214, attempt, 83, seconds per attempt, 2.45
+233007, Combo, 30/58/72, lowest handlePosition, 269, attempt, 84, seconds per attempt, 2.44
+234647, Combo, 30/55/72, lowest handlePosition, 269, attempt, 85, seconds per attempt, 2.43
+236342, Combo, 30/52/72, lowest handlePosition, 273, attempt, 86, seconds per attempt, 2.42
+238095, Combo, 30/49/72, lowest handlePosition, 215, attempt, 87, seconds per attempt, 2.42
+239874, Combo, 30/46/72, lowest handlePosition, 214, attempt, 88, seconds per attempt, 2.41
+241708, Combo, 30/43/72, lowest handlePosition, 270, attempt, 89, seconds per attempt, 2.40
+243627, Combo, 30/40/72, lowest handlePosition, 270, attempt, 90, seconds per attempt, 2.40
+Resetting dial...
+DiscA is at: 33
+DiscB is at: 29
+DiscC is at: 72
+250505, Combo, 33/30/72, lowest handlePosition, 273, attempt, 91, seconds per attempt, 2.45
+252696, Combo, 33/27/72, lowest handlePosition, 215, attempt, 92, seconds per attempt, 2.44
+254956, Combo, 33/24/72, lowest handlePosition, 215, attempt, 93, seconds per attempt, 2.44
+257286, Combo, 33/21/72, lowest handlePosition, 273, attempt, 94, seconds per attempt, 2.44
+259691, Combo, 33/18/72, lowest handlePosition, 271, attempt, 95, seconds per attempt, 2.44
+262171, Combo, 33/15/72, lowest handlePosition, 270, attempt, 96, seconds per attempt, 2.44
+264672, Combo, 33/12/72, lowest handlePosition, 271, attempt, 97, seconds per attempt, 2.44
+267258, Combo, 33/9/72, lowest handlePosition, 215, attempt, 98, seconds per attempt, 2.44
+269928, Combo, 33/6/72, lowest handlePosition, 273, attempt, 99, seconds per attempt, 2.45
+272635, Combo, 33/3/72, lowest handlePosition, 270, attempt, 100, seconds per attempt, 2.45
+275435, Combo, 33/0/72, lowest handlePosition, 270, attempt, 101, seconds per attempt, 2.45
+278311, Combo, 33/97/72, lowest handlePosition, 271, attempt, 102, seconds per attempt, 2.46
+281243, Combo, 33/94/72, lowest handlePosition, 214, attempt, 103, seconds per attempt, 2.46
+284271, Combo, 33/91/72, lowest handlePosition, 272, attempt, 104, seconds per attempt, 2.47
+287343, Combo, 33/88/72, lowest handlePosition, 214, attempt, 105, seconds per attempt, 2.47
+290470, Combo, 33/85/72, lowest handlePosition, 271, attempt, 106, seconds per attempt, 2.48
+293697, Combo, 33/82/72, lowest handlePosition, 270, attempt, 107, seconds per attempt, 2.48
+297017, Combo, 33/79/72, lowest handlePosition, 270, attempt, 108, seconds per attempt, 2.49
+300420, Combo, 33/76/72, lowest handlePosition, 270, attempt, 109, seconds per attempt, 2.50
+302434, Combo, 33/73/72, lowest handlePosition, 272, attempt, 110, seconds per attempt, 2.50
+303259, Combo, 33/70/72, lowest handlePosition, 270, attempt, 111, seconds per attempt, 2.48
+304355, Combo, 33/67/72, lowest handlePosition, 281, attempt, 112, seconds per attempt, 2.47
+305650, Combo, 33/64/72, lowest handlePosition, 215, attempt, 113, seconds per attempt, 2.46
+307100, Combo, 33/61/72, lowest handlePosition, 270, attempt, 114, seconds per attempt, 2.45
+308705, Combo, 33/58/72, lowest handlePosition, 215, attempt, 115, seconds per attempt, 2.44
+310344, Combo, 33/55/72, lowest handlePosition, 215, attempt, 116, seconds per attempt, 2.44
+312070, Combo, 33/52/72, lowest handlePosition, 214, attempt, 117, seconds per attempt, 2.43
+313837, Combo, 33/49/72, lowest handlePosition, 277, attempt, 118, seconds per attempt, 2.42
+315633, Combo, 33/46/72, lowest handlePosition, 215, attempt, 119, seconds per attempt, 2.42
+317477, Combo, 33/43/72, lowest handlePosition, 272, attempt, 120, seconds per attempt, 2.41
+Resetting dial...
+DiscA is at: 36
+DiscB is at: 32
+DiscC is at: 72
+324359, Combo, 36/33/72, lowest handlePosition, 272, attempt, 121, seconds per attempt, 2.45
+326486, Combo, 36/30/72, lowest handlePosition, 269, attempt, 122, seconds per attempt, 2.45
+328699, Combo, 36/27/72, lowest handlePosition, 273, attempt, 123, seconds per attempt, 2.45
+330953, Combo, 36/24/72, lowest handlePosition, 215, attempt, 124, seconds per attempt, 2.44
+333291, Combo, 36/21/72, lowest handlePosition, 216, attempt, 125, seconds per attempt, 2.44
+335719, Combo, 36/18/72, lowest handlePosition, 277, attempt, 126, seconds per attempt, 2.44
+338158, Combo, 36/15/72, lowest handlePosition, 247, attempt, 127, seconds per attempt, 2.44
+340672, Combo, 36/12/72, lowest handlePosition, 215, attempt, 128, seconds per attempt, 2.44
+343265, Combo, 36/9/72, lowest handlePosition, 272, attempt, 129, seconds per attempt, 2.44
+345951, Combo, 36/6/72, lowest handlePosition, 277, attempt, 130, seconds per attempt, 2.45
+348666, Combo, 36/3/72, lowest handlePosition, 271, attempt, 131, seconds per attempt, 2.45
+351468, Combo, 36/0/72, lowest handlePosition, 270, attempt, 132, seconds per attempt, 2.45
+354340, Combo, 36/97/72, lowest handlePosition, 215, attempt, 133, seconds per attempt, 2.45
+357298, Combo, 36/94/72, lowest handlePosition, 214, attempt, 134, seconds per attempt, 2.46
+360313, Combo, 36/91/72, lowest handlePosition, 212, attempt, 135, seconds per attempt, 2.46
+363382, Combo, 36/88/72, lowest handlePosition, 214, attempt, 136, seconds per attempt, 2.47
+366546, Combo, 36/85/72, lowest handlePosition, 272, attempt, 137, seconds per attempt, 2.47
+369823, Combo, 36/82/72, lowest handlePosition, 215, attempt, 138, seconds per attempt, 2.48
+373168, Combo, 36/79/72, lowest handlePosition, 272, attempt, 139, seconds per attempt, 2.48
+376594, Combo, 36/76/72, lowest handlePosition, 269, attempt, 140, seconds per attempt, 2.49
+378598, Combo, 36/73/72, lowest handlePosition, 215, attempt, 141, seconds per attempt, 2.49
+379423, Combo, 36/70/72, lowest handlePosition, 215, attempt, 142, seconds per attempt, 2.48
+380517, Combo, 36/67/72, lowest handlePosition, 216, attempt, 143, seconds per attempt, 2.47
+381813, Combo, 36/64/72, lowest handlePosition, 270, attempt, 144, seconds per attempt, 2.46
+383263, Combo, 36/61/72, lowest handlePosition, 215, attempt, 145, seconds per attempt, 2.45
+384875, Combo, 36/58/72, lowest handlePosition, 270, attempt, 146, seconds per attempt, 2.45
+386518, Combo, 36/55/72, lowest handlePosition, 270, attempt, 147, seconds per attempt, 2.44
+388212, Combo, 36/52/72, lowest handlePosition, 270, attempt, 148, seconds per attempt, 2.43
+389966, Combo, 36/49/72, lowest handlePosition, 221, attempt, 149, seconds per attempt, 2.43
+391775, Combo, 36/46/72, lowest handlePosition, 277, attempt, 150, seconds per attempt, 2.43
+Resetting dial...
+DiscA is at: 40
+DiscB is at: 35
+DiscC is at: 73
+398536, Combo, 39/36/72, lowest handlePosition, 270, attempt, 151, seconds per attempt, 2.45
+400589, Combo, 39/33/72, lowest handlePosition, 224, attempt, 152, seconds per attempt, 2.45
+402722, Combo, 39/30/72, lowest handlePosition, 276, attempt, 153, seconds per attempt, 2.45
+404929, Combo, 39/27/72, lowest handlePosition, 221, attempt, 154, seconds per attempt, 2.45
+407208, Combo, 39/24/72, lowest handlePosition, 222, attempt, 155, seconds per attempt, 2.45
+409561, Combo, 39/21/72, lowest handlePosition, 276, attempt, 156, seconds per attempt, 2.45
+411944, Combo, 39/18/72, lowest handlePosition, 216, attempt, 157, seconds per attempt, 2.45
+414443, Combo, 39/15/72, lowest handlePosition, 276, attempt, 158, seconds per attempt, 2.45
+416976, Combo, 39/12/72, lowest handlePosition, 272, attempt, 159, seconds per attempt, 2.45
+419609, Combo, 39/9/72, lowest handlePosition, 221, attempt, 160, seconds per attempt, 2.45
+422297, Combo, 39/6/72, lowest handlePosition, 270, attempt, 161, seconds per attempt, 2.45
+425063, Combo, 39/3/72, lowest handlePosition, 272, attempt, 162, seconds per attempt, 2.45
+427888, Combo, 39/0/72, lowest handlePosition, 216, attempt, 163, seconds per attempt, 2.45
+430800, Combo, 39/97/72, lowest handlePosition, 270, attempt, 164, seconds per attempt, 2.46
+433771, Combo, 39/94/72, lowest handlePosition, 214, attempt, 165, seconds per attempt, 2.46
+436870, Combo, 39/91/72, lowest handlePosition, 231, attempt, 166, seconds per attempt, 2.46
+439984, Combo, 39/88/72, lowest handlePosition, 271, attempt, 167, seconds per attempt, 2.47
+443174, Combo, 39/85/72, lowest handlePosition, 214, attempt, 168, seconds per attempt, 2.47
+446461, Combo, 39/82/72, lowest handlePosition, 279, attempt, 169, seconds per attempt, 2.48
+449780, Combo, 39/79/72, lowest handlePosition, 271, attempt, 170, seconds per attempt, 2.48
+453207, Combo, 39/76/72, lowest handlePosition, 271, attempt, 171, seconds per attempt, 2.49
+455231, Combo, 39/73/72, lowest handlePosition, 269, attempt, 172, seconds per attempt, 2.48
+456058, Combo, 39/70/72, lowest handlePosition, 215, attempt, 173, seconds per attempt, 2.48
+457155, Combo, 39/67/72, lowest handlePosition, 215, attempt, 174, seconds per attempt, 2.47
+458309, Combo, 39/64/72, lowest handlePosition, 271, attempt, 175, seconds per attempt, 2.46
+459771, Combo, 39/61/72, lowest handlePosition, 258, attempt, 176, seconds per attempt, 2.45
+461389, Combo, 39/58/72, lowest handlePosition, 273, attempt, 177, seconds per attempt, 2.45
+463029, Combo, 39/55/72, lowest handlePosition, 271, attempt, 178, seconds per attempt, 2.44
+464731, Combo, 39/52/72, lowest handlePosition, 270, attempt, 179, seconds per attempt, 2.44
+466495, Combo, 39/49/72, lowest handlePosition, 276, attempt, 180, seconds per attempt, 2.44
+Resetting dial...
+DiscA is at: 43
+DiscB is at: 38
+DiscC is at: 72
+473524, Combo, 42/39/72, lowest handlePosition, 268, attempt, 181, seconds per attempt, 2.46
+475545, Combo, 42/36/72, lowest handlePosition, 269, attempt, 182, seconds per attempt, 2.46
+477644, Combo, 42/33/72, lowest handlePosition, 230, attempt, 183, seconds per attempt, 2.46
+479770, Combo, 42/30/72, lowest handlePosition, 271, attempt, 184, seconds per attempt, 2.46
+481991, Combo, 42/27/72, lowest handlePosition, 271, attempt, 185, seconds per attempt, 2.45
+484277, Combo, 42/24/72, lowest handlePosition, 249, attempt, 186, seconds per attempt, 2.45
+486614, Combo, 42/21/72, lowest handlePosition, 270, attempt, 187, seconds per attempt, 2.45
+489044, Combo, 42/18/72, lowest handlePosition, 216, attempt, 188, seconds per attempt, 2.45
+491532, Combo, 42/15/72, lowest handlePosition, 276, attempt, 189, seconds per attempt, 2.45
+494077, Combo, 42/12/72, lowest handlePosition, 271, attempt, 190, seconds per attempt, 2.45
+496700, Combo, 42/9/72, lowest handlePosition, 215, attempt, 191, seconds per attempt, 2.45
+499419, Combo, 42/6/72, lowest handlePosition, 278, attempt, 192, seconds per attempt, 2.46
+502177, Combo, 42/3/72, lowest handlePosition, 276, attempt, 193, seconds per attempt, 2.46
+505013, Combo, 42/0/72, lowest handlePosition, 281, attempt, 194, seconds per attempt, 2.46
+507929, Combo, 42/97/72, lowest handlePosition, 221, attempt, 195, seconds per attempt, 2.46
+510886, Combo, 42/94/72, lowest handlePosition, 215, attempt, 196, seconds per attempt, 2.46
+513931, Combo, 42/91/72, lowest handlePosition, 224, attempt, 197, seconds per attempt, 2.47
+517044, Combo, 42/88/72, lowest handlePosition, 215, attempt, 198, seconds per attempt, 2.47
+520212, Combo, 42/85/72, lowest handlePosition, 228, attempt, 199, seconds per attempt, 2.47
+523474, Combo, 42/82/72, lowest handlePosition, 269, attempt, 200, seconds per attempt, 2.48
+526772, Combo, 42/79/72, lowest handlePosition, 215, attempt, 201, seconds per attempt, 2.48
+530159, Combo, 42/76/72, lowest handlePosition, 271, attempt, 202, seconds per attempt, 2.49
+530888, Combo, 42/73/72, lowest handlePosition, 215, attempt, 203, seconds per attempt, 2.48
+531708, Combo, 42/70/72, lowest handlePosition, 215, attempt, 204, seconds per attempt, 2.47
+532790, Combo, 42/67/72, lowest handlePosition, 215, attempt, 205, seconds per attempt, 2.46
+534088, Combo, 42/64/72, lowest handlePosition, 215, attempt, 206, seconds per attempt, 2.46
+535546, Combo, 42/61/72, lowest handlePosition, 215, attempt, 207, seconds per attempt, 2.45
+537149, Combo, 42/58/72, lowest handlePosition, 215, attempt, 208, seconds per attempt, 2.45
+538789, Combo, 42/55/72, lowest handlePosition, 215, attempt, 209, seconds per attempt, 2.44
+540470, Combo, 42/52/72, lowest handlePosition, 215, attempt, 210, seconds per attempt, 2.44
+Resetting dial...
+DiscA is at: 46
+DiscB is at: 41
+DiscC is at: 72
+547494, Combo, 45/42/72, lowest handlePosition, 221, attempt, 211, seconds per attempt, 2.46
+549420, Combo, 45/39/72, lowest handlePosition, 273, attempt, 212, seconds per attempt, 2.46
+551418, Combo, 45/36/72, lowest handlePosition, 256, attempt, 213, seconds per attempt, 2.46
+553489, Combo, 45/33/72, lowest handlePosition, 271, attempt, 214, seconds per attempt, 2.46
+555616, Combo, 45/30/72, lowest handlePosition, 215, attempt, 215, seconds per attempt, 2.45
+557829, Combo, 45/27/72, lowest handlePosition, 271, attempt, 216, seconds per attempt, 2.45
+560112, Combo, 45/24/72, lowest handlePosition, 215, attempt, 217, seconds per attempt, 2.45
+562445, Combo, 45/21/72, lowest handlePosition, 272, attempt, 218, seconds per attempt, 2.45
+564859, Combo, 45/18/72, lowest handlePosition, 215, attempt, 219, seconds per attempt, 2.45
+567231, Combo, 45/15/72, lowest handlePosition, 271, attempt, 220, seconds per attempt, 2.45
+569758, Combo, 45/12/72, lowest handlePosition, 215, attempt, 221, seconds per attempt, 2.45
+572394, Combo, 45/9/72, lowest handlePosition, 215, attempt, 222, seconds per attempt, 2.45
+575050, Combo, 45/6/72, lowest handlePosition, 271, attempt, 223, seconds per attempt, 2.45
+577774, Combo, 45/3/72, lowest handlePosition, 226, attempt, 224, seconds per attempt, 2.45
+580583, Combo, 45/0/72, lowest handlePosition, 215, attempt, 225, seconds per attempt, 2.46
+583469, Combo, 45/97/72, lowest handlePosition, 271, attempt, 226, seconds per attempt, 2.46
+586413, Combo, 45/94/72, lowest handlePosition, 271, attempt, 227, seconds per attempt, 2.46
+589426, Combo, 45/91/72, lowest handlePosition, 261, attempt, 228, seconds per attempt, 2.46
+592552, Combo, 45/88/72, lowest handlePosition, 271, attempt, 229, seconds per attempt, 2.47
+595746, Combo, 45/85/72, lowest handlePosition, 231, attempt, 230, seconds per attempt, 2.47
+598945, Combo, 45/82/72, lowest handlePosition, 215, attempt, 231, seconds per attempt, 2.47
+602285, Combo, 45/79/72, lowest handlePosition, 215, attempt, 232, seconds per attempt, 2.48
+605586, Combo, 45/76/72, lowest handlePosition, 215, attempt, 233, seconds per attempt, 2.48
+607595, Combo, 45/73/72, lowest handlePosition, 271, attempt, 234, seconds per attempt, 2.48
+608421, Combo, 45/70/72, lowest handlePosition, 215, attempt, 235, seconds per attempt, 2.47
+609521, Combo, 45/67/72, lowest handlePosition, 211, attempt, 236, seconds per attempt, 2.46
+610821, Combo, 45/64/72, lowest handlePosition, 213, attempt, 237, seconds per attempt, 2.46
+612275, Combo, 45/61/72, lowest handlePosition, 271, attempt, 238, seconds per attempt, 2.46
+613884, Combo, 45/58/72, lowest handlePosition, 215, attempt, 239, seconds per attempt, 2.45
+615525, Combo, 45/55/72, lowest handlePosition, 215, attempt, 240, seconds per attempt, 2.45
+Resetting dial...
+DiscA is at: 49
+DiscB is at: 44
+DiscC is at: 72
+622468, Combo, 48/45/72, lowest handlePosition, 218, attempt, 241, seconds per attempt, 2.47
+624329, Combo, 48/42/72, lowest handlePosition, 215, attempt, 242, seconds per attempt, 2.46
+626266, Combo, 48/39/72, lowest handlePosition, 215, attempt, 243, seconds per attempt, 2.46
+628265, Combo, 48/36/72, lowest handlePosition, 215, attempt, 244, seconds per attempt, 2.46
+630329, Combo, 48/33/72, lowest handlePosition, 215, attempt, 245, seconds per attempt, 2.46
+632439, Combo, 48/30/72, lowest handlePosition, 272, attempt, 246, seconds per attempt, 2.46
+634627, Combo, 48/27/72, lowest handlePosition, 215, attempt, 247, seconds per attempt, 2.46
+636880, Combo, 48/24/72, lowest handlePosition, 271, attempt, 248, seconds per attempt, 2.46
+639236, Combo, 48/21/72, lowest handlePosition, 272, attempt, 249, seconds per attempt, 2.46
+641662, Combo, 48/18/72, lowest handlePosition, 270, attempt, 250, seconds per attempt, 2.46
+644136, Combo, 48/15/72, lowest handlePosition, 272, attempt, 251, seconds per attempt, 2.46
+646672, Combo, 48/12/72, lowest handlePosition, 215, attempt, 252, seconds per attempt, 2.46
+649264, Combo, 48/9/72, lowest handlePosition, 271, attempt, 253, seconds per attempt, 2.46
+651928, Combo, 48/6/72, lowest handlePosition, 210, attempt, 254, seconds per attempt, 2.46
+654658, Combo, 48/3/72, lowest handlePosition, 254, attempt, 255, seconds per attempt, 2.46
+657471, Combo, 48/0/72, lowest handlePosition, 215, attempt, 256, seconds per attempt, 2.46
+660387, Combo, 48/97/72, lowest handlePosition, 270, attempt, 257, seconds per attempt, 2.46
+663367, Combo, 48/94/72, lowest handlePosition, 276, attempt, 258, seconds per attempt, 2.46
+666394, Combo, 48/91/72, lowest handlePosition, 215, attempt, 259, seconds per attempt, 2.47
+669512, Combo, 48/88/72, lowest handlePosition, 215, attempt, 260, seconds per attempt, 2.47
+672690, Combo, 48/85/72, lowest handlePosition, 271, attempt, 261, seconds per attempt, 2.47
+675942, Combo, 48/82/72, lowest handlePosition, 263, attempt, 262, seconds per attempt, 2.47
+679259, Combo, 48/79/72, lowest handlePosition, 215, attempt, 263, seconds per attempt, 2.48
+682698, Combo, 48/76/72, lowest handlePosition, 215, attempt, 264, seconds per attempt, 2.48
+684718, Combo, 48/73/72, lowest handlePosition, 215, attempt, 265, seconds per attempt, 2.48
+685549, Combo, 48/70/72, lowest handlePosition, 272, attempt, 266, seconds per attempt, 2.47
+686652, Combo, 48/67/72, lowest handlePosition, 270, attempt, 267, seconds per attempt, 2.47
+687958, Combo, 48/64/72, lowest handlePosition, 215, attempt, 268, seconds per attempt, 2.46
+689421, Combo, 48/61/72, lowest handlePosition, 216, attempt, 269, seconds per attempt, 2.46
+691050, Combo, 48/58/72, lowest handlePosition, 271, attempt, 270, seconds per attempt, 2.46
+Resetting dial...
+DiscA is at: 52
+DiscB is at: 47
+DiscC is at: 72
+702981, Combo, 51/48/72, lowest handlePosition, 216, attempt, 271, seconds per attempt, 2.49
+704817, Combo, 51/45/72, lowest handlePosition, 275, attempt, 272, seconds per attempt, 2.49
+706711, Combo, 51/42/72, lowest handlePosition, 279, attempt, 273, seconds per attempt, 2.49
+708664, Combo, 51/39/72, lowest handlePosition, 221, attempt, 274, seconds per attempt, 2.48
+710661, Combo, 51/36/72, lowest handlePosition, 216, attempt, 275, seconds per attempt, 2.48
+712734, Combo, 51/33/72, lowest handlePosition, 273, attempt, 276, seconds per attempt, 2.48
+714873, Combo, 51/30/72, lowest handlePosition, 272, attempt, 277, seconds per attempt, 2.48
+717077, Combo, 51/27/72, lowest handlePosition, 270, attempt, 278, seconds per attempt, 2.48
+719337, Combo, 51/24/72, lowest handlePosition, 270, attempt, 279, seconds per attempt, 2.48
+721651, Combo, 51/21/72, lowest handlePosition, 273, attempt, 280, seconds per attempt, 2.48
+724049, Combo, 51/18/72, lowest handlePosition, 218, attempt, 281, seconds per attempt, 2.48
+726500, Combo, 51/15/72, lowest handlePosition, 271, attempt, 282, seconds per attempt, 2.48
+729025, Combo, 51/12/72, lowest handlePosition, 215, attempt, 283, seconds per attempt, 2.48
+731621, Combo, 51/9/72, lowest handlePosition, 271, attempt, 284, seconds per attempt, 2.48
+734289, Combo, 51/6/72, lowest handlePosition, 215, attempt, 285, seconds per attempt, 2.48
+737031, Combo, 51/3/72, lowest handlePosition, 215, attempt, 286, seconds per attempt, 2.48
+739763, Combo, 51/0/72, lowest handlePosition, 270, attempt, 287, seconds per attempt, 2.48
+742661, Combo, 51/97/72, lowest handlePosition, 272, attempt, 288, seconds per attempt, 2.48
+745655, Combo, 51/94/72, lowest handlePosition, 262, attempt, 289, seconds per attempt, 2.48
+748712, Combo, 51/91/72, lowest handlePosition, 215, attempt, 290, seconds per attempt, 2.49
+751863, Combo, 51/88/72, lowest handlePosition, 271, attempt, 291, seconds per attempt, 2.49
+755081, Combo, 51/85/72, lowest handlePosition, 272, attempt, 292, seconds per attempt, 2.49
+758354, Combo, 51/82/72, lowest handlePosition, 215, attempt, 293, seconds per attempt, 2.49
+761765, Combo, 51/79/72, lowest handlePosition, 271, attempt, 294, seconds per attempt, 2.50
+765204, Combo, 51/76/72, lowest handlePosition, 271, attempt, 295, seconds per attempt, 2.50
+765933, Combo, 51/73/72, lowest handlePosition, 215, attempt, 296, seconds per attempt, 2.49
+766747, Combo, 51/70/72, lowest handlePosition, 271, attempt, 297, seconds per attempt, 2.49
+767832, Combo, 51/67/72, lowest handlePosition, 216, attempt, 298, seconds per attempt, 2.48
+768995, Combo, 51/64/72, lowest handlePosition, 216, attempt, 299, seconds per attempt, 2.48
+770468, Combo, 51/61/72, lowest handlePosition, 271, attempt, 300, seconds per attempt, 2.48
+Resetting dial...
+DiscA is at: 55
+DiscB is at: 50
+DiscC is at: 72
+777587, Combo, 54/51/72, lowest handlePosition, 276, attempt, 301, seconds per attempt, 2.49
+779381, Combo, 54/48/72, lowest handlePosition, 259, attempt, 302, seconds per attempt, 2.49
+781230, Combo, 54/45/72, lowest handlePosition, 277, attempt, 303, seconds per attempt, 2.49
+783130, Combo, 54/42/72, lowest handlePosition, 277, attempt, 304, seconds per attempt, 2.48
+785063, Combo, 54/39/72, lowest handlePosition, 278, attempt, 305, seconds per attempt, 2.48
+787059, Combo, 54/36/72, lowest handlePosition, 217, attempt, 306, seconds per attempt, 2.48
+789137, Combo, 54/33/72, lowest handlePosition, 216, attempt, 307, seconds per attempt, 2.48
+791289, Combo, 54/30/72, lowest handlePosition, 272, attempt, 308, seconds per attempt, 2.48
+793510, Combo, 54/27/72, lowest handlePosition, 267, attempt, 309, seconds per attempt, 2.48
+795764, Combo, 54/24/72, lowest handlePosition, 249, attempt, 310, seconds per attempt, 2.48
+798114, Combo, 54/21/72, lowest handlePosition, 271, attempt, 311, seconds per attempt, 2.48
+800498, Combo, 54/18/72, lowest handlePosition, 215, attempt, 312, seconds per attempt, 2.48
+802955, Combo, 54/15/72, lowest handlePosition, 271, attempt, 313, seconds per attempt, 2.48
+805474, Combo, 54/12/72, lowest handlePosition, 270, attempt, 314, seconds per attempt, 2.48
+808068, Combo, 54/9/72, lowest handlePosition, 271, attempt, 315, seconds per attempt, 2.48
+810726, Combo, 54/6/72, lowest handlePosition, 216, attempt, 316, seconds per attempt, 2.48
+813472, Combo, 54/3/72, lowest handlePosition, 272, attempt, 317, seconds per attempt, 2.48
+816285, Combo, 54/0/72, lowest handlePosition, 215, attempt, 318, seconds per attempt, 2.48
+819184, Combo, 54/97/72, lowest handlePosition, 215, attempt, 319, seconds per attempt, 2.48
+822172, Combo, 54/94/72, lowest handlePosition, 273, attempt, 320, seconds per attempt, 2.48
+825220, Combo, 54/91/72, lowest handlePosition, 271, attempt, 321, seconds per attempt, 2.48
+828402, Combo, 54/88/72, lowest handlePosition, 276, attempt, 322, seconds per attempt, 2.49
+831605, Combo, 54/85/72, lowest handlePosition, 215, attempt, 323, seconds per attempt, 2.49
+834914, Combo, 54/82/72, lowest handlePosition, 273, attempt, 324, seconds per attempt, 2.49
+838252, Combo, 54/79/72, lowest handlePosition, 233, attempt, 325, seconds per attempt, 2.49
+841663, Combo, 54/76/72, lowest handlePosition, 271, attempt, 326, seconds per attempt, 2.50
+842391, Combo, 54/73/72, lowest handlePosition, 216, attempt, 327, seconds per attempt, 2.49
+843205, Combo, 54/70/72, lowest handlePosition, 217, attempt, 328, seconds per attempt, 2.49
+844290, Combo, 54/67/72, lowest handlePosition, 216, attempt, 329, seconds per attempt, 2.48
+845599, Combo, 54/64/72, lowest handlePosition, 271, attempt, 330, seconds per attempt, 2.48
+Resetting dial...
+DiscA is at: 58
+DiscB is at: 54
+DiscC is at: 72
+852757, Combo, 57/54/72, lowest handlePosition, 277, attempt, 331, seconds per attempt, 2.49
+854497, Combo, 57/51/72, lowest handlePosition, 275, attempt, 332, seconds per attempt, 2.49
+856264, Combo, 57/48/72, lowest handlePosition, 272, attempt, 333, seconds per attempt, 2.49
+858131, Combo, 57/45/72, lowest handlePosition, 221, attempt, 334, seconds per attempt, 2.49
+859997, Combo, 57/42/72, lowest handlePosition, 270, attempt, 335, seconds per attempt, 2.48
+861922, Combo, 57/39/72, lowest handlePosition, 271, attempt, 336, seconds per attempt, 2.48
+863936, Combo, 57/36/72, lowest handlePosition, 216, attempt, 337, seconds per attempt, 2.48
+866027, Combo, 57/33/72, lowest handlePosition, 271, attempt, 338, seconds per attempt, 2.48
+868162, Combo, 57/30/72, lowest handlePosition, 272, attempt, 339, seconds per attempt, 2.48
+870385, Combo, 57/27/72, lowest handlePosition, 271, attempt, 340, seconds per attempt, 2.48
+872666, Combo, 57/24/72, lowest handlePosition, 271, attempt, 341, seconds per attempt, 2.48
+875012, Combo, 57/21/72, lowest handlePosition, 216, attempt, 342, seconds per attempt, 2.48
+877420, Combo, 57/18/72, lowest handlePosition, 268, attempt, 343, seconds per attempt, 2.48
+879922, Combo, 57/15/72, lowest handlePosition, 274, attempt, 344, seconds per attempt, 2.48
+882462, Combo, 57/12/72, lowest handlePosition, 273, attempt, 345, seconds per attempt, 2.48
+885072, Combo, 57/9/72, lowest handlePosition, 253, attempt, 346, seconds per attempt, 2.48
+887755, Combo, 57/6/72, lowest handlePosition, 216, attempt, 347, seconds per attempt, 2.48
+890531, Combo, 57/3/72, lowest handlePosition, 271, attempt, 348, seconds per attempt, 2.48
+893372, Combo, 57/0/72, lowest handlePosition, 270, attempt, 349, seconds per attempt, 2.48
+896273, Combo, 57/97/72, lowest handlePosition, 271, attempt, 350, seconds per attempt, 2.48
+899226, Combo, 57/94/72, lowest handlePosition, 272, attempt, 351, seconds per attempt, 2.48
+902269, Combo, 57/91/72, lowest handlePosition, 272, attempt, 352, seconds per attempt, 2.48
+905390, Combo, 57/88/72, lowest handlePosition, 271, attempt, 353, seconds per attempt, 2.49
+908565, Combo, 57/85/72, lowest handlePosition, 244, attempt, 354, seconds per attempt, 2.49
+911837, Combo, 57/82/72, lowest handlePosition, 259, attempt, 355, seconds per attempt, 2.49
+915211, Combo, 57/79/72, lowest handlePosition, 271, attempt, 356, seconds per attempt, 2.49
+918673, Combo, 57/76/72, lowest handlePosition, 271, attempt, 357, seconds per attempt, 2.50
+920731, Combo, 57/73/72, lowest handlePosition, 273, attempt, 358, seconds per attempt, 2.49
+921569, Combo, 57/70/72, lowest handlePosition, 271, attempt, 359, seconds per attempt, 2.49
+922678, Combo, 57/67/72, lowest handlePosition, 271, attempt, 360, seconds per attempt, 2.49
+Resetting dial...
+DiscA is at: 60
+DiscB is at: 56
+DiscC is at: 72
+929932, Combo, 60/57/72, lowest handlePosition, 273, attempt, 361, seconds per attempt, 2.50
+931646, Combo, 60/54/72, lowest handlePosition, 221, attempt, 362, seconds per attempt, 2.50
+933388, Combo, 60/51/72, lowest handlePosition, 221, attempt, 363, seconds per attempt, 2.49
+935163, Combo, 60/48/72, lowest handlePosition, 217, attempt, 364, seconds per attempt, 2.49
+936976, Combo, 60/45/72, lowest handlePosition, 273, attempt, 365, seconds per attempt, 2.49
+938889, Combo, 60/42/72, lowest handlePosition, 221, attempt, 366, seconds per attempt, 2.49
+940849, Combo, 60/39/72, lowest handlePosition, 216, attempt, 367, seconds per attempt, 2.49
+942861, Combo, 60/36/72, lowest handlePosition, 270, attempt, 368, seconds per attempt, 2.49
+944935, Combo, 60/33/72, lowest handlePosition, 272, attempt, 369, seconds per attempt, 2.49
+947084, Combo, 60/30/72, lowest handlePosition, 224, attempt, 370, seconds per attempt, 2.48
+949306, Combo, 60/27/72, lowest handlePosition, 216, attempt, 371, seconds per attempt, 2.48
+951625, Combo, 60/24/72, lowest handlePosition, 232, attempt, 372, seconds per attempt, 2.48
+953992, Combo, 60/21/72, lowest handlePosition, 216, attempt, 373, seconds per attempt, 2.48
+956414, Combo, 60/18/72, lowest handlePosition, 267, attempt, 374, seconds per attempt, 2.48
+958820, Combo, 60/15/72, lowest handlePosition, 274, attempt, 375, seconds per attempt, 2.48
+961385, Combo, 60/12/72, lowest handlePosition, 270, attempt, 376, seconds per attempt, 2.48
+963965, Combo, 60/9/72, lowest handlePosition, 276, attempt, 377, seconds per attempt, 2.48
+966682, Combo, 60/6/72, lowest handlePosition, 271, attempt, 378, seconds per attempt, 2.48
+969460, Combo, 60/3/72, lowest handlePosition, 272, attempt, 379, seconds per attempt, 2.48
+972328, Combo, 60/0/72, lowest handlePosition, 216, attempt, 380, seconds per attempt, 2.49
+975278, Combo, 60/97/72, lowest handlePosition, 245, attempt, 381, seconds per attempt, 2.49
+978295, Combo, 60/94/72, lowest handlePosition, 216, attempt, 382, seconds per attempt, 2.49
+981406, Combo, 60/91/72, lowest handlePosition, 270, attempt, 383, seconds per attempt, 2.49
+984611, Combo, 60/88/72, lowest handlePosition, 216, attempt, 384, seconds per attempt, 2.49
+987832, Combo, 60/85/72, lowest handlePosition, 216, attempt, 385, seconds per attempt, 2.49
+991162, Combo, 60/82/72, lowest handlePosition, 270, attempt, 386, seconds per attempt, 2.50
+994577, Combo, 60/79/72, lowest handlePosition, 216, attempt, 387, seconds per attempt, 2.50
+997969, Combo, 60/76/72, lowest handlePosition, 271, attempt, 388, seconds per attempt, 2.50
+1000003, Combo, 60/73/72, lowest handlePosition, 269, attempt, 389, seconds per attempt, 2.50
+1000839, Combo, 60/70/72, lowest handlePosition, 216, attempt, 390, seconds per attempt, 2.49
+Resetting dial...
+DiscA is at: 63
+DiscB is at: 60
+DiscC is at: 72
+1008055, Combo, 63/60/72, lowest handlePosition, 271, attempt, 391, seconds per attempt, 2.51
+1009715, Combo, 63/57/72, lowest handlePosition, 273, attempt, 392, seconds per attempt, 2.50
+1011391, Combo, 63/54/72, lowest handlePosition, 272, attempt, 393, seconds per attempt, 2.50
+1013117, Combo, 63/51/72, lowest handlePosition, 217, attempt, 394, seconds per attempt, 2.50
+1014884, Combo, 63/48/72, lowest handlePosition, 216, attempt, 395, seconds per attempt, 2.50
+1016711, Combo, 63/45/72, lowest handlePosition, 271, attempt, 396, seconds per attempt, 2.50
+1018610, Combo, 63/42/72, lowest handlePosition, 272, attempt, 397, seconds per attempt, 2.50
+1020568, Combo, 63/39/72, lowest handlePosition, 273, attempt, 398, seconds per attempt, 2.49
+1022602, Combo, 63/36/72, lowest handlePosition, 216, attempt, 399, seconds per attempt, 2.49
+1024723, Combo, 63/33/72, lowest handlePosition, 216, attempt, 400, seconds per attempt, 2.49
+1026911, Combo, 63/30/72, lowest handlePosition, 272, attempt, 401, seconds per attempt, 2.49
+1029140, Combo, 63/27/72, lowest handlePosition, 216, attempt, 402, seconds per attempt, 2.49
+1031430, Combo, 63/24/72, lowest handlePosition, 271, attempt, 403, seconds per attempt, 2.49
+1033807, Combo, 63/21/72, lowest handlePosition, 217, attempt, 404, seconds per attempt, 2.49
+1036284, Combo, 63/18/72, lowest handlePosition, 222, attempt, 405, seconds per attempt, 2.49
+1038769, Combo, 63/15/72, lowest handlePosition, 227, attempt, 406, seconds per attempt, 2.49
+1041337, Combo, 63/12/72, lowest handlePosition, 272, attempt, 407, seconds per attempt, 2.49
+1043987, Combo, 63/9/72, lowest handlePosition, 216, attempt, 408, seconds per attempt, 2.49
+1046717, Combo, 63/6/72, lowest handlePosition, 272, attempt, 409, seconds per attempt, 2.49
+1049491, Combo, 63/3/72, lowest handlePosition, 218, attempt, 410, seconds per attempt, 2.49
+1052361, Combo, 63/0/72, lowest handlePosition, 270, attempt, 411, seconds per attempt, 2.49
+1055297, Combo, 63/97/72, lowest handlePosition, 272, attempt, 412, seconds per attempt, 2.49
+1058312, Combo, 63/94/72, lowest handlePosition, 216, attempt, 413, seconds per attempt, 2.50
+1061371, Combo, 63/91/72, lowest handlePosition, 216, attempt, 414, seconds per attempt, 2.50
+1064518, Combo, 63/88/72, lowest handlePosition, 273, attempt, 415, seconds per attempt, 2.50
+1067716, Combo, 63/85/72, lowest handlePosition, 271, attempt, 416, seconds per attempt, 2.50
+1071051, Combo, 63/82/72, lowest handlePosition, 217, attempt, 417, seconds per attempt, 2.50
+1074408, Combo, 63/79/72, lowest handlePosition, 213, attempt, 418, seconds per attempt, 2.50
+1077869, Combo, 63/76/72, lowest handlePosition, 219, attempt, 419, seconds per attempt, 2.51
+1079930, Combo, 63/73/72, lowest handlePosition, 216, attempt, 420, seconds per attempt, 2.50
+Resetting dial...
+DiscA is at: 66
+DiscB is at: 63
+DiscC is at: 72
+1087114, Combo, 66/63/72, lowest handlePosition, 216, attempt, 421, seconds per attempt, 2.52
+1088656, Combo, 66/60/72, lowest handlePosition, 217, attempt, 422, seconds per attempt, 2.51
+1090331, Combo, 66/57/72, lowest handlePosition, 276, attempt, 423, seconds per attempt, 2.51
+1092045, Combo, 66/54/72, lowest handlePosition, 279, attempt, 424, seconds per attempt, 2.51
+1093811, Combo, 66/51/72, lowest handlePosition, 278, attempt, 425, seconds per attempt, 2.51
+1095627, Combo, 66/48/72, lowest handlePosition, 278, attempt, 426, seconds per attempt, 2.51
+Pausing
+Running
+1097493, Combo, 66/45/72, lowest handlePosition, 267, attempt, 427, seconds per attempt, 2.50
+1099424, Combo, 66/42/72, lowest handlePosition, 280, attempt, 428, seconds per attempt, 2.50
+1101421, Combo, 66/39/72, lowest handlePosition, 260, attempt, 429, seconds per attempt, 2.50
+1103486, Combo, 66/36/72, lowest handlePosition, 279, attempt, 430, seconds per attempt, 2.50
+1105596, Combo, 66/33/72, lowest handlePosition, 222, attempt, 431, seconds per attempt, 2.50
+1107765, Combo, 66/30/72, lowest handlePosition, 279, attempt, 432, seconds per attempt, 2.50
+1109988, Combo, 66/27/72, lowest handlePosition, 279, attempt, 433, seconds per attempt, 2.50
+1112299, Combo, 66/24/72, lowest handlePosition, 222, attempt, 434, seconds per attempt, 2.50
+1114652, Combo, 66/21/72, lowest handlePosition, 277, attempt, 435, seconds per attempt, 2.50
+1117135, Combo, 66/18/72, lowest handlePosition, 277, attempt, 436, seconds per attempt, 2.50
+1119610, Combo, 66/15/72, lowest handlePosition, 272, attempt, 437, seconds per attempt, 2.50
+1122185, Combo, 66/12/72, lowest handlePosition, 225, attempt, 438, seconds per attempt, 2.50
+1124835, Combo, 66/9/72, lowest handlePosition, 278, attempt, 439, seconds per attempt, 2.50
+1127512, Combo, 66/6/72, lowest handlePosition, 272, attempt, 440, seconds per attempt, 2.50
+1130278, Combo, 66/3/72, lowest handlePosition, 212, attempt, 441, seconds per attempt, 2.50
+1133164, Combo, 66/0/72, lowest handlePosition, 216, attempt, 442, seconds per attempt, 2.50
+1136089, Combo, 66/97/72, lowest handlePosition, 273, attempt, 443, seconds per attempt, 2.50
+1139109, Combo, 66/94/72, lowest handlePosition, 270, attempt, 444, seconds per attempt, 2.50
+1142174, Combo, 66/91/72, lowest handlePosition, 272, attempt, 445, seconds per attempt, 2.50
+1145341, Combo, 66/88/72, lowest handlePosition, 217, attempt, 446, seconds per attempt, 2.51
+1148540, Combo, 66/85/72, lowest handlePosition, 271, attempt, 447, seconds per attempt, 2.51
+1151846, Combo, 66/82/72, lowest handlePosition, 216, attempt, 448, seconds per attempt, 2.51
+1155225, Combo, 66/79/72, lowest handlePosition, 216, attempt, 449, seconds per attempt, 2.51
+1158732, Combo, 66/76/72, lowest handlePosition, 236, attempt, 450, seconds per attempt, 2.51
+Resetting dial...
+DiscA is at: 69
+DiscB is at: 66
+DiscC is at: 73
+1165857, Combo, 69/66/72, lowest handlePosition, 274, attempt, 451, seconds per attempt, 2.52
+1167221, Combo, 69/63/72, lowest handlePosition, 272, attempt, 452, seconds per attempt, 2.52
+1168746, Combo, 69/60/72, lowest handlePosition, 249, attempt, 453, seconds per attempt, 2.52
+1170326, Combo, 69/57/72, lowest handlePosition, 233, attempt, 454, seconds per attempt, 2.52
+1171995, Combo, 69/54/72, lowest handlePosition, 270, attempt, 455, seconds per attempt, 2.51
+1173746, Combo, 69/51/72, lowest handlePosition, 276, attempt, 456, seconds per attempt, 2.51
+1175549, Combo, 69/48/72, lowest handlePosition, 222, attempt, 457, seconds per attempt, 2.51
+1177411, Combo, 69/45/72, lowest handlePosition, 222, attempt, 458, seconds per attempt, 2.51
+1179332, Combo, 69/42/72, lowest handlePosition, 222, attempt, 459, seconds per attempt, 2.51
+1181265, Combo, 69/39/72, lowest handlePosition, 272, attempt, 460, seconds per attempt, 2.51
+1183305, Combo, 69/36/72, lowest handlePosition, 278, attempt, 461, seconds per attempt, 2.51
+1185381, Combo, 69/33/72, lowest handlePosition, 273, attempt, 462, seconds per attempt, 2.51
+1187544, Combo, 69/30/72, lowest handlePosition, 273, attempt, 463, seconds per attempt, 2.50
+1189782, Combo, 69/27/72, lowest handlePosition, 273, attempt, 464, seconds per attempt, 2.50
+1192090, Combo, 69/24/72, lowest handlePosition, 216, attempt, 465, seconds per attempt, 2.50
+1194465, Combo, 69/21/72, lowest handlePosition, 273, attempt, 466, seconds per attempt, 2.50
+1196906, Combo, 69/18/72, lowest handlePosition, 273, attempt, 467, seconds per attempt, 2.50
+1199403, Combo, 69/15/72, lowest handlePosition, 273, attempt, 468, seconds per attempt, 2.50
+1201960, Combo, 69/12/72, lowest handlePosition, 267, attempt, 469, seconds per attempt, 2.50
+1204568, Combo, 69/9/72, lowest handlePosition, 271, attempt, 470, seconds per attempt, 2.50
+1207251, Combo, 69/6/72, lowest handlePosition, 271, attempt, 471, seconds per attempt, 2.50
+1210042, Combo, 69/3/72, lowest handlePosition, 239, attempt, 472, seconds per attempt, 2.50
+1212886, Combo, 69/0/72, lowest handlePosition, 273, attempt, 473, seconds per attempt, 2.51
+1215821, Combo, 69/97/72, lowest handlePosition, 216, attempt, 474, seconds per attempt, 2.51
+1218930, Combo, 69/94/72, lowest handlePosition, 273, attempt, 475, seconds per attempt, 2.51
+1222086, Combo, 69/91/72, lowest handlePosition, 271, attempt, 476, seconds per attempt, 2.51
+1225240, Combo, 69/88/72, lowest handlePosition, 216, attempt, 477, seconds per attempt, 2.51
+1228545, Combo, 69/85/72, lowest handlePosition, 220, attempt, 478, seconds per attempt, 2.51
+1231923, Combo, 69/82/72, lowest handlePosition, 216, attempt, 479, seconds per attempt, 2.51
+1235416, Combo, 69/79/72, lowest handlePosition, 268, attempt, 480, seconds per attempt, 2.52
+Resetting dial...
+DiscA is at: 72
+DiscB is at: 69
+DiscC is at: 73
+1242632, Combo, 72/69/72, lowest handlePosition, 272, attempt, 481, seconds per attempt, 2.53
+1243844, Combo, 72/66/72, lowest handlePosition, 216, attempt, 482, seconds per attempt, 2.52
+1245220, Combo, 72/63/72, lowest handlePosition, 217, attempt, 483, seconds per attempt, 2.52
+1246735, Combo, 72/60/72, lowest handlePosition, 271, attempt, 484, seconds per attempt, 2.52
+1248343, Combo, 72/57/72, lowest handlePosition, 217, attempt, 485, seconds per attempt, 2.52
+1250021, Combo, 72/54/72, lowest handlePosition, 237, attempt, 486, seconds per attempt, 2.51
+1251755, Combo, 72/51/72, lowest handlePosition, 272, attempt, 487, seconds per attempt, 2.51
+1253535, Combo, 72/48/72, lowest handlePosition, 272, attempt, 488, seconds per attempt, 2.51
+1255366, Combo, 72/45/72, lowest handlePosition, 217, attempt, 489, seconds per attempt, 2.51
+1257311, Combo, 72/42/72, lowest handlePosition, 264, attempt, 490, seconds per attempt, 2.51
+1259293, Combo, 72/39/72, lowest handlePosition, 276, attempt, 491, seconds per attempt, 2.51
+1261341, Combo, 72/36/72, lowest handlePosition, 271, attempt, 492, seconds per attempt, 2.51
+1263447, Combo, 72/33/72, lowest handlePosition, 217, attempt, 493, seconds per attempt, 2.51
+1265627, Combo, 72/30/72, lowest handlePosition, 217, attempt, 494, seconds per attempt, 2.51
+1267826, Combo, 72/27/72, lowest handlePosition, 217, attempt, 495, seconds per attempt, 2.50
+1270125, Combo, 72/24/72, lowest handlePosition, 217, attempt, 496, seconds per attempt, 2.50
+1272486, Combo, 72/21/72, lowest handlePosition, 216, attempt, 497, seconds per attempt, 2.50
+1274916, Combo, 72/18/72, lowest handlePosition, 270, attempt, 498, seconds per attempt, 2.50
+1277416, Combo, 72/15/72, lowest handlePosition, 272, attempt, 499, seconds per attempt, 2.50
+1279988, Combo, 72/12/72, lowest handlePosition, 216, attempt, 500, seconds per attempt, 2.50
+1282632, Combo, 72/9/72, lowest handlePosition, 216, attempt, 501, seconds per attempt, 2.50
+1285324, Combo, 72/6/72, lowest handlePosition, 271, attempt, 502, seconds per attempt, 2.50
+1288113, Combo, 72/3/72, lowest handlePosition, 216, attempt, 503, seconds per attempt, 2.51
+1291043, Combo, 72/0/72, lowest handlePosition, 271, attempt, 504, seconds per attempt, 2.51
+1294059, Combo, 72/97/72, lowest handlePosition, 272, attempt, 505, seconds per attempt, 2.51
+1297078, Combo, 72/94/72, lowest handlePosition, 254, attempt, 506, seconds per attempt, 2.51
+1300173, Combo, 72/91/72, lowest handlePosition, 216, attempt, 507, seconds per attempt, 2.51
+1303353, Combo, 72/88/72, lowest handlePosition, 216, attempt, 508, seconds per attempt, 2.51
+1306615, Combo, 72/85/72, lowest handlePosition, 216, attempt, 509, seconds per attempt, 2.51
+1310006, Combo, 72/82/72, lowest handlePosition, 271, attempt, 510, seconds per attempt, 2.51
+Resetting dial...
+DiscA is at: 75
+DiscB is at: 72
+DiscC is at: 72
+1323393, Combo, 75/72/72, lowest handlePosition, 269, attempt, 511, seconds per attempt, 2.54
+1324229, Combo, 75/69/72, lowest handlePosition, 274, attempt, 512, seconds per attempt, 2.53
+1325364, Combo, 75/66/72, lowest handlePosition, 260, attempt, 513, seconds per attempt, 2.53
+1326747, Combo, 75/63/72, lowest handlePosition, 272, attempt, 514, seconds per attempt, 2.53
+1328303, Combo, 75/60/72, lowest handlePosition, 217, attempt, 515, seconds per attempt, 2.53
+1329931, Combo, 75/57/72, lowest handlePosition, 271, attempt, 516, seconds per attempt, 2.52
+1331648, Combo, 75/54/72, lowest handlePosition, 272, attempt, 517, seconds per attempt, 2.52
+1333400, Combo, 75/51/72, lowest handlePosition, 217, attempt, 518, seconds per attempt, 2.52
+1335191, Combo, 75/48/72, lowest handlePosition, 272, attempt, 519, seconds per attempt, 2.52
+1337035, Combo, 75/45/72, lowest handlePosition, 270, attempt, 520, seconds per attempt, 2.52
+1338945, Combo, 75/42/72, lowest handlePosition, 222, attempt, 521, seconds per attempt, 2.52
+1340929, Combo, 75/39/72, lowest handlePosition, 272, attempt, 522, seconds per attempt, 2.52
+1342945, Combo, 75/36/72, lowest handlePosition, 217, attempt, 523, seconds per attempt, 2.51
+1345043, Combo, 75/33/72, lowest handlePosition, 217, attempt, 524, seconds per attempt, 2.51
+1347233, Combo, 75/30/72, lowest handlePosition, 272, attempt, 525, seconds per attempt, 2.51
+1349547, Combo, 75/27/72, lowest handlePosition, 221, attempt, 526, seconds per attempt, 2.51
+1351913, Combo, 75/24/72, lowest handlePosition, 277, attempt, 527, seconds per attempt, 2.51
+1354289, Combo, 75/21/72, lowest handlePosition, 226, attempt, 528, seconds per attempt, 2.51
+1356739, Combo, 75/18/72, lowest handlePosition, 277, attempt, 529, seconds per attempt, 2.51
+1359256, Combo, 75/15/72, lowest handlePosition, 273, attempt, 530, seconds per attempt, 2.51
+1361853, Combo, 75/12/72, lowest handlePosition, 278, attempt, 531, seconds per attempt, 2.51
+1364503, Combo, 75/9/72, lowest handlePosition, 216, attempt, 532, seconds per attempt, 2.51
+1367224, Combo, 75/6/72, lowest handlePosition, 217, attempt, 533, seconds per attempt, 2.51
+1370024, Combo, 75/3/72, lowest handlePosition, 216, attempt, 534, seconds per attempt, 2.51
+1372875, Combo, 75/0/72, lowest handlePosition, 273, attempt, 535, seconds per attempt, 2.51
+1375825, Combo, 75/97/72, lowest handlePosition, 216, attempt, 536, seconds per attempt, 2.51
+1378866, Combo, 75/94/72, lowest handlePosition, 216, attempt, 537, seconds per attempt, 2.52
+1382020, Combo, 75/91/72, lowest handlePosition, 273, attempt, 538, seconds per attempt, 2.52
+1385163, Combo, 75/88/72, lowest handlePosition, 272, attempt, 539, seconds per attempt, 2.52
+1388400, Combo, 75/85/72, lowest handlePosition, 273, attempt, 540, seconds per attempt, 2.52
+Resetting dial...
+DiscA is at: 78
+DiscB is at: 75
+DiscC is at: 72
+1397029, Combo, 78/75/72, lowest handlePosition, 235, attempt, 541, seconds per attempt, 2.53
+1397774, Combo, 78/72/72, lowest handlePosition, 221, attempt, 542, seconds per attempt, 2.53
+1398593, Combo, 78/69/72, lowest handlePosition, 221, attempt, 543, seconds per attempt, 2.52
+1399712, Combo, 78/66/72, lowest handlePosition, 218, attempt, 544, seconds per attempt, 2.52
+1401081, Combo, 78/63/72, lowest handlePosition, 274, attempt, 545, seconds per attempt, 2.52
+1402556, Combo, 78/60/72, lowest handlePosition, 216, attempt, 546, seconds per attempt, 2.52
+1404240, Combo, 78/57/72, lowest handlePosition, 275, attempt, 547, seconds per attempt, 2.52
+1405953, Combo, 78/54/72, lowest handlePosition, 216, attempt, 548, seconds per attempt, 2.51
+1407706, Combo, 78/51/72, lowest handlePosition, 273, attempt, 549, seconds per attempt, 2.51
+1409511, Combo, 78/48/72, lowest handlePosition, 216, attempt, 550, seconds per attempt, 2.51
+1411409, Combo, 78/45/72, lowest handlePosition, 272, attempt, 551, seconds per attempt, 2.51
+1413348, Combo, 78/42/72, lowest handlePosition, 272, attempt, 552, seconds per attempt, 2.51
+1415324, Combo, 78/39/72, lowest handlePosition, 275, attempt, 553, seconds per attempt, 2.51
+1417378, Combo, 78/36/72, lowest handlePosition, 216, attempt, 554, seconds per attempt, 2.51
+1419480, Combo, 78/33/72, lowest handlePosition, 216, attempt, 555, seconds per attempt, 2.51
+1421652, Combo, 78/30/72, lowest handlePosition, 252, attempt, 556, seconds per attempt, 2.51
+1423895, Combo, 78/27/72, lowest handlePosition, 216, attempt, 557, seconds per attempt, 2.51
+1426183, Combo, 78/24/72, lowest handlePosition, 269, attempt, 558, seconds per attempt, 2.51
+1428569, Combo, 78/21/72, lowest handlePosition, 272, attempt, 559, seconds per attempt, 2.51
+1430991, Combo, 78/18/72, lowest handlePosition, 271, attempt, 560, seconds per attempt, 2.51
+1433497, Combo, 78/15/72, lowest handlePosition, 216, attempt, 561, seconds per attempt, 2.51
+1436100, Combo, 78/12/72, lowest handlePosition, 216, attempt, 562, seconds per attempt, 2.51
+1438774, Combo, 78/9/72, lowest handlePosition, 270, attempt, 563, seconds per attempt, 2.51
+1441491, Combo, 78/6/72, lowest handlePosition, 272, attempt, 564, seconds per attempt, 2.51
+1444288, Combo, 78/3/72, lowest handlePosition, 274, attempt, 565, seconds per attempt, 2.51
+1447049, Combo, 78/0/72, lowest handlePosition, 273, attempt, 566, seconds per attempt, 2.51
+1449987, Combo, 78/97/72, lowest handlePosition, 226, attempt, 567, seconds per attempt, 2.51
+1452988, Combo, 78/94/72, lowest handlePosition, 267, attempt, 568, seconds per attempt, 2.51
+1456052, Combo, 78/91/72, lowest handlePosition, 273, attempt, 569, seconds per attempt, 2.51
+1459213, Combo, 78/88/72, lowest handlePosition, 274, attempt, 570, seconds per attempt, 2.51
+Resetting dial...
+DiscA is at: 81
+DiscB is at: 78
+DiscC is at: 72
+1467771, Combo, 81/78/72, lowest handlePosition, 278, attempt, 571, seconds per attempt, 2.52
+1469819, Combo, 81/75/72, lowest handlePosition, 273, attempt, 572, seconds per attempt, 2.52
+1470659, Combo, 81/72/72, lowest handlePosition, 273, attempt, 573, seconds per attempt, 2.52
+1471498, Combo, 81/69/72, lowest handlePosition, 276, attempt, 574, seconds per attempt, 2.52
+1472629, Combo, 81/66/72, lowest handlePosition, 217, attempt, 575, seconds per attempt, 2.51
+1474003, Combo, 81/63/72, lowest handlePosition, 217, attempt, 576, seconds per attempt, 2.51
+1475540, Combo, 81/60/72, lowest handlePosition, 273, attempt, 577, seconds per attempt, 2.51
+1477194, Combo, 81/57/72, lowest handlePosition, 272, attempt, 578, seconds per attempt, 2.51
+1478863, Combo, 81/54/72, lowest handlePosition, 273, attempt, 579, seconds per attempt, 2.51
+1480573, Combo, 81/51/72, lowest handlePosition, 269, attempt, 580, seconds per attempt, 2.50
+1482340, Combo, 81/48/72, lowest handlePosition, 272, attempt, 581, seconds per attempt, 2.50
+1484157, Combo, 81/45/72, lowest handlePosition, 272, attempt, 582, seconds per attempt, 2.50
+1486034, Combo, 81/42/72, lowest handlePosition, 272, attempt, 583, seconds per attempt, 2.50
+1487974, Combo, 81/39/72, lowest handlePosition, 253, attempt, 584, seconds per attempt, 2.50
+1490034, Combo, 81/36/72, lowest handlePosition, 264, attempt, 585, seconds per attempt, 2.50
+1492149, Combo, 81/33/72, lowest handlePosition, 216, attempt, 586, seconds per attempt, 2.50
+1494329, Combo, 81/30/72, lowest handlePosition, 216, attempt, 587, seconds per attempt, 2.50
+1496552, Combo, 81/27/72, lowest handlePosition, 216, attempt, 588, seconds per attempt, 2.50
+1498860, Combo, 81/24/72, lowest handlePosition, 274, attempt, 589, seconds per attempt, 2.50
+1501260, Combo, 81/21/72, lowest handlePosition, 273, attempt, 590, seconds per attempt, 2.50
+1503711, Combo, 81/18/72, lowest handlePosition, 216, attempt, 591, seconds per attempt, 2.50
+1506247, Combo, 81/15/72, lowest handlePosition, 271, attempt, 592, seconds per attempt, 2.50
+1508815, Combo, 81/12/72, lowest handlePosition, 216, attempt, 593, seconds per attempt, 2.50
+1511452, Combo, 81/9/72, lowest handlePosition, 216, attempt, 594, seconds per attempt, 2.50
+1514167, Combo, 81/6/72, lowest handlePosition, 272, attempt, 595, seconds per attempt, 2.50
+1516952, Combo, 81/3/72, lowest handlePosition, 216, attempt, 596, seconds per attempt, 2.50
+1519825, Combo, 81/0/72, lowest handlePosition, 273, attempt, 597, seconds per attempt, 2.50
+1522803, Combo, 81/97/72, lowest handlePosition, 273, attempt, 598, seconds per attempt, 2.50
+1525840, Combo, 81/94/72, lowest handlePosition, 243, attempt, 599, seconds per attempt, 2.50
+1528950, Combo, 81/91/72, lowest handlePosition, 271, attempt, 600, seconds per attempt, 2.50
+Resetting dial...
+DiscA is at: 84
+DiscB is at: 81
+DiscC is at: 72
+1537529, Combo, 84/81/72, lowest handlePosition, 271, attempt, 601, seconds per attempt, 2.51
+1541046, Combo, 84/78/72, lowest handlePosition, 275, attempt, 602, seconds per attempt, 2.51
+1543118, Combo, 84/75/72, lowest handlePosition, 222, attempt, 603, seconds per attempt, 2.51
+1543954, Combo, 84/72/72, lowest handlePosition, 271, attempt, 604, seconds per attempt, 2.51
+1544794, Combo, 84/69/72, lowest handlePosition, 271, attempt, 605, seconds per attempt, 2.51
+1545930, Combo, 84/66/72, lowest handlePosition, 274, attempt, 606, seconds per attempt, 2.51
+1547309, Combo, 84/63/72, lowest handlePosition, 274, attempt, 607, seconds per attempt, 2.50
+1548863, Combo, 84/60/72, lowest handlePosition, 216, attempt, 608, seconds per attempt, 2.50
+1550548, Combo, 84/57/72, lowest handlePosition, 275, attempt, 609, seconds per attempt, 2.50
+1552321, Combo, 84/54/72, lowest handlePosition, 216, attempt, 610, seconds per attempt, 2.50
+1554068, Combo, 84/51/72, lowest handlePosition, 275, attempt, 611, seconds per attempt, 2.50
+1555862, Combo, 84/48/72, lowest handlePosition, 216, attempt, 612, seconds per attempt, 2.50
+1557757, Combo, 84/45/72, lowest handlePosition, 272, attempt, 613, seconds per attempt, 2.50
+1559710, Combo, 84/42/72, lowest handlePosition, 275, attempt, 614, seconds per attempt, 2.49
+1561730, Combo, 84/39/72, lowest handlePosition, 277, attempt, 615, seconds per attempt, 2.49
+1563823, Combo, 84/36/72, lowest handlePosition, 221, attempt, 616, seconds per attempt, 2.49
+1565938, Combo, 84/33/72, lowest handlePosition, 276, attempt, 617, seconds per attempt, 2.49
+1568119, Combo, 84/30/72, lowest handlePosition, 273, attempt, 618, seconds per attempt, 2.49
+1570415, Combo, 84/27/72, lowest handlePosition, 277, attempt, 619, seconds per attempt, 2.49
+1572723, Combo, 84/24/72, lowest handlePosition, 216, attempt, 620, seconds per attempt, 2.49
+1575122, Combo, 84/21/72, lowest handlePosition, 216, attempt, 621, seconds per attempt, 2.49
+1577623, Combo, 84/18/72, lowest handlePosition, 216, attempt, 622, seconds per attempt, 2.49
+1580148, Combo, 84/15/72, lowest handlePosition, 217, attempt, 623, seconds per attempt, 2.49
+1582745, Combo, 84/12/72, lowest handlePosition, 216, attempt, 624, seconds per attempt, 2.49
+1585436, Combo, 84/9/72, lowest handlePosition, 273, attempt, 625, seconds per attempt, 2.49
+1588170, Combo, 84/6/72, lowest handlePosition, 216, attempt, 626, seconds per attempt, 2.49
+1590990, Combo, 84/3/72, lowest handlePosition, 216, attempt, 627, seconds per attempt, 2.49
+1593890, Combo, 84/0/72, lowest handlePosition, 216, attempt, 628, seconds per attempt, 2.49
+1596877, Combo, 84/97/72, lowest handlePosition, 273, attempt, 629, seconds per attempt, 2.49
+1599981, Combo, 84/94/72, lowest handlePosition, 272, attempt, 630, seconds per attempt, 2.50
+Resetting dial...
+DiscA is at: 87
+DiscB is at: 84
+DiscC is at: 72
+1608511, Combo, 87/84/72, lowest handlePosition, 221, attempt, 631, seconds per attempt, 2.50
+1611934, Combo, 87/81/72, lowest handlePosition, 221, attempt, 632, seconds per attempt, 2.51
+1615461, Combo, 87/78/72, lowest handlePosition, 278, attempt, 633, seconds per attempt, 2.51
+1617542, Combo, 87/75/72, lowest handlePosition, 274, attempt, 634, seconds per attempt, 2.51
+1618384, Combo, 87/72/72, lowest handlePosition, 273, attempt, 635, seconds per attempt, 2.50
+1619228, Combo, 87/69/72, lowest handlePosition, 275, attempt, 636, seconds per attempt, 2.50
+1620368, Combo, 87/66/72, lowest handlePosition, 273, attempt, 637, seconds per attempt, 2.50
+1621752, Combo, 87/63/72, lowest handlePosition, 216, attempt, 638, seconds per attempt, 2.50
+1623304, Combo, 87/60/72, lowest handlePosition, 273, attempt, 639, seconds per attempt, 2.50
+1624931, Combo, 87/57/72, lowest handlePosition, 215, attempt, 640, seconds per attempt, 2.50
+1626659, Combo, 87/54/72, lowest handlePosition, 233, attempt, 641, seconds per attempt, 2.49
+1628402, Combo, 87/51/72, lowest handlePosition, 275, attempt, 642, seconds per attempt, 2.49
+1630184, Combo, 87/48/72, lowest handlePosition, 273, attempt, 643, seconds per attempt, 2.49
+1632048, Combo, 87/45/72, lowest handlePosition, 273, attempt, 644, seconds per attempt, 2.49
+1633961, Combo, 87/42/72, lowest handlePosition, 259, attempt, 645, seconds per attempt, 2.49
+1635927, Combo, 87/39/72, lowest handlePosition, 273, attempt, 646, seconds per attempt, 2.49
+1637972, Combo, 87/36/72, lowest handlePosition, 244, attempt, 647, seconds per attempt, 2.49
+1640088, Combo, 87/33/72, lowest handlePosition, 273, attempt, 648, seconds per attempt, 2.49
+1642280, Combo, 87/30/72, lowest handlePosition, 216, attempt, 649, seconds per attempt, 2.49
+1644546, Combo, 87/27/72, lowest handlePosition, 274, attempt, 650, seconds per attempt, 2.49
+1646853, Combo, 87/24/72, lowest handlePosition, 271, attempt, 651, seconds per attempt, 2.49
+1649248, Combo, 87/21/72, lowest handlePosition, 273, attempt, 652, seconds per attempt, 2.49
+1651687, Combo, 87/18/72, lowest handlePosition, 274, attempt, 653, seconds per attempt, 2.49
+1654218, Combo, 87/15/72, lowest handlePosition, 216, attempt, 654, seconds per attempt, 2.49
+1656819, Combo, 87/12/72, lowest handlePosition, 216, attempt, 655, seconds per attempt, 2.49
+1659509, Combo, 87/9/72, lowest handlePosition, 274, attempt, 656, seconds per attempt, 2.49
+1662126, Combo, 87/6/72, lowest handlePosition, 216, attempt, 657, seconds per attempt, 2.49
+1664932, Combo, 87/3/72, lowest handlePosition, 273, attempt, 658, seconds per attempt, 2.49
+1667881, Combo, 87/0/72, lowest handlePosition, 216, attempt, 659, seconds per attempt, 2.49
+1670863, Combo, 87/97/72, lowest handlePosition, 216, attempt, 660, seconds per attempt, 2.49
+Resetting dial...
+DiscA is at: 90
+DiscB is at: 87
+DiscC is at: 72
+1677961, Combo, 90/87/72, lowest handlePosition, 264, attempt, 661, seconds per attempt, 2.50
+1681324, Combo, 90/84/72, lowest handlePosition, 221, attempt, 662, seconds per attempt, 2.50
+1684746, Combo, 90/81/72, lowest handlePosition, 216, attempt, 663, seconds per attempt, 2.50
+1688241, Combo, 90/78/72, lowest handlePosition, 271, attempt, 664, seconds per attempt, 2.50
+1690340, Combo, 90/75/72, lowest handlePosition, 277, attempt, 665, seconds per attempt, 2.50
+1691183, Combo, 90/72/72, lowest handlePosition, 245, attempt, 666, seconds per attempt, 2.50
+1692028, Combo, 90/69/72, lowest handlePosition, 216, attempt, 667, seconds per attempt, 2.50
+1693170, Combo, 90/66/72, lowest handlePosition, 216, attempt, 668, seconds per attempt, 2.49
+1694554, Combo, 90/63/72, lowest handlePosition, 274, attempt, 669, seconds per attempt, 2.49
+1696118, Combo, 90/60/72, lowest handlePosition, 273, attempt, 670, seconds per attempt, 2.49
+1697828, Combo, 90/57/72, lowest handlePosition, 216, attempt, 671, seconds per attempt, 2.49
+1699517, Combo, 90/54/72, lowest handlePosition, 273, attempt, 672, seconds per attempt, 2.49
+1701253, Combo, 90/51/72, lowest handlePosition, 216, attempt, 673, seconds per attempt, 2.49
+1703060, Combo, 90/48/72, lowest handlePosition, 273, attempt, 674, seconds per attempt, 2.49
+1704903, Combo, 90/45/72, lowest handlePosition, 271, attempt, 675, seconds per attempt, 2.48
+1706809, Combo, 90/42/72, lowest handlePosition, 216, attempt, 676, seconds per attempt, 2.48
+1708826, Combo, 90/39/72, lowest handlePosition, 272, attempt, 677, seconds per attempt, 2.48
+1710854, Combo, 90/36/72, lowest handlePosition, 216, attempt, 678, seconds per attempt, 2.48
+1712951, Combo, 90/33/72, lowest handlePosition, 215, attempt, 679, seconds per attempt, 2.48
+1715146, Combo, 90/30/72, lowest handlePosition, 271, attempt, 680, seconds per attempt, 2.48
+1717414, Combo, 90/27/72, lowest handlePosition, 216, attempt, 681, seconds per attempt, 2.48
+1719724, Combo, 90/24/72, lowest handlePosition, 271, attempt, 682, seconds per attempt, 2.48
+1722115, Combo, 90/21/72, lowest handlePosition, 216, attempt, 683, seconds per attempt, 2.48
+1724585, Combo, 90/18/72, lowest handlePosition, 272, attempt, 684, seconds per attempt, 2.48
+1727131, Combo, 90/15/72, lowest handlePosition, 216, attempt, 685, seconds per attempt, 2.48
+1729736, Combo, 90/12/72, lowest handlePosition, 215, attempt, 686, seconds per attempt, 2.48
+1732434, Combo, 90/9/72, lowest handlePosition, 215, attempt, 687, seconds per attempt, 2.48
+1735193, Combo, 90/6/72, lowest handlePosition, 216, attempt, 688, seconds per attempt, 2.48
+1738001, Combo, 90/3/72, lowest handlePosition, 263, attempt, 689, seconds per attempt, 2.48
+1740905, Combo, 90/0/72, lowest handlePosition, 272, attempt, 690, seconds per attempt, 2.48
+Resetting dial...
+DiscA is at: 93
+DiscB is at: 90
+DiscC is at: 72
+1748066, Combo, 93/90/72, lowest handlePosition, 273, attempt, 691, seconds per attempt, 2.49
+1751305, Combo, 93/87/72, lowest handlePosition, 273, attempt, 692, seconds per attempt, 2.49
+1754638, Combo, 93/84/72, lowest handlePosition, 216, attempt, 693, seconds per attempt, 2.49
+1758073, Combo, 93/81/72, lowest handlePosition, 271, attempt, 694, seconds per attempt, 2.49
+1761566, Combo, 93/78/72, lowest handlePosition, 273, attempt, 695, seconds per attempt, 2.49
+1763661, Combo, 93/75/72, lowest handlePosition, 221, attempt, 696, seconds per attempt, 2.49
+1764502, Combo, 93/72/72, lowest handlePosition, 216, attempt, 697, seconds per attempt, 2.49
+1765348, Combo, 93/69/72, lowest handlePosition, 274, attempt, 698, seconds per attempt, 2.49
+1766496, Combo, 93/66/72, lowest handlePosition, 272, attempt, 699, seconds per attempt, 2.49
+1767882, Combo, 93/63/72, lowest handlePosition, 216, attempt, 700, seconds per attempt, 2.49
+1769450, Combo, 93/60/72, lowest handlePosition, 283, attempt, 701, seconds per attempt, 2.48
+1771156, Combo, 93/57/72, lowest handlePosition, 271, attempt, 702, seconds per attempt, 2.48
+1772900, Combo, 93/54/72, lowest handlePosition, 216, attempt, 703, seconds per attempt, 2.48
+1774696, Combo, 93/51/72, lowest handlePosition, 272, attempt, 704, seconds per attempt, 2.48
+1776545, Combo, 93/48/72, lowest handlePosition, 216, attempt, 705, seconds per attempt, 2.48
+1778437, Combo, 93/45/72, lowest handlePosition, 272, attempt, 706, seconds per attempt, 2.48
+1780349, Combo, 93/42/72, lowest handlePosition, 273, attempt, 707, seconds per attempt, 2.48
+1782334, Combo, 93/39/72, lowest handlePosition, 284, attempt, 708, seconds per attempt, 2.48
+1784393, Combo, 93/36/72, lowest handlePosition, 272, attempt, 709, seconds per attempt, 2.48
+1786542, Combo, 93/33/72, lowest handlePosition, 216, attempt, 710, seconds per attempt, 2.48
+1788756, Combo, 93/30/72, lowest handlePosition, 272, attempt, 711, seconds per attempt, 2.48
+1791055, Combo, 93/27/72, lowest handlePosition, 273, attempt, 712, seconds per attempt, 2.48
+1793395, Combo, 93/24/72, lowest handlePosition, 272, attempt, 713, seconds per attempt, 2.48
+1795792, Combo, 93/21/72, lowest handlePosition, 272, attempt, 714, seconds per attempt, 2.48
+1798278, Combo, 93/18/72, lowest handlePosition, 272, attempt, 715, seconds per attempt, 2.48
+1800830, Combo, 93/15/72, lowest handlePosition, 215, attempt, 716, seconds per attempt, 2.48
+1803471, Combo, 93/12/72, lowest handlePosition, 216, attempt, 717, seconds per attempt, 2.48
+1806170, Combo, 93/9/72, lowest handlePosition, 216, attempt, 718, seconds per attempt, 2.48
+1808924, Combo, 93/6/72, lowest handlePosition, 271, attempt, 719, seconds per attempt, 2.48
+1811752, Combo, 93/3/72, lowest handlePosition, 216, attempt, 720, seconds per attempt, 2.48
+Resetting dial...
+DiscA is at: 96
+DiscB is at: 93
+DiscC is at: 72
+1818946, Combo, 96/93/72, lowest handlePosition, 272, attempt, 721, seconds per attempt, 2.48
+1822106, Combo, 96/90/72, lowest handlePosition, 271, attempt, 722, seconds per attempt, 2.49
+1825375, Combo, 96/87/72, lowest handlePosition, 216, attempt, 723, seconds per attempt, 2.49
+1828698, Combo, 96/84/72, lowest handlePosition, 267, attempt, 724, seconds per attempt, 2.49
+1832153, Combo, 96/81/72, lowest handlePosition, 216, attempt, 725, seconds per attempt, 2.49
+1835664, Combo, 96/78/72, lowest handlePosition, 273, attempt, 726, seconds per attempt, 2.49
+1837762, Combo, 96/75/72, lowest handlePosition, 279, attempt, 727, seconds per attempt, 2.49
+1838605, Combo, 96/72/72, lowest handlePosition, 272, attempt, 728, seconds per attempt, 2.49
+1839451, Combo, 96/69/72, lowest handlePosition, 248, attempt, 729, seconds per attempt, 2.49
+1840596, Combo, 96/66/72, lowest handlePosition, 216, attempt, 730, seconds per attempt, 2.48
+1841980, Combo, 96/63/72, lowest handlePosition, 256, attempt, 731, seconds per attempt, 2.48
+1843546, Combo, 96/60/72, lowest handlePosition, 272, attempt, 732, seconds per attempt, 2.48
+1845242, Combo, 96/57/72, lowest handlePosition, 274, attempt, 733, seconds per attempt, 2.48
+1846983, Combo, 96/54/72, lowest handlePosition, 273, attempt, 734, seconds per attempt, 2.48
+1848778, Combo, 96/51/72, lowest handlePosition, 215, attempt, 735, seconds per attempt, 2.48
+1850617, Combo, 96/48/72, lowest handlePosition, 216, attempt, 736, seconds per attempt, 2.48
+1852506, Combo, 96/45/72, lowest handlePosition, 274, attempt, 737, seconds per attempt, 2.48
+1854455, Combo, 96/42/72, lowest handlePosition, 233, attempt, 738, seconds per attempt, 2.48
+1856436, Combo, 96/39/72, lowest handlePosition, 220, attempt, 739, seconds per attempt, 2.47
+1858526, Combo, 96/36/72, lowest handlePosition, 279, attempt, 740, seconds per attempt, 2.47
+1860660, Combo, 96/33/72, lowest handlePosition, 221, attempt, 741, seconds per attempt, 2.47
+1862837, Combo, 96/30/72, lowest handlePosition, 216, attempt, 742, seconds per attempt, 2.47
+1865125, Combo, 96/27/72, lowest handlePosition, 272, attempt, 743, seconds per attempt, 2.47
+1867453, Combo, 96/24/72, lowest handlePosition, 271, attempt, 744, seconds per attempt, 2.47
+1869837, Combo, 96/21/72, lowest handlePosition, 216, attempt, 745, seconds per attempt, 2.47
+1872315, Combo, 96/18/72, lowest handlePosition, 271, attempt, 746, seconds per attempt, 2.47
+1874857, Combo, 96/15/72, lowest handlePosition, 261, attempt, 747, seconds per attempt, 2.47
+1877432, Combo, 96/12/72, lowest handlePosition, 273, attempt, 748, seconds per attempt, 2.47
+1879996, Combo, 96/9/72, lowest handlePosition, 271, attempt, 749, seconds per attempt, 2.47
+1882718, Combo, 96/6/72, lowest handlePosition, 271, attempt, 750, seconds per attempt, 2.47
+Resetting dial...
+DiscA is at: 99
+DiscB is at: 96
+DiscC is at: 72
+1889933, Combo, 99/96/72, lowest handlePosition, 272, attempt, 751, seconds per attempt, 2.48
+1893017, Combo, 99/93/72, lowest handlePosition, 271, attempt, 752, seconds per attempt, 2.48
+1896218, Combo, 99/90/72, lowest handlePosition, 272, attempt, 753, seconds per attempt, 2.48
+1899465, Combo, 99/87/72, lowest handlePosition, 215, attempt, 754, seconds per attempt, 2.48
+1902796, Combo, 99/84/72, lowest handlePosition, 272, attempt, 755, seconds per attempt, 2.48
+1906236, Combo, 99/81/72, lowest handlePosition, 273, attempt, 756, seconds per attempt, 2.48
+1909773, Combo, 99/78/72, lowest handlePosition, 253, attempt, 757, seconds per attempt, 2.49
+1911875, Combo, 99/75/72, lowest handlePosition, 279, attempt, 758, seconds per attempt, 2.49
+1912721, Combo, 99/72/72, lowest handlePosition, 271, attempt, 759, seconds per attempt, 2.48
+1913566, Combo, 99/69/72, lowest handlePosition, 216, attempt, 760, seconds per attempt, 2.48
+1914708, Combo, 99/66/72, lowest handlePosition, 216, attempt, 761, seconds per attempt, 2.48
+1916094, Combo, 99/63/72, lowest handlePosition, 234, attempt, 762, seconds per attempt, 2.48
+1917655, Combo, 99/60/72, lowest handlePosition, 267, attempt, 763, seconds per attempt, 2.48
+1919349, Combo, 99/57/72, lowest handlePosition, 215, attempt, 764, seconds per attempt, 2.48
+1921076, Combo, 99/54/72, lowest handlePosition, 265, attempt, 765, seconds per attempt, 2.47
+1922853, Combo, 99/51/72, lowest handlePosition, 215, attempt, 766, seconds per attempt, 2.47
+1924723, Combo, 99/48/72, lowest handlePosition, 271, attempt, 767, seconds per attempt, 2.47
+1926606, Combo, 99/45/72, lowest handlePosition, 272, attempt, 768, seconds per attempt, 2.47
+1928565, Combo, 99/42/72, lowest handlePosition, 276, attempt, 769, seconds per attempt, 2.47
+1930540, Combo, 99/39/72, lowest handlePosition, 277, attempt, 770, seconds per attempt, 2.47
+1932578, Combo, 99/36/72, lowest handlePosition, 278, attempt, 771, seconds per attempt, 2.47
+1934727, Combo, 99/33/72, lowest handlePosition, 272, attempt, 772, seconds per attempt, 2.47
+1936924, Combo, 99/30/72, lowest handlePosition, 271, attempt, 773, seconds per attempt, 2.47
+1939258, Combo, 99/27/72, lowest handlePosition, 254, attempt, 774, seconds per attempt, 2.47
+1941607, Combo, 99/24/72, lowest handlePosition, 274, attempt, 775, seconds per attempt, 2.47
+1944017, Combo, 99/21/72, lowest handlePosition, 215, attempt, 776, seconds per attempt, 2.47
+1946490, Combo, 99/18/72, lowest handlePosition, 258, attempt, 777, seconds per attempt, 2.47
+1949029, Combo, 99/15/72, lowest handlePosition, 272, attempt, 778, seconds per attempt, 2.47
+1951652, Combo, 99/12/72, lowest handlePosition, 215, attempt, 779, seconds per attempt, 2.47
+1954316, Combo, 99/9/72, lowest handlePosition, 215, attempt, 780, seconds per attempt, 2.47
+Wrapping around zero.
+Resetting dial...
+DiscA is at: 2
+DiscB is at: 99
+DiscC is at: 72
+1961516, Combo, 2/99/72, lowest handlePosition, 238, attempt, 781, seconds per attempt, 2.48
+1964516, Combo, 2/96/72, lowest handlePosition, 215, attempt, 782, seconds per attempt, 2.48
+1967605, Combo, 2/93/72, lowest handlePosition, 273, attempt, 783, seconds per attempt, 2.48
+1970768, Combo, 2/90/72, lowest handlePosition, 272, attempt, 784, seconds per attempt, 2.48
+1974049, Combo, 2/87/72, lowest handlePosition, 278, attempt, 785, seconds per attempt, 2.48
+1977355, Combo, 2/84/72, lowest handlePosition, 271, attempt, 786, seconds per attempt, 2.48
+1980765, Combo, 2/81/72, lowest handlePosition, 215, attempt, 787, seconds per attempt, 2.48
+1984272, Combo, 2/78/72, lowest handlePosition, 273, attempt, 788, seconds per attempt, 2.48
+1986390, Combo, 2/75/72, lowest handlePosition, 280, attempt, 789, seconds per attempt, 2.48
+1987236, Combo, 2/72/72, lowest handlePosition, 271, attempt, 790, seconds per attempt, 2.48
+1988085, Combo, 2/69/72, lowest handlePosition, 215, attempt, 791, seconds per attempt, 2.48
+1989224, Combo, 2/66/72, lowest handlePosition, 216, attempt, 792, seconds per attempt, 2.48
+1990602, Combo, 2/63/72, lowest handlePosition, 215, attempt, 793, seconds per attempt, 2.48
+1992157, Combo, 2/60/72, lowest handlePosition, 271, attempt, 794, seconds per attempt, 2.47
+1993831, Combo, 2/57/72, lowest handlePosition, 272, attempt, 795, seconds per attempt, 2.47
+1995569, Combo, 2/54/72, lowest handlePosition, 254, attempt, 796, seconds per attempt, 2.47
+1997329, Combo, 2/51/72, lowest handlePosition, 245, attempt, 797, seconds per attempt, 2.47
+1999147, Combo, 2/48/72, lowest handlePosition, 221, attempt, 798, seconds per attempt, 2.47
+2001018, Combo, 2/45/72, lowest handlePosition, 278, attempt, 799, seconds per attempt, 2.47
+2002927, Combo, 2/42/72, lowest handlePosition, 221, attempt, 800, seconds per attempt, 2.47
+2004878, Combo, 2/39/72, lowest handlePosition, 277, attempt, 801, seconds per attempt, 2.47
+2006902, Combo, 2/36/72, lowest handlePosition, 215, attempt, 802, seconds per attempt, 2.47
+2009031, Combo, 2/33/72, lowest handlePosition, 230, attempt, 803, seconds per attempt, 2.47
+2011284, Combo, 2/30/72, lowest handlePosition, 276, attempt, 804, seconds per attempt, 2.47
+2013600, Combo, 2/27/72, lowest handlePosition, 277, attempt, 805, seconds per attempt, 2.47
+Cracking stopped
+
+Combo to start at: 2/27/72
+1) Go home and reset dial
+2) Test dial control
+3) View indent positions
+4) Measure indents
+5) Set indents to test
+6) Set starting combos
+7) Calibrate handle servo
+8) Test handle button
+9) Test indent centers
+s) Start cracking

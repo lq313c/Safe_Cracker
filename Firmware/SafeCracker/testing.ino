@@ -185,23 +185,27 @@ void positionTesting()
 {
   int randomDial;
 
-  for (int x = 0 ; x < 2 ; x++)
+  for (int x = 0 ; x < 9 ; x++)
   {
     randomDial = random(0, 100);
-    randomDial = 25;
+    // randomDial = 25;
     turnCCW();
     setDial(randomDial, false);
 
-    Serial.print(F("Dial should be at: "));
+    Serial.print(F("Dial commanded CCW to: "));
+    Serial.print(randomDial);
+    Serial.print(F(", Dial should be at: "));
     Serial.println(convertEncoderToDial(steps));
     messagePause("Verify then press key to continue");
 
     randomDial = random(0, 100);
-    randomDial = 75;
+    // randomDial = 75;
     turnCW();
     setDial(randomDial, false);
 
-    Serial.print(F("Dial should be at: "));
+    Serial.print(F("Dial commanded CW to: "));
+    Serial.print(randomDial);
+     Serial.print(F(", Dial should be at: "));
     Serial.println(convertEncoderToDial(steps));
     messagePause("Verify then press key to exit");
   }

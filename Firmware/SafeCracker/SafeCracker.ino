@@ -49,6 +49,7 @@ const byte displayData = A4;
 //const byte servoPressurePosition = 50; //Position when doing indent measuring
 //const byte servoTryPosition = 80; //Position when testing handle
 
+
 //Default settings for 1.2 cubic ft. safe
 //On the 2nd larger configuration, decreasing numbers cause handle to go down
 // int servoRestingPosition = 100; //Position not pulling/testing on handle
@@ -61,7 +62,7 @@ int servoTryPosition = 47; //Position when testing handle
 int servoHighPressurePosition = 57; //Position when doing indent measuring
 int handleOpenPosition = 200; // this will be set after servotesting
 
-const int timeServoApply = 350;  //ms for servo to apply pressure. 350 works
+const int timeServoApply = 750;  //ms for servo to apply pressure. 350 works
 const int timeServoRelease = 250;  //Allow servo to release. 250 works
 const int timeMotorStop = 125; //ms for motor to stop spinning after stop command. 200 works
 
@@ -324,7 +325,7 @@ void loop()
 
       while (!Serial.available()); //Wait for user input
 
-      Serial.setTimeout(1000); //Must be long enough for user to enter second character
+      Serial.setTimeout(30000); //Must be long enough for user to enter second character
       zeroLocation = Serial.parseInt(); //Read user input
 
       Serial.print(zeroLocation);
@@ -411,7 +412,7 @@ void loop()
 
         while (!Serial.available()); //Wait for user input
 
-        Serial.setTimeout(500); //Must be long enough for user to enter second character
+        Serial.setTimeout(20000); //Must be long enough for user to enter second character
         indent = Serial.parseInt(); //Read user input
 
         if (indent >= 0 && indent <= 11) break;
@@ -451,7 +452,7 @@ void loop()
         Serial.print(F(" to start at: "));
         while (!Serial.available()); //Wait for user input
 
-        Serial.setTimeout(1000); //Must be long enough for user to enter second character
+        Serial.setTimeout(30000); //Must be long enough for user to enter second character
         combo = Serial.parseInt(); //Read user input
 
         if (combo >= 0 && combo <= 99) break;
