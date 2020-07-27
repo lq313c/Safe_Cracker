@@ -46,7 +46,7 @@ int gotoStep(int stepGoal, boolean addAFullRotation)
   }
 
   setMotorSpeed(coarseSpeed); //Go!
-  while (stepsRequired(steps, stepGoal) > coarseWindow) ; //Spin until coarse window is closed
+  while (stepsRequired(steps, stepGoal) > coarseWindow) motorSafetyTest(); //Spin until coarse window is closed
 
   //After we have gotten close to the first coarse window, proceed past the goal, then proceed to the goal
   if (addAFullRotation == true)
@@ -55,15 +55,15 @@ int gotoStep(int stepGoal, boolean addAFullRotation)
     if (tempStepGoal > 8400) tempStepGoal -= 8400;
     
     //Go to temp position
-    while (stepsRequired(steps, tempStepGoal) > coarseWindow) ; 
+    while (stepsRequired(steps, tempStepGoal) > coarseWindow) motorSafetyTest(); 
         
     //Go to stepGoal
-    while (stepsRequired(steps, stepGoal) > coarseWindow) ; //Spin until coarse window is closed
+    while (stepsRequired(steps, stepGoal) > coarseWindow) motorSafetyTest(); //Spin until coarse window is closed
   }
 
   setMotorSpeed(fineSpeed); //Slowly approach
 
-  while (stepsRequired(steps, stepGoal) > fineWindow) ; //Spin until fine window is closed
+  while (stepsRequired(steps, stepGoal) > fineWindow) motorSafetyTest(); //Spin until fine window is closed
 
   setMotorSpeed(0); //Stop
 
@@ -482,4 +482,20 @@ int averageAnalogRead(byte pinToRead)
   runningValue /= numberOfReadings;
 
   return (runningValue);
+}
+
+void motorSafetyTest() {
+  timeSinceLastMovement = millis();
+  lastStep = steps;
+
+  if (lastStep != steps) {
+    lastStep = steps;
+    timeSinceLastMovement = millis();
+  }
+  if (millis() - timeSinceLastMovement > 25) {
+    Serial.println("Dial stuck. Stopping motor for safety.");
+    setMotorSpeed(0); //Stop!
+    while (1);
+  }
+
 }
