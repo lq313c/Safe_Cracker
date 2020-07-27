@@ -27,7 +27,7 @@ int gotoStep(int stepGoal, boolean addAFullRotation)
   //overshoot.
   int coarseSpeed = 200; //Speed at which we get to coarse window (0-255). 150, 200 works. 210, 230 fails
   int coarseWindow = 1250; //Once we are within this amount, switch to fine adjustment
-  int fineSpeed = 180; //Less than 50 may not have enough torque
+  int fineSpeed = 180; //Less than 50 may not have enough torque. I'm setting this super high because my dial is SUPER sticky
   int fineWindow = 22; //One we are within this amount, stop searching
 
   //Because we're switching directions we need to add extra steps to take
@@ -114,6 +114,11 @@ int stepsRequired(int currentSteps, int goal)
 //Returns the dial value we actually ended on
 int setDial(int dialValue, boolean extraSpin)
 {
+  //In testing, I found that the arrived position is always short of the commanded position by 2 dialValues.
+  //This is an attempt at adjusting for that.
+  if (direction == CW) dialValue += 2;
+  else dialValue -= 2;
+
   //Serial.print("Want dialValue: ");
   //Serial.println(dialValue);
 

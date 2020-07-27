@@ -11,6 +11,11 @@ void nextCombination()
 {
   combinationsAttempted++; //Increase the overall count
 
+  //Because of the stickiness of my dial, the motor gets hot after a number of dials
+  if (combinationsAttempted % takeABreakAttempts == 0) {
+    messagePause("Pausing for motor to cool down. Press any key to continue.");
+  }
+
   discCAttempts++; //There are as many as 12 indents to try.
 
   if (discCAttempts >= maxCAttempts) //Idents are exhausted, time to adjust discB
