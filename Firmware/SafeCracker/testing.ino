@@ -211,3 +211,58 @@ void positionTesting()
   }
 }
 
+void detailedPositionTesting() {
+  Serial.println(F("x to exit"));
+  Serial.println(F("d to toggle direction"));
+  Serial.println(F("s to set motor speed (0 is no turn, 255 is max)"));
+  Serial.println(F("p to set desired dial position"));
+  
+  while (1) {
+    if (Serial.available()){
+      byte incoming = Serial.read();
+
+      if (incoming == 'd') {
+        previousDirection = direction;
+        direction ^= true;
+        Serial.print(F("New direction: "));
+        if (direction == CW) Serial.println("CW");
+        else Serial.println("CCW");
+      }
+      if (incoming == 's') {
+        Serial.println(F("Enter new speed"));
+        while (!Serial.available()); //Wait for user input
+        Serial.setTimeout(30000); //Must be long enough for user to enter second character
+
+        int speed = Serial.parseInt();
+        setMotorSpeed(speed);
+        Serial.print(F("New motor speed: "));
+        Serial.println(speed);
+      }
+      if (incoming = 'p') {
+        Serial.println(F("Enter desired position"));
+        while (!Serial.available()); //Wait for user input
+        Serial.setTimeout(30000); //Must be long enough for user to enter second character
+
+        int position = Serial.parseInt();
+        setDial(position, false);
+        Serial.print(F("Hopefully it arrived at new position: "));
+        Serial.println(position);
+      }
+      if (incoming = 'q') {
+        Serial.println(F("Enter desired position (with extra spin)"));
+        while (!Serial.available()); //Wait for user input
+        Serial.setTimeout(30000); //Must be long enough for user to enter second character
+
+        int position = Serial.parseInt();
+        setDial(position, true);
+        Serial.print(F("Hopefully it arrived at new position: "));
+        Serial.println(position);
+      }
+      if (incoming == 'x') {
+        setMotorSpeed(0); //Stop motor
+        break;
+      }
+    }
+  }
+}
+

@@ -281,6 +281,7 @@ void loop()
   Serial.println(F("7) Calibrate handle servo"));
   Serial.println(F("8) Test handle servo"));
   Serial.println(F("9) Test indent centers"));
+  Serial.println(F("p) Move dial to a position"));
   Serial.println(F("s) Start cracking"));
 
   while (!Serial.available())
@@ -516,7 +517,10 @@ void loop()
       delay(timeServoRelease); //Allow servo to release
     }
     Serial.println();
-
+  }
+  else if (incoming == 'p')
+  {
+    detailedPositionTesting();
   }
   else if (incoming == 'a')
   {
@@ -528,8 +532,8 @@ void loop()
   }
   else if (incoming == 's') //Start cracking!
   {
-    clearDisplay();
-    showCombination(discA, discB, discC); //Update display
+    // clearDisplay();
+    // showCombination(discA, discB, discC); //Update display
 
     startTime = millis();
 
