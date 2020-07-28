@@ -474,7 +474,7 @@ int getNextIndent(int currentDialPosition)
 //Returns the average
 int averageAnalogRead(byte pinToRead)
 {
-  byte numberOfReadings = 8;
+  byte numberOfReadings = 20;
   unsigned int runningValue = 0;
 
   for (int x = 0 ; x < numberOfReadings ; x++)

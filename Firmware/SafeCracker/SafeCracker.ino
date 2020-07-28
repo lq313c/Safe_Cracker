@@ -69,7 +69,7 @@ const int timeMotorStop = 125; //ms for motor to stop spinning after stop comman
 int handlePosition; //Used to see how far handle moved when pulled on
 //const int handleOpenPosition = 200; //Analog value. Must be less than analog value from servo testing.
 
-const int takeABreakAttempts = 5; //Used to let the motor cool down after so many attempts
+const int takeABreakAttempts = 300; //Used to let the motor cool down after so many attempts
 //These are here to measure motor position to ensure that it doesn't burn out in case the dial gets stuck somehow
 long timeSinceLastMovement;
 int lastStep;
