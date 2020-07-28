@@ -240,6 +240,9 @@ void setup()
   maxCAttempts = 0;
   for (byte x = 0 ; x < 12 ; x++)
     if (indentsToTry[x] == true) maxCAttempts++;
+  Serial.print(F("maxCAttempts: "));
+  Serial.print(maxCAttempts);
+  Serial.println();
 
   //At startup discB may be negative. Fix it.
   if (discB < 0) discB += 100;
@@ -251,8 +254,8 @@ void setup()
   steps = (84 * homeOffset); //84 * the number the dial sits on when 'home'
   setDial(0, false); //Make dial go to zero
 
-  clearDisplay();
-  showCombination(0, 0, 0); //Display zeroes
+  // clearDisplay();
+  // showCombination(0, 0, 0); //Display zeroes
 }
 
 void loop()
