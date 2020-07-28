@@ -62,7 +62,7 @@ int servoTryPosition = 47; //Position when testing handle
 int servoHighPressurePosition = 57; //Position when doing indent measuring
 int handleOpenPosition = 200; // this will be set after servotesting
 
-const int timeServoApply = 750;  //ms for servo to apply pressure. 350 works
+const int timeServoApply = 500;  //ms for servo to apply pressure. 350 works
 const int timeServoRelease = 250;  //Allow servo to release. 250 works
 const int timeMotorStop = 125; //ms for motor to stop spinning after stop command. 200 works
 
