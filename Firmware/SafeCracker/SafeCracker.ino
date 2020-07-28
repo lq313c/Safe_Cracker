@@ -201,9 +201,9 @@ void setup()
   }
 
   //Get servo settings
-  EEPROM.get(LOCATION_SERVO_REST, servoRestingPosition);
-  EEPROM.get(LOCATION_SERVO_TEST_PRESSURE, servoTryPosition);
-  EEPROM.get(LOCATION_SERVO_HIGH_PRESSURE, servoHighPressurePosition);
+  // EEPROM.get(LOCATION_SERVO_REST, servoRestingPosition);
+  // EEPROM.get(LOCATION_SERVO_TEST_PRESSURE, servoTryPosition);
+  // EEPROM.get(LOCATION_SERVO_HIGH_PRESSURE, servoHighPressurePosition);
 
   //Validate settings
   if (servoRestingPosition > 250 || servoRestingPosition < 0)
@@ -279,7 +279,7 @@ void loop()
   Serial.println(F("5) Set indents to test"));
   Serial.println(F("6) Set starting combos"));
   Serial.println(F("7) Calibrate handle servo"));
-  Serial.println(F("8) Test handle button"));
+  Serial.println(F("8) Test handle servo"));
   Serial.println(F("9) Test indent centers"));
   Serial.println(F("s) Start cracking"));
 
@@ -481,8 +481,7 @@ void loop()
   }
   else if (incoming == '8')
   {
-    // testHandleButton(); //Just pull down on handle and vary distance to hit open button
-    Serial.println(F("Function disabled"));
+    tryHandle();
   }
   else if (incoming == '9')
   {
