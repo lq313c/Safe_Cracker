@@ -23,24 +23,24 @@ void testServo()
   long timeSinceLastMovement = millis();
   int lastStep = steps;
 
-  turnCW();
-  setMotorSpeed(50);
+  // turnCW();
+  // setMotorSpeed(50);
 
-  enableMotor(); //Turn on motor controller
+  // enableMotor(); //Turn on motor controller
 
   while (1)
   {
-    if (lastStep != steps)
-    {
-      lastStep = steps;
-      timeSinceLastMovement = millis();
-    }
-    if (millis() - timeSinceLastMovement > 25)
-    {
-      setMotorSpeed(0); //Stop!
-      Serial.println("Dial stuck");
-      // while (1);
-    }
+    // if (lastStep != steps)
+    // {
+    //   lastStep = steps;
+    //   timeSinceLastMovement = millis();
+    // }
+    // if (millis() - timeSinceLastMovement > 25)
+    // {
+    //   setMotorSpeed(0); //Stop!
+    //   Serial.println("Dial stuck");
+    //   // while (1);
+    // }
 
     if (Serial.available())
     {
@@ -77,33 +77,33 @@ void testServo()
     delay(100);
   }
 
-  //Record settings to EEPROM
-  servoRestingPosition = servo; //At the end of calibration, servo position should be set at the desired resting psoition
-  servoTryPosition = servoHighPressurePosition - 10;
-  handleOpenPosition = handlePosition - 30; // hopefully 30 less is not too much to identify an opened handle
+  // //Record settings to EEPROM
+  // servoRestingPosition = servo; //At the end of calibration, servo position should be set at the desired resting psoition
+  // servoTryPosition = servoHighPressurePosition - 10;
+  // handleOpenPosition = handlePosition - 30; // hopefully 30 less is not too much to identify an opened handle
 
-  //17 was found in testing to be the min servo position, with 217 the max
-  if (servoHighPressurePosition < 17 || servoTryPosition < 17)
-  {
-    Serial.println(F("servoHighPressurePosition or servoTryPosition is too small. Adjust servo higher."));
-    Serial.println(F("Freezing"));
-    while (1); //Freeze
-  }
+  // //17 was found in testing to be the min servo position, with 217 the max
+  // if (servoHighPressurePosition < 17 || servoTryPosition < 17)
+  // {
+  //   Serial.println(F("servoHighPressurePosition or servoTryPosition is too small. Adjust servo higher."));
+  //   Serial.println(F("Freezing"));
+  //   while (1); //Freeze
+  // }
 
-  EEPROM.put(LOCATION_SERVO_REST, servoRestingPosition);
-  EEPROM.put(LOCATION_SERVO_TEST_PRESSURE, servoTryPosition);
-  EEPROM.put(LOCATION_SERVO_HIGH_PRESSURE, servoHighPressurePosition);
+  // EEPROM.put(LOCATION_SERVO_REST, servoRestingPosition);
+  // EEPROM.put(LOCATION_SERVO_TEST_PRESSURE, servoTryPosition);
+  // EEPROM.put(LOCATION_SERVO_HIGH_PRESSURE, servoHighPressurePosition);
 
-  Serial.print(F("servo: resting["));
-  Serial.print(servoRestingPosition);
-  Serial.print(F("] try["));
-  Serial.print(servoTryPosition);
-  Serial.print(F("] Highpressure["));
-  Serial.print(servoHighPressurePosition);
-  Serial.print(F("]"));
-  Serial.println();
+  // Serial.print(F("servo: resting["));
+  // Serial.print(servoRestingPosition);
+  // Serial.print(F("] try["));
+  // Serial.print(servoTryPosition);
+  // Serial.print(F("] Highpressure["));
+  // Serial.print(servoHighPressurePosition);
+  // Serial.print(F("]"));
+  // Serial.println();
 
-  Serial.println(F("Servo positions stored."));
+  // Serial.println(F("Servo positions stored."));
 
 }
 
