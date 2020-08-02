@@ -281,6 +281,7 @@ void loop()
   Serial.println(F("7) Calibrate handle servo"));
   Serial.println(F("8) Test handle servo"));
   Serial.println(F("9) Test indent centers"));
+  Serial.println(F("t) Test tryHandle() function"));
   Serial.println(F("p) Move dial to a position"));
   Serial.println(F("s) Start cracking"));
 

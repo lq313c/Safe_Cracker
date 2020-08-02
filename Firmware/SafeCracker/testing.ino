@@ -215,20 +215,21 @@ void detailedPositionTesting() {
   Serial.println(F("x to exit"));
   Serial.println(F("d to toggle direction"));
   Serial.println(F("s to set motor speed (0 is no turn, 255 is max)"));
-  Serial.println(F("p to set desired dial position"));
+  Serial.println(F("q to set desired dial position"));
+  Serial.println(F("w to set desired dial position (with extra spin)"));
   
   while (1) {
     if (Serial.available()){
-      byte incoming = Serial.read();
+      byte command = Serial.read();
 
-      if (incoming == 'd') {
+      if (command == 'd') {
         previousDirection = direction;
         direction ^= true;
         Serial.print(F("New direction: "));
         if (direction == CW) Serial.println("CW");
         else Serial.println("CCW");
       }
-      if (incoming == 's') {
+      else if (command == 's') {
         Serial.println(F("Enter new speed"));
         while (!Serial.available()); //Wait for user input
         Serial.setTimeout(30000); //Must be long enough for user to enter second character
@@ -238,7 +239,7 @@ void detailedPositionTesting() {
         Serial.print(F("New motor speed: "));
         Serial.println(speed);
       }
-      if (incoming = 'p') {
+      else if (command = 'q') {
         Serial.println(F("Enter desired position"));
         while (!Serial.available()); //Wait for user input
         Serial.setTimeout(30000); //Must be long enough for user to enter second character
@@ -248,7 +249,7 @@ void detailedPositionTesting() {
         Serial.print(F("Hopefully it arrived at new position: "));
         Serial.println(position);
       }
-      if (incoming = 'q') {
+      else if (command = 'w') {
         Serial.println(F("Enter desired position (with extra spin)"));
         while (!Serial.available()); //Wait for user input
         Serial.setTimeout(30000); //Must be long enough for user to enter second character
@@ -258,9 +259,13 @@ void detailedPositionTesting() {
         Serial.print(F("Hopefully it arrived at new position: "));
         Serial.println(position);
       }
-      if (incoming == 'x') {
+      else if (command == 'x') {
         setMotorSpeed(0); //Stop motor
         break;
+      }
+      else
+      {
+        Serial.println(F("Unknown command ¯\\_(ツ)_/¯"));
       }
     }
   }
