@@ -46,8 +46,8 @@ void testServo()
     {
       byte incoming = Serial.read();
 
-      if (incoming == 'a') servo++;
-      if (incoming == 'z') servo--;
+      if (incoming == 'a') servo+=3;
+      if (incoming == 'z') servo-=3;
       if (incoming == 'x') //Exit
       {
         setMotorSpeed(0); //Stop!
@@ -79,7 +79,7 @@ void testServo()
 
   // //Record settings to EEPROM
   // servoRestingPosition = servo; //At the end of calibration, servo position should be set at the desired resting psoition
-  // servoTryPosition = servoHighPressurePosition - 10;
+  servoTryPosition = servoHighPressurePosition - 10;
   // handleOpenPosition = handlePosition - 30; // hopefully 30 less is not too much to identify an opened handle
 
   // //17 was found in testing to be the min servo position, with 217 the max

@@ -274,8 +274,10 @@ void resetDial()
 boolean tryHandle()
 {
   //Attempt to pull down on handle
-  handleServo.write(servoTryPosition);
+  handleServo.write(servoTryPosition-5); //Have to overshoot a bit and later retract to get a good reading
   delay(timeServoApply); //Wait for servo to move, but don't let it stall for too long and burn out
+  handleServo.write(servoTryPosition); //Retract a bit so that servo doesn't stall
+  delay(timeServoApply); //Wait for servo to move
 
   //Check if we're there
   // if (digitalRead(servoPositionButton) == LOW)
