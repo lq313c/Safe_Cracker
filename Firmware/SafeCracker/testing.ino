@@ -219,57 +219,69 @@ void detailedPositionTesting() {
   Serial.println(F("w to set desired dial position (with extra spin)"));
   
   while (1) {
+    Serial.flush();
     while (!Serial.available()); //Wait for user input
     Serial.setTimeout(30000); //Must be long enough for user to enter second character
-    if (Serial.available()){
-      byte command = Serial.read();
+    byte command = Serial.read();
+    Serial.flush(); //Throw away CRLF
+    // Serial.println(command);
 
-      if (command == 'd') {
-        previousDirection = direction;
-        direction ^= true;
-        Serial.print(F("New direction: "));
-        if (direction == CW) Serial.println("CW");
-        else Serial.println("CCW");
-      }
-      else if (command == 's') {
-        Serial.println(F("Enter new speed"));
-        while (!Serial.available()); //Wait for user input
-        Serial.setTimeout(30000); //Must be long enough for user to enter second character
+    if (command == 'd') {
+      previousDirection = direction;
+      direction ^= true;
+      Serial.print(F("New direction: "));
+      if (direction == CW) Serial.println("CW");
+      else Serial.println("CCW");
+    } else if (command == 's') {
+      Serial.println(F("Enter new speed"));
+      while (!Serial.available()); //Wait for user input
+      Serial.setTimeout(30000); //Must be long enough for user to enter second character
 
-        int speed = Serial.parseInt();
-        setMotorSpeed(speed);
-        Serial.print(F("New motor speed: "));
-        Serial.println(speed);
-      }
-      else if (command = 'q') {
-        Serial.println(F("Enter desired position"));
-        while (!Serial.available()); //Wait for user input
-        Serial.setTimeout(30000); //Must be long enough for user to enter second character
+      int speed = Serial.parseInt();
+      setMotorSpeed(speed);
+      Serial.print(F("New motor speed: "));
+      Serial.println(speed);
+    } else if (command == 'q') {
+      Serial.println(F("Enter desired position"));
+      while (!Serial.available()); //Wait for user input
+      Serial.setTimeout(30000); //Must be long enough for user to enter second character
 
-        int position = Serial.parseInt();
-        setDial(position, false);
-        Serial.print(F("Hopefully it arrived at new position: "));
-        Serial.println(position);
-      }
-      else if (command = 'w') {
-        Serial.println(F("Enter desired position (with extra spin)"));
-        while (!Serial.available()); //Wait for user input
-        Serial.setTimeout(30000); //Must be long enough for user to enter second character
+      int position = Serial.parseInt();
+      setDial(position, false);
+      Serial.print(F("Hopefully it arrived at new position: "));
+      Serial.println(position);
+    } else if (command == 'w') {
+      Serial.println(F("Enter desired position (with extra spin)"));
+      while (!Serial.available()); //Wait for user input
+      Serial.setTimeout(30000); //Must be long enough for user to enter second character
 
-        int position = Serial.parseInt();
-        setDial(position, true);
-        Serial.print(F("Hopefully it arrived at new position: "));
-        Serial.println(position);
-      }
-      else if (command == 'x') {
-        setMotorSpeed(0); //Stop motor
-        break;
-      }
-      else
-      {
-        Serial.println(F("Unknown command ¯\\_(ツ)_/¯"));
-      }
+      int position = Serial.parseInt();
+      setDial(position, true);
+      Serial.print(F("Hopefully it arrived at new position: "));
+      Serial.println(position);
+    } else if (command == 'x') {
+      setMotorSpeed(0); //Stop motor
+      break;
+    } else {
+      // Serial.println(F("Unknown command ¯\\_(ツ)_/¯"));
     }
   }
+}
+
+void inputTest() {
+  Serial.println("=== Input test ===");
+
+  while(1) {
+    while (!Serial.available()); //Wait for user input
+    Serial.setTimeout(30000); //Must be long enough for user to enter second character
+    Serial.println("input read!");
+    byte input = Serial.read();
+    Serial.read(); //throw away CRLF
+
+    Serial.println(input);
+    if (input == 'x') break;
+    else if (input == 'b') Serial.println("b");
+  }
+
 }
 

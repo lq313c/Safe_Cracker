@@ -316,8 +316,10 @@ void loop()
   // }
   // else
   // {
-    incoming = Serial.read();
+  //   incoming = Serial.read();
   // }
+  while (!Serial.available()); //Wait for user input
+  incoming = Serial.read();
 
   if (incoming == '1')
   {
@@ -521,6 +523,7 @@ void loop()
   else if (incoming == 'p')
   {
     detailedPositionTesting();
+    // inputTest();
   }
   else if (incoming == 'a')
   {
