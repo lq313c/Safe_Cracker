@@ -219,6 +219,8 @@ void detailedPositionTesting() {
   Serial.println(F("w to set desired dial position (with extra spin)"));
   
   while (1) {
+    while (!Serial.available()); //Wait for user input
+    Serial.setTimeout(30000); //Must be long enough for user to enter second character
     if (Serial.available()){
       byte command = Serial.read();
 

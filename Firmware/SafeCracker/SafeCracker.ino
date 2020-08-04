@@ -279,46 +279,45 @@ void loop()
   Serial.println(F("5) Set indents to test"));
   Serial.println(F("6) Set starting combos"));
   Serial.println(F("7) Calibrate handle servo"));
-  Serial.println(F("8) Test handle servo"));
+  Serial.println(F("8) Test handle servo tryHandle()"));
   Serial.println(F("9) Test indent centers"));
-  Serial.println(F("t) Test tryHandle() function"));
   Serial.println(F("p) Move dial to a position"));
   Serial.println(F("s) Start cracking"));
 
-  while (!Serial.available())
-  {
-    if (digitalRead(button) == LOW)
-    {
-      delay(50);
-      if (digitalRead(button) == LOW)
-      {
-        buttonPressed = true;
-        break;
-      }
-      else
-      {
-        buttonPressed = false;
-      }
-    }
-    else
-    {
-      buttonPressed = false;
-    }
-  }
+  // while (!Serial.available())
+  // {
+  //   if (digitalRead(button) == LOW)
+  //   {
+  //     delay(50);
+  //     if (digitalRead(button) == LOW)
+  //     {
+  //       buttonPressed = true;
+  //       break;
+  //     }
+  //     else
+  //     {
+  //       buttonPressed = false;
+  //     }
+  //   }
+  //   else
+  //   {
+  //     buttonPressed = false;
+  //   }
+  // }
 
-  if (buttonPressed == true)
-  {
-    Serial.println(F("Button pressed!"));
+  // if (buttonPressed == true)
+  // {
+  //   Serial.println(F("Button pressed!"));
 
-    while (digitalRead(button) == false); //Wait for user to stop pressing button
-    buttonPressed = false; //Reset variable
+  //   while (digitalRead(button) == false); //Wait for user to stop pressing button
+  //   buttonPressed = false; //Reset variable
 
-    incoming = 's'; //Act as if user pressed start cracking
-  }
-  else
-  {
+  //   incoming = 's'; //Act as if user pressed start cracking
+  // }
+  // else
+  // {
     incoming = Serial.read();
-  }
+  // }
 
   if (incoming == '1')
   {
@@ -530,10 +529,6 @@ void loop()
   else if (incoming == 'z')
   {
     handleServo.write(servoTryPosition);
-  }
-  else if (incoming == 't')
-  {
-    tryHandle();
   }
   else if (incoming == 's') //Start cracking!
   {
