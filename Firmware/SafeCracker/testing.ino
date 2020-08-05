@@ -228,20 +228,29 @@ void detailedPositionTesting() {
 
     if (command == 'd') {
       previousDirection = direction;
-      direction ^= true;
+      direction ^= true; //Toggle direction
+      
       Serial.print(F("New direction: "));
-      if (direction == CW) Serial.println("CW");
-      else Serial.println("CCW");
-    } else if (command == 's') {
+      if (direction == CW) {
+        Serial.println("CW");
+        turnCW();
+      }
+      else {
+        Serial.println("CCW");
+        turnCCW();
+      }
+    } 
+    else if (command == 's') {
       Serial.println(F("Enter new speed"));
       while (!Serial.available()); //Wait for user input
       Serial.setTimeout(30000); //Must be long enough for user to enter second character
-
       int speed = Serial.parseInt();
+
       setMotorSpeed(speed);
       Serial.print(F("New motor speed: "));
       Serial.println(speed);
-    } else if (command == 'q') {
+    } 
+    else if (command == 'q') {
       Serial.println(F("Enter desired position"));
       while (!Serial.available()); //Wait for user input
       Serial.setTimeout(30000); //Must be long enough for user to enter second character
@@ -250,7 +259,8 @@ void detailedPositionTesting() {
       setDial(position, false);
       Serial.print(F("Hopefully it arrived at new position: "));
       Serial.println(position);
-    } else if (command == 'w') {
+    } 
+    else if (command == 'w') {
       Serial.println(F("Enter desired position (with extra spin)"));
       while (!Serial.available()); //Wait for user input
       Serial.setTimeout(30000); //Must be long enough for user to enter second character
@@ -259,10 +269,12 @@ void detailedPositionTesting() {
       setDial(position, true);
       Serial.print(F("Hopefully it arrived at new position: "));
       Serial.println(position);
-    } else if (command == 'x') {
+    } 
+    else if (command == 'x') {
       setMotorSpeed(0); //Stop motor
       break;
-    } else {
+    } 
+    else {
       // Serial.println(F("Unknown command ¯\\_(ツ)_/¯"));
     }
   }
