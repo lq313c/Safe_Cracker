@@ -205,7 +205,7 @@ void positionTesting()
 
     Serial.print(F("Dial commanded CW to: "));
     Serial.print(randomDial);
-     Serial.print(F(", Dial should be at: "));
+    Serial.print(F(", Dial should be at: "));
     Serial.println(convertEncoderToDial(steps));
     messagePause("Verify then press key to exit");
   }
@@ -229,7 +229,7 @@ void detailedPositionTesting() {
     if (command == 'd') {
       previousDirection = direction;
       direction ^= true; //Toggle direction
-      
+
       Serial.print(F("New direction: "));
       if (direction == CW) {
         Serial.println("CW");
@@ -251,24 +251,26 @@ void detailedPositionTesting() {
       Serial.println(speed);
     } 
     else if (command == 'q') {
-      Serial.println(F("Enter desired position"));
+      Serial.print(F("Enter desired position: "));
       while (!Serial.available()); //Wait for user input
       Serial.setTimeout(30000); //Must be long enough for user to enter second character
 
       int position = Serial.parseInt();
-      setDial(position, false);
-      Serial.print(F("Hopefully it arrived at new position: "));
       Serial.println(position);
+      setDial(position, false);
+      Serial.print(F("Encoder position: "));
+      printEncoderToDial(steps);
     } 
     else if (command == 'w') {
-      Serial.println(F("Enter desired position (with extra spin)"));
+      Serial.print(F("Enter desired position (with extra spin): "));
       while (!Serial.available()); //Wait for user input
       Serial.setTimeout(30000); //Must be long enough for user to enter second character
 
       int position = Serial.parseInt();
-      setDial(position, true);
-      Serial.print(F("Hopefully it arrived at new position: "));
       Serial.println(position);
+      setDial(position, true);
+      Serial.print(F("Encoder position: "));
+      printEncoderToDial(steps);
     } 
     else if (command == 'x') {
       setMotorSpeed(0); //Stop motor
@@ -279,6 +281,19 @@ void detailedPositionTesting() {
     }
   }
 }
+
+void printEncoderToDial(int encoderValue)
+{
+  int dialValue = encoderValue / 84; //2388/84 = 28.43
+  int partial = encoderValue % 84; //2388%84 = 36
+
+  if (dialValue > 99) dialValue -= 100;
+
+  Serial.print(dialValue);
+  Serial.print(F(" / "));
+  Serial.println(partial);
+}
+
 
 void inputTest() {
   Serial.println("=== Input test ===");
