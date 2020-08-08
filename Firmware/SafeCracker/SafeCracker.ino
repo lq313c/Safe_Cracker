@@ -537,11 +537,13 @@ void loop()
   {
     // clearDisplay();
     // showCombination(discA, discB, discC); //Update display
+    Serial.println(Serial.read()); //throw away CRLFs from previous input
+    Serial.println(Serial.read()); 
 
     startTime = millis();
 
     //Set the discs to the current combinations (user can set if needed from menu)
-    resetDiscsWithCurrentCombo(false); //Do not pause with messages
+    resetDiscsWithCurrentCombo(true); //pause to confirm for some measure of confidence that dials are operating correctly
 
     while (1)
     {
