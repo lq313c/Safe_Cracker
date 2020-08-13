@@ -364,6 +364,12 @@ void countA()
   else steps++;
   if (steps < 0) steps = 8399; //Limit variable to zero
   if (steps > 8399) steps = 0; //Limit variable to 8399
+  countACount++; //troubleshooting
+  diff = countACount - countBCount;
+  if (diff != 0 && diff != 1 && diff != 65535) {
+    Serial.println(F("Direction Changed"));//Direction  has changed!
+    countACount = countBCount; //resync both counts
+  }
 }
 
 //Interrupt routine when encoderB pin changes
@@ -373,6 +379,12 @@ void countB()
   else steps++;
   if (steps < 0) steps = 8399; //Limit variable to zero
   if (steps > 8399) steps = 0; //Limit variable to 8399
+  countBCount++; //troubleshooting
+  diff = countACount - countBCount;
+  if (diff != 0 && diff != 1 && diff != 65535) {
+    Serial.println(F("Direction Changed"));//Direction  has changed!
+    countACount = countBCount; //resync both counts
+  }
 }
 
 //Checks to see if we detect the photogate being blocked by the flag
