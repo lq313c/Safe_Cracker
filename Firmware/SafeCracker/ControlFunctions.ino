@@ -185,18 +185,24 @@ void resetDiscsWithCurrentCombo(boolean pause)
   //Set discs to this combo
   turnCCW();
   int discAIsAt = setDial(discA, false);
+  Serial.print(F("DiscA commanded to: "));
+  Serial.println(discA);
   Serial.print("DiscA is at: ");
   Serial.println(discAIsAt);
   if (pause == true) messagePause("Verify disc position");
 
   turnCW();
   //Turn past disc B one extra spin
+  Serial.print(F("DiscB commanded to: "));
+  Serial.println(discB);
   int discBIsAt = setDial(discB, true);
   Serial.print("DiscB is at: ");
   Serial.println(discBIsAt);
   if (pause == true) messagePause("Verify disc position");
 
   turnCCW();
+  Serial.print(F("DiscC commanded to: "));
+  Serial.println(discC);
   int discCIsAt = setDial(discC, false);
   Serial.print("DiscC is at: ");
   Serial.println(discCIsAt);
@@ -246,7 +252,7 @@ void resetDial()
 
   turnCCW();
 
-  setMotorSpeed(255); //Go fast!
+  setMotorSpeed(140); //Go at coarse speed
   enableMotor();
 
   //Spin until 8400*2 steps have gone by
