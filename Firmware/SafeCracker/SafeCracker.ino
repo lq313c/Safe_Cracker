@@ -74,11 +74,8 @@ const int takeABreakAttempts = 300; //Used to let the motor cool down after so m
 long timeSinceLastMovement;
 int lastStep;
 
-//Directional Counters. These should always be in lockstep with one another if direction is the same. If one gets ahead of the other by
-//more than 1, that means direction has changed.
-unsigned int countACount = 0;
-unsigned int countBCount = 0;
-unsigned int diff = 0;
+//Direction detection: If dial is spun without changing direction, encoderA and encoderB edge should fire alternatingly
+bool encoderAEdge = false;
 
 #define CCW 0
 #define CW 1
