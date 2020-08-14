@@ -137,6 +137,19 @@ int setDial(int dialValue, boolean extraSpin)
   return (actualDialValue);
 }
 
+// initialize direction with encoder edge tracker for precise positioning
+void initalizeDir()
+{
+  turnCW();
+  //spin a bit
+  setMotorSpeed(255);
+  delay(500);
+  setMotorSpeed(0);
+  delay(timeMotorStop); //Wait for motor to stop spinning
+  //assuming there's backsliding, set dir
+  direction = CCW;
+}
+
 //Spin until we detect the photo gate trigger
 void findFlag()
 {
@@ -369,7 +382,7 @@ void countA()
   // detect bounceback from sliding friction
   if (encoderAEdge == true) {
     Serial.println(F("Direction Changed"));//Direction  has changed!
-    // direction ^= true; //Toggle direction
+    direction ^= true; //Toggle direction
   }
   if (direction == CW) steps--;
   else steps++;
@@ -384,7 +397,7 @@ void countB()
   // detect bounceback from sliding friction
   if (encoderAEdge == false) {
     Serial.println(F("Direction Changed"));//Direction  has changed!
-    // direction ^= true; //Toggle direction
+    direction ^= true; //Toggle direction
   }
   if (direction == CW) steps--;
   else steps++;
