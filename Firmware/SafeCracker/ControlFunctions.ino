@@ -403,7 +403,6 @@ void countB()
   else steps++;
   if (steps < 0) steps = 8399; //Limit variable to zero
   if (steps > 8399) steps = 0; //Limit variable to 8399
-  countBCount++; //troubleshooting
   encoderAEdge = false;
 }
 
