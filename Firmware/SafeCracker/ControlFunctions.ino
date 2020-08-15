@@ -114,11 +114,6 @@ int stepsRequired(int currentSteps, int goal)
 //Returns the dial value we actually ended on
 int setDial(int dialValue, boolean extraSpin)
 {
-  //In testing, I found that the arrived position is always short of the commanded position by 2 dialValues.
-  //This is an attempt at adjusting for that.
-  // if (direction == CW) dialValue += 2;
-  // else dialValue -= 2;
-
   //Serial.print("Want dialValue: ");
   //Serial.println(dialValue);
 

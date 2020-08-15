@@ -217,7 +217,6 @@ void detailedPositionTesting() {
   Serial.println(F("s to set motor speed (0 is no turn, 255 is max)"));
   Serial.println(F("q to set desired dial position"));
   Serial.println(F("w to set desired dial position (with extra spin)"));
-  resetDial(); //Clear out everything
 
   while (1) {
     Serial.flush();
