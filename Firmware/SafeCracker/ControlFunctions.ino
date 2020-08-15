@@ -137,7 +137,7 @@ int setDial(int dialValue, boolean extraSpin)
   return (actualDialValue);
 }
 
-// initialize direction with encoder edge tracker for precise positioning
+// initialize encoderDirection with encoder edge counter for precise position measurement
 void initalizeDir()
 {
   turnCW();
@@ -147,7 +147,7 @@ void initalizeDir()
   setMotorSpeed(0);
   delay(timeMotorStop); //Wait for motor to stop spinning
   //assuming there's backsliding, set dir
-  direction = CCW;
+  encoderDirection = CCW;
 }
 
 //Spin until we detect the photo gate trigger
@@ -381,10 +381,11 @@ void countA()
 {
   // detect bounceback from sliding friction
   if (encoderAEdge == true) {
-    Serial.println(F("Direction Changed"));//Direction  has changed!
-    direction ^= true; //Toggle direction
+    Serial.print(F("Direction changed, new dir: "));//Direction  has changed!
+    encoderDirection ^= true; //Toggle direction
+    Serial.println(encoderDirection);
   }
-  if (direction == CW) steps--;
+  if (encoderDirection == CW) steps--;
   else steps++;
   if (steps < 0) steps = 8399; //Limit variable to zero
   if (steps > 8399) steps = 0; //Limit variable to 8399
@@ -396,10 +397,11 @@ void countB()
 {
   // detect bounceback from sliding friction
   if (encoderAEdge == false) {
-    Serial.println(F("Direction Changed"));//Direction  has changed!
-    direction ^= true; //Toggle direction
+    Serial.print(F("Direction changed, new dir: "));//Direction  has changed!
+    encoderDirection ^= true; //Toggle direction
+    Serial.println(encoderDirection);
   }
-  if (direction == CW) steps--;
+  if (encoderDirection == CW) steps--;
   else steps++;
   if (steps < 0) steps = 8399; //Limit variable to zero
   if (steps > 8399) steps = 0; //Limit variable to 8399

@@ -81,8 +81,9 @@ bool encoderAEdge = false;
 #define CW 1
 
 volatile int steps = 0; //Keeps track of encoder counts. 8400 per revolution so this can get big.
-boolean direction = CW; //steps goes up or down based on direction
+boolean direction = CW; //Commanded direction
 boolean previousDirection = CW; //Detects when direction changes to add some steps for encoder slack
+boolean encoderDirection = CW; //This separately tracks the direction of turn as measured by the encoder
 byte homeOffset = 0; //Found by running findFlag(). Stored in nvm.
 
 //Because we're switching directions we need to add extra steps to take
