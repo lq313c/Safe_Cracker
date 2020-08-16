@@ -116,6 +116,10 @@ int stepsRequired(int currentSteps, int goal)
 //Returns the dial value we actually ended on
 int setDial(int dialValue, boolean extraSpin)
 {
+  Serial.print(F("Commanded "));
+  encoderDirection == CCW ? Serial.print("CCW") : Serial.print("CW");
+  Serial.print(F(" to "));
+  Serial.println(dialValue);
   if (dirChanges != expectedDirChanges) {
     // Motor encoder directional detection error. For now just log it. 
     Serial.print("Direction tracking error detected, dirChanges/expectedDirChanges: ");
