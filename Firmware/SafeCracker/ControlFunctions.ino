@@ -124,7 +124,7 @@ int setDial(int dialValue, boolean extraSpin)
     Serial.println(expectedDirChanges);
     // Next step: fall back to commanded direction for direction tracking. If there aren't too many of these the accuracy should still be sufficient
     encoderDirection = direction;
-    Serial.println(F("Falling back to commanded direction for direction tracking");
+    Serial.println(F("Falling back to commanded direction for direction tracking"));
     // Next step: use the light sensor to recalibrate dial
     //recalibrateDial();
   }
@@ -395,7 +395,7 @@ void countA()
   // detect bounceback from sliding friction
   if (encoderAEdge == true) {
     encoderDirection ^= true; //Toggle direction
-    encoderDirecton == CCW ? Serial.println("CCW") : Serial.println("CW"));
+    encoderDirection == CCW ? Serial.println("CCW") : Serial.println("CW");
     dirChanges++;
   }
   if (encoderDirection == CW) steps--;
@@ -411,7 +411,7 @@ void countB()
   // detect bounceback from sliding friction
   if (encoderAEdge == false) {
     encoderDirection ^= true; //Toggle direction
-    encoderDirecton == CCW ? Serial.println("CCW") : Serial.println("CW"));
+    encoderDirection == CCW ? Serial.println("CCW") : Serial.println("CW");
     dirChanges++;
   }
   if (encoderDirection == CW) steps--;
