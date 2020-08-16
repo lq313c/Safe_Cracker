@@ -123,7 +123,8 @@ int setDial(int dialValue, boolean extraSpin)
     Serial.print("/");
     Serial.println(expectedDirChanges);
     // Next step: fall back to commanded direction for direction tracking. If there aren't too many of these the accuracy should still be sufficient
-    //encoderDirection = direction;
+    encoderDirection = direction;
+    Serial.println(F("Falling back to commanded direction for direction tracking");
     // Next step: use the light sensor to recalibrate dial
     //recalibrateDial();
   }
