@@ -37,12 +37,14 @@ int gotoStep(int stepGoal, boolean addAFullRotation)
     steps += switchDirectionAdjustment;
     if (steps > 8400) steps -= 8400;
     previousDirection = CW;
+    expectedDirChanges--;
   }
   else if (direction == CCW && previousDirection == CW)
   {
     steps -= switchDirectionAdjustment;
     if (steps < 0) steps += 8400;
     previousDirection = CCW;
+    expectedDirChanges--;
   }
 
   setMotorSpeed(coarseSpeed); //Go!
@@ -114,6 +116,17 @@ int stepsRequired(int currentSteps, int goal)
 //Returns the dial value we actually ended on
 int setDial(int dialValue, boolean extraSpin)
 {
+  if (dirChanges != expectedDirChanges) {
+    // Motor encoder directional detection error. For now just log it. 
+    Serial.print("Direction tracking error detected, dirChanges/expectedDirChanges: ");
+    Serial.print(dirChanges);
+    Serial.print("/");
+    Serial.println(expectedDirChanges);
+    // Next step: fall back to commanded direction for direction tracking. If there aren't too many of these the accuracy should still be sufficient
+    //encoderDirection = direction;
+    // Next step: use the light sensor to recalibrate dial
+    //recalibrateDial();
+  }
   //Serial.print("Want dialValue: ");
   //Serial.println(dialValue);
 
@@ -129,6 +142,10 @@ int setDial(int dialValue, boolean extraSpin)
   //Serial.print("After movement, dialvalue: ");
   //Serial.println(actualDialValue);
 
+  //Upon finish, reset dirChanges
+  dirChanges = 0;
+  expectedDirChanges = 0;
+  
   return (actualDialValue);
 }
 
@@ -196,7 +213,7 @@ void resetDiscsWithCurrentCombo(boolean pause)
   Serial.print(F("DiscA commanded to: "));
   Serial.println(discA);
   Serial.print("DiscA is at: ");
-  Serial.println(discAIsAt);
+  printEncoderToDial(steps);
   if (pause == true) messagePause("Verify disc position");
 
   turnCW();
@@ -205,7 +222,7 @@ void resetDiscsWithCurrentCombo(boolean pause)
   Serial.println(discB);
   int discBIsAt = setDial(discB, true);
   Serial.print("DiscB is at: ");
-  Serial.println(discBIsAt);
+  printEncoderToDial(steps);
   if (pause == true) messagePause("Verify disc position");
 
   turnCCW();
@@ -213,7 +230,7 @@ void resetDiscsWithCurrentCombo(boolean pause)
   Serial.println(discC);
   int discCIsAt = setDial(discC, false);
   Serial.print("DiscC is at: ");
-  Serial.println(discCIsAt);
+  printEncoderToDial(steps);
   if (pause == true) messagePause("Verify disc position");
   
 
@@ -376,9 +393,9 @@ void countA()
 {
   // detect bounceback from sliding friction
   if (encoderAEdge == true) {
-    Serial.print(F("Direction changed, new dir: "));//Direction  has changed!
     encoderDirection ^= true; //Toggle direction
-    Serial.println(encoderDirection);
+    encoderDirecton == CCW ? Serial.println("CCW") : Serial.println("CW"));
+    dirChanges++;
   }
   if (encoderDirection == CW) steps--;
   else steps++;
@@ -392,9 +409,9 @@ void countB()
 {
   // detect bounceback from sliding friction
   if (encoderAEdge == false) {
-    Serial.print(F("Direction changed, new dir: "));//Direction  has changed!
     encoderDirection ^= true; //Toggle direction
-    Serial.println(encoderDirection);
+    encoderDirecton == CCW ? Serial.println("CCW") : Serial.println("CW"));
+    dirChanges++;
   }
   if (encoderDirection == CW) steps--;
   else steps++;
@@ -525,6 +542,11 @@ void motorSafetyTest() {
   if (millis() - timeSinceLastMovement > 25) {
     Serial.println("Dial stuck. Stopping motor for safety.");
     setMotorSpeed(0); //Stop!
+
+    //Also return to resting position, in case it's being pulled
+    handleServo.write(servoRestingPosition);
+    delay(timeServoRelease); //Allow servo to release. 200 was too short on new safe
+
     while (1);
   }
 
