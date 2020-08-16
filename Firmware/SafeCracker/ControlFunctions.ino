@@ -120,20 +120,18 @@ int setDial(int dialValue, boolean extraSpin)
   encoderDirection == CCW ? Serial.print("CCW") : Serial.print("CW");
   Serial.print(F(" to "));
   Serial.println(dialValue);
-  if (dirChanges != expectedDirChanges) {
-    // Motor encoder directional detection error. For now just log it. 
-    Serial.print("Direction tracking error detected, dirChanges/expectedDirChanges: ");
-    Serial.print(dirChanges);
-    Serial.print("/");
-    Serial.println(expectedDirChanges);
-    // Next step: fall back to commanded direction for direction tracking. If there aren't too many of these the accuracy should still be sufficient
-    encoderDirection = !direction; //set opposite of commanded direction to compensate for back-sliding
-    Serial.println(F("Falling back to commanded direction for direction tracking"));
-    // Next step: use the light sensor to recalibrate dial
-    //recalibrateDial();
-  }
-  //Serial.print("Want dialValue: ");
-  //Serial.println(dialValue);
+  // if (dirChanges != expectedDirChanges) {
+  //   // Motor encoder directional detection error. For now just log it. 
+  //   Serial.print("Direction tracking error detected, dirChanges/expectedDirChanges: ");
+  //   Serial.print(dirChanges);
+  //   Serial.print("/");
+  //   Serial.println(expectedDirChanges);
+  //   // Next step: fall back to commanded direction for direction tracking. If there aren't too many of these the accuracy should still be sufficient
+  //   encoderDirection = !direction; //set opposite of commanded direction to compensate for back-sliding
+  //   Serial.println(F("Falling back to commanded direction for direction tracking"));
+  //   // Next step: use the light sensor to recalibrate dial
+  //   //recalibrateDial();
+  // }
 
   int encoderValue = convertDialToEncoder(dialValue); //Get encoder value
   //Serial.print("Want encoderValue: ");
