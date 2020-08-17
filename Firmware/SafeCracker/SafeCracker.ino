@@ -178,7 +178,7 @@ void setup()
   Serial.println(homeOffset);
 
   homeOffsetSteps = readIntFromEEPROM(LOCATION_HOME_OFFSET_STEPS);
-  Serial.print(F("Home Offset in seteps: "));
+  Serial.print(F("Home Offset in steps: "));
   Serial.println(homeOffsetSteps);
 
   Serial.println(F("Indent data"));
