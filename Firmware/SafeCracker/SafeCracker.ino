@@ -64,7 +64,7 @@ int handleOpenPosition = 200; // this will be set after servotesting
 
 const int timeServoApply = 350;  //ms for servo to apply pressure. 350 works
 const int timeServoRelease = 250;  //Allow servo to release. 250 works
-const int timeMotorStop = 125; //ms for motor to stop spinning after stop command. 200 works
+const int timeMotorStop = 1000; //ms for motor to stop spinning after stop command. 200 works
 
 int handlePosition; //Used to see how far handle moved when pulled on
 //const int handleOpenPosition = 200; //Analog value. Must be less than analog value from servo testing.
