@@ -401,7 +401,8 @@ void countA()
   // detect bounceback from sliding friction
   if (encoderAEdge == true) {
     encoderDirection ^= true; //Toggle direction
-    encoderDirection == CCW ? Serial.println("CCW") : Serial.println("CW");
+    encoderDirection == CCW ? Serial.print("CCW, dial at: ") : Serial.print("CW, dial at: ");
+    printEncoderToDial(steps);
     dirChanges++;
   }
   if (encoderDirection == CW) steps--;
@@ -417,7 +418,8 @@ void countB()
   // detect bounceback from sliding friction
   if (encoderAEdge == false) {
     encoderDirection ^= true; //Toggle direction
-    encoderDirection == CCW ? Serial.println("CCW") : Serial.println("CW");
+    encoderDirection == CCW ? Serial.print("CCW, dial at: ") : Serial.print("CW, dial at: ");
+    printEncoderToDial(steps);
     dirChanges++;
   }
   if (encoderDirection == CW) steps--;
