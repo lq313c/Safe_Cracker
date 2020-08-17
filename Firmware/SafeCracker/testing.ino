@@ -183,6 +183,10 @@ void testServo()
 //If one direction is off, check switchDirectionAdjustment variable.
 void positionTesting()
 {
+  Serial.flush();
+  byte command = Serial.read();
+  Serial.flush(); //Throw away CRLF
+
   int randomDial;
 
   for (int x = 0 ; x < 5 ; x++)
@@ -194,8 +198,8 @@ void positionTesting()
 
     // Serial.print(F("Dial commanded CCW to: "));
     // Serial.print(randomDial);
-    Serial.print(F(", Dial should be at: "));
-    Serial.println(convertEncoderToDial(steps));
+    Serial.print(F("Dial should be at: "));
+    printEncoderToDial(steps);
     messagePause("Verify then press key to continue");
 
     randomDial = random(0, 100);
@@ -205,8 +209,8 @@ void positionTesting()
 
     // Serial.print(F("Dial commanded CW to: "));
     // Serial.print(randomDial);
-    Serial.print(F(", Dial should be at: "));
-    Serial.println(convertEncoderToDial(steps));
+    Serial.print(F("Dial should be at: "));
+    printEncoderToDial(steps);
     messagePause("Verify then press key to exit");
   }
 }
