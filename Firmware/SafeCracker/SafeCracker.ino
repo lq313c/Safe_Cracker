@@ -87,6 +87,7 @@ boolean encoderDirection = CW; //This separately tracks the direction of turn as
 int dirChanges = 0; //Track number of undirected direction changes of the dial
 int expectedDirChanges = 0; //Used for tracking dial changes due to back sliding
 byte homeOffset = 0; //Found by running findFlag(). Stored in nvm.
+int homeOffsetSteps = 0; //More accurate offset - includes fractional dial value
 
 //Because we're switching directions we need to add extra steps to take
 //up the slack in the encoder
@@ -176,6 +177,10 @@ void setup()
   Serial.print(F("Home Offset: "));
   Serial.println(homeOffset);
 
+  homeOffsetSteps = EEPROM.read(LOCATION_HOME_OFFSET_STEPS);
+  Serial.print(F("Home Offset in seteps: "));
+  Serial.println(homeOffsetSteps);
+
   Serial.println(F("Indent data"));
   for (int indentNumber = 0 ; indentNumber < 12 ; indentNumber++)
   {
@@ -258,7 +263,8 @@ void setup()
   initalizeDir(); //initialize direction tracker
   findFlag(); //Find the flag
   //Adjust steps with the real-world offset
-  steps = (84 * homeOffset); //84 * the number the dial sits on when 'home'
+  // steps = (84 * homeOffset); //84 * the number the dial sits on when 'home'
+  steps = homeOffsetSteps;
   setDial(0, false); //Make dial go to zero
 
   // clearDisplay();
@@ -334,9 +340,10 @@ void loop()
     findFlag(); //Detect the flag and center the dial
 
     Serial.print(F("Home offset is: "));
-    Serial.println(homeOffset);
+    // Serial.println(homeOffset);
+    Serial.println(homeOffsetSteps / 84.0);
 
-    int zeroLocation = 0;
+    float zeroLocation = 0;
     while (1) //Loop until we have good input
     {
       Serial.print(F("Enter where dial is actually at: "));
@@ -344,22 +351,25 @@ void loop()
       while (!Serial.available()); //Wait for user input
 
       Serial.setTimeout(30000); //Must be long enough for user to enter second character
-      zeroLocation = Serial.parseInt(); //Read user input
+      zeroLocation = Serial.parseFloat(); //Read user input
 
       Serial.print(zeroLocation);
       if (zeroLocation >= 0 && zeroLocation <= 99) break;
       Serial.println(F(" out of bounds"));
     }
 
-    homeOffset = zeroLocation;
+    homeOffset = (byte) zeroLocation;
+    homeOffsetSteps = zeroLocation * 84;
 
     Serial.print(F("\n\rSetting home offset to: "));
     Serial.println(homeOffset);
 
     EEPROM.write(LOCATION_HOME_OFFSET, homeOffset);
+    EEPROM.write(LOCATION_HOME_OFFSET_STEPS, homeOffsetSteps);
 
     //Adjust steps with the real-world offset
-    steps = (84 * homeOffset); //84 * the number the dial sits on when 'home'
+    // steps = (84 * homeOffset); //84 * the number the dial sits on when 'home'
+    steps = homeOffsetSteps;
 
     setDial(0, false); //Turn to zero
 

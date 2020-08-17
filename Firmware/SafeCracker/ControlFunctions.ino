@@ -200,7 +200,8 @@ void findFlag()
   delay(timeMotorStop); //Wait for motor to stop
 
   //Adjust steps with the real-world offset
-  steps = (84 * homeOffset); //84 * the number the dial sits on when 'home'
+  // steps = (84 * homeOffset); //84 * the number the dial sits on when 'home'
+  steps = homeOffsetSteps;
 
   previousDirection = CCW; //Last adjustment to dial was in CCW direction
 }
