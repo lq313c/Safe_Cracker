@@ -266,6 +266,8 @@ void setup()
   // steps = (84 * homeOffset); //84 * the number the dial sits on when 'home'
   steps = homeOffsetSteps;
   setDial(0, false); //Make dial go to zero
+  Serial.print(F("Dial should be at 0, is at: "));
+  printEncoderToDial(steps);
 
   // clearDisplay();
   // showCombination(0, 0, 0); //Display zeroes
