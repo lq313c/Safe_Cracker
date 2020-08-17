@@ -260,7 +260,7 @@ void setup()
 
   //Tell dial to go to zero
   enableMotor(); //Turn on motor controller
-  initalizeDir(); //initialize direction tracker
+  initalizeDir(); //initialize direction tracker. Turns dial CW for half a second to sync up encoder direction.
   findFlag(); //Find the flag
   //Adjust steps with the real-world offset
   // steps = (84 * homeOffset); //84 * the number the dial sits on when 'home'

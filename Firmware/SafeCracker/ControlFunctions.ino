@@ -117,7 +117,7 @@ int stepsRequired(int currentSteps, int goal)
 int setDial(int dialValue, boolean extraSpin)
 {
   Serial.print(F("Commanded "));
-  encoderDirection == CCW ? Serial.print("CCW") : Serial.print("CW");
+  direction == CCW ? Serial.print("CCW") : Serial.print("CW");
   Serial.print(F(" to "));
   Serial.println(dialValue);
   // if (dirChanges != expectedDirChanges) {
@@ -152,7 +152,8 @@ int setDial(int dialValue, boolean extraSpin)
   return (actualDialValue);
 }
 
-// initialize encoderDirection with encoder edge counter for precise position measurement
+//Initialize encoderDirection with encoder edge counter for precise position measurement.
+//Turns dial CW for half a second, and assuming there's backsliding, encoderDirection should land in CCW direction.
 void initalizeDir()
 {
   turnCW();
@@ -163,6 +164,7 @@ void initalizeDir()
   delay(timeMotorStop); //Wait for motor to stop spinning
   //assuming there's backsliding, set dir
   encoderDirection = CCW;
+  Serial.println(F("Dial Direction initialized"));
 }
 
 //Spin until we detect the photo gate trigger
@@ -204,6 +206,7 @@ void findFlag()
   steps = homeOffsetSteps;
 
   previousDirection = CCW; //Last adjustment to dial was in CCW direction
+  Serial.println(F("Flag found"));
 }
 
 //Set the discs to the current combinations (user selectable)
