@@ -198,7 +198,7 @@ void positionTesting()
 
     // Serial.print(F("Dial commanded CCW to: "));
     // Serial.print(randomDial);
-    Serial.print(F("Dial should be at: "));
+    Serial.print(F("Dial should be at 10, is at: "));
     printEncoderToDial(steps);
     messagePause("Verify then press key to continue");
 
@@ -209,7 +209,7 @@ void positionTesting()
 
     // Serial.print(F("Dial commanded CW to: "));
     // Serial.print(randomDial);
-    Serial.print(F("Dial should be at: "));
+    Serial.print(F("Dial should be at 60, is at: "));
     printEncoderToDial(steps);
     messagePause("Verify then press key to exit");
   }

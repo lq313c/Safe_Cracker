@@ -373,7 +373,8 @@ void loop()
 
     setDial(0, false); //Turn to zero
 
-    Serial.println(F("Dial should be at: 0"));
+    Serial.print(F("Dial should be at 0, is at: "));
+    printEncoderToDial(steps);
   }
   else if (incoming == '2')
   {
