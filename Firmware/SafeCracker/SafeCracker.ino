@@ -177,7 +177,7 @@ void setup()
   Serial.print(F("Home Offset: "));
   Serial.println(homeOffset);
 
-  homeOffsetSteps = EEPROM.read(LOCATION_HOME_OFFSET_STEPS);
+  homeOffsetSteps = readIntFromEEPROM(LOCATION_HOME_OFFSET_STEPS);
   Serial.print(F("Home Offset in seteps: "));
   Serial.println(homeOffsetSteps);
 
@@ -365,7 +365,7 @@ void loop()
     Serial.println(homeOffset);
 
     EEPROM.write(LOCATION_HOME_OFFSET, homeOffset);
-    EEPROM.write(LOCATION_HOME_OFFSET_STEPS, homeOffsetSteps);
+    writeIntIntoEEPROM(LOCATION_HOME_OFFSET_STEPS, homeOffsetSteps);
 
     //Adjust steps with the real-world offset
     // steps = (84 * homeOffset); //84 * the number the dial sits on when 'home'
@@ -584,4 +584,19 @@ void loop()
       }
     } //End eombination loop
   } //End incoming == 's'
+}
+
+void writeIntIntoEEPROM(int address, int number)
+{ 
+  byte byte1 = number >> 8;
+  byte byte2 = number & 0xFF;
+  EEPROM.write(address, byte1);
+  EEPROM.write(address + 1, byte2);
+}
+
+int readIntFromEEPROM(int address)
+{
+  byte byte1 = EEPROM.read(address);
+  byte byte2 = EEPROM.read(address + 1);
+  return (byte1 << 8) + byte2;
 }
