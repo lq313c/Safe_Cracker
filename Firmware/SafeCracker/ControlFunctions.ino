@@ -25,7 +25,7 @@ int gotoStep(int stepGoal, boolean addAFullRotation)
   //Coarse speed and window control how fast we arrive at the digit on the dial
   //Having too small of a window or too fast of an attack will make the dial
   //overshoot.
-  int coarseSpeed = 140; //Speed at which we get to coarse window (0-255). 150, 200 works. 210, 230 fails
+  int coarseSpeed = 100; //Speed at which we get to coarse window (0-255). 150, 200 works. 210, 230 fails
   int coarseWindow = 1250; //Once we are within this amount, switch to fine adjustment
   int fineSpeed = 70; //Less than 50 may not have enough torque.
   int fineWindow = 28; //One we are within this amount, stop searching
@@ -401,8 +401,8 @@ void countA()
   // detect bounceback from sliding friction
   if (encoderAEdge == true) {
     encoderDirection ^= true; //Toggle direction
-    encoderDirection == CCW ? Serial.print("CCW, dial at: ") : Serial.print("CW, dial at: ");
-    printEncoderToDial(steps);
+    // encoderDirection == CCW ? Serial.print("CCW, dial at: ") : Serial.print("CW, dial at: ");
+    // printEncoderToDial(steps);
     dirChanges++;
   }
   if (encoderDirection == CW) steps--;
@@ -418,8 +418,8 @@ void countB()
   // detect bounceback from sliding friction
   if (encoderAEdge == false) {
     encoderDirection ^= true; //Toggle direction
-    encoderDirection == CCW ? Serial.print("CCW, dial at: ") : Serial.print("CW, dial at: ");
-    printEncoderToDial(steps);
+    // encoderDirection == CCW ? Serial.print("CCW, dial at: ") : Serial.print("CW, dial at: ");
+    // printEncoderToDial(steps);
     dirChanges++;
   }
   if (encoderDirection == CW) steps--;
