@@ -37,14 +37,12 @@ int gotoStep(int stepGoal, boolean addAFullRotation)
     steps += switchDirectionAdjustment;
     if (steps > 8400) steps -= 8400;
     previousDirection = CW;
-    expectedDirChanges--;
   }
   else if (direction == CCW && previousDirection == CW)
   {
     steps -= switchDirectionAdjustment;
     if (steps < 0) steps += 8400;
     previousDirection = CCW;
-    expectedDirChanges--;
   }
 
   setMotorSpeed(coarseSpeed); //Go!
@@ -120,18 +118,6 @@ int setDial(int dialValue, boolean extraSpin)
   direction == CCW ? Serial.print("CCW") : Serial.print("CW");
   Serial.print(F(" to "));
   Serial.println(dialValue);
-  // if (dirChanges != expectedDirChanges) {
-  //   // Motor encoder directional detection error. For now just log it. 
-  //   Serial.print("Direction tracking error detected, dirChanges/expectedDirChanges: ");
-  //   Serial.print(dirChanges);
-  //   Serial.print("/");
-  //   Serial.println(expectedDirChanges);
-  //   // Next step: fall back to commanded direction for direction tracking. If there aren't too many of these the accuracy should still be sufficient
-  //   encoderDirection = !direction; //set opposite of commanded direction to compensate for back-sliding
-  //   Serial.println(F("Falling back to commanded direction for direction tracking"));
-  //   // Next step: use the light sensor to recalibrate dial
-  //   //recalibrateDial();
-  // }
 
   int encoderValue = convertDialToEncoder(dialValue); //Get encoder value
   //Serial.print("Want encoderValue: ");
@@ -145,10 +131,6 @@ int setDial(int dialValue, boolean extraSpin)
   //Serial.print("After movement, dialvalue: ");
   //Serial.println(actualDialValue);
 
-  //Upon finish, reset dirChanges
-  dirChanges = 0;
-  expectedDirChanges = 0;
-  
   return (actualDialValue);
 }
 
@@ -399,11 +381,11 @@ void disableMotor()
 void countA()
 {
   // detect bounceback from sliding friction
-  if (encoderAEdge == true) {
-    encoderDirection ^= true; //Toggle direction
-    // encoderDirection == CCW ? Serial.print("CCW, dial at: ") : Serial.print("CW, dial at: ");
-    // printEncoderToDial(steps);
-  }
+  // if (encoderAEdge == true) {
+  //   encoderDirection ^= true; //Toggle direction
+  //   // encoderDirection == CCW ? Serial.print("CCW, dial at: ") : Serial.print("CW, dial at: ");
+  //   // printEncoderToDial(steps);
+  // }
   if (encoderDirection == CW) steps--;
   else steps++;
   if (steps < 0) steps = 8399; //Limit variable to zero
@@ -415,11 +397,11 @@ void countA()
 void countB()
 {
   // detect bounceback from sliding friction
-  if (encoderAEdge == false) {
-    encoderDirection ^= true; //Toggle direction
-    // encoderDirection == CCW ? Serial.print("CCW, dial at: ") : Serial.print("CW, dial at: ");
-    // printEncoderToDial(steps);
-  }
+  // if (encoderAEdge == false) {
+  //   encoderDirection ^= true; //Toggle direction
+  //   // encoderDirection == CCW ? Serial.print("CCW, dial at: ") : Serial.print("CW, dial at: ");
+  //   // printEncoderToDial(steps);
+  // }
   if (encoderDirection == CW) steps--;
   else steps++;
   if (steps < 0) steps = 8399; //Limit variable to zero
