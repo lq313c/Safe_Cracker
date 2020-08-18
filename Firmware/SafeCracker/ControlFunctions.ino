@@ -158,8 +158,8 @@ void initalizeDir()
 {
   turnCW();
   //spin a bit
-  setMotorSpeed(255);
-  delay(500);
+  setMotorSpeed(150);
+  delay(1000);
   setMotorSpeed(0);
   delay(timeMotorStop); //Wait for motor to stop spinning
   //assuming there's backsliding, set dir
@@ -170,7 +170,7 @@ void initalizeDir()
 //Spin until we detect the photo gate trigger
 void findFlag()
 {
-  byte fastSearch = 255; //Speed at which we locate photogate
+  byte fastSearch = 150; //Speed at which we locate photogate
   byte slowSearch = 50;
 
   turnCW();
