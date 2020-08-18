@@ -403,7 +403,6 @@ void countA()
     encoderDirection ^= true; //Toggle direction
     // encoderDirection == CCW ? Serial.print("CCW, dial at: ") : Serial.print("CW, dial at: ");
     // printEncoderToDial(steps);
-    dirChanges++;
   }
   if (encoderDirection == CW) steps--;
   else steps++;
@@ -420,7 +419,6 @@ void countB()
     encoderDirection ^= true; //Toggle direction
     // encoderDirection == CCW ? Serial.print("CCW, dial at: ") : Serial.print("CW, dial at: ");
     // printEncoderToDial(steps);
-    dirChanges++;
   }
   if (encoderDirection == CW) steps--;
   else steps++;
