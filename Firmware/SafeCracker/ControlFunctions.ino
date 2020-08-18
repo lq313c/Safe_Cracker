@@ -381,11 +381,9 @@ void disableMotor()
 void countA()
 {
   // detect bounceback from sliding friction
-  // if (encoderAEdge == true) {
-  //   encoderDirection ^= true; //Toggle direction
-  //   // encoderDirection == CCW ? Serial.print("CCW, dial at: ") : Serial.print("CW, dial at: ");
-  //   // printEncoderToDial(steps);
-  // }
+  if (encoderAEdge == true) {
+    encoderDirection ^= true; //Toggle direction
+  }
   if (encoderDirection == CW) steps--;
   else steps++;
   if (steps < 0) steps = 8399; //Limit variable to zero
@@ -397,11 +395,9 @@ void countA()
 void countB()
 {
   // detect bounceback from sliding friction
-  // if (encoderAEdge == false) {
-  //   encoderDirection ^= true; //Toggle direction
-  //   // encoderDirection == CCW ? Serial.print("CCW, dial at: ") : Serial.print("CW, dial at: ");
-  //   // printEncoderToDial(steps);
-  // }
+  if (encoderAEdge == false) {
+    encoderDirection ^= true; //Toggle direction
+  }
   if (encoderDirection == CW) steps--;
   else steps++;
   if (steps < 0) steps = 8399; //Limit variable to zero

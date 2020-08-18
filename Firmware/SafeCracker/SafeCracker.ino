@@ -75,7 +75,7 @@ long timeSinceLastMovement;
 int lastStep;
 
 //Direction detection: If dial is spun without changing direction, encoderA and encoderB edge should fire alternatingly
-bool encoderAEdge = false;
+volatile bool encoderAEdge = false;
 
 #define CCW 0
 #define CW 1
@@ -83,7 +83,7 @@ bool encoderAEdge = false;
 volatile int steps = 0; //Keeps track of encoder counts. 8400 per revolution so this can get big.
 boolean direction = CW; //Commanded direction
 boolean previousDirection = CW; //Detects when direction changes to add some steps for encoder slack
-boolean encoderDirection = CW; //This separately tracks the direction of turn as measured by the encoder
+volatile boolean encoderDirection = CW; //This separately tracks the direction of turn as measured by the encoder
 byte homeOffset = 0; //Found by running findFlag(). Stored in nvm.
 int homeOffsetSteps = 0; //More accurate offset - includes fractional dial value
 
