@@ -92,7 +92,7 @@ int homeOffsetSteps = 0; //More accurate offset - includes fractional dial value
 //Because we're switching directions we need to add extra steps to take
 //up the slack in the encoder
 //The greater the adjustment the more negative it goes
-int switchDirectionAdjustment = (84 * 1) + 20; //Use 'Test dial control' to determine adjustment size
+int switchDirectionAdjustment = (84 * 1) + 5; //Use 'Test dial control' to determine adjustment size
 //84 * 1 - 20 = Says 34 but is actually 33.5 (undershoot)
 //84 * 0 = Says 85 but is actually 85.9 (overshoot)
 

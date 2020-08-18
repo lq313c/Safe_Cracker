@@ -194,7 +194,7 @@ void positionTesting()
     randomDial = random(0, 100);
     randomDial = 10;
     turnCCW();
-    setDial(randomDial, true);
+    setDial(randomDial, false);
 
     // Serial.print(F("Dial commanded CCW to: "));
     // Serial.print(randomDial);
@@ -205,7 +205,7 @@ void positionTesting()
     randomDial = random(0, 100);
     randomDial = 60;
     turnCW();
-    setDial(randomDial, true);
+    setDial(randomDial, false);
 
     // Serial.print(F("Dial commanded CW to: "));
     // Serial.print(randomDial);
