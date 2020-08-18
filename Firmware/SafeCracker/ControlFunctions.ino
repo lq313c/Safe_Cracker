@@ -407,7 +407,7 @@ void countA()
   if (encoderDirection == CW) steps--;
   else steps++;
   if (steps < 0) steps = 8399; //Limit variable to zero
-  if (steps > 8399) steps = 0; //Limit variable to 8399
+  else if (steps > 8399) steps = 0; //Limit variable to 8399
   encoderAEdge = true;  
 }
 
@@ -423,7 +423,7 @@ void countB()
   if (encoderDirection == CW) steps--;
   else steps++;
   if (steps < 0) steps = 8399; //Limit variable to zero
-  if (steps > 8399) steps = 0; //Limit variable to 8399
+  else if (steps > 8399) steps = 0; //Limit variable to 8399
   encoderAEdge = false;
 }
 
