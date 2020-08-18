@@ -297,6 +297,7 @@ void loop()
   Serial.println(F("8) Test handle servo tryHandle()"));
   Serial.println(F("9) Test indent centers"));
   Serial.println(F("p) Move dial to a position"));
+  Serial.println(F("f) Find flag and recenter dial"));
   Serial.println(F("s) Start cracking"));
 
   // while (!Serial.available())
@@ -544,6 +545,15 @@ void loop()
   {
     detailedPositionTesting();
     // inputTest();
+  }
+  else if (incoming == 'f')
+  {
+    findFlag(); //Find the flag
+    //Adjust steps with the real-world offset
+    steps = homeOffsetSteps;
+    setDial(0, false); //Make dial go to zero
+    Serial.print(F("Dial should be at 0, is at: "));
+    printEncoderToDial(steps);
   }
   else if (incoming == 'a')
   {
