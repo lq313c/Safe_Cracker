@@ -46,7 +46,8 @@ int gotoStep(int stepGoal, boolean addAFullRotation)
   }
 
   setMotorSpeed(coarseSpeed); //Go!
-  while (stepsRequired(steps, stepGoal) > coarseWindow) motorSafetyTest(); //Spin until coarse window is closed
+  // while (stepsRequired(steps, stepGoal) > coarseWindow) motorSafetyTest(); //Spin until coarse window is closed
+  while (stepsRequired(steps, stepGoal) > coarseWindow) Serial.println(steps); //log dial position
 
   //After we have gotten close to the first coarse window, proceed past the goal, then proceed to the goal
   if (addAFullRotation == true)
@@ -55,22 +56,25 @@ int gotoStep(int stepGoal, boolean addAFullRotation)
     if (tempStepGoal > 8400) tempStepGoal -= 8400;
     
     //Go to temp position
-    while (stepsRequired(steps, tempStepGoal) > coarseWindow) motorSafetyTest(); 
+    // while (stepsRequired(steps, tempStepGoal) > coarseWindow) motorSafetyTest(); 
+    while (stepsRequired(steps, tempStepGoal) > coarseWindow) Serial.println(steps);
         
     //Go to stepGoal
-    while (stepsRequired(steps, stepGoal) > coarseWindow) motorSafetyTest(); //Spin until coarse window is closed
+    // while (stepsRequired(steps, stepGoal) > coarseWindow) motorSafetyTest(); //Spin until coarse window is closed
+    while (stepsRequired(steps, stepGoal) > coarseWindow) Serial.println(steps);
   }
 
   setMotorSpeed(fineSpeed); //Slowly approach
 
-  while (stepsRequired(steps, stepGoal) > fineWindow) motorSafetyTest(); //Spin until fine window is closed
+  // while (stepsRequired(steps, stepGoal) > fineWindow) motorSafetyTest(); //Spin until fine window is closed
+  while (stepsRequired(steps, stepGoal) > fineWindow) Serial.println(steps);
 
   setMotorSpeed(0); //Stop
 
   //log dial behavior at end of a turn after commanded stop
-  // for (int i = 0; i < 300; i++) {
-  //   Serial.println(steps);
-  // }
+  for (int i = 0; i < 300; i++) {
+    Serial.println(steps);
+  }
 
   delay(timeMotorStop); //Wait for motor to stop
 
@@ -426,13 +430,13 @@ void bChange()
 void aRise()
 {
   if (lastEncoderEdge == B_RISING) {
-    //backward
-    encoderDirection = CCW;
-    steps++;
-  } else if (lastEncoderEdge == B_FALLING) {
     //forward
     encoderDirection = CW;
     steps--;
+  } else if (lastEncoderEdge == B_FALLING) {
+    //backward
+    encoderDirection = CCW;
+    steps++;
   } else if (lastEncoderEdge == A_FALLING) {
     //direction reversal
     encoderDirection ^= true;
@@ -445,13 +449,13 @@ void aRise()
 void aFall()
 {
   if (lastEncoderEdge == B_RISING) {
-    //forward
-    encoderDirection = CW;
-    steps--;
-  } else if (lastEncoderEdge == B_FALLING) {
     //backward
     encoderDirection = CCW;
     steps++;
+  } else if (lastEncoderEdge == B_FALLING) {
+    //forward
+    encoderDirection = CW;
+    steps--;
   } else if (lastEncoderEdge == A_RISING) {
     //direction reversal
     encoderDirection ^= true;
@@ -464,13 +468,13 @@ void aFall()
 void bRise()
 {
   if (lastEncoderEdge == A_RISING) {
-    //forward
-    encoderDirection = CW;
-    steps--;
-  } else if (lastEncoderEdge == A_FALLING) {
     //backward
     encoderDirection = CCW;
     steps++;
+  } else if (lastEncoderEdge == A_FALLING) {
+    //forward
+    encoderDirection = CW;
+    steps--;
   } else if (lastEncoderEdge == B_RISING) {
     //direction reversal
     encoderDirection ^= true;
@@ -483,13 +487,13 @@ void bRise()
 void bFall()
 {
   if (lastEncoderEdge == A_RISING) {
-    //backward
-    encoderDirection = CCW;
-    steps++;
-  } else if (lastEncoderEdge == A_FALLING) {
     //forward
     encoderDirection = CW;
     steps--;
+  } else if (lastEncoderEdge == A_FALLING) {
+    //backward
+    encoderDirection = CCW;
+    steps++;
   } else if (lastEncoderEdge == B_FALLING) {
     //direction reversal
     encoderDirection ^= true;
