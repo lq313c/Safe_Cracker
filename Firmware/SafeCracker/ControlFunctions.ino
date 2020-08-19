@@ -420,99 +420,175 @@ void countB()
 
 void aChange()
 {
-  if (digitalRead(encoderA) == HIGH) aRise();  // consider using direct port read to be faster - http://www.arduino.cc/en/Reference/PortManipulation
-  else aFall();
+  if (digitalRead(encoderA) == HIGH) //consider using direct port read to be faster - http://www.arduino.cc/en/Reference/PortManipulation
+  {
+    //Encoder A rising edge
+    if (lastEncoderEdge == B_RISING) {
+      //forward
+      encoderDirection = CW;
+      steps--;
+    } else if (lastEncoderEdge == B_FALLING) {
+      //backward
+      encoderDirection = CCW;
+      steps++;
+    } else if (lastEncoderEdge == A_FALLING) {
+      //direction reversal
+      encoderDirection ^= true;
+    } else {
+      numErrors++; //should never get in here, it means 4 edges were missed!
+    }
+    lastEncoderEdge = A_RISING;
+  }
+  else
+  {
+    //Encoder A falling edge
+    if (lastEncoderEdge == B_RISING) {
+      //backward
+      encoderDirection = CCW;
+      steps++;
+    } else if (lastEncoderEdge == B_FALLING) {
+      //forward
+      encoderDirection = CW;
+      steps--;
+    } else if (lastEncoderEdge == A_RISING) {
+      //direction reversal
+      encoderDirection ^= true;
+    } else {
+      numErrors++; //should never get in here, it means 4 edges were missed!
+    }
+    lastEncoderEdge = A_FALLING;
+  }
+  if (steps < 0) steps = 8399; //Limit variable to zero
+  else if (steps > 8399) steps = 0; //Limit variable to 8399
 }
 
 void bChange()
 {
-  if (digitalRead(encoderB) == HIGH) bRise();  // consider using direct port read to be faster - http://www.arduino.cc/en/Reference/PortManipulation
-  else bFall();
-}
-
-void aRise()
-{
-  if (lastEncoderEdge == B_RISING) {
-    //forward
-    encoderDirection = CW;
-    steps--;
-  } else if (lastEncoderEdge == B_FALLING) {
-    //backward
-    encoderDirection = CCW;
-    steps++;
-  } else if (lastEncoderEdge == A_FALLING) {
-    //direction reversal
-    encoderDirection ^= true;
-  } else {
-    numErrors++; //should never get in here, it means 4 edges were missed!
+  if (digitalRead(encoderB) == HIGH) //consider using direct port read to be faster - http://www.arduino.cc/en/Reference/PortManipulation
+  {
+    //Encoder B rising edge
+    if (lastEncoderEdge == A_RISING) {
+      //backward
+      encoderDirection = CCW;
+      steps++;
+    } else if (lastEncoderEdge == A_FALLING) {
+      //forward
+      encoderDirection = CW;
+      steps--;
+    } else if (lastEncoderEdge == B_RISING) {
+      //direction reversal
+      encoderDirection ^= true;
+    } else {
+      numErrors++; //should never get in here, it means 4 edges were missed!
+    }
+    lastEncoderEdge = B_RISING;
   }
-  lastEncoderEdge = A_RISING;
+  else
+  {
+    //Encoder B falling edge
+    if (lastEncoderEdge == A_RISING) {
+      //forward
+      encoderDirection = CW;
+      steps--;
+    } else if (lastEncoderEdge == A_FALLING) {
+      //backward
+      encoderDirection = CCW;
+      steps++;
+    } else if (lastEncoderEdge == B_FALLING) {
+      //direction reversal
+      encoderDirection ^= true;
+    } else {
+      numErrors++; //should never get in here, it means 4 edges were missed!
+    }
+    lastEncoderEdge = B_FALLING;
+  }
   if (steps < 0) steps = 8399; //Limit variable to zero
   else if (steps > 8399) steps = 0; //Limit variable to 8399
 }
 
-void aFall()
-{
-  if (lastEncoderEdge == B_RISING) {
-    //backward
-    encoderDirection = CCW;
-    steps++;
-  } else if (lastEncoderEdge == B_FALLING) {
-    //forward
-    encoderDirection = CW;
-    steps--;
-  } else if (lastEncoderEdge == A_RISING) {
-    //direction reversal
-    encoderDirection ^= true;
-  } else {
-    numErrors++; //should never get in here, it means 4 edges were missed!
-  }
-  lastEncoderEdge = A_FALLING;
-  if (steps < 0) steps = 8399; //Limit variable to zero
-  else if (steps > 8399) steps = 0; //Limit variable to 8399
-}
+// void aRise()
+// {
+//   if (lastEncoderEdge == B_RISING) {
+//     //forward
+//     encoderDirection = CW;
+//     steps--;
+//   } else if (lastEncoderEdge == B_FALLING) {
+//     //backward
+//     encoderDirection = CCW;
+//     steps++;
+//   } else if (lastEncoderEdge == A_FALLING) {
+//     //direction reversal
+//     encoderDirection ^= true;
+//   } else {
+//     numErrors++; //should never get in here, it means 4 edges were missed!
+//   }
+//   lastEncoderEdge = A_RISING;
+//   if (steps < 0) steps = 8399; //Limit variable to zero
+//   else if (steps > 8399) steps = 0; //Limit variable to 8399
+// }
 
-void bRise()
-{
-  if (lastEncoderEdge == A_RISING) {
-    //backward
-    encoderDirection = CCW;
-    steps++;
-  } else if (lastEncoderEdge == A_FALLING) {
-    //forward
-    encoderDirection = CW;
-    steps--;
-  } else if (lastEncoderEdge == B_RISING) {
-    //direction reversal
-    encoderDirection ^= true;
-  } else {
-    numErrors++; //should never get in here, it means 4 edges were missed!
-  }
-  lastEncoderEdge = B_RISING;
-  if (steps < 0) steps = 8399; //Limit variable to zero
-  else if (steps > 8399) steps = 0; //Limit variable to 8399
-}
+// void aFall()
+// {
+//   if (lastEncoderEdge == B_RISING) {
+//     //backward
+//     encoderDirection = CCW;
+//     steps++;
+//   } else if (lastEncoderEdge == B_FALLING) {
+//     //forward
+//     encoderDirection = CW;
+//     steps--;
+//   } else if (lastEncoderEdge == A_RISING) {
+//     //direction reversal
+//     encoderDirection ^= true;
+//   } else {
+//     numErrors++; //should never get in here, it means 4 edges were missed!
+//   }
+//   lastEncoderEdge = A_FALLING;
+//   if (steps < 0) steps = 8399; //Limit variable to zero
+//   else if (steps > 8399) steps = 0; //Limit variable to 8399
+// }
 
-void bFall()
-{
-  if (lastEncoderEdge == A_RISING) {
-    //forward
-    encoderDirection = CW;
-    steps--;
-  } else if (lastEncoderEdge == A_FALLING) {
-    //backward
-    encoderDirection = CCW;
-    steps++;
-  } else if (lastEncoderEdge == B_FALLING) {
-    //direction reversal
-    encoderDirection ^= true;
-  } else {
-    numErrors++; //should never get in here, it means 4 edges were missed!
-  }
-  lastEncoderEdge = B_FALLING;
-  if (steps < 0) steps = 8399; //Limit variable to zero
-  else if (steps > 8399) steps = 0; //Limit variable to 8399
-}
+// void bRise()
+// {
+//   if (lastEncoderEdge == A_RISING) {
+//     //backward
+//     encoderDirection = CCW;
+//     steps++;
+//   } else if (lastEncoderEdge == A_FALLING) {
+//     //forward
+//     encoderDirection = CW;
+//     steps--;
+//   } else if (lastEncoderEdge == B_RISING) {
+//     //direction reversal
+//     encoderDirection ^= true;
+//   } else {
+//     numErrors++; //should never get in here, it means 4 edges were missed!
+//   }
+//   lastEncoderEdge = B_RISING;
+//   if (steps < 0) steps = 8399; //Limit variable to zero
+//   else if (steps > 8399) steps = 0; //Limit variable to 8399
+// }
+
+// void bFall()
+// {
+//   if (lastEncoderEdge == A_RISING) {
+//     //forward
+//     encoderDirection = CW;
+//     steps--;
+//   } else if (lastEncoderEdge == A_FALLING) {
+//     //backward
+//     encoderDirection = CCW;
+//     steps++;
+//   } else if (lastEncoderEdge == B_FALLING) {
+//     //direction reversal
+//     encoderDirection ^= true;
+//   } else {
+//     numErrors++; //should never get in here, it means 4 edges were missed!
+//   }
+//   lastEncoderEdge = B_FALLING;
+//   if (steps < 0) steps = 8399; //Limit variable to zero
+//   else if (steps > 8399) steps = 0; //Limit variable to 8399
+// }
 // *************   ISRs for measuring encoder position   *************
 
 
