@@ -46,7 +46,7 @@ int gotoStep(int stepGoal, boolean addAFullRotation)
   }
 
   setMotorSpeed(coarseSpeed); //Go!
-  while (stepsRequired(steps, stepGoal) > coarseWindow) motorSafetyTest(); //Spin until coarse window is closed
+  while (stepsRequired(steps, stepGoal) > coarseWindow) Serial.println(steps); //Spin until coarse window is closed
 
   //After we have gotten close to the first coarse window, proceed past the goal, then proceed to the goal
   if (addAFullRotation == true)
@@ -55,17 +55,22 @@ int gotoStep(int stepGoal, boolean addAFullRotation)
     if (tempStepGoal > 8400) tempStepGoal -= 8400;
     
     //Go to temp position
-    while (stepsRequired(steps, tempStepGoal) > coarseWindow) motorSafetyTest(); 
+    while (stepsRequired(steps, tempStepGoal) > coarseWindow) Serial.println(steps); 
         
     //Go to stepGoal
-    while (stepsRequired(steps, stepGoal) > coarseWindow) motorSafetyTest(); //Spin until coarse window is closed
+    while (stepsRequired(steps, stepGoal) > coarseWindow) Serial.println(steps); //Spin until coarse window is closed
   }
 
   setMotorSpeed(fineSpeed); //Slowly approach
 
-  while (stepsRequired(steps, stepGoal) > fineWindow) motorSafetyTest(); //Spin until fine window is closed
+  while (stepsRequired(steps, stepGoal) > fineWindow) Serial.println(steps); //Spin until fine window is closed
 
   setMotorSpeed(0); //Stop
+
+  //log dial behavior at end of a turn after commanded stop
+  for (int i = 0; i < 300; i++) {
+    Serial.println(steps);
+  }
 
   delay(timeMotorStop); //Wait for motor to stop
 
@@ -380,29 +385,29 @@ void disableMotor()
 //Interrupt routine when encoderA pin changes
 void countA()
 {
-  // detect bounceback from sliding friction
+  // detect back-sliding from sticky dial
   if (encoderAEdge == true) {
     encoderDirection ^= true; //Toggle direction
   }
+  encoderAEdge = true;  
   if (encoderDirection == CW) steps--;
   else steps++;
   if (steps < 0) steps = 8399; //Limit variable to zero
   else if (steps > 8399) steps = 0; //Limit variable to 8399
-  encoderAEdge = true;  
 }
 
 //Interrupt routine when encoderB pin changes
 void countB()
 {
-  // detect bounceback from sliding friction
+  // detect back-sliding from sticky dial
   if (encoderAEdge == false) {
     encoderDirection ^= true; //Toggle direction
   }
+  encoderAEdge = false;
   if (encoderDirection == CW) steps--;
   else steps++;
   if (steps < 0) steps = 8399; //Limit variable to zero
   else if (steps > 8399) steps = 0; //Limit variable to 8399
-  encoderAEdge = false;
 }
 
 //Checks to see if we detect the photogate being blocked by the flag
