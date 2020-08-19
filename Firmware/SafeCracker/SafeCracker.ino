@@ -82,6 +82,7 @@ volatile bool encoderAEdge = false;
 #define A_FALLING 2 //encoder A falling edge
 #define B_FALLING 3 //encoder B falling edge
 volatile byte lastEncoderEdge = A_RISING;
+volatile byte numErrors = 0;
 
 #define CCW 0
 #define CW 1
