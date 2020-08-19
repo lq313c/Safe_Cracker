@@ -409,7 +409,20 @@ void countB()
 // *************   ISRs for measuring encoder position   *************
 // In the event of an ISR taking too long, and missing an alternating edge, it will look like a directional reversal, 
 // in which case we will leave step count alone, since it's better to be off by 2 than off by 3. If we miss 2 edges,
-// then we'll be off by 4. If we miss 3 edges, then the same encoder edge will appear twice in succession. 
+// then we'll be off by 4. If we miss 3 edges, then the same encoder edge will appear twice in succession.
+
+void aChange()
+{
+  if (digitalRead(encoderA) == HIGH) aRise();  // consider using direct port read to be faster - http://www.arduino.cc/en/Reference/PortManipulation
+  else aFall();
+}
+
+void bChange()
+{
+  if (digitalRead(encoderB) == HIGH) bRise();  // consider using direct port read to be faster - http://www.arduino.cc/en/Reference/PortManipulation
+  else bFall();
+}
+
 void aRise()
 {
   if (lastEncoderEdge == B_RISING) {

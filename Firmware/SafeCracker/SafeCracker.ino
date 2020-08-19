@@ -175,10 +175,15 @@ void setup()
   //Setup the encoder interrupts.
   // attachInterrupt(digitalPinToInterrupt(encoderA), countA, CHANGE);
   // attachInterrupt(digitalPinToInterrupt(encoderB), countB, CHANGE);
-  attachInterrupt(digitalPinToInterrupt(encoderA), aRise, RISING);
-  attachInterrupt(digitalPinToInterrupt(encoderA), aFall, FALLING);
-  attachInterrupt(digitalPinToInterrupt(encoderB), bRise, RISING);
-  attachInterrupt(digitalPinToInterrupt(encoderB), bFall, FALLING);
+
+  // This does not work. Can only assign either RISING or FALLING mode to one pin, not both
+  // attachInterrupt(digitalPinToInterrupt(encoderA), aRise, RISING);
+  // attachInterrupt(digitalPinToInterrupt(encoderA), aFall, FALLING);
+  // attachInterrupt(digitalPinToInterrupt(encoderB), bRise, RISING);
+  // attachInterrupt(digitalPinToInterrupt(encoderB), bFall, FALLING);
+
+  attachInterrupt(digitalPinToInterrupt(encoderA), aChange, CHANGE);
+  attachInterrupt(digitalPinToInterrupt(encoderB), bChange, CHANGE);
 
   //Load settings from EEPROM
   homeOffset = EEPROM.read(LOCATION_HOME_OFFSET); //After doing a findFlag calibration, adjust this number up or down until dial is at zero
