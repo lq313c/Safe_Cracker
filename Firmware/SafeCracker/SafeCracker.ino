@@ -76,6 +76,12 @@ int lastStep;
 
 //Direction detection: If dial is spun without changing direction, encoderA and encoderB edge should fire alternatingly
 volatile bool encoderAEdge = false;
+//Track motor encoder:
+#define A_RISING 0 //encoder A rising edge
+#define B_RISING 1 //encoder B rising edge
+#define A_FALLING 2 //encoder A falling edge
+#define B_FALLING 3 //encoder B falling edge
+volatile byte lastEncoderEdge = A_RISING;
 
 #define CCW 0
 #define CW 1
@@ -167,8 +173,12 @@ void setup()
   digitalWrite(displayData, LOW);
 
   //Setup the encoder interrupts.
-  attachInterrupt(digitalPinToInterrupt(encoderA), countA, CHANGE);
-  attachInterrupt(digitalPinToInterrupt(encoderB), countB, CHANGE);
+  // attachInterrupt(digitalPinToInterrupt(encoderA), countA, CHANGE);
+  // attachInterrupt(digitalPinToInterrupt(encoderB), countB, CHANGE);
+  attachInterrupt(digitalPinToInterrupt(encoderA), aRise, RISING);
+  attachInterrupt(digitalPinToInterrupt(encoderA), aFall, FALLING);
+  attachInterrupt(digitalPinToInterrupt(encoderB), bRise, RISING);
+  attachInterrupt(digitalPinToInterrupt(encoderB), bFall, FALLING);
 
   //Load settings from EEPROM
   homeOffset = EEPROM.read(LOCATION_HOME_OFFSET); //After doing a findFlag calibration, adjust this number up or down until dial is at zero
@@ -258,7 +268,7 @@ void setup()
 
   //Tell dial to go to zero
   enableMotor(); //Turn on motor controller
-  initalizeDir(); //initialize direction tracker. Turns dial CW for half a second to sync up encoder direction.
+  // initalizeDir(); //initialize direction tracker. Turns dial CW for half a second to sync up encoder direction.
   findFlag(); //Find the flag
   //Adjust steps with the real-world offset
   // steps = (84 * homeOffset); //84 * the number the dial sits on when 'home'

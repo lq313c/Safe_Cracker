@@ -406,6 +406,88 @@ void countB()
   else if (steps > 8399) steps = 0; //Limit variable to 8399
 }
 
+// *************   ISRs for measuring encoder position   *************
+// In the event of an ISR taking too long, and missing an alternating edge, it will look like a directional reversal, 
+// in which case we will leave step count alone, since it's better to be off by 2 than off by 3. If we miss 2 edges,
+// then we'll be off by 4. If we miss 3 edges, then the same encoder edge will appear twice in succession. 
+void aRise()
+{
+  if (lastEncoderEdge == B_RISING) {
+    //backward
+    encoderDirection = CCW;
+    steps++;
+  } else if (lastEncoderEdge == B_FALLING) {
+    //forward
+    encoderDirection = CW;
+    steps--;
+  } else if (lastEncoderEdge == A_FALLING) {
+    //direction reversal
+    encoderDirection ^= true;
+  }
+  lastEncoderEdge = A_RISING;
+  if (steps < 0) steps = 8399; //Limit variable to zero
+  else if (steps > 8399) steps = 0; //Limit variable to 8399
+}
+
+void aFall()
+{
+  if (lastEncoderEdge == B_RISING) {
+    //forward
+    encoderDirection = CW;
+    steps--;
+  } else if (lastEncoderEdge == B_FALLING) {
+    //backward
+    encoderDirection = CCW;
+    steps++;
+  } else if (lastEncoderEdge == A_RISING) {
+    //direction reversal
+    encoderDirection ^= true;
+  }
+  lastEncoderEdge = A_FALLING;
+  if (steps < 0) steps = 8399; //Limit variable to zero
+  else if (steps > 8399) steps = 0; //Limit variable to 8399
+}
+
+void bRise()
+{
+  if (lastEncoderEdge == A_RISING) {
+    //forward
+    encoderDirection = CW;
+    steps--;
+  } else if (lastEncoderEdge == A_FALLING) {
+    //backward
+    encoderDirection = CCW;
+    steps++;
+  } else if (lastEncoderEdge == B_RISING) {
+    //direction reversal
+    encoderDirection ^= true;
+  }
+  lastEncoderEdge = B_RISING;
+  if (steps < 0) steps = 8399; //Limit variable to zero
+  else if (steps > 8399) steps = 0; //Limit variable to 8399
+}
+
+void bFall()
+{
+  if (lastEncoderEdge == A_RISING) {
+    //backward
+    encoderDirection = CCW;
+    steps++;
+  } else if (lastEncoderEdge == A_FALLING) {
+    //forward
+    encoderDirection = CW;
+    steps--;
+  } else if (lastEncoderEdge == B_FALLING) {
+    //direction reversal
+    encoderDirection ^= true;
+  }
+  lastEncoderEdge = B_FALLING;
+  if (steps < 0) steps = 8399; //Limit variable to zero
+  else if (steps > 8399) steps = 0; //Limit variable to 8399
+}
+// *************   ISRs for measuring encoder position   *************
+
+
 //Checks to see if we detect the photogate being blocked by the flag
 boolean flagDetected()
 {
