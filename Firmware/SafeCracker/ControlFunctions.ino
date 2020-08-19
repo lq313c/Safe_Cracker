@@ -384,7 +384,7 @@ void disableMotor()
 void aChange()
 {
   // if (digitalRead(encoderA) == HIGH) //consider using direct port read to be faster - http://www.arduino.cc/en/Reference/PortManipulation
-  if (PIND & B00000100 == B00000100) //if pin2 (encoder A) is high
+  if (PIND & B00100000 == B00100000) //if pin2 (encoder A) is high
   {
     //Encoder A rising edge
     if (lastEncoderEdge == B_RISING) {
@@ -429,7 +429,7 @@ void aChange()
 void bChange()
 {
   // if (digitalRead(encoderB) == HIGH) //consider using direct port read to be faster - http://www.arduino.cc/en/Reference/PortManipulation
-  if (PIND & B00001000 == B00001000) //if pin3 (encoder B) is high
+  if (PIND & B00010000 == B00010000) //if pin3 (encoder B) is high
   {
     //Encoder B rising edge
     if (lastEncoderEdge == A_RISING) {
