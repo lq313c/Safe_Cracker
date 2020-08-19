@@ -379,9 +379,12 @@ void disableMotor()
 // in which case we will leave step count alone, since it's better to be off by 2 than off by 3. If we miss 2 edges,
 // then we'll be off by 4. If we miss 3 edges, then the same encoder edge will appear twice in succession.
 
+// On the Arduino Uno (ATmega328P) encoderA is mapped to pin 2, encoderB to pin 3
+
 void aChange()
 {
-  if (digitalRead(encoderA) == HIGH) //consider using direct port read to be faster - http://www.arduino.cc/en/Reference/PortManipulation
+  // if (digitalRead(encoderA) == HIGH) //consider using direct port read to be faster - http://www.arduino.cc/en/Reference/PortManipulation
+  if (PIND & B00000010 == B00000010) //if pin2 (encoder A) is high
   {
     //Encoder A rising edge
     if (lastEncoderEdge == B_RISING) {
@@ -425,7 +428,8 @@ void aChange()
 
 void bChange()
 {
-  if (digitalRead(encoderB) == HIGH) //consider using direct port read to be faster - http://www.arduino.cc/en/Reference/PortManipulation
+  // if (digitalRead(encoderB) == HIGH) //consider using direct port read to be faster - http://www.arduino.cc/en/Reference/PortManipulation
+  if (PIND & B00000100 == B00000100) //if pin3 (encoder B) is high
   {
     //Encoder B rising edge
     if (lastEncoderEdge == A_RISING) {
