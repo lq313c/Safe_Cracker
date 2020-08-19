@@ -386,10 +386,8 @@ void disableMotor()
 void countA()
 {
   // detect back-sliding from sticky dial
-  if (encoderAEdge == true) {
-    encoderDirection ^= true; //Toggle direction
-  }
-  encoderAEdge = true;  
+  if (encoderAEdge == true) encoderDirection ^= true; //Toggle direction
+  else encoderAEdge = true;  
   if (encoderDirection == CW) steps--;
   else steps++;
   if (steps < 0) steps = 8399; //Limit variable to zero
@@ -400,10 +398,8 @@ void countA()
 void countB()
 {
   // detect back-sliding from sticky dial
-  if (encoderAEdge == false) {
-    encoderDirection ^= true; //Toggle direction
-  }
-  encoderAEdge = false;
+  if (encoderAEdge == false) encoderDirection ^= true; //Toggle direction
+  else encoderAEdge = false;
   if (encoderDirection == CW) steps--;
   else steps++;
   if (steps < 0) steps = 8399; //Limit variable to zero
