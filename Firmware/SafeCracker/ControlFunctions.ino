@@ -146,21 +146,6 @@ int setDial(int dialValue, boolean extraSpin)
   return (actualDialValue);
 }
 
-//Initialize encoderDirection with encoder edge counter for precise position measurement.
-//Turns dial CW for half a second, and assuming there's backsliding, encoderDirection should land in CCW direction.
-void initalizeDir()
-{
-  turnCW();
-  //spin a bit
-  setMotorSpeed(150);
-  delay(1000);
-  setMotorSpeed(0);
-  delay(timeMotorStop); //Wait for motor to stop spinning
-  //assuming there's backsliding, set dir
-  encoderDirection = CCW;
-  Serial.println(F("Dial Direction initialized"));
-}
-
 //Spin until we detect the photo gate trigger
 void findFlag()
 {
@@ -389,30 +374,6 @@ void disableMotor()
   digitalWrite(motorReset, LOW);
 }
 
-//Interrupt routine when encoderA pin changes
-void countA()
-{
-  // detect back-sliding from sticky dial
-  if (encoderAEdge == true) encoderDirection ^= true; //Toggle direction
-  else encoderAEdge = true;  
-  if (encoderDirection == CW) steps--;
-  else steps++;
-  if (steps < 0) steps = 8399; //Limit variable to zero
-  else if (steps > 8399) steps = 0; //Limit variable to 8399
-}
-
-//Interrupt routine when encoderB pin changes
-void countB()
-{
-  // detect back-sliding from sticky dial
-  if (encoderAEdge == false) encoderDirection ^= true; //Toggle direction
-  else encoderAEdge = false;
-  if (encoderDirection == CW) steps--;
-  else steps++;
-  if (steps < 0) steps = 8399; //Limit variable to zero
-  else if (steps > 8399) steps = 0; //Limit variable to 8399
-}
-
 // *************   ISRs for measuring encoder position   *************
 // In the event of an ISR taking too long, and missing an alternating edge, it will look like a directional reversal, 
 // in which case we will leave step count alone, since it's better to be off by 2 than off by 3. If we miss 2 edges,
@@ -425,15 +386,15 @@ void aChange()
     //Encoder A rising edge
     if (lastEncoderEdge == B_RISING) {
       //forward
-      encoderDirection = CW;
+      // encoderDirection = CW;
       steps--;
     } else if (lastEncoderEdge == B_FALLING) {
       //backward
-      encoderDirection = CCW;
+      // encoderDirection = CCW;
       steps++;
     } else if (lastEncoderEdge == A_FALLING) {
       //direction reversal
-      encoderDirection ^= true;
+      // encoderDirection ^= true;
     } else {
       numErrors++; //should never get in here, it means 4 edges were missed!
     }
@@ -444,15 +405,15 @@ void aChange()
     //Encoder A falling edge
     if (lastEncoderEdge == B_RISING) {
       //backward
-      encoderDirection = CCW;
+      // encoderDirection = CCW;
       steps++;
     } else if (lastEncoderEdge == B_FALLING) {
       //forward
-      encoderDirection = CW;
+      // encoderDirection = CW;
       steps--;
     } else if (lastEncoderEdge == A_RISING) {
       //direction reversal
-      encoderDirection ^= true;
+      // encoderDirection ^= true;
     } else {
       numErrors++; //should never get in here, it means 4 edges were missed!
     }
@@ -469,15 +430,15 @@ void bChange()
     //Encoder B rising edge
     if (lastEncoderEdge == A_RISING) {
       //backward
-      encoderDirection = CCW;
+      // encoderDirection = CCW;
       steps++;
     } else if (lastEncoderEdge == A_FALLING) {
       //forward
-      encoderDirection = CW;
+      // encoderDirection = CW;
       steps--;
     } else if (lastEncoderEdge == B_RISING) {
       //direction reversal
-      encoderDirection ^= true;
+      // encoderDirection ^= true;
     } else {
       numErrors++; //should never get in here, it means 4 edges were missed!
     }
@@ -488,15 +449,15 @@ void bChange()
     //Encoder B falling edge
     if (lastEncoderEdge == A_RISING) {
       //forward
-      encoderDirection = CW;
+      // encoderDirection = CW;
       steps--;
     } else if (lastEncoderEdge == A_FALLING) {
       //backward
-      encoderDirection = CCW;
+      // encoderDirection = CCW;
       steps++;
     } else if (lastEncoderEdge == B_FALLING) {
       //direction reversal
-      encoderDirection ^= true;
+      // encoderDirection ^= true;
     } else {
       numErrors++; //should never get in here, it means 4 edges were missed!
     }
@@ -505,90 +466,6 @@ void bChange()
   if (steps < 0) steps = 8399; //Limit variable to zero
   else if (steps > 8399) steps = 0; //Limit variable to 8399
 }
-
-// void aRise()
-// {
-//   if (lastEncoderEdge == B_RISING) {
-//     //forward
-//     encoderDirection = CW;
-//     steps--;
-//   } else if (lastEncoderEdge == B_FALLING) {
-//     //backward
-//     encoderDirection = CCW;
-//     steps++;
-//   } else if (lastEncoderEdge == A_FALLING) {
-//     //direction reversal
-//     encoderDirection ^= true;
-//   } else {
-//     numErrors++; //should never get in here, it means 4 edges were missed!
-//   }
-//   lastEncoderEdge = A_RISING;
-//   if (steps < 0) steps = 8399; //Limit variable to zero
-//   else if (steps > 8399) steps = 0; //Limit variable to 8399
-// }
-
-// void aFall()
-// {
-//   if (lastEncoderEdge == B_RISING) {
-//     //backward
-//     encoderDirection = CCW;
-//     steps++;
-//   } else if (lastEncoderEdge == B_FALLING) {
-//     //forward
-//     encoderDirection = CW;
-//     steps--;
-//   } else if (lastEncoderEdge == A_RISING) {
-//     //direction reversal
-//     encoderDirection ^= true;
-//   } else {
-//     numErrors++; //should never get in here, it means 4 edges were missed!
-//   }
-//   lastEncoderEdge = A_FALLING;
-//   if (steps < 0) steps = 8399; //Limit variable to zero
-//   else if (steps > 8399) steps = 0; //Limit variable to 8399
-// }
-
-// void bRise()
-// {
-//   if (lastEncoderEdge == A_RISING) {
-//     //backward
-//     encoderDirection = CCW;
-//     steps++;
-//   } else if (lastEncoderEdge == A_FALLING) {
-//     //forward
-//     encoderDirection = CW;
-//     steps--;
-//   } else if (lastEncoderEdge == B_RISING) {
-//     //direction reversal
-//     encoderDirection ^= true;
-//   } else {
-//     numErrors++; //should never get in here, it means 4 edges were missed!
-//   }
-//   lastEncoderEdge = B_RISING;
-//   if (steps < 0) steps = 8399; //Limit variable to zero
-//   else if (steps > 8399) steps = 0; //Limit variable to 8399
-// }
-
-// void bFall()
-// {
-//   if (lastEncoderEdge == A_RISING) {
-//     //forward
-//     encoderDirection = CW;
-//     steps--;
-//   } else if (lastEncoderEdge == A_FALLING) {
-//     //backward
-//     encoderDirection = CCW;
-//     steps++;
-//   } else if (lastEncoderEdge == B_FALLING) {
-//     //direction reversal
-//     encoderDirection ^= true;
-//   } else {
-//     numErrors++; //should never get in here, it means 4 edges were missed!
-//   }
-//   lastEncoderEdge = B_FALLING;
-//   if (steps < 0) steps = 8399; //Limit variable to zero
-//   else if (steps > 8399) steps = 0; //Limit variable to 8399
-// }
 // *************   ISRs for measuring encoder position   *************
 
 

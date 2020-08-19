@@ -174,15 +174,6 @@ void setup()
   digitalWrite(displayData, LOW);
 
   //Setup the encoder interrupts.
-  // attachInterrupt(digitalPinToInterrupt(encoderA), countA, CHANGE);
-  // attachInterrupt(digitalPinToInterrupt(encoderB), countB, CHANGE);
-
-  // This does not work. Can only assign either RISING or FALLING mode to one pin, not both
-  // attachInterrupt(digitalPinToInterrupt(encoderA), aRise, RISING);
-  // attachInterrupt(digitalPinToInterrupt(encoderA), aFall, FALLING);
-  // attachInterrupt(digitalPinToInterrupt(encoderB), bRise, RISING);
-  // attachInterrupt(digitalPinToInterrupt(encoderB), bFall, FALLING);
-
   attachInterrupt(digitalPinToInterrupt(encoderA), aChange, CHANGE);
   attachInterrupt(digitalPinToInterrupt(encoderB), bChange, CHANGE);
 
@@ -274,7 +265,6 @@ void setup()
 
   //Tell dial to go to zero
   enableMotor(); //Turn on motor controller
-  // initalizeDir(); //initialize direction tracker. Turns dial CW for half a second to sync up encoder direction.
   findFlag(); //Find the flag
   //Adjust steps with the real-world offset
   // steps = (84 * homeOffset); //84 * the number the dial sits on when 'home'
