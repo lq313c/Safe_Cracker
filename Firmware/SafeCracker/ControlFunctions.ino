@@ -46,7 +46,7 @@ int gotoStep(int stepGoal, boolean addAFullRotation)
   }
 
   setMotorSpeed(coarseSpeed); //Go!
-  while (stepsRequired(steps, stepGoal) > coarseWindow) Serial.println(steps); //Spin until coarse window is closed
+  while (stepsRequired(steps, stepGoal) > coarseWindow) motorSafetyTest(); //Spin until coarse window is closed
 
   //After we have gotten close to the first coarse window, proceed past the goal, then proceed to the goal
   if (addAFullRotation == true)
@@ -55,22 +55,22 @@ int gotoStep(int stepGoal, boolean addAFullRotation)
     if (tempStepGoal > 8400) tempStepGoal -= 8400;
     
     //Go to temp position
-    while (stepsRequired(steps, tempStepGoal) > coarseWindow) Serial.println(steps); 
+    while (stepsRequired(steps, tempStepGoal) > coarseWindow) motorSafetyTest(); 
         
     //Go to stepGoal
-    while (stepsRequired(steps, stepGoal) > coarseWindow) Serial.println(steps); //Spin until coarse window is closed
+    while (stepsRequired(steps, stepGoal) > coarseWindow) motorSafetyTest(); //Spin until coarse window is closed
   }
 
   setMotorSpeed(fineSpeed); //Slowly approach
 
-  while (stepsRequired(steps, stepGoal) > fineWindow) Serial.println(steps); //Spin until fine window is closed
+  while (stepsRequired(steps, stepGoal) > fineWindow) motorSafetyTest(); //Spin until fine window is closed
 
   setMotorSpeed(0); //Stop
 
   //log dial behavior at end of a turn after commanded stop
-  for (int i = 0; i < 300; i++) {
-    Serial.println(steps);
-  }
+  // for (int i = 0; i < 300; i++) {
+  //   Serial.println(steps);
+  // }
 
   delay(timeMotorStop); //Wait for motor to stop
 
