@@ -135,12 +135,12 @@ int setDial(int dialValue, boolean extraSpin)
   //Serial.print("Want encoderValue: ");
   //Serial.println(encoderValue);
 
-  unsigned long start = millis();
+  // unsigned long start = millis();
   gotoStep(encoderValue, extraSpin); //Goto that encoder value
   //Serial.print("After movement, steps: ");
   //Serial.println(steps);
-  Serial.print(F("Time to spin dial: "));
-  Serial.println((millis() - start) / 1000.0);
+  // Serial.print(F("Time to spin dial: "));
+  // Serial.println((millis() - start) / 1000.0);
 
   int actualDialValue = convertEncoderToDial(steps); //Convert back to dial values
   //Serial.print("After movement, dialvalue: ");
@@ -394,10 +394,12 @@ void aChange()
       //forward
       // encoderDirection = CW;
       steps--;
+      if (steps < 0) steps = 8399; //Limit variable to zero
     } else if (lastEncoderEdge == B_FALLING) {
       //backward
       // encoderDirection = CCW;
       steps++;
+      if (steps > 8399) steps = 0; //Limit variable to 8399
     // } else if (lastEncoderEdge == A_FALLING) {
       //direction reversal
       // encoderDirection ^= true;
@@ -413,10 +415,12 @@ void aChange()
       //backward
       // encoderDirection = CCW;
       steps++;
+      if (steps > 8399) steps = 0; //Limit variable to 8399
     } else if (lastEncoderEdge == B_FALLING) {
       //forward
       // encoderDirection = CW;
       steps--;
+      if (steps < 0) steps = 8399; //Limit variable to zero
     // } else if (lastEncoderEdge == A_RISING) {
       //direction reversal
       // encoderDirection ^= true;
@@ -425,8 +429,6 @@ void aChange()
     }
     lastEncoderEdge = A_FALLING;
   }
-  if (steps < 0) steps = 8399; //Limit variable to zero
-  else if (steps > 8399) steps = 0; //Limit variable to 8399
 }
 
 void bChange()
@@ -439,10 +441,12 @@ void bChange()
       //backward
       // encoderDirection = CCW;
       steps++;
+      if (steps > 8399) steps = 0; //Limit variable to 8399
     } else if (lastEncoderEdge == A_FALLING) {
       //forward
       // encoderDirection = CW;
       steps--;
+      if (steps < 0) steps = 8399; //Limit variable to zero
     // } else if (lastEncoderEdge == B_RISING) {
       //direction reversal
       // encoderDirection ^= true;
@@ -458,10 +462,12 @@ void bChange()
       //forward
       // encoderDirection = CW;
       steps--;
+      if (steps < 0) steps = 8399; //Limit variable to zero
     } else if (lastEncoderEdge == A_FALLING) {
       //backward
       // encoderDirection = CCW;
       steps++;
+      if (steps > 8399) steps = 0; //Limit variable to 8399
     // } else if (lastEncoderEdge == B_FALLING) {
       //direction reversal
       // encoderDirection ^= true;
@@ -470,8 +476,6 @@ void bChange()
     }
     lastEncoderEdge = B_FALLING;
   }
-  if (steps < 0) steps = 8399; //Limit variable to zero
-  else if (steps > 8399) steps = 0; //Limit variable to 8399
 }
 // *************   ISRs for measuring encoder position   *************
 
