@@ -395,10 +395,10 @@ void aChange()
       //backward
       // encoderDirection = CCW;
       steps++;
-    } else if (lastEncoderEdge == A_FALLING) {
+    // } else if (lastEncoderEdge == A_FALLING) {
       //direction reversal
       // encoderDirection ^= true;
-    } else {
+    } else if (lastEncoderEdge == A_RISING) {
       numErrors++; //should never get in here, it means 4 edges were missed!
     }
     lastEncoderEdge = A_RISING;
@@ -414,10 +414,10 @@ void aChange()
       //forward
       // encoderDirection = CW;
       steps--;
-    } else if (lastEncoderEdge == A_RISING) {
+    // } else if (lastEncoderEdge == A_RISING) {
       //direction reversal
       // encoderDirection ^= true;
-    } else {
+    } else if (lastEncoderEdge == A_FALLING) {
       numErrors++; //should never get in here, it means 4 edges were missed!
     }
     lastEncoderEdge = A_FALLING;
@@ -440,10 +440,10 @@ void bChange()
       //forward
       // encoderDirection = CW;
       steps--;
-    } else if (lastEncoderEdge == B_RISING) {
+    // } else if (lastEncoderEdge == B_RISING) {
       //direction reversal
       // encoderDirection ^= true;
-    } else {
+    } else if (lastEncoderEdge == B_RISING) {
       numErrors++; //should never get in here, it means 4 edges were missed!
     }
     lastEncoderEdge = B_RISING;
@@ -459,10 +459,10 @@ void bChange()
       //backward
       // encoderDirection = CCW;
       steps++;
-    } else if (lastEncoderEdge == B_FALLING) {
+    // } else if (lastEncoderEdge == B_FALLING) {
       //direction reversal
       // encoderDirection ^= true;
-    } else {
+    } else if (lastEncoderEdge == B_FALLING) {
       numErrors++; //should never get in here, it means 4 edges were missed!
     }
     lastEncoderEdge = B_FALLING;
