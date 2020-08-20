@@ -135,9 +135,12 @@ int setDial(int dialValue, boolean extraSpin)
   //Serial.print("Want encoderValue: ");
   //Serial.println(encoderValue);
 
+  int start = millis();
   gotoStep(encoderValue, extraSpin); //Goto that encoder value
   //Serial.print("After movement, steps: ");
   //Serial.println(steps);
+  Serial.print(F("Time to spin dial: "));
+  Serial.println((millis() - start) / 1000.0);
 
   int actualDialValue = convertEncoderToDial(steps); //Convert back to dial values
   //Serial.print("After movement, dialvalue: ");
