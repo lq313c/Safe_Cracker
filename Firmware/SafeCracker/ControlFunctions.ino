@@ -149,7 +149,7 @@ int setDial(int dialValue, boolean extraSpin)
 //Spin until we detect the photo gate trigger
 void findFlag()
 {
-  byte fastSearch = 150; //Speed at which we locate photogate
+  byte fastSearch = 70; //Speed at which we locate photogate
   byte slowSearch = 50;
 
   turnCW();
