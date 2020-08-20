@@ -174,8 +174,8 @@ void setup()
   digitalWrite(displayData, LOW);
 
   //Setup the encoder interrupts.
-  attachInterrupt(digitalPinToInterrupt(encoderA), aChange, CHANGE);
-  attachInterrupt(digitalPinToInterrupt(encoderB), bChange, CHANGE);
+  attachInterrupt(digitalPinToInterrupt(encoderA), aChangeTest, CHANGE);
+  attachInterrupt(digitalPinToInterrupt(encoderB), bChangeTest, CHANGE);
 
   //Load settings from EEPROM
   homeOffset = EEPROM.read(LOCATION_HOME_OFFSET); //After doing a findFlag calibration, adjust this number up or down until dial is at zero
@@ -601,6 +601,24 @@ void loop()
       }
     } //End eombination loop
   } //End incoming == 's'
+  else if (incoming == 'm')
+  {
+    turnCCW();
+    setMotorSpeed(100); //Go!
+    delay(1000);
+    setMotorSpeed(0); //stop
+    Serial.print(F("CCW encoder errors: "));
+    Serial.println(numErrors);
+  }
+  else if (incoming = 'n')
+  {
+    turnCW();
+    setMotorSpeed(100); //Go!
+    delay(1000);
+    setMotorSpeed(0); //stop
+    Serial.print(F("CW encoder errors: "));
+    Serial.println(numErrors);
+  }
 }
 
 void writeIntIntoEEPROM(int address, int number)

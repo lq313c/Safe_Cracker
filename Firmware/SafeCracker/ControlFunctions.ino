@@ -477,6 +477,44 @@ void bChange()
     lastEncoderEdge = B_FALLING;
   }
 }
+
+void aChangeTest() {
+  if (PIND & B00000100) //if pin2 (encoder A) is high
+  {
+    //Encoder A rising edge
+    if (lastEncoderEdge == A_RISING) {
+      numErrors++; //should never get in here, it means 4 edges were missed!
+    }
+    lastEncoderEdge = A_RISING;
+  }
+  else
+  {
+    //Encoder A falling edge
+    if (lastEncoderEdge == A_FALLING) {
+      numErrors++; //should never get in here, it means 4 edges were missed!
+    }
+    lastEncoderEdge = A_FALLING;
+  }
+}
+
+void bChangeTest() {
+  if (PIND & B00001000) //if pin3 (encoder B) is high
+  {
+    //Encoder B rising edge
+    if (lastEncoderEdge == B_RISING) {
+      numErrors++; //should never get in here, it means 4 edges were missed!
+    }
+    lastEncoderEdge = B_RISING;
+  }
+  else
+  {
+    //Encoder B falling edge
+    if (lastEncoderEdge == B_FALLING) {
+      numErrors++; //should never get in here, it means 4 edges were missed!
+    }
+    lastEncoderEdge = B_FALLING;
+  }
+}
 // *************   ISRs for measuring encoder position   *************
 
 
