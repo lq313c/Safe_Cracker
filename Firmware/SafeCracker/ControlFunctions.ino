@@ -263,7 +263,7 @@ void resetDial()
 
   turnCCW();
 
-  setMotorSpeed(140); //Go at coarse speed
+  setMotorSpeed(100); //Go at coarse speed
   enableMotor();
 
   //Spin until 8400*2 steps have gone by
