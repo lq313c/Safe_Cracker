@@ -265,13 +265,11 @@ void setup()
 
   //Tell dial to go to zero
   enableMotor(); //Turn on motor controller
-  findFlag(); //Find the flag
-  //Adjust steps with the real-world offset
-  // steps = (84 * homeOffset); //84 * the number the dial sits on when 'home'
-  steps = homeOffsetSteps;
-  setDial(0, false); //Make dial go to zero
-  Serial.print(F("Dial should be at 0, is at: "));
-  printEncoderToDial(steps);
+  // findFlag(); //Find the flag
+  // steps = homeOffsetSteps; //Adjust steps with the real-world offset
+  // setDial(0, false); //Make dial go to zero
+  // Serial.print(F("Dial should be at 0, is at: "));
+  // printEncoderToDial(steps);
 
   // clearDisplay();
   // showCombination(0, 0, 0); //Display zeroes
@@ -604,20 +602,22 @@ void loop()
   else if (incoming == 'm')
   {
     turnCCW();
-    setMotorSpeed(100); //Go!
+    setMotorSpeed(200); //Go!
     delay(1000);
     setMotorSpeed(0); //stop
     Serial.print(F("CCW encoder errors: "));
     Serial.println(numErrors);
+    Serial.read(); //clear out remaining byte
   }
   else if (incoming = 'n')
   {
     turnCW();
-    setMotorSpeed(100); //Go!
+    setMotorSpeed(200); //Go!
     delay(1000);
     setMotorSpeed(0); //stop
     Serial.print(F("CW encoder errors: "));
     Serial.println(numErrors);
+    Serial.read(); //clear out remaining byte
   }
 }
 
