@@ -83,6 +83,10 @@ volatile bool encoderAEdge = false;
 #define B_FALLING 3 //encoder B falling edge
 volatile byte lastEncoderEdge = A_RISING;
 volatile byte numErrors = 0;
+volatile byte numErrorsAR = 0;
+volatile byte numErrorsAF = 0;
+volatile byte numErrorsBR = 0;
+volatile byte numErrorsBF = 0;
 
 #define CCW 0
 #define CW 1
@@ -605,8 +609,15 @@ void loop()
     setMotorSpeed(200); //Go!
     delay(1000);
     setMotorSpeed(0); //stop
-    Serial.print(F("CCW encoder errors: "));
-    Serial.println(numErrors);
+    Serial.print(F("CCW encoder errors (AR/AF/BR/BF): "));
+    Serial.print(numErrorsAR);
+    Serial.print("/");
+    Serial.print(numErrorsAF);
+    Serial.print("/");
+    Serial.print(numErrorsBR);
+    Serial.print("/");
+    Serial.print(numErrorsBF);
+    Serial.print("/");
     Serial.read(); //clear out remaining byte
   }
   else if (incoming = 'n')
@@ -615,8 +626,15 @@ void loop()
     setMotorSpeed(200); //Go!
     delay(1000);
     setMotorSpeed(0); //stop
-    Serial.print(F("CW encoder errors: "));
-    Serial.println(numErrors);
+    Serial.print(F("CW encoder errors (AR/AF/BR/BF): "));
+    Serial.print(numErrorsAR);
+    Serial.print("/");
+    Serial.print(numErrorsAF);
+    Serial.print("/");
+    Serial.print(numErrorsBR);
+    Serial.print("/");
+    Serial.print(numErrorsBF);
+    Serial.print("/");
     Serial.read(); //clear out remaining byte
   }
 }

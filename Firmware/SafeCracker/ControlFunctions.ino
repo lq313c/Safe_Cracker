@@ -483,7 +483,7 @@ void aChangeTest() {
   {
     //Encoder A rising edge
     if (lastEncoderEdge == A_RISING) {
-      numErrors++; //should never get in here, it means 4 edges were missed!
+      numErrorsAR++; //should never get in here, it means 4 edges were missed!
     }
     lastEncoderEdge = A_RISING;
   }
@@ -491,7 +491,7 @@ void aChangeTest() {
   {
     //Encoder A falling edge
     if (lastEncoderEdge == A_FALLING) {
-      numErrors++; //should never get in here, it means 4 edges were missed!
+      numErrorsAF++; //should never get in here, it means 4 edges were missed!
     }
     lastEncoderEdge = A_FALLING;
   }
@@ -502,7 +502,7 @@ void bChangeTest() {
   {
     //Encoder B rising edge
     if (lastEncoderEdge == B_RISING) {
-      numErrors++; //should never get in here, it means 4 edges were missed!
+      numErrorsBR++; //should never get in here, it means 4 edges were missed!
     }
     lastEncoderEdge = B_RISING;
   }
@@ -510,7 +510,7 @@ void bChangeTest() {
   {
     //Encoder B falling edge
     if (lastEncoderEdge == B_FALLING) {
-      numErrors++; //should never get in here, it means 4 edges were missed!
+      numErrorsBF++; //should never get in here, it means 4 edges were missed!
     }
     lastEncoderEdge = B_FALLING;
   }
