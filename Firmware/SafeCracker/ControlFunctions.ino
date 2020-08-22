@@ -78,8 +78,8 @@ int gotoStep(int stepGoal, boolean addAFullRotation)
 
   delay(timeMotorStop); //Wait for motor to stop
 
-  Serial.print(F("Encoder errors: "));
-  Serial.println(numErrors);
+  // Serial.print(F("Encoder errors: "));
+  // Serial.println(numErrors);
 
   int delta = steps - stepGoal;
 
