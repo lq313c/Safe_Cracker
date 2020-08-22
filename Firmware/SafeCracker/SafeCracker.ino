@@ -599,40 +599,40 @@ void loop()
       }
     } //End eombination loop
   } //End incoming == 's'
-  else if (incoming == 'm')
-  {
-    turnCCW();
-    setMotorSpeed(200); //Go!
-    delay(1000);
-    setMotorSpeed(0); //stop
-    Serial.print(F("CCW encoder errors (AR/AF/BR/BF): "));
-    Serial.print(numErrorsAR);
-    Serial.print("/");
-    Serial.print(numErrorsAF);
-    Serial.print("/");
-    Serial.print(numErrorsBR);
-    Serial.print("/");
-    Serial.print(numErrorsBF);
-    Serial.print("/");
-    Serial.read(); //clear out remaining byte
-  }
-  else if (incoming = 'n')
-  {
-    turnCW();
-    setMotorSpeed(200); //Go!
-    delay(1000);
-    setMotorSpeed(0); //stop
-    Serial.print(F("CW encoder errors (AR/AF/BR/BF): "));
-    Serial.print(numErrorsAR);
-    Serial.print("/");
-    Serial.print(numErrorsAF);
-    Serial.print("/");
-    Serial.print(numErrorsBR);
-    Serial.print("/");
-    Serial.print(numErrorsBF);
-    Serial.print("/");
-    Serial.read(); //clear out remaining byte
-  }
+  // else if (incoming == 'm')
+  // {
+  //   turnCCW();
+  //   setMotorSpeed(200); //Go!
+  //   delay(1000);
+  //   setMotorSpeed(0); //stop
+  //   Serial.print(F("CCW encoder errors (AR/AF/BR/BF): "));
+  //   Serial.print(numErrorsAR);
+  //   Serial.print("/");
+  //   Serial.print(numErrorsAF);
+  //   Serial.print("/");
+  //   Serial.print(numErrorsBR);
+  //   Serial.print("/");
+  //   Serial.print(numErrorsBF);
+  //   Serial.print("/");
+  //   Serial.read(); //clear out remaining byte
+  // }
+  // else if (incoming = 'n')
+  // {
+  //   turnCW();
+  //   setMotorSpeed(200); //Go!
+  //   delay(1000);
+  //   setMotorSpeed(0); //stop
+  //   Serial.print(F("CW encoder errors (AR/AF/BR/BF): "));
+  //   Serial.print(numErrorsAR);
+  //   Serial.print("/");
+  //   Serial.print(numErrorsAF);
+  //   Serial.print("/");
+  //   Serial.print(numErrorsBR);
+  //   Serial.print("/");
+  //   Serial.print(numErrorsBF);
+  //   Serial.print("/");
+  //   Serial.read(); //clear out remaining byte
+  // }
 }
 
 void writeIntIntoEEPROM(int address, int number)
