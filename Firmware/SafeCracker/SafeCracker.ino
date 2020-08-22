@@ -546,7 +546,6 @@ void loop()
   else if (incoming == 'p')
   {
     detailedPositionTesting();
-    // inputTest();
   }
   else if (incoming == 'f')
   {
@@ -556,6 +555,7 @@ void loop()
     setDial(0, false); //Make dial go to zero
     Serial.print(F("Dial should be at 0, is at: "));
     printEncoderToDial(steps);
+    Serial.read(); //clear out remaining byte
   }
   else if (incoming == 'a')
   {
