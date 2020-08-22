@@ -281,9 +281,11 @@ void detailedPositionTesting() {
       break;
     } 
     else {
-      // Serial.println(F("Unknown command ¯\\_(ツ)_/¯"));
+      Serial.println(F("Unknown command ¯\\_(ツ)_/¯"));
     }
+    Serial.read(); //clear out remaining byte
   }
+  Serial.read(); //clear out remaining byte
 }
 
 void printEncoderToDial(int encoderValue)
