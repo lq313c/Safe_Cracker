@@ -478,6 +478,32 @@ void bChange()
   }
 }
 
+void aChangeSimple() {
+  bool encA = PIND & B00000100;
+  bool encB = PIND & B00001000;
+  if (encA == encB) {
+    steps--;
+    if (steps < 0) steps = 8399;
+  }
+  else {
+    steps++;
+    if (steps > 8399) steps = 0;
+  }
+}
+
+void bChangeSimple() {
+  bool encA = PIND & B00000100;
+  bool encB = PIND & B00001000;
+  if (encA != encB) {
+    steps--;
+    if (steps < 0) steps = 8399;
+  }
+  else {
+    steps++;
+    if (steps > 8399) steps = 0;
+  }
+}
+
 void aChangeTest() {
   if (PIND & B00000100) //if pin2 (encoder A) is high
   {

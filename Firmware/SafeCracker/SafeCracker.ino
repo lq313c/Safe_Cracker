@@ -162,7 +162,6 @@ void setup()
   pinMode(LED, OUTPUT);
 
   pinMode(currentSense, INPUT);
-  // pinMode(servoPositionButton, INPUT_PULLUP);
   pinMode(servoPosition, INPUT);
 
   pinMode(photo, INPUT_PULLUP);
@@ -178,8 +177,8 @@ void setup()
   digitalWrite(displayData, LOW);
 
   //Setup the encoder interrupts.
-  attachInterrupt(digitalPinToInterrupt(encoderA), aChangeTest, CHANGE);
-  attachInterrupt(digitalPinToInterrupt(encoderB), bChangeTest, CHANGE);
+  attachInterrupt(digitalPinToInterrupt(encoderA), aChangeSimple, CHANGE);
+  attachInterrupt(digitalPinToInterrupt(encoderB), bChangeSimple, CHANGE);
 
   //Load settings from EEPROM
   homeOffset = EEPROM.read(LOCATION_HOME_OFFSET); //After doing a findFlag calibration, adjust this number up or down until dial is at zero
@@ -269,14 +268,11 @@ void setup()
 
   //Tell dial to go to zero
   enableMotor(); //Turn on motor controller
-  // findFlag(); //Find the flag
-  // steps = homeOffsetSteps; //Adjust steps with the real-world offset
-  // setDial(0, false); //Make dial go to zero
-  // Serial.print(F("Dial should be at 0, is at: "));
-  // printEncoderToDial(steps);
-
-  // clearDisplay();
-  // showCombination(0, 0, 0); //Display zeroes
+  findFlag(); //Find the flag
+  steps = homeOffsetSteps; //Adjust steps with the real-world offset
+  setDial(0, false); //Make dial go to zero
+  Serial.print(F("Dial should be at 0, is at: "));
+  printEncoderToDial(steps);
 }
 
 void loop()
