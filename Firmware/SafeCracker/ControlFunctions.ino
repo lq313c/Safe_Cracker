@@ -152,7 +152,7 @@ int setDial(int dialValue, boolean extraSpin)
 //Spin until we detect the photo gate trigger
 void findFlag()
 {
-  byte fastSearch = 70; //Speed at which we locate photogate
+  byte fastSearch = 60; //Speed at which we locate photogate
   byte slowSearch = 50;
 
   turnCW();
@@ -172,22 +172,21 @@ void findFlag()
 
   while (flagDetected() == false) delayMicroseconds(1); //Spin freely
 
-  //Ok, we just zipped past the gate. Stop and spin slowly backward
-  setMotorSpeed(0);
-  delay(timeMotorStop); //Wait for motor to stop spinning
-  turnCCW();
+  // //Ok, we just zipped past the gate. Stop and spin slowly backward
+  // setMotorSpeed(0);
+  // delay(timeMotorStop); //Wait for motor to stop spinning
+  // turnCCW();
 
-  setMotorSpeed(slowSearch);
-  while (flagDetected() == false) delayMicroseconds(1); //Find flag
+  // setMotorSpeed(slowSearch);
+  // while (flagDetected() == false) delayMicroseconds(1); //Find flag
 
   setMotorSpeed(0);
   delay(timeMotorStop); //Wait for motor to stop
 
   //Adjust steps with the real-world offset
-  // steps = (84 * homeOffset); //84 * the number the dial sits on when 'home'
   steps = homeOffsetSteps;
 
-  previousDirection = CCW; //Last adjustment to dial was in CCW direction
+  previousDirection = CW; //Last adjustment to dial was in CCW direction
   Serial.println(F("Flag found"));
 }
 
