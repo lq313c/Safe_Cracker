@@ -48,3 +48,126 @@ Pausing. Press button to continue.Test 1 of 1. IndentNum[8] Encoder[5400] / Dial
 Pausing. Press button to continue.Test 1 of 1. IndentNum[9] Encoder[6027] / Dial[72] / Width[429] / Depth[0]
 Pausing. Press button to continue.Test 1 of 1. IndentNum[10] Encoder[6817] / Dial[81] / Width[667] / Depth[0]
 Pausing. Press button to continue.Test 1 of 1. IndentNum[11] Encoder[7554] / Dial[90] / Width[662] / Depth[0]
+
+
+Indent testing (8/22): after encoder ISR optimization (using simpleChange algorithm, where only the current encoder state is considered, not previous edges, or possibility of impossible states) 
+Test 1 of 2. IndentNum[0] Encoder[8241] / Dial[98] / Width[698] / Depth[0]
+Pausing. Press button to continue.Flag found
+Commanded CCW to 8
+Encoder errors: 0
+Encoder errors: 0
+Test 1 of 2. IndentNum[1] Encoder[549] / Dial[7] / Width[716] / Depth[0]
+Pausing. Press button to continue.Flag found
+Commanded CCW to 17
+Encoder errors: 0
+Encoder errors: 0
+Test 1 of 2. IndentNum[2] Encoder[1227] / Dial[15] / Width[725] / Depth[0]
+Pausing. Press button to continue.Flag found
+Commanded CCW to 25
+Encoder errors: 0
+Encoder errors: 0
+Test 1 of 2. IndentNum[3] Encoder[1931] / Dial[23] / Width[752] / Depth[0]
+Pausing. Press button to continue.Flag found
+Commanded CCW to 33
+Encoder errors: 0
+Encoder errors: 0
+Test 1 of 2. IndentNum[4] Encoder[2624] / Dial[31] / Width[750] / Depth[0]
+Pausing. Press button to continue.Flag found
+Commanded CCW to 41
+Encoder errors: 0
+Encoder errors: 0
+Test 1 of 2. IndentNum[5] Encoder[3322] / Dial[40] / Width[737] / Depth[0]
+Pausing. Press button to continue.Flag found
+Commanded CCW to 50
+Encoder errors: 0
+Encoder errors: 0
+Test 1 of 2. IndentNum[6] Encoder[4019] / Dial[48] / Width[735] / Depth[0]
+Pausing. Press button to continue.Flag found
+Commanded CCW to 58
+Encoder errors: 0
+Encoder errors: 0
+Test 1 of 2. IndentNum[7] Encoder[4721] / Dial[56] / Width[740] / Depth[0]
+Pausing. Press button to continue.Flag found
+Commanded CCW to 66
+Encoder errors: 0
+Encoder errors: 0
+Test 1 of 2. IndentNum[8] Encoder[5416] / Dial[64] / Width[748] / Depth[0]
+Pausing. Press button to continue.Flag found
+Commanded CCW to 74
+Encoder errors: 0
+Encoder errors: 0
+Test 1 of 2. IndentNum[9] Encoder[6126] / Dial[73] / Width[744] / Depth[0]
+Pausing. Press button to continue.Flag found
+Commanded CCW to 83
+Encoder errors: 0
+Encoder errors: 0
+Test 1 of 2. IndentNum[10] Encoder[6826] / Dial[81] / Width[721] / Depth[0]
+Pausing. Press button to continue.Flag found
+Commanded CCW to 91
+Encoder errors: 0
+Encoder errors: 0
+Test 1 of 2. IndentNum[11] Encoder[7547] / Dial[90] / Width[728] / Depth[0]
+Pausing. Press button to continue.Flag found
+Commanded CCW to 0
+Encoder errors: 0
+Encoder errors: 0
+Test 2 of 2. IndentNum[0] Encoder[8247] / Dial[98] / Width[1416] / Depth[0]
+Pausing. Press button to continue.Flag found
+Commanded CCW to 8
+Encoder errors: 0
+Encoder errors: 0
+Test 2 of 2. IndentNum[1] Encoder[549] / Dial[7] / Width[1456] / Depth[0]
+Pausing. Press button to continue.Flag found
+Commanded CCW to 17
+Encoder errors: 0
+Encoder errors: 0
+Test 2 of 2. IndentNum[2] Encoder[1227] / Dial[15] / Width[1479] / Depth[0]
+Pausing. Press button to continue.Flag found
+Commanded CCW to 25
+Encoder errors: 0
+Encoder errors: 0
+Test 2 of 2. IndentNum[3] Encoder[1925] / Dial[23] / Width[1526] / Depth[0]
+Pausing. Press button to continue.Flag found
+Commanded CCW to 33
+Encoder errors: 0
+Encoder errors: 0
+Test 2 of 2. IndentNum[4] Encoder[2617] / Dial[31] / Width[1534] / Depth[0]
+Pausing. Press button to continue.Flag found
+Commanded CCW to 41
+Encoder errors: 0
+Encoder errors: 0
+Test 2 of 2. IndentNum[5] Encoder[3321] / Dial[40] / Width[1520] / Depth[0]
+Pausing. Press button to continue.Flag found
+Commanded CCW to 50
+Encoder errors: 0
+Encoder errors: 0
+Test 2 of 2. IndentNum[6] Encoder[4024] / Dial[48] / Width[1513] / Depth[0]
+Pausing. Press button to continue.Flag found
+Commanded CCW to 58
+Encoder errors: 0
+Encoder errors: 0
+Test 2 of 2. IndentNum[7] Encoder[4724] / Dial[56] / Width[1502] / Depth[0]
+Pausing. Press button to continue.Flag found
+Commanded CCW to 66
+Encoder errors: 0
+Encoder errors: 0
+Test 2 of 2. IndentNum[8] Encoder[5419] / Dial[65] / Width[1512] / Depth[0]
+Pausing. Press button to continue.Flag found
+Commanded CCW to 75
+Encoder errors: 0
+Encoder errors: 0
+Test 2 of 2. IndentNum[9] Encoder[6130] / Dial[73] / Width[1498] / Depth[0]
+Pausing. Press button to continue.Flag found
+Commanded CCW to 83
+Encoder errors: 0
+Encoder errors: 0
+Test 2 of 2. IndentNum[10] Encoder[6822] / Dial[81] / Width[1446] / Depth[0]
+Pausing. Press button to continue.Flag found
+Commanded CCW to 91
+Encoder errors: 0
+Encoder errors: 0
+Test 2 of 2. IndentNum[11] Encoder[7546] / Dial[90] / Width[1462] / Depth[0]
+Largest indent number: 4
+Largest indent is now set to test
+Indent locations recorded to EEPROM
+Press key to continue
