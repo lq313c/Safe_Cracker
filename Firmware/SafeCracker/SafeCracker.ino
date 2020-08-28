@@ -13,6 +13,8 @@
   TODO:
   servo rest, pull, and open settings to eeprom
   current combination to nvm
+
+  Modified 
 */
 
 #include "nvm.h" //EEPROM locations for settings
@@ -26,19 +28,13 @@ const byte encoderA = 2;
 const byte encoderB = 3;
 const byte photo = 5;
 const byte motorPWM = 6;
-const byte button = 7;
 const byte motorReset = 8;
 const byte servo = 9;
 const byte motorDIR = 10;
 const byte buzzer = 11;
-const byte LED = 13;
 
-const byte currentSense = A0;
 // const byte servoPositionButton = A1;
 const byte servoPosition = A1;
-const byte displayLatch = A2;
-const byte displayClock = A3;
-const byte displayData = A4;
 
 //Servo values are found using the testServo() function while the
 //cracker was deattached from the safe
@@ -136,8 +132,6 @@ byte discCAttempts = 0;
 
 long startTime; //Used to measure amount of time taken per test
 
-boolean buttonPressed = false; //Keeps track of the 'GO' button.
-
 boolean indentsToTry[12]; //Keeps track of the indents we want to try
 int indentLocations[12]; //Encoder click for a given indent
 int indentWidths[12]; //Calculated width of a given indent
@@ -159,22 +153,9 @@ void setup()
   pinMode(motorPWM, OUTPUT);
   pinMode(motorDIR, OUTPUT);
 
-  pinMode(LED, OUTPUT);
-
-  pinMode(currentSense, INPUT);
   pinMode(servoPosition, INPUT);
 
   pinMode(photo, INPUT_PULLUP);
-
-  pinMode(button, INPUT_PULLUP);
-
-  pinMode(displayClock, OUTPUT);
-  pinMode(displayLatch, OUTPUT);
-  pinMode(displayData, OUTPUT);
-
-  digitalWrite(displayClock, LOW);
-  digitalWrite(displayLatch, LOW);
-  digitalWrite(displayData, LOW);
 
   //Setup the encoder interrupts.
   attachInterrupt(digitalPinToInterrupt(encoderA), aChangeSimple, CHANGE);
@@ -302,40 +283,6 @@ void loop()
   Serial.println(F("f) Find flag and recenter dial"));
   Serial.println(F("s) Start cracking"));
 
-  // while (!Serial.available())
-  // {
-  //   if (digitalRead(button) == LOW)
-  //   {
-  //     delay(50);
-  //     if (digitalRead(button) == LOW)
-  //     {
-  //       buttonPressed = true;
-  //       break;
-  //     }
-  //     else
-  //     {
-  //       buttonPressed = false;
-  //     }
-  //   }
-  //   else
-  //   {
-  //     buttonPressed = false;
-  //   }
-  // }
-
-  // if (buttonPressed == true)
-  // {
-  //   Serial.println(F("Button pressed!"));
-
-  //   while (digitalRead(button) == false); //Wait for user to stop pressing button
-  //   buttonPressed = false; //Reset variable
-
-  //   incoming = 's'; //Act as if user pressed start cracking
-  // }
-  // else
-  // {
-  //   incoming = Serial.read();
-  // }
   while (!Serial.available()); //Wait for user input
   incoming = Serial.read();
 

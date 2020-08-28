@@ -332,25 +332,6 @@ void setMotorSpeed(int speedValue)
   analogWrite(motorPWM, speedValue);
 }
 
-//Gives the current being used by the motor in milliamps
-int readMotorCurrent()
-{
-  const int VOLTAGE_REF = 5;  //This board runs at 5V
-  const float RS = 0.1;          //Shunt resistor value (in ohms)
-
-  float sensorValue = averageAnalogRead(currentSense);
-
-  // Remap the ADC value into a voltage number (5V reference)
-  sensorValue = (sensorValue * VOLTAGE_REF) / 1023;
-
-  // Follow the equation given by the INA169 datasheet to
-  // determine the current flowing through RS. Assume RL = 10k
-  // Is = (Vout x 1k) / (RS x RL)
-  float current = sensorValue / (10 * RS);
-
-  return (current * 1000);
-}
-
 //Tell motor to turn dial clock wise
 void turnCW()
 {
@@ -603,15 +584,15 @@ void messagePause(char* message)
   Serial.read(); //Throw away character
 }
 
-//See if user has pressed a button. If so, pause
+//See if user has requested a pause. If so, pause
 void checkForUserPause()
 {
-  if (Serial.available()) //See if user has pressed a button
+  if (Serial.available()) //See if user has has requested a pause
   {
     Serial.read(); //Throw out character
-    Serial.print("Pausing. Press button to continue.");
+    Serial.print("Pausing. Press key to continue.");
 
-    while (!Serial.available()); //Wait for user to press button to continue
+    while (!Serial.available()); //Wait for user to press key to continue
   }
 }
 

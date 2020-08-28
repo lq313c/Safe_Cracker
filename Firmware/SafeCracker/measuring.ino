@@ -21,7 +21,7 @@ void measureDiscC(int numberOfTests)
   {
     for (int indentNumber = 0 ; indentNumber < 12 ; indentNumber++)
     {
-      checkForUserPause(); //Pause if user presses a button
+      checkForUserPause(); //Pause if user requested a pause
 
       findFlag(); //Recal every loop. Measuring causes havoc with the encoder
 
