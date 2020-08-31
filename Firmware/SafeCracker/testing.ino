@@ -110,7 +110,7 @@ void testServo()
 //Test to see if we can repeatably go to a dial position
 //Turns dial to random CW and CCW position and asks user to verify.
 //How to use: Attach cracker to safe. Home the dial using the menu function. Then run this
-//and verify the dial goes where it says it is going. If it's wrong, check homeOffset variable.
+//and verify the dial goes where it says it is going. If it's wrong, check homeOffsetSteps variable.
 //If one direction is off, check switchDirectionAdjustment variable.
 void positionTesting()
 {

@@ -72,19 +72,19 @@ void measureDiscC(int numberOfTests)
   for (int x = 0 ; x < 12 ; x++)
   {
     indentsToTry[x] = false; //Clear local array
-    EEPROM.put(LOCATION_TEST_INDENT_0 + x, false); //Record settings to EEPROM
+    // EEPROM.put(LOCATION_TEST_INDENT_0 + x, false); //Record settings to EEPROM
   }
 
   //Turn on the one largest indent
   indentsToTry[biggestIndent] = true;
-  EEPROM.put(LOCATION_TEST_INDENT_0 + biggestIndent, true); //Record settings to EEPROM
+  // EEPROM.put(LOCATION_TEST_INDENT_0 + biggestIndent, true); //Record settings to EEPROM
   Serial.println(F("Largest indent is now set to test"));
 
   //Record these indent values to EEPROM
   for (byte x = 0 ; x < 12 ; x++)
-    EEPROM.put(LOCATION_INDENT_DIAL_0 + (x * 2), indentLocations[x]); //adr, data
+    // EEPROM.put(LOCATION_INDENT_DIAL_0 + (x * 2), indentLocations[x]); //adr, data
   
-  Serial.println(F("Indent locations recorded to EEPROM"));
+  // Serial.println(F("Indent locations recorded to EEPROM"));
 
   messagePause("Press key to continue");
 }

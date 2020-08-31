@@ -137,7 +137,6 @@ void nextCombination()
 
     Serial.println();
     Serial.println("Door is open!!!");
-    announceSuccess();
     disableMotor(); //Power down motor
 
     Serial.println(F("Pausing. Press key to release handle."));

@@ -17,8 +17,8 @@
   Modified 
 */
 
-#include "nvm.h" //EEPROM locations for settings
-#include <EEPROM.h> //For storing settings and things to NVM
+// #include "nvm.h" //EEPROM locations for settings
+// #include <EEPROM.h> //For storing settings and things to NVM
 
 #include <Servo.h>
 Servo handleServo;
@@ -92,7 +92,6 @@ volatile int steps = 0; //Keeps track of encoder counts. 8400 per revolution so 
 boolean direction = CW; //Commanded direction
 boolean previousDirection = CW; //Detects when direction changes to add some steps for encoder slack
 volatile boolean encoderDirection = CW; //This separately tracks the direction of turn as measured by the encoder
-byte homeOffset = 0; //Found by running findFlag(). Stored in nvm.
 int homeOffsetSteps = 0; //More accurate offset - includes fractional dial value
 
 //Because we're switching directions we need to add extra steps to take
@@ -133,8 +132,8 @@ byte discCAttempts = 0;
 
 long startTime; //Used to measure amount of time taken per test
 
-boolean indentsToTry[12]; //Keeps track of the indents we want to try
-int indentLocations[12]; //Encoder click for a given indent
+boolean indentsToTry[12] = {9, 10, 11}; //Keeps track of the indents we want to try
+int indentLocations[12] = {98, 6, 14, 23, 31, 40, 48, 56, 65, 73, 81, 90}; //indent centers as meausured. Set as appropriate
 int indentWidths[12]; //Calculated width of a given indent
 int indentDepths[12]; //Not really used
 
@@ -162,12 +161,9 @@ void setup()
   attachInterrupt(digitalPinToInterrupt(encoderA), aChangeSimple, CHANGE);
   attachInterrupt(digitalPinToInterrupt(encoderB), bChangeSimple, CHANGE);
 
-  //Load settings from EEPROM
-  homeOffset = EEPROM.read(LOCATION_HOME_OFFSET); //After doing a findFlag calibration, adjust this number up or down until dial is at zero
-  Serial.print(F("Home Offset: "));
-  Serial.println(homeOffset);
+  // homeOffsetSteps = readIntFromEEPROM(LOCATION_HOME_OFFSET_STEPS);
+  homeOffsetSteps = 79.10;
 
-  homeOffsetSteps = readIntFromEEPROM(LOCATION_HOME_OFFSET_STEPS);
   Serial.print(F("Home Offset in steps: "));
   Serial.println(homeOffsetSteps);
 
@@ -175,21 +171,22 @@ void setup()
   for (int indentNumber = 0 ; indentNumber < 12 ; indentNumber++)
   {
     //Load the yes/no for each indent To Try
-    indentsToTry[indentNumber] = EEPROM.read(LOCATION_TEST_INDENT_0 + indentNumber); //Boolean
+    // indentsToTry[indentNumber] = EEPROM.read(LOCATION_TEST_INDENT_0 + indentNumber); //Boolean
     
     //Get the encoder values for each indent
-    EEPROM.get(LOCATION_INDENT_DIAL_0 + (indentNumber * 2), indentLocations[indentNumber]); //Addr, loc. Encoder click for a given indent
+    // EEPROM.get(LOCATION_INDENT_DIAL_0 + (indentNumber * 2), indentLocations[indentNumber]); //Addr, loc. Encoder click for a given indent
 
     Serial.print(F("IndentNum["));
     Serial.print(indentNumber);
     Serial.print(F("] Encoder["));
     Serial.print(indentLocations[indentNumber]);
     Serial.print(F("] / Dial["));
-    Serial.print(convertEncoderToDial(indentLocations[indentNumber]));
-    Serial.print(F("] / Width["));
-    Serial.print(indentWidths[indentNumber]);
-    Serial.print(F("] / Depth["));
-    Serial.print(indentDepths[indentNumber]);
+    Serial.print(indentLocations[indentNumber]);
+    // Ignore these, since manually measured and no EEPROM on DUE
+    // Serial.print(F("] / Width["));
+    // Serial.print(indentWidths[indentNumber]);
+    // Serial.print(F("] / Depth["));
+    // Serial.print(indentDepths[indentNumber]);
     Serial.print(F("] Test["));
 
     //Print Test if indent will be tested
@@ -206,20 +203,6 @@ void setup()
   // EEPROM.get(LOCATION_SERVO_TEST_PRESSURE, servoTryPosition);
   // EEPROM.get(LOCATION_SERVO_HIGH_PRESSURE, servoHighPressurePosition);
 
-  //Validate settings
-  if (servoRestingPosition > 250 || servoRestingPosition < 0)
-  {
-    //New board and/or EEPROM has not been set
-    //Assign defaults
-    servoRestingPosition = 100;
-    servoTryPosition = 50;
-    servoHighPressurePosition = 40;
-
-    //Record these defaults to EEPROM
-    EEPROM.put(LOCATION_SERVO_REST, servoRestingPosition); //addr, data
-    EEPROM.put(LOCATION_SERVO_TEST_PRESSURE, servoTryPosition);
-    EEPROM.put(LOCATION_SERVO_HIGH_PRESSURE, servoHighPressurePosition);
-  }
 
   Serial.print(F("servo: resting["));
   Serial.print(servoRestingPosition);
@@ -279,7 +262,6 @@ void loop()
   Serial.println(F("6) Set starting combos"));
   Serial.println(F("7) Calibrate handle servo"));
   Serial.println(F("8) Test handle servo tryHandle()"));
-  Serial.println(F("9) Test indent centers"));
   Serial.println(F("p) Move dial to a position"));
   Serial.println(F("f) Find flag and recenter dial"));
   Serial.println(F("s) Start cracking"));
@@ -293,7 +275,6 @@ void loop()
     findFlag(); //Detect the flag and center the dial
 
     Serial.print(F("Home offset is: "));
-    // Serial.println(homeOffset);
     Serial.println(homeOffsetSteps / 84.0);
 
     float zeroLocation = 0;
@@ -311,17 +292,12 @@ void loop()
       Serial.println(F(" out of bounds"));
     }
 
-    homeOffset = (byte) zeroLocation;
     homeOffsetSteps = zeroLocation * 84;
 
-    Serial.print(F("\n\rSetting home offset to: "));
-    Serial.println(homeOffset);
-
-    EEPROM.write(LOCATION_HOME_OFFSET, homeOffset);
-    writeIntIntoEEPROM(LOCATION_HOME_OFFSET_STEPS, homeOffsetSteps);
+    Serial.print(F("\n\rSetting home offset (in steps) to: "));
+    Serial.println(homeOffsetSteps);
 
     //Adjust steps with the real-world offset
-    // steps = (84 * homeOffset); //84 * the number the dial sits on when 'home'
     steps = homeOffsetSteps;
 
     setDial(0, false); //Turn to zero
@@ -410,8 +386,8 @@ void loop()
       if (indentsToTry[indent] == true) indentsToTry[indent] = false;
       else indentsToTry[indent] = true;
 
-      //Record current settings to EEPROM
-      EEPROM.put(LOCATION_TEST_INDENT_0 + indent, indentsToTry[indent]);
+      // //Record current settings to EEPROM
+      // EEPROM.put(LOCATION_TEST_INDENT_0 + indent, indentsToTry[indent]);
     }
 
     //Calculate how many indents we need to attempt on discC
@@ -456,40 +432,6 @@ void loop()
   else if (incoming == '8')
   {
     tryHandle();
-  }
-  else if (incoming == '9')
-  {
-
-    setDial(0, false); //Turn to zero without extra spin
-
-    //Test center point of each indent
-    for (int indentNumber = 0 ; indentNumber < 12 ; indentNumber++)
-    {
-
-      //int dialValue = lookupIndentValues(indentNumber); //Get this indent's dial value
-      //setDial(dialValue, false); //Go to the middle of this indent's location
-
-      int encoderValue;
-      EEPROM.get(LOCATION_INDENT_DIAL_0 + (indentNumber * 2), encoderValue);
-
-      //84 allows bar to hit indent but just barely
-      //* 2 lines the bar with indent nicely
-      encoderValue += 84 * 2;
-
-      gotoStep(encoderValue, false); //Goto that encoder value, no extra spin
-
-      Serial.print("dialValue: ");
-      Serial.print(convertEncoderToDial(encoderValue));
-
-      Serial.print(" encoderValue: ");
-      Serial.println(encoderValue);
-
-      handleServo.write(servoTryPosition); //Apply pressure to handle
-      delay(timeServoApply); //Wait for servo to move
-      handleServo.write(servoRestingPosition); //Release servo
-      delay(timeServoRelease); //Allow servo to release
-    }
-    Serial.println();
   }
   else if (incoming == 'p')
   {
@@ -583,17 +525,18 @@ void loop()
   // }
 }
 
-void writeIntIntoEEPROM(int address, int number)
-{ 
-  byte byte1 = number >> 8;
-  byte byte2 = number & 0xFF;
-  EEPROM.write(address, byte1);
-  EEPROM.write(address + 1, byte2);
-}
+// These functions were written for the Uno, but are removed for the Due.
+// void writeIntIntoEEPROM(int address, int number)
+// { 
+//   byte byte1 = number >> 8;
+//   byte byte2 = number & 0xFF;
+//   EEPROM.write(address, byte1);
+//   EEPROM.write(address + 1, byte2);
+// }
 
-int readIntFromEEPROM(int address)
-{
-  byte byte1 = EEPROM.read(address);
-  byte byte2 = EEPROM.read(address + 1);
-  return (byte1 << 8) + byte2;
-}
+// int readIntFromEEPROM(int address)
+// {
+//   byte byte1 = EEPROM.read(address);
+//   byte byte2 = EEPROM.read(address + 1);
+//   return (byte1 << 8) + byte2;
+// }

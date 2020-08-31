@@ -531,17 +531,6 @@ boolean flagDetected()
   return (false);
 }
 
-//Play a music tone to indicate door is open
-void announceSuccess()
-{
-  //Beep! Piano keys to frequencies: http://www.sengpielaudio.com/KeyboardAndFrequencies.gif
-  tone(buzzer, 2093, 150); //C
-  delay(150);
-  tone(buzzer, 2349, 150); //D
-  delay(150);
-  tone(buzzer, 2637, 150); //E
-  delay(150);
-}
 
 //Disc C is the safety disc that prevents you from feeling the edges of the wheels
 //It has 12 upper and 12 low indents which means 100/24 = 4.16 per lower indent
@@ -550,9 +539,9 @@ void announceSuccess()
 //And later found by using the findIndents() function - which then stores values to EEPROM
 int lookupIndentValues(int indentNumber)
 {
-  int indentCenterValue;
-  EEPROM.get(LOCATION_INDENT_DIAL_0 + (indentNumber * sizeof(int)), indentCenterValue); //addr, variable to put it in
-  return (convertEncoderToDial(indentCenterValue));
+  // int indentCenterValue;
+  // EEPROM.get(LOCATION_INDENT_DIAL_0 + (indentNumber * sizeof(int)), indentCenterValue); //addr, variable to put it in
+  // return (convertEncoderToDial(indentCenterValue));
 
   /*
     switch (indentNumber)
@@ -573,6 +562,7 @@ int lookupIndentValues(int indentNumber)
     case 12: return (-1); //Not valid
     }
   */
+ return indentLocations[indentNumber];
 }
 
 //Print a message and wait for user to press a button
