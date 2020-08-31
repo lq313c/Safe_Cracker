@@ -114,10 +114,6 @@ void testServo()
 //If one direction is off, check switchDirectionAdjustment variable.
 void positionTesting()
 {
-  Serial.flush();
-  byte command = Serial.read();
-  Serial.flush(); //Throw away CRLF
-
   int randomDial;
 
   for (int x = 0 ; x < 5 ; x++)
@@ -154,12 +150,8 @@ void detailedPositionTesting() {
   Serial.println(F("w to set desired dial position (with extra spin)"));
 
   while (1) {
-    Serial.flush();
     while (!Serial.available()); //Wait for user input
-    Serial.setTimeout(30000); //Must be long enough for user to enter second character
     byte command = Serial.read();
-    Serial.flush(); //Throw away CRLF
-    // Serial.println(command);
 
     if (command == 'd') {
       previousDirection = direction;
@@ -178,7 +170,6 @@ void detailedPositionTesting() {
     else if (command == 's') {
       Serial.println(F("Enter new speed"));
       while (!Serial.available()); //Wait for user input
-      Serial.setTimeout(30000); //Must be long enough for user to enter second character
       int speed = Serial.parseInt();
 
       setMotorSpeed(speed);
@@ -188,7 +179,6 @@ void detailedPositionTesting() {
     else if (command == 'q') {
       Serial.print(F("Enter desired position: "));
       while (!Serial.available()); //Wait for user input
-      Serial.setTimeout(30000); //Must be long enough for user to enter second character
 
       int position = Serial.parseInt();
       Serial.println(position);
@@ -199,7 +189,6 @@ void detailedPositionTesting() {
     else if (command == 'w') {
       Serial.print(F("Enter desired position (with extra spin): "));
       while (!Serial.available()); //Wait for user input
-      Serial.setTimeout(30000); //Must be long enough for user to enter second character
 
       int position = Serial.parseInt();
       Serial.println(position);
@@ -214,9 +203,7 @@ void detailedPositionTesting() {
     else {
       Serial.println(F("Unknown command ¯\\_(ツ)_/¯"));
     }
-    Serial.read(); //clear out remaining byte
   }
-  Serial.read(); //clear out remaining byte
 }
 
 void printEncoderToDial(int encoderValue)

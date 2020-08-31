@@ -53,10 +53,11 @@ const byte servoPosition = A1;
 // int servoHighPressurePosition = 40; //Position when doing indent measuring
 
 //Settings for my personal white (?.?) cubic ft. safe
-int servoRestingPosition = 117; //Position not pulling/testing on handle. min/max = 17/217
-int servoTryPosition = 47; //Position when testing handle
-int servoHighPressurePosition = 57; //Position when doing indent measuring
-int handleOpenPosition = 200; // this will be set after servotesting
+//High torque (20kg/cm) servo. Decrease command position to pull handle down.
+int servoRestingPosition = 100; //Position not pulling/testing on handle. min/max = 0/175
+int servoTryPosition = 25; //Position when testing handle
+int servoHighPressurePosition = 30; //Position when doing indent measuring
+int handleOpenPosition = 150; // set with test data
 
 const int timeServoApply = 350;  //ms for servo to apply pressure. 350 works
 const int timeServoRelease = 250;  //Allow servo to release. 250 works
