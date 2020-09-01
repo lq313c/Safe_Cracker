@@ -92,7 +92,7 @@ volatile int steps = 0; //Keeps track of encoder counts. 8400 per revolution so 
 boolean direction = CW; //Commanded direction
 boolean previousDirection = CW; //Detects when direction changes to add some steps for encoder slack
 volatile boolean encoderDirection = CW; //This separately tracks the direction of turn as measured by the encoder
-int homeOffsetSteps = 0; //More accurate offset - includes fractional dial value
+int homeOffsetSteps = 79.10 * 84; //More accurate offset - includes fractional dial value
 
 //Because we're switching directions we need to add extra steps to take
 //up the slack in the encoder
@@ -132,7 +132,7 @@ byte discCAttempts = 0;
 
 long startTime; //Used to measure amount of time taken per test
 
-boolean indentsToTry[12] = {9, 10, 11}; //Keeps track of the indents we want to try
+boolean indentsToTry[12] = {false, false, false, false, false, false, false, false, false, true, true, true}; //Keeps track of the indents we want to try
 int indentLocations[12] = {98, 6, 14, 23, 31, 40, 48, 56, 65, 73, 81, 90}; //indent centers as meausured. Set as appropriate
 int indentWidths[12]; //Calculated width of a given indent
 int indentDepths[12]; //Not really used
@@ -162,7 +162,6 @@ void setup()
   attachInterrupt(digitalPinToInterrupt(encoderB), bChangeSimple, CHANGE);
 
   // homeOffsetSteps = readIntFromEEPROM(LOCATION_HOME_OFFSET_STEPS);
-  homeOffsetSteps = 79.10;
 
   Serial.print(F("Home Offset in steps: "));
   Serial.println(homeOffsetSteps);
