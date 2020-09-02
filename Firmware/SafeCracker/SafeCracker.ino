@@ -69,7 +69,6 @@ int handlePosition; //Used to see how far handle moved when pulled on
 const int takeABreakAttempts = 300; //Used to let the motor cool down after so many attempts
 //These are here to measure motor position to ensure that it doesn't burn out in case the dial gets stuck somehow
 long timeSinceLastMovement;
-int lastStep;
 
 //Direction detection: If dial is spun without changing direction, encoderA and encoderB edge should fire alternatingly
 volatile bool encoderAEdge = false;
@@ -89,6 +88,7 @@ volatile byte numErrorsBF = 0;
 #define CW 1
 
 volatile int steps = 0; //Keeps track of encoder counts. 8400 per revolution so this can get big.
+int lastStep = steps + 1; //Use for motor stall safety monitoring
 boolean direction = CW; //Commanded direction
 boolean previousDirection = CW; //Detects when direction changes to add some steps for encoder slack
 volatile boolean encoderDirection = CW; //This separately tracks the direction of turn as measured by the encoder
