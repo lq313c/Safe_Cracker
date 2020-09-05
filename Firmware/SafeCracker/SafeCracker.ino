@@ -10,11 +10,7 @@
   Motor current turning dial, speed = 255, ~350 to 560mA
   Motor current turning dial, speed = 50, = ~60 to 120mA
 
-  TODO:
-  servo rest, pull, and open settings to eeprom
-  current combination to nvm
-
-  Modified 
+  Modified by Mike L for use with Arduino Due
 */
 
 // #include "nvm.h" //EEPROM locations for settings
@@ -36,22 +32,6 @@ const byte buzzer = 11;
 // const byte servoPositionButton = A1;
 const byte servoPosition = A1;
 
-//Servo values are found using the testServo() function while the
-//cracker was deattached from the safe
-
-//Default settings for 0.8 cubic ft. safe
-//On the 1st configuration increasing numbers cause handle to go down
-//const byte servoRestingPosition = 15; //Position not pulling/testing on handle
-//const byte servoPressurePosition = 50; //Position when doing indent measuring
-//const byte servoTryPosition = 80; //Position when testing handle
-
-
-//Default settings for 1.2 cubic ft. safe
-//On the 2nd larger configuration, decreasing numbers cause handle to go down
-// int servoRestingPosition = 100; //Position not pulling/testing on handle
-// int servoTryPosition = 50; //Position when testing handle
-// int servoHighPressurePosition = 40; //Position when doing indent measuring
-
 //Settings for my personal white (?.?) cubic ft. safe
 //High torque (20kg/cm) servo. Decrease command position to pull handle down.
 int servoRestingPosition = 100; //Position not pulling/testing on handle. min/max = 0/175
@@ -64,7 +44,6 @@ const int timeServoRelease = 250;  //Allow servo to release. 250 works
 const int timeMotorStop = 1000; //ms for motor to stop spinning after stop command. 200 works
 
 int handlePosition; //Used to see how far handle moved when pulled on
-//const int handleOpenPosition = 200; //Analog value. Must be less than analog value from servo testing.
 
 const int takeABreakAttempts = 300; //Used to let the motor cool down after so many attempts
 //These are here to measure motor position to ensure that it doesn't burn out in case the dial gets stuck somehow
@@ -94,8 +73,7 @@ boolean previousDirection = CW; //Detects when direction changes to add some ste
 volatile boolean encoderDirection = CW; //This separately tracks the direction of turn as measured by the encoder
 int homeOffsetSteps = 79.10 * 84; //More accurate offset - includes fractional dial value
 
-//Because we're switching directions we need to add extra steps to take
-//up the slack in the encoder
+//Because we're switching directions we need to add extra steps to take up the slack in the encoder
 //The greater the adjustment the more negative it goes
 int switchDirectionAdjustment = (84 * 0) + 15; //Use 'Test dial control' to determine adjustment size
 //84 * 1 - 20 = Says 34 but is actually 33.5 (undershoot)
@@ -136,6 +114,10 @@ boolean indentsToTry[12] = {false, false, false, false, false, false, false, fal
 int indentLocations[12] = {98, 6, 14, 23, 31, 40, 48, 56, 65, 73, 81, 90}; //indent centers as meausured. Set as appropriate
 int indentWidths[12]; //Calculated width of a given indent
 int indentDepths[12]; //Not really used
+
+int coarseSpeed = 100; //Speed at which we get to coarse window (0-255). 150, 200 works. 210, 230 fails
+int fineSpeed = 70; //Less than 50 may not have enough torque.
+
 
 void setup()
 {

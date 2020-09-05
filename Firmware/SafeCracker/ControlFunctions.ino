@@ -22,16 +22,12 @@
 //Adding a full rotation will add a 360 degree full rotation
 int gotoStep(int stepGoal, boolean addAFullRotation)
 {
-  //Coarse speed and window control how fast we arrive at the digit on the dial
-  //Having too small of a window or too fast of an attack will make the dial
-  //overshoot.
-  int coarseSpeed = 100; //Speed at which we get to coarse window (0-255). 150, 200 works. 210, 230 fails
+  //Coarse window control how fast we arrive at the digit on the dial
+  //Having too small of a window or too fast of an attack will make the dial overshoot.
   int coarseWindow = 1250; //Once we are within this amount, switch to fine adjustment
-  int fineSpeed = 70; //Less than 50 may not have enough torque.
   int fineWindow = 28; //One we are within this amount, stop searching
 
-  //Because we're switching directions we need to add extra steps to take
-  //up the slack in the encoder
+  //Because we're switching directions we need to add extra steps to take up the slack in the encoder
   if (direction == CW && previousDirection == CCW)
   {
     steps += switchDirectionAdjustment;
@@ -152,10 +148,9 @@ int setDial(int dialValue, boolean extraSpin)
 //Spin until we detect the photo gate trigger
 void findFlag()
 {
-  byte fastSearch = 60; //Speed at which we locate photogate
-  byte slowSearch = 50;
+  byte fastSearch = 255; //Speed at which we locate photogate
+  byte slowSearch = 60;
 
-  turnCW();
 
   //If the photogate is already detected spin until we are out
   if (flagDetected() == true)
@@ -168,17 +163,18 @@ void findFlag()
   }
 
   //Begin spinning
-  setMotorSpeed(fastSearch);
+  // turnCW();
+  // setMotorSpeed(fastSearch);
 
-  while (flagDetected() == false) delayMicroseconds(1); //Spin freely
+  // while (flagDetected() == false) delayMicroseconds(1); //Spin freely
 
   // //Ok, we just zipped past the gate. Stop and spin slowly backward
   // setMotorSpeed(0);
   // delay(timeMotorStop); //Wait for motor to stop spinning
-  // turnCCW();
-
-  // setMotorSpeed(slowSearch);
-  // while (flagDetected() == false) delayMicroseconds(1); //Find flag
+  
+  turnCCW();
+  setMotorSpeed(slowSearch);
+  while (flagDetected() == false) delayMicroseconds(1); //Find flag
 
   setMotorSpeed(0);
   delay(timeMotorStop); //Wait for motor to stop
@@ -186,7 +182,7 @@ void findFlag()
   //Adjust steps with the real-world offset
   steps = homeOffsetSteps;
 
-  previousDirection = CW; //Last adjustment to dial was in CCW direction
+  previousDirection = CCW; //Last adjustment to dial was in CCW direction
   Serial.println(F("Flag found"));
 }
 
