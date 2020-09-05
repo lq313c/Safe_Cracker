@@ -71,11 +71,11 @@ int lastStep = steps + 1; //Use for motor stall safety monitoring
 boolean direction = CW; //Commanded direction
 boolean previousDirection = CW; //Detects when direction changes to add some steps for encoder slack
 volatile boolean encoderDirection = CW; //This separately tracks the direction of turn as measured by the encoder
-int homeOffsetSteps = 79.10 * 84; //More accurate offset - includes fractional dial value
+int homeOffsetSteps = 77.9 * 84; //More accurate offset - includes fractional dial value
 
 //Because we're switching directions we need to add extra steps to take up the slack in the encoder
 //The greater the adjustment the more negative it goes
-int switchDirectionAdjustment = (84 * 0) + 15; //Use 'Test dial control' to determine adjustment size
+int switchDirectionAdjustment = (84 * 0) + 40; //Use 'Test dial control' to determine adjustment size
 //84 * 1 - 20 = Says 34 but is actually 33.5 (undershoot)
 //84 * 0 = Says 85 but is actually 85.9 (overshoot)
 
@@ -116,7 +116,7 @@ int indentWidths[12]; //Calculated width of a given indent
 int indentDepths[12]; //Not really used
 
 int coarseSpeed = 100; //Speed at which we get to coarse window (0-255). 150, 200 works. 210, 230 fails
-int fineSpeed = 70; //Less than 50 may not have enough torque.
+int fineSpeed = 60; //Less than 50 may not have enough torque.
 
 
 void setup()
@@ -145,7 +145,9 @@ void setup()
 
   // homeOffsetSteps = readIntFromEEPROM(LOCATION_HOME_OFFSET_STEPS);
 
-  Serial.print(F("Home Offset in steps: "));
+  Serial.print(F("Home Offset dial/steps: "));
+  Serial.print(homeOffsetSteps / 84.0);
+  Serial.print(F(" / "));
   Serial.println(homeOffsetSteps);
 
   Serial.println(F("Indent data"));
@@ -265,7 +267,6 @@ void loop()
 
       while (!Serial.available()); //Wait for user input
 
-      Serial.setTimeout(30000); //Must be long enough for user to enter second character
       zeroLocation = Serial.parseFloat(); //Read user input
 
       Serial.print(zeroLocation);

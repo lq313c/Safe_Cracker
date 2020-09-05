@@ -24,7 +24,7 @@ int gotoStep(int stepGoal, boolean addAFullRotation)
 {
   //Coarse window control how fast we arrive at the digit on the dial
   //Having too small of a window or too fast of an attack will make the dial overshoot.
-  int coarseWindow = 1250; //Once we are within this amount, switch to fine adjustment
+  int coarseWindow = 2100; //Once we are within this amount, switch to fine adjustment
   int fineWindow = 28; //One we are within this amount, stop searching
 
   //Because we're switching directions we need to add extra steps to take up the slack in the encoder
