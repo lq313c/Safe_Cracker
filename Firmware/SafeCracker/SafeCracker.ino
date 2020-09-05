@@ -439,11 +439,6 @@ void loop()
   }
   else if (incoming == 's') //Start cracking!
   {
-    // clearDisplay();
-    // showCombination(discA, discB, discC); //Update display
-    Serial.println(Serial.read()); //throw away CRLFs from previous input
-    Serial.println(Serial.read()); 
-
     startTime = millis();
 
     //Set the discs to the current combinations (user can set if needed from menu)

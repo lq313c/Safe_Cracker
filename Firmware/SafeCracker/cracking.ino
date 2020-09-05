@@ -28,7 +28,7 @@ void nextCombination()
     boolean crossesA = checkCrossing(discB, -11, discA); //Check to see if the next B will cross A
     if (crossesA == true) //disc B is exhausted, time to adjust discA
     {
-      discA += 3; //Disc A changes by 3
+      discA += 2; //Disc A changes by 2
       if (discA > 99)
       {
         discA -= 100;
@@ -40,7 +40,7 @@ void nextCombination()
       }
 
       //Adjust discA, discB, discC
-      discB = discA - 3; //Reset discB
+      discB = discA - 2; //Reset discB
       if (discB < 0) discB += 100;
 
       discC = getNextIndent(discB); //Get the first indent after B
@@ -60,7 +60,7 @@ void nextCombination()
       //Adjust discB to this new value
       turnCW();
 
-      discB -= 3; //Disc B changes by 3
+      discB -= 2; //Disc B changes by 2
       if (discB < 0) discB += 100;
 
       int discBIsAt = setDial(discB, false);
