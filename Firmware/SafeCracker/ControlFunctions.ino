@@ -24,7 +24,7 @@ int gotoStep(int stepGoal, boolean addAFullRotation)
 {
   //Coarse window control how fast we arrive at the digit on the dial
   //Having too small of a window or too fast of an attack will make the dial overshoot.
-  int coarseWindow = 2100; //Once we are within this amount, switch to fine adjustment
+  int coarseWindow = 1680; //Once we are within this amount, switch to fine adjustment (because of dial-past logic, must be less than 25*84)
   int fineWindow = 28; //One we are within this amount, stop searching
 
   //Because we're switching directions we need to add extra steps to take up the slack in the encoder
@@ -132,11 +132,11 @@ int setDial(int dialValue, boolean extraSpin)
   //Serial.println(encoderValue);
 
   // unsigned long start = millis();
-  gotoStep(encoderValue, extraSpin); //Goto that encoder value
-  //Serial.print("After movement, steps: ");
-  //Serial.println(steps);
-  // Serial.print(F("Time to spin dial: "));
-  // Serial.println((millis() - start) / 1000.0);
+  int stepDelta = gotoStep(encoderValue, extraSpin); //Goto that encoder value
+  if (stepDelta < -84 || stepDelta > 84) {
+    Serial.print(F("Dial did not arrive at commanded value, step ∆ = "));
+    Serial.print(stepDelta);
+  }
 
   int actualDialValue = convertEncoderToDial(steps); //Convert back to dial values
   //Serial.print("After movement, dialvalue: ");
