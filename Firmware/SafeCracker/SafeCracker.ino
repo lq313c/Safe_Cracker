@@ -393,7 +393,6 @@ void loop()
         Serial.print(F(" to start at: "));
         while (!Serial.available()); //Wait for user input
 
-        Serial.setTimeout(30000); //Must be long enough for user to enter second character
         combo = Serial.parseInt(); //Read user input
 
         if (combo >= 0 && combo <= 99) break;
