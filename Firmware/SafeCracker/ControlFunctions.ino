@@ -119,7 +119,7 @@ int stepsRequired(int currentSteps, int goal)
 
 //Given a dial number, goto that value
 //Assume user has set the direction before calling
-//Returns the dial value we actually ended on
+//Returns the delta from gotoStep() 
 int setDial(int dialValue, boolean extraSpin)
 {
   Serial.print(F("Commanded "));
@@ -133,16 +133,16 @@ int setDial(int dialValue, boolean extraSpin)
 
   // unsigned long start = millis();
   int stepDelta = gotoStep(encoderValue, extraSpin); //Goto that encoder value
-  if (stepDelta < -84 || stepDelta > 84) {
+  if (stepDelta < -stepTolerance || stepDelta > stepTolerance) {
     Serial.print(F("Dial did not arrive at commanded value, step ∆ = "));
-    Serial.print(stepDelta);
+    Serial.println(stepDelta);
   }
 
   int actualDialValue = convertEncoderToDial(steps); //Convert back to dial values
   //Serial.print("After movement, dialvalue: ");
   //Serial.println(actualDialValue);
 
-  return (actualDialValue);
+  return (stepDelta);
 }
 
 //Spin until we detect the photo gate trigger
@@ -193,7 +193,7 @@ void resetDiscsWithCurrentCombo(boolean pause)
 
   //Set discs to this combo
   turnCCW();
-  int discAIsAt = setDial(discA, false);
+  int discADelta = setDial(discA, false);
   Serial.print(F("DiscA commanded to: "));
   Serial.println(discA);
   Serial.print("DiscA is at: ");
@@ -204,7 +204,7 @@ void resetDiscsWithCurrentCombo(boolean pause)
   //Turn past disc B one extra spin
   Serial.print(F("DiscB commanded to: "));
   Serial.println(discB);
-  int discBIsAt = setDial(discB, true);
+  int discBDelta = setDial(discB, true);
   Serial.print("DiscB is at: ");
   printEncoderToDial(steps);
   if (pause == true) messagePause("Verify disc position");
@@ -212,11 +212,26 @@ void resetDiscsWithCurrentCombo(boolean pause)
   turnCCW();
   Serial.print(F("DiscC commanded to: "));
   Serial.println(discC);
-  int discCIsAt = setDial(discC, false);
+  int discCDelta = setDial(discC, false);
   Serial.print("DiscC is at: ");
   printEncoderToDial(steps);
   if (pause == true) messagePause("Verify disc position");
   
+  if (discADelta < -stepTolerance || discADelta > stepTolerance
+      || discBDelta < -stepTolerance || discBDelta > stepTolerance
+      || discCDelta < -stepTolerance || discCDelta > stepTolerance)
+  {
+    Serial.print(F("Detected mis-actuation of dial, discA∆ / discB∆ / discC∆: "));
+    Serial.print(discADelta);
+    Serial.print(F(" / "));
+    Serial.print(discBDelta);
+    Serial.print(F(" / "));
+    Serial.println(discCDelta);
+    Serial.println(F("Retrying current combo after re-finding flag."));
+    
+    findFlag(); //Re-home the dial between large finds
+    resetDiscsWithCurrentCombo(false);
+  }
 
   discCAttempts = -1; //Reset
 }
@@ -261,7 +276,7 @@ void resetDial()
 
   turnCCW();
 
-  setMotorSpeed(100); //Go at coarse speed
+  setMotorSpeed(coarseSpeed); //Go at coarse speed
   enableMotor();
 
   //Spin until 8400*2 steps have gone by

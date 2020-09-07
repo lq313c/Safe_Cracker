@@ -9,6 +9,9 @@ int combinationsAttempted = 0;
 //Given the current state of discs, advance to the next combo
 void nextCombination()
 {
+  int discBDelta = 0;
+  int discCDelta = 0;
+
   combinationsAttempted++; //Increase the overall count
 
   //Because of the stickiness of my dial, the motor gets hot after a number of dials
@@ -63,7 +66,7 @@ void nextCombination()
       discB -= 2; //Disc B changes by 2
       if (discB < 0) discB += 100;
 
-      int discBIsAt = setDial(discB, false);
+      discBDelta = setDial(discB, false);
       //Serial.print("DiscB is at: ");
       //Serial.println(discBIsAt);
       //messagePause("Check dial position");
@@ -86,7 +89,7 @@ void nextCombination()
       else
       {
         //Move C
-        int discCIsAt = setDial(discC, false);
+        discCDelta = setDial(discC, false);
         //Serial.print("DiscC is at: ");
         //Serial.println(discCIsAt);
         //messagePause("Check dial position");
@@ -112,12 +115,10 @@ void nextCombination()
     discC = getNextIndent(discC); //Get next discC position
 
     //Adjust discC to this new value
-    int discCIsAt = setDial(discC, false);
+    discCDelta = setDial(discC, false);
     //Serial.print("DiscC is at: ");
     //Serial.println(discCIsAt);
   }
-
-  //showCombination(discA, discB, discC); //Update display
 
   //Serial.print("Time, ");
   Serial.print(millis()); //Show timestamp
@@ -128,6 +129,20 @@ void nextCombination()
   Serial.print(discB);
   Serial.print("/");
   Serial.print(discC);
+
+  // if we detect a mis-actuation of the dial, retry the combination
+  if (discBDelta < -stepTolerance || discBDelta > stepTolerance
+      || discCDelta < -stepTolerance || discCDelta > stepTolerance)
+  {
+    Serial.print(F("Detected mis-actuation of dial, discB∆ / discC∆: "));
+    Serial.print(discBDelta);
+    Serial.print(F(" / "));
+    Serial.println(discCDelta);
+    Serial.println(F("Retrying current combo after re-finding flag."));
+    
+    findFlag(); //Re-home the dial between large finds
+    resetDiscsWithCurrentCombo(false);
+  }
 
   //Try the handle
   if (tryHandle() == true)

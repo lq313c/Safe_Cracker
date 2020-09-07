@@ -22,17 +22,16 @@ Servo handleServo;
 //Pin definitions
 const byte encoderA = 2;
 const byte encoderB = 3;
-const byte photo = 5;
-const byte motorPWM = 6;
-const byte motorReset = 8;
-const byte servo = 9;
-const byte motorDIR = 10;
-const byte buzzer = 11;
+const byte photo = 5; //input: photo gate
+const byte motorPWM = 6; //output: controls motor speed
+const byte motorReset = 8; //output: enable/disables motor
+const byte servo = 9; //output: PWM signal to control servo
+const byte motorDIR = 10; //output: control motor direction
 
 // const byte servoPositionButton = A1;
-const byte servoPosition = A1;
+const byte servoPosition = A1; //analog input: servo position feedback
 
-//Settings for my personal white (?.?) cubic ft. safe
+//Settings for my personal white (20"x17"x17") cubic ft. safe
 //High torque (20kg/cm) servo. Decrease command position to pull handle down.
 int servoRestingPosition = 100; //Position not pulling/testing on handle. min/max = 0/175
 int servoTryPosition = 25; //Position when testing handle
@@ -42,6 +41,8 @@ int handleOpenPosition = 150; // set with test data
 const int timeServoApply = 350;  //ms for servo to apply pressure. 350 works
 const int timeServoRelease = 250;  //Allow servo to release. 250 works
 const int timeMotorStop = 1000; //ms for motor to stop spinning after stop command. 200 works
+
+const int stepTolerance = 84; //tolerance for the commanded vs arrived at dial position on either side
 
 int handlePosition; //Used to see how far handle moved when pulled on
 
