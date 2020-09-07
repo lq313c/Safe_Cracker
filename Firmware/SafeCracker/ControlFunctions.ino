@@ -79,6 +79,14 @@ int gotoStep(int stepGoal, boolean addAFullRotation)
 
   int delta = steps - stepGoal;
 
+  // if |delta| > 90 dial ticks, it's probably just near the 0 rollover point
+  if (delta > 90*84) {
+    delta -= 8400;
+  } 
+  else if (delta <  -90*84) {
+    delta += 8400;
+  }
+
   /*if (direction == CW) Serial.print("CW ");
     else Serial.print("CCW ");
     Serial.print("stepGoal: ");
