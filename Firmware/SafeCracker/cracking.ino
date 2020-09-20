@@ -154,9 +154,9 @@ void nextCombination()
     Serial.println("Door is open!!!");
     disableMotor(); //Power down motor
 
-    Serial.println(F("Pausing. Press key to release handle."));
-    while (!Serial.available());
-    Serial.read();
+    // Serial.println(F("Pausing. Press key to release handle."));
+    // while (!Serial.available());
+    // Serial.read();
 
     //Return to resting position
     handleServo.write(servoRestingPosition);
