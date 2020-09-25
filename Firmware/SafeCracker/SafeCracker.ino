@@ -111,7 +111,7 @@ byte discCAttempts = 0;
 
 long startTime; //Used to measure amount of time taken per test
 
-boolean indentsToTry[12] = {false, false, false, false, false, false, false, false, false, true, true, true}; //Keeps track of the indents we want to try
+boolean indentsToTry[12] = {false, true, true, true, true, true, true, true, true, false, false, false}; //Keeps track of the indents we want to try
 int indentLocations[12] = {98, 6, 14, 23, 31, 40, 48, 56, 65, 73, 81, 90}; //indent centers as meausured. Set as appropriate
 int indentWidths[12]; //Calculated width of a given indent
 int indentDepths[12]; //Not really used
