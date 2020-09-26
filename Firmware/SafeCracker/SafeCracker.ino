@@ -19,31 +19,31 @@
 #include <Servo.h>
 Servo handleServo;
 
-// ============== Pin definitions for Arduino Uno ==============
-//outputs (all digital)
-const byte motorPWM = 6; //output: controls motor speed
-const byte motorReset = 8; //output: enable/disables motor
-const byte motorDIR = 10; //output: control motor direction
-const byte servo = 9; //output: PWM signal to control servo
-//inputs
-const byte photo = 5; //input: photo gate
-const byte servoPosition = A1; //analog input: servo position feedback
-const byte encoderA = 2;
-const byte encoderB = 3;
-// const byte servoPositionButton = A1;
+// // ============== Pin definitions for Arduino Uno ==============
+// //outputs (all digital)
+// const byte motorPWM = 6; //output: controls motor speed
+// const byte motorReset = 8; //output: enable/disables motor
+// const byte motorDIR = 10; //output: control motor direction
+// const byte servo = 9; //output: PWM signal to control servo
+// //inputs
+// const byte photo = 5; //input: photo gate
+// const byte servoPosition = A1; //analog input: servo position feedback
+// const byte encoderA = 2;
+// const byte encoderB = 3;
+// // const byte servoPositionButton = A1;
 
 // ============== Pin definitions for Arduino Due ==============
-// //outputs (all digital)
-// const byte motorPWM = 7; //output: controls motor speed
-// const byte motorReset = 6; //output: enable/disables motor
-// const byte motorDIR = 5; //output: control motor direction
-// const byte servo = 4; //output: PWM signal to control servo
-// //inputs (all digital except servoPosition)
-// const byte photo = 11; //input: photo gate
-// const byte encoderA = 2; // TIOA0 for onboard decoder
-// const byte encoderB = 13; // TIOB0 for onboard decoder
-// const byte servoPosition = A1; //analog input: servo position feedback
-// // const byte servoPositionButton = A1;
+//outputs (all digital)
+const byte motorPWM = 7; //output: controls motor speed
+const byte motorReset = 6; //output: enable/disables motor
+const byte motorDIR = 5; //output: control motor direction
+const byte servo = 4; //output: PWM signal to control servo
+//inputs (all digital except servoPosition)
+const byte photo = 11; //input: photo gate
+const byte encoderA = 2; // TIOA0 for onboard decoder
+const byte encoderB = 13; // TIOB0 for onboard decoder
+const byte servoPosition = A1; //analog input: servo position feedback
+// const byte servoPositionButton = A1;
 
 
 //Settings for my personal white (20"x17"x17") cubic ft. safe
@@ -151,14 +151,14 @@ void setup()
   pinMode(encoderA, INPUT);
   pinMode(encoderB, INPUT);
   // //Motor encoder setup for Arduino Due
-  // REG_PMC_PCER0 = PMC_PCER0_PID27;   // activate clock for TC0
-  // REG_TC0_CMR0 = TC_CMR_TCCLKS_XC0;  // select XC0 as clock source
-  // //activate quadrature encoder and position measure mode, no filters
-  // REG_TC0_BMR = TC_BMR_QDEN
-  //             | TC_BMR_POSEN
-  //             | TC_BMR_EDGPHA;
-  // // enable the clock (CLKEN=1) and reset the counter (SWTRG=1)
-  // REG_TC0_CCR0 = TC_CCR_CLKEN | TC_CCR_SWTRG;
+  REG_PMC_PCER0 = PMC_PCER0_PID27;   // activate clock for TC0
+  REG_TC0_CMR0 = TC_CMR_TCCLKS_XC0;  // select XC0 as clock source
+  //activate quadrature encoder and position measure mode, no filters
+  REG_TC0_BMR = TC_BMR_QDEN
+              | TC_BMR_POSEN
+              | TC_BMR_EDGPHA;
+  // enable the clock (CLKEN=1) and reset the counter (SWTRG=1)
+  REG_TC0_CCR0 = TC_CCR_CLKEN | TC_CCR_SWTRG;
 
   pinMode(motorPWM, OUTPUT);
   pinMode(motorDIR, OUTPUT);
@@ -167,11 +167,9 @@ void setup()
 
   pinMode(photo, INPUT_PULLUP);
 
-  //Setup the encoder interrupts.
-  attachInterrupt(digitalPinToInterrupt(encoderA), aChangeSimple, CHANGE);
-  attachInterrupt(digitalPinToInterrupt(encoderB), bChangeSimple, CHANGE);
-
-  // homeOffsetSteps = readIntFromEEPROM(LOCATION_HOME_OFFSET_STEPS);
+  // //Setup the encoder interrupts (for Arduino Uno only)
+  // attachInterrupt(digitalPinToInterrupt(encoderA), aChangeSimple, CHANGE);
+  // attachInterrupt(digitalPinToInterrupt(encoderB), bChangeSimple, CHANGE);
 
   Serial.print(F("Home Offset dial/steps: "));
   Serial.print(homeOffsetSteps / 84.0);
@@ -244,11 +242,11 @@ void setup()
 
   //Tell dial to go to zero
   enableMotor(); //Turn on motor controller
-  findFlag(); //Find the flag
-  steps = homeOffsetSteps; //Adjust steps with the real-world offset
-  setDial(0, false); //Make dial go to zero
-  Serial.print(F("Dial should be at 0, is at: "));
-  printEncoderToDial(steps);
+  // findFlag(); //Find the flag
+  // steps = homeOffsetSteps; //Adjust steps with the real-world offset
+  // setDial(0, false); //Make dial go to zero
+  // Serial.print(F("Dial should be at 0, is at: "));
+  // printEncoderToDial(steps);
 }
 
 void loop()
