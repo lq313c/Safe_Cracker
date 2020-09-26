@@ -134,6 +134,7 @@ void nextCombination()
   if (discBDelta < -stepTolerance || discBDelta > stepTolerance
       || discCDelta < -stepTolerance || discCDelta > stepTolerance)
   {
+    Serial.println();
     Serial.print(F("Detected mis-actuation of dial, discB∆ / discC∆: "));
     Serial.print(discBDelta);
     Serial.print(F(" / "));
