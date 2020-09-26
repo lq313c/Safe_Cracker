@@ -19,17 +19,32 @@
 #include <Servo.h>
 Servo handleServo;
 
-//Pin definitions
-const byte encoderA = 2;
-const byte encoderB = 3;
-const byte photo = 5; //input: photo gate
+// ============== Pin definitions for Arduino Uno ==============
+//outputs (all digital)
 const byte motorPWM = 6; //output: controls motor speed
 const byte motorReset = 8; //output: enable/disables motor
-const byte servo = 9; //output: PWM signal to control servo
 const byte motorDIR = 10; //output: control motor direction
-
-// const byte servoPositionButton = A1;
+const byte servo = 9; //output: PWM signal to control servo
+//inputs
+const byte photo = 5; //input: photo gate
 const byte servoPosition = A1; //analog input: servo position feedback
+const byte encoderA = 2;
+const byte encoderB = 3;
+// const byte servoPositionButton = A1;
+
+// ============== Pin definitions for Arduino Due ==============
+//outputs (all digital)
+const byte motorPWM = 7; //output: controls motor speed
+const byte motorReset = 6; //output: enable/disables motor
+const byte motorDIR = 5; //output: control motor direction
+const byte servo = 4; //output: PWM signal to control servo
+//inputs (all digital except servoPosition)
+const byte photo = 11; //input: photo gate
+const byte encoderA = 2; // TIOA0 for onboard decoder
+const byte encoderB = 13; // TIOB0 for onboard decoder
+const byte servoPosition = A1; //analog input: servo position feedback
+// const byte servoPositionButton = A1;
+
 
 //Settings for my personal white (20"x17"x17") cubic ft. safe
 //High torque (20kg/cm) servo. Decrease command position to pull handle down.
@@ -130,8 +145,18 @@ void setup()
   pinMode(motorReset, OUTPUT);
   disableMotor();
 
+  //Motor encoder setup for Arduino Uno
   pinMode(encoderA, INPUT);
   pinMode(encoderB, INPUT);
+  // //Motor encoder setup for Arduino Due
+  // REG_PMC_PCER0 = PMC_PCER0_PID27;   // activate clock for TC0
+  // REG_TC0_CMR0 = TC_CMR_TCCLKS_XC0;  // select XC0 as clock source
+  // //activate quadrature encoder and position measure mode, no filters
+  // REG_TC0_BMR = TC_BMR_QDEN
+  //             | TC_BMR_POSEN
+  //             | TC_BMR_EDGPHA;
+  // // enable the clock (CLKEN=1) and reset the counter (SWTRG=1)
+  // REG_TC0_CCR0 = TC_CCR_CLKEN | TC_CCR_SWTRG;
 
   pinMode(motorPWM, OUTPUT);
   pinMode(motorDIR, OUTPUT);
