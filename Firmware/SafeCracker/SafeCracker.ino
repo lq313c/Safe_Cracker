@@ -33,17 +33,17 @@ const byte encoderB = 3;
 // const byte servoPositionButton = A1;
 
 // ============== Pin definitions for Arduino Due ==============
-//outputs (all digital)
-const byte motorPWM = 7; //output: controls motor speed
-const byte motorReset = 6; //output: enable/disables motor
-const byte motorDIR = 5; //output: control motor direction
-const byte servo = 4; //output: PWM signal to control servo
-//inputs (all digital except servoPosition)
-const byte photo = 11; //input: photo gate
-const byte encoderA = 2; // TIOA0 for onboard decoder
-const byte encoderB = 13; // TIOB0 for onboard decoder
-const byte servoPosition = A1; //analog input: servo position feedback
-// const byte servoPositionButton = A1;
+// //outputs (all digital)
+// const byte motorPWM = 7; //output: controls motor speed
+// const byte motorReset = 6; //output: enable/disables motor
+// const byte motorDIR = 5; //output: control motor direction
+// const byte servo = 4; //output: PWM signal to control servo
+// //inputs (all digital except servoPosition)
+// const byte photo = 11; //input: photo gate
+// const byte encoderA = 2; // TIOA0 for onboard decoder
+// const byte encoderB = 13; // TIOB0 for onboard decoder
+// const byte servoPosition = A1; //analog input: servo position feedback
+// // const byte servoPositionButton = A1;
 
 
 //Settings for my personal white (20"x17"x17") cubic ft. safe
@@ -81,6 +81,8 @@ volatile byte numErrorsBF = 0;
 
 #define CCW 0
 #define CW 1
+//encoder register for Arduino Due
+// #define steps REG_TC0_CV0
 
 volatile int steps = 0; //Keeps track of encoder counts. 8400 per revolution so this can get big.
 int lastStep = steps + 1; //Use for motor stall safety monitoring
