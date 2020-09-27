@@ -34,17 +34,19 @@ Servo handleServo;
 
 // ============== Pin definitions for Arduino Due ==============
 //outputs (all digital)
-const byte motorPWM = 7; //output: controls motor speed
-const byte motorReset = 6; //output: enable/disables motor
-const byte motorDIR = 5; //output: control motor direction
-const byte servo = 4; //output: PWM signal to control servo
-const byte levelConverterEnable = 8; //output: enables the 3.3/5V level converter
+const int motorPWM = 7; //output: controls motor speed
+const int motorReset = 6; //output: enable/disables motor
+const int motorDIR = 5; //output: control motor direction
+const int servo = 4; //output: PWM signal to control servo
+const int levelConverterEnable = 8; //output: enables the 3.3/5V level converter
 //inputs (all digital except servoPosition)
-const byte photo = 11; //input: photo gate
-const byte encoderA = 2; // TIOA0 for onboard decoder
-const byte encoderB = 13; // TIOB0 for onboard decoder
-const byte servoPosition = A1; //analog input: servo position feedback
-// const byte servoPositionButton = A1;
+const int photo = 11; //input: photo gate
+const int encoderA = 2; // TIOA0 for onboard decoder
+const int encoderB = 13; // TIOB0 for onboard decoder
+const unsigned int mask_encoder_A = digitalPinToBitMask(encoderA);
+const unsigned int mask_encoder_B = digitalPinToBitMask(encoderB); 
+const int servoPosition = A1; //analog input: servo position feedback
+// const int servoPositionButton = A1;
 
 
 //Settings for my personal white (20"x17"x17") cubic ft. safe
@@ -154,7 +156,13 @@ void setup()
   //Motor encoder setup for Arduino Uno
   pinMode(encoderA, INPUT);
   pinMode(encoderB, INPUT);
-  // //Motor encoder setup for Arduino Due
+  //Motor encoder setup for Arduino Due
+  // activate peripheral functions for quad pins
+  REG_PIOB_PDR = mask_encoder_A;     // activate peripheral function (disables all PIO functionality)
+  REG_PIOB_ABSR |= mask_encoder_A;   // choose peripheral option B   
+  REG_PIOB_PDR = mask_encoder_B;     // activate peripheral function (disables all PIO functionality)
+  REG_PIOB_ABSR |= mask_encoder_B;   // choose peripheral option B
+
   REG_PMC_PCER0 = PMC_PCER0_PID27;   // activate clock for TC0
   REG_TC0_CMR0 = TC_CMR_TCCLKS_XC0;  // select XC0 as clock source
   //activate quadrature encoder and position measure mode, no filters
