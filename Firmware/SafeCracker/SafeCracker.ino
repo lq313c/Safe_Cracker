@@ -38,6 +38,7 @@ const byte motorPWM = 7; //output: controls motor speed
 const byte motorReset = 6; //output: enable/disables motor
 const byte motorDIR = 5; //output: control motor direction
 const byte servo = 4; //output: PWM signal to control servo
+const byte levelConverterEnable = 8; //output: enables the 3.3/5V level converter
 //inputs (all digital except servoPosition)
 const byte photo = 11; //input: photo gate
 const byte encoderA = 2; // TIOA0 for onboard decoder
@@ -143,6 +144,9 @@ void setup()
   Serial.println();
   Serial.println();
   Serial.println("Safe Cracker");
+
+  pinMode(levelConverterEnable, OUTPUT);
+  digitalWrite(levelConverterEnable, HIGH); // enable 3.3/5V level converter
 
   pinMode(motorReset, OUTPUT);
   disableMotor();
