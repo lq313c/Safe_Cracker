@@ -491,6 +491,19 @@ void loop()
       }
     } //End eombination loop
   } //End incoming == 's'
+  else if (incoming == 't')
+  {
+    while (1)
+    {
+      if (Serial.available())
+      {
+        // exit if any input detected
+        Serial.read();
+        break;
+      }
+      printEncoderToDial(REG_TC0_CV0);
+    }
+  }
   // else if (incoming == 'm')
   // {
   //   turnCCW();
