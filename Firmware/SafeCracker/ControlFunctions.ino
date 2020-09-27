@@ -30,39 +30,39 @@ int gotoStep(int stepGoal, boolean addAFullRotation)
   //Because we're switching directions we need to add extra steps to take up the slack in the encoder
   if (direction == CW && previousDirection == CCW)
   {
-    steps += switchDirectionAdjustment;
-    if (steps > 8400) steps -= 8400;
+    REG_TC0_CV0 += switchDirectionAdjustment;
+    if (REG_TC0_CV0 > 8400) REG_TC0_CV0 -= 8400;
     previousDirection = CW;
   }
   else if (direction == CCW && previousDirection == CW)
   {
-    steps -= switchDirectionAdjustment;
-    if (steps < 0) steps += 8400;
+    REG_TC0_CV0 -= switchDirectionAdjustment;
+    if (REG_TC0_CV0 < 0) REG_TC0_CV0 += 8400;
     previousDirection = CCW;
   }
 
   setMotorSpeed(coarseSpeed); //Go!
-  while (stepsRequired(steps, stepGoal) > coarseWindow) motorSafetyTest(); //Spin until coarse window is closed
+  while (stepsRequired(REG_TC0_CV0, stepGoal) > coarseWindow) motorSafetyTest(); //Spin until coarse window is closed
   // while (stepsRequired(steps, stepGoal) > coarseWindow) Serial.println(steps); //log dial position
 
   //After we have gotten close to the first coarse window, proceed past the goal, then proceed to the goal
   if (addAFullRotation == true)
   {
-    int tempStepGoal = steps + 8400/2; //Move 50 away from current position
+    int tempStepGoal = REG_TC0_CV0 + 8400/2; //Move 50 away from current position
     if (tempStepGoal > 8400) tempStepGoal -= 8400;
     
     //Go to temp position
-    while (stepsRequired(steps, tempStepGoal) > coarseWindow) motorSafetyTest(); 
+    while (stepsRequired(REG_TC0_CV0, tempStepGoal) > coarseWindow) motorSafetyTest(); 
     // while (stepsRequired(steps, tempStepGoal) > coarseWindow) Serial.println(steps);
         
     //Go to stepGoal
-    while (stepsRequired(steps, stepGoal) > coarseWindow) motorSafetyTest(); //Spin until coarse window is closed
+    while (stepsRequired(REG_TC0_CV0, stepGoal) > coarseWindow) motorSafetyTest(); //Spin until coarse window is closed
     // while (stepsRequired(steps, stepGoal) > coarseWindow) Serial.println(steps);
   }
 
   setMotorSpeed(fineSpeed); //Slowly approach
 
-  while (stepsRequired(steps, stepGoal) > fineWindow) motorSafetyTest(); //Spin until fine window is closed
+  while (stepsRequired(REG_TC0_CV0, stepGoal) > fineWindow) motorSafetyTest(); //Spin until fine window is closed
   // while (stepsRequired(steps, stepGoal) > fineWindow) Serial.println(steps);
 
   setMotorSpeed(0); //Stop
@@ -77,7 +77,7 @@ int gotoStep(int stepGoal, boolean addAFullRotation)
   // Serial.print(F("Encoder errors: "));
   // Serial.println(numErrors);
 
-  int delta = steps - stepGoal;
+  int delta = REG_TC0_CV0 - stepGoal;
 
   // if |delta| > 90 dial ticks, it's probably just near the 0 rollover point
   if (delta > 90*84) {
@@ -144,7 +144,7 @@ int setDial(int dialValue, boolean extraSpin)
     Serial.println(stepDelta);
   }
 
-  int actualDialValue = convertEncoderToDial(steps); //Convert back to dial values
+  int actualDialValue = convertEncoderToDial(REG_TC0_CV0); //Convert back to dial values
   //Serial.print("After movement, dialvalue: ");
   //Serial.println(actualDialValue);
 
@@ -162,7 +162,7 @@ void findFlag()
   if (flagDetected() == true)
   {
     Serial.println(F("We're too close to the photogate"));
-    int currentDial = convertEncoderToDial(steps);
+    int currentDial = convertEncoderToDial(REG_TC0_CV0);
     currentDial += 50;
     if (currentDial > 100) currentDial -= 100;
     setDial(currentDial, false); //Advance to 50 dial ticks away from here
@@ -186,7 +186,7 @@ void findFlag()
   delay(timeMotorStop); //Wait for motor to stop
 
   //Adjust steps with the real-world offset
-  steps = homeOffsetSteps;
+  REG_TC0_CV0 = homeOffsetSteps;
 
   previousDirection = CCW; //Last adjustment to dial was in CCW direction
   Serial.println(F("Flag found"));
@@ -203,7 +203,7 @@ void resetDiscsWithCurrentCombo(boolean pause)
   Serial.print(F("DiscA commanded to: "));
   Serial.println(discA);
   Serial.print("DiscA is at: ");
-  printEncoderToDial(steps);
+  printEncoderToDial(REG_TC0_CV0);
   if (pause == true) messagePause("Verify disc position");
 
   turnCW();
@@ -212,7 +212,7 @@ void resetDiscsWithCurrentCombo(boolean pause)
   Serial.println(discB);
   int discBDelta = setDial(discB, true);
   Serial.print("DiscB is at: ");
-  printEncoderToDial(steps);
+  printEncoderToDial(REG_TC0_CV0);
   if (pause == true) messagePause("Verify disc position");
 
   turnCCW();
@@ -220,7 +220,7 @@ void resetDiscsWithCurrentCombo(boolean pause)
   Serial.println(discC);
   int discCDelta = setDial(discC, false);
   Serial.print("DiscC is at: ");
-  printEncoderToDial(steps);
+  printEncoderToDial(REG_TC0_CV0);
   if (pause == true) messagePause("Verify disc position");
   
   if (discADelta < -stepTolerance || discADelta > stepTolerance
@@ -289,11 +289,11 @@ void resetDial()
   int deltaSteps = 0;
   while (deltaSteps < (8400 * 2))
   {
-    int startingSteps = steps; //Remember where we started
+    int startingSteps = REG_TC0_CV0; //Remember where we started
     delay(100); //Let motor spin for awhile
 
-    if (steps >= startingSteps) deltaSteps += steps - startingSteps;
-    else deltaSteps += (8400 - startingSteps + steps);
+    if (REG_TC0_CV0 >= startingSteps) deltaSteps += REG_TC0_CV0 - startingSteps;
+    else deltaSteps += (8400 - startingSteps + REG_TC0_CV0);
   }
   
   setMotorSpeed(0); //Stop
@@ -381,163 +381,163 @@ void disableMotor()
 
 // On the Arduino Uno (ATmega328P) encoderA is mapped to pin 2, encoderB to pin 3
 
-void aChange()
-{
-  // if (digitalRead(encoderA) == HIGH) //consider using direct port read to be faster - http://www.arduino.cc/en/Reference/PortManipulation
-  if (PIND & B00000100) //if pin2 (encoder A) is high
-  {
-    //Encoder A rising edge
-    if (lastEncoderEdge == B_RISING) {
-      //forward
-      // encoderDirection = CW;
-      steps--;
-      if (steps < 0) steps = 8399; //Limit variable to zero
-    } else if (lastEncoderEdge == B_FALLING) {
-      //backward
-      // encoderDirection = CCW;
-      steps++;
-      if (steps > 8399) steps = 0; //Limit variable to 8399
-    // } else if (lastEncoderEdge == A_FALLING) {
-      //direction reversal
-      // encoderDirection ^= true;
-    } else if (lastEncoderEdge == A_RISING) {
-      numErrors++; //should never get in here, it means 4 edges were missed!
-    }
-    lastEncoderEdge = A_RISING;
-  }
-  else
-  {
-    //Encoder A falling edge
-    if (lastEncoderEdge == B_RISING) {
-      //backward
-      // encoderDirection = CCW;
-      steps++;
-      if (steps > 8399) steps = 0; //Limit variable to 8399
-    } else if (lastEncoderEdge == B_FALLING) {
-      //forward
-      // encoderDirection = CW;
-      steps--;
-      if (steps < 0) steps = 8399; //Limit variable to zero
-    // } else if (lastEncoderEdge == A_RISING) {
-      //direction reversal
-      // encoderDirection ^= true;
-    } else if (lastEncoderEdge == A_FALLING) {
-      numErrors++; //should never get in here, it means 4 edges were missed!
-    }
-    lastEncoderEdge = A_FALLING;
-  }
-}
+// void aChange()
+// {
+//   // if (digitalRead(encoderA) == HIGH) //consider using direct port read to be faster - http://www.arduino.cc/en/Reference/PortManipulation
+//   if (PIND & B00000100) //if pin2 (encoder A) is high
+//   {
+//     //Encoder A rising edge
+//     if (lastEncoderEdge == B_RISING) {
+//       //forward
+//       // encoderDirection = CW;
+//       steps--;
+//       if (steps < 0) steps = 8399; //Limit variable to zero
+//     } else if (lastEncoderEdge == B_FALLING) {
+//       //backward
+//       // encoderDirection = CCW;
+//       steps++;
+//       if (steps > 8399) steps = 0; //Limit variable to 8399
+//     // } else if (lastEncoderEdge == A_FALLING) {
+//       //direction reversal
+//       // encoderDirection ^= true;
+//     } else if (lastEncoderEdge == A_RISING) {
+//       numErrors++; //should never get in here, it means 4 edges were missed!
+//     }
+//     lastEncoderEdge = A_RISING;
+//   }
+//   else
+//   {
+//     //Encoder A falling edge
+//     if (lastEncoderEdge == B_RISING) {
+//       //backward
+//       // encoderDirection = CCW;
+//       steps++;
+//       if (steps > 8399) steps = 0; //Limit variable to 8399
+//     } else if (lastEncoderEdge == B_FALLING) {
+//       //forward
+//       // encoderDirection = CW;
+//       steps--;
+//       if (steps < 0) steps = 8399; //Limit variable to zero
+//     // } else if (lastEncoderEdge == A_RISING) {
+//       //direction reversal
+//       // encoderDirection ^= true;
+//     } else if (lastEncoderEdge == A_FALLING) {
+//       numErrors++; //should never get in here, it means 4 edges were missed!
+//     }
+//     lastEncoderEdge = A_FALLING;
+//   }
+// }
 
-void bChange()
-{
-  // if (digitalRead(encoderB) == HIGH) //consider using direct port read to be faster - http://www.arduino.cc/en/Reference/PortManipulation
-  if (PIND & B00001000) //if pin3 (encoder B) is high
-  {
-    //Encoder B rising edge
-    if (lastEncoderEdge == A_RISING) {
-      //backward
-      // encoderDirection = CCW;
-      steps++;
-      if (steps > 8399) steps = 0; //Limit variable to 8399
-    } else if (lastEncoderEdge == A_FALLING) {
-      //forward
-      // encoderDirection = CW;
-      steps--;
-      if (steps < 0) steps = 8399; //Limit variable to zero
-    // } else if (lastEncoderEdge == B_RISING) {
-      //direction reversal
-      // encoderDirection ^= true;
-    } else if (lastEncoderEdge == B_RISING) {
-      numErrors++; //should never get in here, it means 4 edges were missed!
-    }
-    lastEncoderEdge = B_RISING;
-  }
-  else
-  {
-    //Encoder B falling edge
-    if (lastEncoderEdge == A_RISING) {
-      //forward
-      // encoderDirection = CW;
-      steps--;
-      if (steps < 0) steps = 8399; //Limit variable to zero
-    } else if (lastEncoderEdge == A_FALLING) {
-      //backward
-      // encoderDirection = CCW;
-      steps++;
-      if (steps > 8399) steps = 0; //Limit variable to 8399
-    // } else if (lastEncoderEdge == B_FALLING) {
-      //direction reversal
-      // encoderDirection ^= true;
-    } else if (lastEncoderEdge == B_FALLING) {
-      numErrors++; //should never get in here, it means 4 edges were missed!
-    }
-    lastEncoderEdge = B_FALLING;
-  }
-}
+// void bChange()
+// {
+//   // if (digitalRead(encoderB) == HIGH) //consider using direct port read to be faster - http://www.arduino.cc/en/Reference/PortManipulation
+//   if (PIND & B00001000) //if pin3 (encoder B) is high
+//   {
+//     //Encoder B rising edge
+//     if (lastEncoderEdge == A_RISING) {
+//       //backward
+//       // encoderDirection = CCW;
+//       steps++;
+//       if (steps > 8399) steps = 0; //Limit variable to 8399
+//     } else if (lastEncoderEdge == A_FALLING) {
+//       //forward
+//       // encoderDirection = CW;
+//       steps--;
+//       if (steps < 0) steps = 8399; //Limit variable to zero
+//     // } else if (lastEncoderEdge == B_RISING) {
+//       //direction reversal
+//       // encoderDirection ^= true;
+//     } else if (lastEncoderEdge == B_RISING) {
+//       numErrors++; //should never get in here, it means 4 edges were missed!
+//     }
+//     lastEncoderEdge = B_RISING;
+//   }
+//   else
+//   {
+//     //Encoder B falling edge
+//     if (lastEncoderEdge == A_RISING) {
+//       //forward
+//       // encoderDirection = CW;
+//       steps--;
+//       if (steps < 0) steps = 8399; //Limit variable to zero
+//     } else if (lastEncoderEdge == A_FALLING) {
+//       //backward
+//       // encoderDirection = CCW;
+//       steps++;
+//       if (steps > 8399) steps = 0; //Limit variable to 8399
+//     // } else if (lastEncoderEdge == B_FALLING) {
+//       //direction reversal
+//       // encoderDirection ^= true;
+//     } else if (lastEncoderEdge == B_FALLING) {
+//       numErrors++; //should never get in here, it means 4 edges were missed!
+//     }
+//     lastEncoderEdge = B_FALLING;
+//   }
+// }
 
-void aChangeSimple() {
-  bool encA = PIND & B00000100;
-  bool encB = PIND & B00001000;
-  if (encA == encB) {
-    steps--;
-    if (steps < 0) steps = 8399;
-  }
-  else {
-    steps++;
-    if (steps > 8399) steps = 0;
-  }
-}
+// void aChangeSimple() {
+//   bool encA = PIND & B00000100;
+//   bool encB = PIND & B00001000;
+//   if (encA == encB) {
+//     steps--;
+//     if (steps < 0) steps = 8399;
+//   }
+//   else {
+//     steps++;
+//     if (steps > 8399) steps = 0;
+//   }
+// }
 
-void bChangeSimple() {
-  bool encA = PIND & B00000100;
-  bool encB = PIND & B00001000;
-  if (encA != encB) {
-    steps--;
-    if (steps < 0) steps = 8399;
-  }
-  else {
-    steps++;
-    if (steps > 8399) steps = 0;
-  }
-}
+// void bChangeSimple() {
+//   bool encA = PIND & B00000100;
+//   bool encB = PIND & B00001000;
+//   if (encA != encB) {
+//     steps--;
+//     if (steps < 0) steps = 8399;
+//   }
+//   else {
+//     steps++;
+//     if (steps > 8399) steps = 0;
+//   }
+// }
 
-void aChangeTest() {
-  if (PIND & B00000100) //if pin2 (encoder A) is high
-  {
-    //Encoder A rising edge
-    if (lastEncoderEdge == A_RISING) {
-      numErrorsAR++; //should never get in here, it means 4 edges were missed!
-    }
-    lastEncoderEdge = A_RISING;
-  }
-  else
-  {
-    //Encoder A falling edge
-    if (lastEncoderEdge == A_FALLING) {
-      numErrorsAF++; //should never get in here, it means 4 edges were missed!
-    }
-    lastEncoderEdge = A_FALLING;
-  }
-}
+// void aChangeTest() {
+//   if (PIND & B00000100) //if pin2 (encoder A) is high
+//   {
+//     //Encoder A rising edge
+//     if (lastEncoderEdge == A_RISING) {
+//       numErrorsAR++; //should never get in here, it means 4 edges were missed!
+//     }
+//     lastEncoderEdge = A_RISING;
+//   }
+//   else
+//   {
+//     //Encoder A falling edge
+//     if (lastEncoderEdge == A_FALLING) {
+//       numErrorsAF++; //should never get in here, it means 4 edges were missed!
+//     }
+//     lastEncoderEdge = A_FALLING;
+//   }
+// }
 
-void bChangeTest() {
-  if (PIND & B00001000) //if pin3 (encoder B) is high
-  {
-    //Encoder B rising edge
-    if (lastEncoderEdge == B_RISING) {
-      numErrorsBR++; //should never get in here, it means 4 edges were missed!
-    }
-    lastEncoderEdge = B_RISING;
-  }
-  else
-  {
-    //Encoder B falling edge
-    if (lastEncoderEdge == B_FALLING) {
-      numErrorsBF++; //should never get in here, it means 4 edges were missed!
-    }
-    lastEncoderEdge = B_FALLING;
-  }
-}
+// void bChangeTest() {
+//   if (PIND & B00001000) //if pin3 (encoder B) is high
+//   {
+//     //Encoder B rising edge
+//     if (lastEncoderEdge == B_RISING) {
+//       numErrorsBR++; //should never get in here, it means 4 edges were missed!
+//     }
+//     lastEncoderEdge = B_RISING;
+//   }
+//   else
+//   {
+//     //Encoder B falling edge
+//     if (lastEncoderEdge == B_FALLING) {
+//       numErrorsBF++; //should never get in here, it means 4 edges were missed!
+//     }
+//     lastEncoderEdge = B_FALLING;
+//   }
+// }
 // *************   ISRs for measuring encoder position   *************
 
 
@@ -643,11 +643,9 @@ int averageAnalogRead(byte pinToRead)
 }
 
 void motorSafetyTest() {
-  // timeSinceLastMovement = millis();
-  // lastStep = steps;
 
-  if (lastStep != steps) {
-    lastStep = steps;
+  if (lastStep != REG_TC0_CV0) {
+    lastStep = REG_TC0_CV0;
     timeSinceLastMovement = millis();
   }
   if (millis() - timeSinceLastMovement > 25) {

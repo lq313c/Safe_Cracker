@@ -20,28 +20,8 @@ void testServo()
 
   servoHighPressurePosition = servoRestingPosition;
 
-  long timeSinceLastMovement = millis();
-  int lastStep = steps;
-
-  // turnCW();
-  // setMotorSpeed(50);
-
-  // enableMotor(); //Turn on motor controller
-
   while (1)
   {
-    // if (lastStep != steps)
-    // {
-    //   lastStep = steps;
-    //   timeSinceLastMovement = millis();
-    // }
-    // if (millis() - timeSinceLastMovement > 25)
-    // {
-    //   setMotorSpeed(0); //Stop!
-    //   Serial.println("Dial stuck");
-    //   // while (1);
-    // }
-
     if (Serial.available())
     {
       byte incoming = Serial.read();
@@ -126,7 +106,7 @@ void positionTesting()
     // Serial.print(F("Dial commanded CCW to: "));
     // Serial.print(randomDial);
     Serial.print(F("Dial should be at 10, is at: "));
-    printEncoderToDial(steps);
+    printEncoderToDial(REG_TC0_CV0);
     messagePause("Verify then press key to continue");
 
     randomDial = random(0, 100);
@@ -137,7 +117,7 @@ void positionTesting()
     // Serial.print(F("Dial commanded CW to: "));
     // Serial.print(randomDial);
     Serial.print(F("Dial should be at 60, is at: "));
-    printEncoderToDial(steps);
+    printEncoderToDial(REG_TC0_CV0);
     messagePause("Verify then press key to exit");
   }
 }
@@ -184,7 +164,7 @@ void detailedPositionTesting() {
       Serial.println(position);
       setDial(position, false);
       Serial.print(F("Encoder position: "));
-      printEncoderToDial(steps);
+      printEncoderToDial(REG_TC0_CV0);
     } 
     else if (command == 'w') {
       Serial.print(F("Enter desired position (with extra spin): "));
@@ -194,7 +174,7 @@ void detailedPositionTesting() {
       Serial.println(position);
       setDial(position, true);
       Serial.print(F("Encoder position: "));
-      printEncoderToDial(steps);
+      printEncoderToDial(REG_TC0_CV0);
     } 
     else if (command == 'x') {
       setMotorSpeed(0); //Stop motor

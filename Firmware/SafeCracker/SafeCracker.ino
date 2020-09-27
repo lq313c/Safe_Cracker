@@ -84,8 +84,8 @@ volatile byte numErrorsBF = 0;
 //encoder register for Arduino Due
 // #define steps REG_TC0_CV0
 
-volatile int steps = 0; //Keeps track of encoder counts. 8400 per revolution so this can get big.
-int lastStep = steps + 1; //Use for motor stall safety monitoring
+// volatile int steps = 0; //Keeps track of encoder counts. 8400 per revolution so this can get big.
+int lastStep = REG_TC0_CV0 + 1; //Use for motor stall safety monitoring
 boolean direction = CW; //Commanded direction
 boolean previousDirection = CW; //Detects when direction changes to add some steps for encoder slack
 volatile boolean encoderDirection = CW; //This separately tracks the direction of turn as measured by the encoder
@@ -242,11 +242,11 @@ void setup()
 
   //Tell dial to go to zero
   enableMotor(); //Turn on motor controller
-  // findFlag(); //Find the flag
-  // steps = homeOffsetSteps; //Adjust steps with the real-world offset
-  // setDial(0, false); //Make dial go to zero
-  // Serial.print(F("Dial should be at 0, is at: "));
-  // printEncoderToDial(steps);
+  findFlag(); //Find the flag
+  REG_TC0_CV0 = homeOffsetSteps; //Adjust steps with the real-world offset
+  setDial(0, false); //Make dial go to zero
+  Serial.print(F("Dial should be at 0, is at: "));
+  printEncoderToDial(REG_TC0_CV0);
 }
 
 void loop()
@@ -306,12 +306,12 @@ void loop()
     Serial.println(homeOffsetSteps);
 
     //Adjust steps with the real-world offset
-    steps = homeOffsetSteps;
+    REG_TC0_CV0 = homeOffsetSteps;
 
     setDial(0, false); //Turn to zero
 
     Serial.print(F("Dial should be at 0, is at: "));
-    printEncoderToDial(steps);
+    printEncoderToDial(REG_TC0_CV0);
   }
   else if (incoming == '2')
   {
@@ -448,10 +448,10 @@ void loop()
   {
     findFlag(); //Find the flag
     //Adjust steps with the real-world offset
-    steps = homeOffsetSteps;
+    REG_TC0_CV0 = homeOffsetSteps;
     setDial(0, false); //Make dial go to zero
     Serial.print(F("Dial should be at 0, is at: "));
-    printEncoderToDial(steps);
+    printEncoderToDial(REG_TC0_CV0);
     Serial.read(); //clear out remaining byte
   }
   else if (incoming == 'a')

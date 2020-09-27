@@ -109,12 +109,12 @@ void measureIndent(int &indentLocation, int &indentWidth, int &indentDepth)
   setMotorSpeed(searchSlow); //Begin turning dial
 
   long timeSinceLastMovement = millis();
-  int lastStep = steps;
+  int lastStep = REG_TC0_CV0;
   while (1)
   {
-    if (lastStep != steps)
+    if (lastStep != REG_TC0_CV0)
     {
-      lastStep = steps;
+      lastStep = REG_TC0_CV0;
       timeSinceLastMovement = millis();
     }
     if (millis() - timeSinceLastMovement > 10) break;
@@ -125,10 +125,10 @@ void measureIndent(int &indentLocation, int &indentWidth, int &indentDepth)
 
   //Add offset because we're switching directions and we need to take up
   //slack in the encoder
-  steps += switchDirectionAdjustment;
-  if (steps > 8400) steps -= 8400;
+  REG_TC0_CV0 += switchDirectionAdjustment;
+  if (REG_TC0_CV0 > 8400) REG_TC0_CV0 -= 8400;
 
-  edgeFar = steps; //Take measurement
+  edgeFar = REG_TC0_CV0; //Take measurement
 
 
   //Ok, we've made it to the far edge of an indent. Now move backwards towards the other edge.
@@ -138,12 +138,12 @@ void measureIndent(int &indentLocation, int &indentWidth, int &indentDepth)
   setMotorSpeed(searchSlow); //Begin turning dial
 
   timeSinceLastMovement = millis();
-  lastStep = steps;
+  lastStep = REG_TC0_CV0;
   while (1)
   {
-    if (lastStep != steps)
+    if (lastStep != REG_TC0_CV0)
     {
-      lastStep = steps;
+      lastStep = REG_TC0_CV0;
       timeSinceLastMovement = millis();
     }
     if (millis() - timeSinceLastMovement > 10) break;
@@ -155,10 +155,10 @@ void measureIndent(int &indentLocation, int &indentWidth, int &indentDepth)
   //Take a reading on how deep the handle got
   //handlePosition = averageAnalogRead(servoPosition);
 
-  steps -= switchDirectionAdjustment;
-  if (steps < 0) steps += 8400;
+  REG_TC0_CV0 -= switchDirectionAdjustment;
+  if (REG_TC0_CV0 < 0) REG_TC0_CV0 += 8400;
 
-  edgeNear = steps; //Take measurement
+  edgeNear = REG_TC0_CV0; //Take measurement
 
 
   //Ok, we've made it to the near edge of an indent. Now move towards the other edge for a 2nd reading
@@ -169,12 +169,12 @@ void measureIndent(int &indentLocation, int &indentWidth, int &indentDepth)
   setMotorSpeed(searchSlow); //Begin turning dial
 
   timeSinceLastMovement = millis();
-  lastStep = steps;
+  lastStep = REG_TC0_CV0;
   while (1)
   {
-    if (lastStep != steps)
+    if (lastStep != REG_TC0_CV0)
     {
-      lastStep = steps;
+      lastStep = REG_TC0_CV0;
       timeSinceLastMovement = millis();
     }
     if (millis() - timeSinceLastMovement > 10) break;
@@ -186,10 +186,10 @@ void measureIndent(int &indentLocation, int &indentWidth, int &indentDepth)
   //Take a reading on how deep the handle got
   //handlePosition = averageAnalogRead(servoPosition);
 
-  steps -= switchDirectionAdjustment;
-  if (steps < 0) steps += 8400;
+  REG_TC0_CV0 -= switchDirectionAdjustment;
+  if (REG_TC0_CV0 < 0) REG_TC0_CV0 += 8400;
 
-  int edgeFar2 = steps; //Take measurement
+  int edgeFar2 = REG_TC0_CV0; //Take measurement
 
 
 
