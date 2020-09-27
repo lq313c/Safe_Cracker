@@ -154,8 +154,8 @@ void setup()
   disableMotor();
 
   //Motor encoder setup for Arduino Uno
-  pinMode(encoderA, INPUT);
-  pinMode(encoderB, INPUT);
+  // pinMode(encoderA, INPUT);
+  // pinMode(encoderB, INPUT);
   //Motor encoder setup for Arduino Due
   // activate peripheral functions for quad pins
   REG_PIOB_PDR = mask_encoder_A;     // activate peripheral function (disables all PIO functionality)
