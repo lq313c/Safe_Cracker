@@ -677,9 +677,9 @@ void motorSafetyTest() {
 }
 
 int getEncoderSteps() {
-  return ((int) REG_TC0_CV0) % 8400;
+  return ((int) REG_TC0_CV0 + offset) % 8400;
 }
 
 void setEncoderSteps(int steps) {
-  REG_TC0_CV0 = steps;
+  offset = steps;
 }
