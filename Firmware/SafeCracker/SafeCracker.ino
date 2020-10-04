@@ -261,10 +261,9 @@ void setup()
 
   //Tell dial to go to zero
   enableMotor(); //Turn on motor controller
-  // findFlag(); //Find the flag
-  // encoderSteps = homeOffsetSteps; //Adjust steps with the real-world offset
-  // setDial(0, false); //Make dial go to zero
-  // Serial.print(F("Dial should be at 0, is at: "));
+  findFlag(); //Find the flag
+  setDial(0, false); //Make dial go to zero
+  Serial.print(F("Dial should be at 0, is at: "));
   printEncoderToDial(getEncoderSteps());
 }
 
