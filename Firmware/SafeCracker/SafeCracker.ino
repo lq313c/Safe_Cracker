@@ -466,9 +466,6 @@ void loop()
   else if (incoming == 'f')
   {
     findFlag(); //Find the flag
-    //Adjust steps with the real-world offset
-    // encoderSteps = homeOffsetSteps;
-    setEncoderSteps(homeOffsetSteps);
     setDial(0, false); //Make dial go to zero
     Serial.print(F("Dial should be at 0, is at: "));
     printEncoderToDial(getEncoderSteps());

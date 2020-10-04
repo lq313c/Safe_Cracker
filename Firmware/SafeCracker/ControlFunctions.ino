@@ -153,7 +153,7 @@ int setDial(int dialValue, boolean extraSpin)
   return (stepDelta);
 }
 
-//Spin until we detect the photo gate trigger
+//Find the flag and set the encoder to the predefined homeOffset value
 void findFlag()
 {
   byte fastSearch = 255; //Speed at which we locate photogate
@@ -189,7 +189,7 @@ void findFlag()
 
   //Adjust steps with the real-world offset
   // encoderSteps = homeOffsetSteps;
-  setEncoderSteps(homeOffsetSteps);
+  setEncoderSteps(getEncoderSteps() + homeOffsetSteps);
 
   previousDirection = CCW; //Last adjustment to dial was in CCW direction
   Serial.println(F("Flag found"));
