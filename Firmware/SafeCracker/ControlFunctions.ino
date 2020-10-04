@@ -676,8 +676,12 @@ void motorSafetyTest() {
 
 }
 
+// returns the dial steps (between 0 - 8399)
 int getEncoderSteps() {
-  return ((unsigned int) REG_TC0_CV0 + offset) % 8400;
+  int dialSteps = ((int) REG_TC0_CV0 + offset) % 8400;
+
+  if (dialSteps > 0) return dialSteps;
+  else return dialSteps + 8400; //if negative, roll it over to positive
 }
 
 void setEncoderSteps(int steps) {
