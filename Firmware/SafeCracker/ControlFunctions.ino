@@ -689,5 +689,5 @@ void setEncoderSteps(int steps) {
   REG_TC0_CCR0 = TC_CCR_CLKEN        //#define TC_CCR_CLKEN (0x1u << 0) /**< \brief (TC_CCR) Counter Clock Enable Command */
                | TC_CCR_SWTRG;       //#define TC_CCR_SWTRG (0x1u << 2) /**< \brief (TC_CCR) Software Trigger Command */
 
-  offset = 4294962000 + steps; //set offset to midway point of unsigned int (such that it mod 8400 == 0)
+  offset = steps; //set offset to midway point of unsigned int (such that it mod 8400 == 0)
 }
