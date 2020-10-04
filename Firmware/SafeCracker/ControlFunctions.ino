@@ -189,7 +189,7 @@ void findFlag()
 
   //Adjust steps with the real-world offset
   // encoderSteps = homeOffsetSteps;
-  setEncoderSteps(getEncoderSteps() + homeOffsetSteps);
+  setEncoderSteps(homeOffsetSteps);
 
   previousDirection = CCW; //Last adjustment to dial was in CCW direction
   Serial.println(F("Flag found"));
@@ -681,5 +681,9 @@ int getEncoderSteps() {
 }
 
 void setEncoderSteps(int steps) {
+  // enable the clock (CLKEN=1) and reset the counter (SWTRG=1)
+  REG_TC0_CCR0 = TC_CCR_CLKEN        //#define TC_CCR_CLKEN (0x1u << 0) /**< \brief (TC_CCR) Counter Clock Enable Command */
+               | TC_CCR_SWTRG;       //#define TC_CCR_SWTRG (0x1u << 2) /**< \brief (TC_CCR) Software Trigger Command */
+
   offset = steps;
 }
