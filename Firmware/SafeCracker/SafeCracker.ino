@@ -170,9 +170,8 @@ void setup()
   //activate quadrature encoder and position measure mode, no filters
   REG_TC0_BMR = TC_BMR_QDEN          //#define TC_BMR_QDEN (0x1u << 8) /**< \brief (TC_BMR) Quadrature Decoder ENabled */
               | TC_BMR_POSEN         //#define TC_BMR_POSEN (0x1u << 9) /**< \brief (TC_BMR) POSition ENabled */
-              | TC_BMR_EDGPHA        //#define TC_BMR_EDGPHA (0x1u << 12) /**< \brief (TC_BMR) EDGe on PHA count mode */
-              | TC_BMR_INVA          //#define TC_BMR_INVA (0x1u << 13) /**< \brief (TC_BMR) INVerted phA */
-              | TC_BMR_INVB;         //#define TC_BMR_INVB (0x1u << 14) /**< \brief (TC_BMR) INVerted phB */
+              | TC_BMR_EDGPHA        //#define TC_BMR_EDGPHA (0x1u << 12) /**< \brief (TC_BMR) Edges are detected on both PHA and PHB */
+              | TC_BMR_SWAP;         //#define TC_BMR_SWAP (0x1u << 16) /**< \brief (TC_BMR) SWAP PHA and PHB */
   // enable the clock (CLKEN=1) and reset the counter (SWTRG=1)
   REG_TC0_CCR0 = TC_CCR_CLKEN        //#define TC_CCR_CLKEN (0x1u << 0) /**< \brief (TC_CCR) Counter Clock Enable Command */
                | TC_CCR_SWTRG;       //#define TC_CCR_SWTRG (0x1u << 2) /**< \brief (TC_CCR) Software Trigger Command */
