@@ -106,7 +106,7 @@ void positionTesting()
     // Serial.print(F("Dial commanded CCW to: "));
     // Serial.print(randomDial);
     Serial.print(F("Dial should be at 10, is at: "));
-    printEncoderToDial(encoderSteps);
+    printEncoderToDial(getEncoderSteps());
     messagePause("Verify then press key to continue");
 
     randomDial = random(0, 100);
@@ -117,7 +117,7 @@ void positionTesting()
     // Serial.print(F("Dial commanded CW to: "));
     // Serial.print(randomDial);
     Serial.print(F("Dial should be at 60, is at: "));
-    printEncoderToDial(encoderSteps);
+    printEncoderToDial(getEncoderSteps());
     messagePause("Verify then press key to exit");
   }
 }
@@ -164,7 +164,7 @@ void detailedPositionTesting() {
       Serial.println(position);
       setDial(position, false);
       Serial.print(F("Encoder position: "));
-      printEncoderToDial(encoderSteps);
+      printEncoderToDial(getEncoderSteps());
     } 
     else if (command == 'w') {
       Serial.print(F("Enter desired position (with extra spin): "));
@@ -174,7 +174,7 @@ void detailedPositionTesting() {
       Serial.println(position);
       setDial(position, true);
       Serial.print(F("Encoder position: "));
-      printEncoderToDial(encoderSteps);
+      printEncoderToDial(getEncoderSteps());
     } 
     else if (command == 'x') {
       setMotorSpeed(0); //Stop motor

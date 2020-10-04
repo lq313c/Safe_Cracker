@@ -30,39 +30,41 @@ int gotoStep(int stepGoal, boolean addAFullRotation)
   //Because we're switching directions we need to add extra steps to take up the slack in the encoder
   if (direction == CW && previousDirection == CCW)
   {
-    encoderSteps += switchDirectionAdjustment;
-    if (encoderSteps > 8400) encoderSteps -= 8400;
+    // encoderSteps += switchDirectionAdjustment;
+    // if (encoderSteps > 8400) encoderSteps -= 8400;
+    setEncoderSteps(getEncoderSteps() + switchDirectionAdjustment);
     previousDirection = CW;
   }
   else if (direction == CCW && previousDirection == CW)
   {
-    encoderSteps -= switchDirectionAdjustment;
-    if (encoderSteps < 0) encoderSteps += 8400;
+    // encoderSteps -= switchDirectionAdjustment;
+    // if (encoderSteps < 0) encoderSteps += 8400;
+    setEncoderSteps(getEncoderSteps() - switchDirectionAdjustment);
     previousDirection = CCW;
   }
 
   setMotorSpeed(coarseSpeed); //Go!
-  while (stepsRequired(encoderSteps, stepGoal) > coarseWindow) motorSafetyTest(); //Spin until coarse window is closed
+  while (stepsRequired(getEncoderSteps(), stepGoal) > coarseWindow) motorSafetyTest(); //Spin until coarse window is closed
   // while (stepsRequired(steps, stepGoal) > coarseWindow) Serial.println(steps); //log dial position
 
   //After we have gotten close to the first coarse window, proceed past the goal, then proceed to the goal
   if (addAFullRotation == true)
   {
-    int tempStepGoal = encoderSteps + 8400/2; //Move 50 away from current position
+    int tempStepGoal = getEncoderSteps() + 8400/2; //Move 50 away from current position
     if (tempStepGoal > 8400) tempStepGoal -= 8400;
     
     //Go to temp position
-    while (stepsRequired(encoderSteps, tempStepGoal) > coarseWindow) motorSafetyTest(); 
+    while (stepsRequired(getEncoderSteps(), tempStepGoal) > coarseWindow) motorSafetyTest(); 
     // while (stepsRequired(steps, tempStepGoal) > coarseWindow) Serial.println(steps);
         
     //Go to stepGoal
-    while (stepsRequired(encoderSteps, stepGoal) > coarseWindow) motorSafetyTest(); //Spin until coarse window is closed
+    while (stepsRequired(getEncoderSteps(), stepGoal) > coarseWindow) motorSafetyTest(); //Spin until coarse window is closed
     // while (stepsRequired(steps, stepGoal) > coarseWindow) Serial.println(steps);
   }
 
   setMotorSpeed(fineSpeed); //Slowly approach
 
-  while (stepsRequired(encoderSteps, stepGoal) > fineWindow) motorSafetyTest(); //Spin until fine window is closed
+  while (stepsRequired(getEncoderSteps(), stepGoal) > fineWindow) motorSafetyTest(); //Spin until fine window is closed
   // while (stepsRequired(steps, stepGoal) > fineWindow) Serial.println(steps);
 
   setMotorSpeed(0); //Stop
@@ -77,7 +79,7 @@ int gotoStep(int stepGoal, boolean addAFullRotation)
   // Serial.print(F("Encoder errors: "));
   // Serial.println(numErrors);
 
-  int delta = encoderSteps - stepGoal;
+  int delta = getEncoderSteps() - stepGoal;
 
   // if |delta| > 90 dial ticks, it's probably just near the 0 rollover point
   if (delta > 90*84) {
@@ -144,7 +146,7 @@ int setDial(int dialValue, boolean extraSpin)
     Serial.println(stepDelta);
   }
 
-  int actualDialValue = convertEncoderToDial(encoderSteps); //Convert back to dial values
+  int actualDialValue = convertEncoderToDial(getEncoderSteps()); //Convert back to dial values
   //Serial.print("After movement, dialvalue: ");
   //Serial.println(actualDialValue);
 
@@ -162,7 +164,7 @@ void findFlag()
   if (flagDetected() == true)
   {
     Serial.println(F("We're too close to the photogate"));
-    int currentDial = convertEncoderToDial(encoderSteps);
+    int currentDial = convertEncoderToDial(getEncoderSteps());
     currentDial += 50;
     if (currentDial > 100) currentDial -= 100;
     setDial(currentDial, false); //Advance to 50 dial ticks away from here
@@ -186,7 +188,8 @@ void findFlag()
   delay(timeMotorStop); //Wait for motor to stop
 
   //Adjust steps with the real-world offset
-  encoderSteps = homeOffsetSteps;
+  // encoderSteps = homeOffsetSteps;
+  setEncoderSteps(homeOffsetSteps)
 
   previousDirection = CCW; //Last adjustment to dial was in CCW direction
   Serial.println(F("Flag found"));
@@ -203,7 +206,7 @@ void resetDiscsWithCurrentCombo(boolean pause)
   Serial.print(F("DiscA commanded to: "));
   Serial.println(discA);
   Serial.print("DiscA is at: ");
-  printEncoderToDial(encoderSteps);
+  printEncoderToDial(getEncoderSteps());
   if (pause == true) messagePause("Verify disc position");
 
   turnCW();
@@ -212,7 +215,7 @@ void resetDiscsWithCurrentCombo(boolean pause)
   Serial.println(discB);
   int discBDelta = setDial(discB, true);
   Serial.print("DiscB is at: ");
-  printEncoderToDial(encoderSteps);
+  printEncoderToDial(getEncoderSteps());
   if (pause == true) messagePause("Verify disc position");
 
   turnCCW();
@@ -220,7 +223,7 @@ void resetDiscsWithCurrentCombo(boolean pause)
   Serial.println(discC);
   int discCDelta = setDial(discC, false);
   Serial.print("DiscC is at: ");
-  printEncoderToDial(encoderSteps);
+  printEncoderToDial(getEncoderSteps());
   if (pause == true) messagePause("Verify disc position");
   
   if (discADelta < -stepTolerance || discADelta > stepTolerance
@@ -289,11 +292,11 @@ void resetDial()
   int deltaSteps = 0;
   while (deltaSteps < (8400 * 2))
   {
-    int startingSteps = encoderSteps; //Remember where we started
+    int startingSteps = getEncoderSteps(); //Remember where we started
     delay(100); //Let motor spin for awhile
 
-    if (encoderSteps >= startingSteps) deltaSteps += encoderSteps - startingSteps;
-    else deltaSteps += (8400 - startingSteps + encoderSteps);
+    if (getEncoderSteps() >= startingSteps) deltaSteps += getEncoderSteps() - startingSteps;
+    else deltaSteps += (8400 - startingSteps + getEncoderSteps());
   }
   
   setMotorSpeed(0); //Stop
@@ -475,52 +478,43 @@ void disableMotor()
 //   }
 // }
 
-void aChangeSimple() {
-  // PIND register specific to Arduino Uno
-  // bool encA = PIND & B00000100;
-  // bool encB = PIND & B00001000;
+// void aChangeSimple() {
+//   // PIND register specific to Arduino Uno
+//   // bool encA = PIND & B00000100;
+//   // bool encB = PIND & B00001000;
 
-  // register specific to Arduino Due
-  bool encA = PIO_PDSR_P25;
-  bool encB = PIO_PDSR_P27;
+//   // register specific to Arduino Due
+//   bool encA = PIO_PDSR_P25;
+//   bool encB = PIO_PDSR_P27;
 
-  if (encA == encB) {
-    encoderSteps--;
-    if (encoderSteps < 0) encoderSteps = 8399;
-  }
-  else {
-    encoderSteps++;
-    if (encoderSteps > 8399) encoderSteps = 0;
-  }
-  Serial.print("A change encA/encB: ");
-  Serial.print(encA);
-  Serial.print("/");
-  Serial.println(encB);
-}
+//   if (encA == encB) {
+//     encoderSteps--;
+//     if (encoderSteps < 0) encoderSteps = 8399;
+//   }
+//   else {
+//     encoderSteps++;
+//     if (encoderSteps > 8399) encoderSteps = 0;
+//   }
+// }
 
-void bChangeSimple() {
-  // PIND register specific to Arduino Uno
-  // bool encA = PIND & B00000100;
-  // bool encB = PIND & B00001000;
+// void bChangeSimple() {
+//   // PIND register specific to Arduino Uno
+//   // bool encA = PIND & B00000100;
+//   // bool encB = PIND & B00001000;
   
-  // register specific to Arduino Due
-  bool encA = PIO_PDSR_P25;
-  bool encB = PIO_PDSR_P27;
+//   // register specific to Arduino Due
+//   bool encA = PIO_PDSR_P25;
+//   bool encB = PIO_PDSR_P27;
 
-  if (encA != encB) {
-    encoderSteps--;
-    if (encoderSteps < 0) encoderSteps = 8399;
-  }
-  else {
-    encoderSteps++;
-    if (encoderSteps > 8399) encoderSteps = 0;
-  }
-  Serial.print("B change encA/encB: ");
-  Serial.print(encA);
-  Serial.print("/");
-  Serial.println(encB);
-
-}
+//   if (encA != encB) {
+//     encoderSteps--;
+//     if (encoderSteps < 0) encoderSteps = 8399;
+//   }
+//   else {
+//     encoderSteps++;
+//     if (encoderSteps > 8399) encoderSteps = 0;
+//   }
+// }
 
 // void aChangeTest() {
 //   if (PIND & B00000100) //if pin2 (encoder A) is high
@@ -665,8 +659,8 @@ int averageAnalogRead(byte pinToRead)
 
 void motorSafetyTest() {
 
-  if (lastStep != encoderSteps) {
-    lastStep = encoderSteps;
+  if (lastStep != getEncoderSteps()) {
+    lastStep = getEncoderSteps();
     timeSinceLastMovement = millis();
   }
   if (millis() - timeSinceLastMovement > 25) {
@@ -680,4 +674,12 @@ void motorSafetyTest() {
     while (1);
   }
 
+}
+
+int getEncoderSteps() {
+  return ((int) REG_TC0_CV0) % 8400;
+}
+
+void setEncoderSteps(int steps) {
+  REG_TC0_CV0 = steps;
 }
