@@ -85,10 +85,11 @@ volatile byte numErrorsBF = 0;
 #define CCW 0
 #define CW 1
 //encoder register for Arduino Due
-// #define steps REG_TC0_CV0
+// #define steps encoderSteps
 
-// volatile int steps = 0; //Keeps track of encoder counts. 8400 per revolution so this can get big.
-int lastStep = REG_TC0_CV0 + 1; //Use for motor stall safety monitoring
+volatile int encoderSteps = 0; //Keeps track of encoder counts. 8400 per revolution so this can get big.
+int lastStep = encoderSteps + 1;
+// int lastStep = encoderSteps + 1; //Use for motor stall safety monitoring
 boolean direction = CW; //Commanded direction
 boolean previousDirection = CW; //Detects when direction changes to add some steps for encoder slack
 volatile boolean encoderDirection = CW; //This separately tracks the direction of turn as measured by the encoder
@@ -160,22 +161,25 @@ void setup()
 
   //Motor encoder setup for Arduino Due
   // activate peripheral functions for quad pins
-  REG_PIOB_PDR = mask_encoder_A;     // activate peripheral function (disables all PIO functionality)
-  REG_PIOB_ABSR |= mask_encoder_A;   // choose peripheral option B   
-  REG_PIOB_PDR = mask_encoder_B;     // activate peripheral function (disables all PIO functionality)
-  REG_PIOB_ABSR |= mask_encoder_B;   // choose peripheral option B
+  // REG_PIOB_PDR = mask_encoder_A;     // activate peripheral function (disables all PIO functionality)
+  // REG_PIOB_ABSR |= mask_encoder_A;   // choose peripheral option B   
+  // REG_PIOB_PDR = mask_encoder_B;     // activate peripheral function (disables all PIO functionality)
+  // REG_PIOB_ABSR |= mask_encoder_B;   // choose peripheral option B
 
-  // activate clock for TC0
-  REG_PMC_PCER0 = PMC_PCER0_PID27;   //#define PMC_PCER0_PID27 (0x1u << 27) /**< \brief (PMC_PCER0) Peripheral Clock 27 Enable */
-  // select XC0 as clock source
-  REG_TC0_CMR0 = TC_CMR_TCCLKS_XC0;  //#define   TC_CMR_TCCLKS_XC0 (0x5u << 0) /**< \brief (TC_CMR) Clock selected: XC0 */
-  //activate quadrature encoder and position measure mode, no filters
-  REG_TC0_BMR = TC_BMR_QDEN          //#define TC_BMR_QDEN (0x1u << 8) /**< \brief (TC_BMR) Quadrature Decoder ENabled */
-              | TC_BMR_POSEN         //#define TC_BMR_POSEN (0x1u << 9) /**< \brief (TC_BMR) POSition ENabled */
-              | TC_BMR_EDGPHA;       //#define TC_BMR_EDGPHA (0x1u << 12) /**< \brief (TC_BMR) EDGe on PHA count mode */
-  // enable the clock (CLKEN=1) and reset the counter (SWTRG=1)
-  REG_TC0_CCR0 = TC_CCR_CLKEN        //#define TC_CCR_CLKEN (0x1u << 0) /**< \brief (TC_CCR) Counter Clock Enable Command */
-               | TC_CCR_SWTRG;       //#define TC_CCR_SWTRG (0x1u << 2) /**< \brief (TC_CCR) Software Trigger Command */
+  // // activate clock for TC0
+  // REG_PMC_PCER0 = PMC_PCER0_PID27;   //#define PMC_PCER0_PID27 (0x1u << 27) /**< \brief (PMC_PCER0) Peripheral Clock 27 Enable */
+  // // select XC0 as clock source
+  // REG_TC0_CMR0 = TC_CMR_TCCLKS_XC0;  //#define   TC_CMR_TCCLKS_XC0 (0x5u << 0) /**< \brief (TC_CMR) Clock selected: XC0 */
+  // //activate quadrature encoder and position measure mode, no filters
+  // REG_TC0_BMR = TC_BMR_QDEN          //#define TC_BMR_QDEN (0x1u << 8) /**< \brief (TC_BMR) Quadrature Decoder ENabled */
+  //             | TC_BMR_POSEN         //#define TC_BMR_POSEN (0x1u << 9) /**< \brief (TC_BMR) POSition ENabled */
+  //             | TC_BMR_EDGPHA;       //#define TC_BMR_EDGPHA (0x1u << 12) /**< \brief (TC_BMR) EDGe on PHA count mode */
+  // // enable the clock (CLKEN=1) and reset the counter (SWTRG=1)
+  // REG_TC0_CCR0 = TC_CCR_CLKEN        //#define TC_CCR_CLKEN (0x1u << 0) /**< \brief (TC_CCR) Counter Clock Enable Command */
+  //              | TC_CCR_SWTRG;       //#define TC_CCR_SWTRG (0x1u << 2) /**< \brief (TC_CCR) Software Trigger Command */
+
+  pinMode(encoderA, INPUT);
+  pinMode(encoderB, INPUT);
 
   pinMode(motorPWM, OUTPUT);
   pinMode(motorDIR, OUTPUT);
@@ -185,8 +189,8 @@ void setup()
   pinMode(photo, INPUT_PULLUP);
 
   // //Setup the encoder interrupts (for Arduino Uno only)
-  // attachInterrupt(digitalPinToInterrupt(encoderA), aChangeSimple, CHANGE);
-  // attachInterrupt(digitalPinToInterrupt(encoderB), bChangeSimple, CHANGE);
+  attachInterrupt(digitalPinToInterrupt(encoderA), aChangeSimple, CHANGE);
+  attachInterrupt(digitalPinToInterrupt(encoderB), bChangeSimple, CHANGE);
 
   Serial.print(F("Home Offset dial/steps: "));
   Serial.print(homeOffsetSteps / 84.0);
@@ -260,10 +264,10 @@ void setup()
   //Tell dial to go to zero
   enableMotor(); //Turn on motor controller
   // findFlag(); //Find the flag
-  // REG_TC0_CV0 = homeOffsetSteps; //Adjust steps with the real-world offset
+  // encoderSteps = homeOffsetSteps; //Adjust steps with the real-world offset
   // setDial(0, false); //Make dial go to zero
   // Serial.print(F("Dial should be at 0, is at: "));
-  printEncoderToDial(REG_TC0_CV0);
+  printEncoderToDial(encoderSteps);
 }
 
 void loop()
@@ -323,12 +327,12 @@ void loop()
     Serial.println(homeOffsetSteps);
 
     //Adjust steps with the real-world offset
-    REG_TC0_CV0 = homeOffsetSteps;
+    encoderSteps = homeOffsetSteps;
 
     setDial(0, false); //Turn to zero
 
     Serial.print(F("Dial should be at 0, is at: "));
-    printEncoderToDial(REG_TC0_CV0);
+    printEncoderToDial(encoderSteps);
   }
   else if (incoming == '2')
   {
@@ -465,10 +469,10 @@ void loop()
   {
     findFlag(); //Find the flag
     //Adjust steps with the real-world offset
-    REG_TC0_CV0 = homeOffsetSteps;
+    encoderSteps = homeOffsetSteps;
     setDial(0, false); //Make dial go to zero
     Serial.print(F("Dial should be at 0, is at: "));
-    printEncoderToDial(REG_TC0_CV0);
+    printEncoderToDial(encoderSteps);
     Serial.read(); //clear out remaining byte
   }
   else if (incoming == 'a')
@@ -518,7 +522,7 @@ void loop()
         Serial.read();
         break;
       }
-      Serial.println((int) REG_TC0_CV0);
+      Serial.println((int) encoderSteps);
     }
   }
   // else if (incoming == 'm')
