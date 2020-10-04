@@ -189,7 +189,7 @@ void findFlag()
 
   //Adjust steps with the real-world offset
   // encoderSteps = homeOffsetSteps;
-  setEncoderSteps(homeOffsetSteps)
+  setEncoderSteps(homeOffsetSteps);
 
   previousDirection = CCW; //Last adjustment to dial was in CCW direction
   Serial.println(F("Flag found"));
