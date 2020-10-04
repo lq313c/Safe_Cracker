@@ -492,6 +492,10 @@ void aChangeSimple() {
     encoderSteps++;
     if (encoderSteps > 8399) encoderSteps = 0;
   }
+  Serial.print("A change encA/encB: ");
+  Serial.print(encA);
+  Serial.print("/");
+  Serial.println(encB);
 }
 
 void bChangeSimple() {
@@ -511,6 +515,11 @@ void bChangeSimple() {
     encoderSteps++;
     if (encoderSteps > 8399) encoderSteps = 0;
   }
+  Serial.print("B change encA/encB: ");
+  Serial.print(encA);
+  Serial.print("/");
+  Serial.println(encB);
+
 }
 
 // void aChangeTest() {
