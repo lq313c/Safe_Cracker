@@ -186,7 +186,7 @@ void setup()
   pinMode(photo, INPUT_PULLUP);
 
   pinMode(servoPositionButton, INPUT);
-  attachInterrupt(digitalPinToInterrupt(servoPositionButton), buttonPushed, FALLING);
+  // attachInterrupt(digitalPinToInterrupt(servoPositionButton), buttonPushed, FALLING);
 
   // //Setup the encoder interrupts (for Arduino Uno only)
   // pinMode(encoderA, INPUT);
