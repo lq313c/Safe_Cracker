@@ -390,7 +390,7 @@ void loop()
 
           //Print dial value of this indent
           Serial.print(" / ");
-          Serial.print(convertEncoderToDial(indentLocations[x]));
+          Serial.print(indentLocations[x]);
 
           Serial.println();
         }
