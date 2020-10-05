@@ -204,7 +204,6 @@ void inputTest() {
 
   while(1) {
     while (!Serial.available()); //Wait for user input
-    Serial.setTimeout(30000); //Must be long enough for user to enter second character
     Serial.println("input read!");
     byte input = Serial.read();
     Serial.read(); //throw away CRLF

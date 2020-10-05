@@ -360,7 +360,6 @@ void loop()
     {
       Serial.print(F("How many measurements would you like to take? (Start with 1)"));
       while (!Serial.available()); //Wait for user input
-      Serial.setTimeout(1000); //Must be long enough for user to enter second character
       measurements = Serial.parseInt(); //Read user input
 
       if (measurements >= 1 && measurements <= 20) break;
@@ -400,7 +399,6 @@ void loop()
 
         while (!Serial.available()); //Wait for user input
 
-        Serial.setTimeout(20000); //Must be long enough for user to enter second character
         indent = Serial.parseInt(); //Read user input
 
         if (indent >= 0 && indent <= 11) break;
