@@ -314,16 +314,16 @@ boolean tryHandle()
 {
   //Attempt to pull down on handle
   handleServo.write(servoTryPosition-5); //Have to overshoot a bit and later retract to get a good reading
-  delay(timeServoApply); //Wait for servo to move, but don't let it stall for too long and burn out
-  handleServo.write(servoTryPosition); //Retract a bit so that servo doesn't stall
+  // delay(timeServoApply); //Wait for servo to move, but don't let it stall for too long and burn out
+  // handleServo.write(servoTryPosition); //Retract a bit so that servo doesn't stall
   delay(timeServoApply); //Wait for servo to move
 
   //Check if we're there
-  // if (digitalRead(servoPositionButton) == LOW)
-  // {
-  //   //Holy smokes we're there!
-  //   return (true);
-  // }
+  if (digitalRead(servoPositionButton) == LOW)
+  {
+    Serial.println("Holy smokes we're there!");
+    return (true);
+  }
 
 
   handlePosition = averageAnalogRead(servoPosition);
@@ -336,8 +336,6 @@ boolean tryHandle()
     Serial.print(", lowest handlePosition, ");
     Serial.print(handlePosition);
   }
-
-  if (buttonWasPushed) return true;
 
   //Ok, we failed
   //Return to resting position
@@ -695,6 +693,7 @@ void setEncoderSteps(int steps) {
 }
 
 // ISR for when servo button pushed (to detect door opening)
-void buttonPushed() {
-  buttonWasPushed = true;
-}
+// Commenting out because the signal is too sensitive to noise. Running the motor for example causes many falling edges.
+// void buttonPushed() {
+//   buttonWasPushed = true;
+// }
