@@ -84,7 +84,7 @@ void nextCombination()
       if(abs(discB - discC) < 4) //C is too close to B
       {
         //Don't move C
-        //Serial.println("Not moving C this time");
+        Serial.println("Not moving C this time");
       }
       else
       {

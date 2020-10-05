@@ -44,7 +44,7 @@ int gotoStep(int stepGoal, boolean addAFullRotation)
   }
 
   setMotorSpeed(coarseSpeed); //Go!
-  while (stepsRequired(getEncoderSteps(), stepGoal) > coarseWindow) motorSafetyTest(); //Spin until coarse window is closed
+  while (stepsRequired(getEncoderSteps(), stepGoal) > coarseWindow); //Spin until coarse window is closed
   // while (stepsRequired(steps, stepGoal) > coarseWindow) Serial.println(steps); //log dial position
 
   //After we have gotten close to the first coarse window, proceed past the goal, then proceed to the goal
@@ -54,17 +54,17 @@ int gotoStep(int stepGoal, boolean addAFullRotation)
     if (tempStepGoal > 8400) tempStepGoal -= 8400;
     
     //Go to temp position
-    while (stepsRequired(getEncoderSteps(), tempStepGoal) > coarseWindow) motorSafetyTest(); 
+    while (stepsRequired(getEncoderSteps(), tempStepGoal) > coarseWindow); 
     // while (stepsRequired(steps, tempStepGoal) > coarseWindow) Serial.println(steps);
         
     //Go to stepGoal
-    while (stepsRequired(getEncoderSteps(), stepGoal) > coarseWindow) motorSafetyTest(); //Spin until coarse window is closed
+    while (stepsRequired(getEncoderSteps(), stepGoal) > coarseWindow); //Spin until coarse window is closed
     // while (stepsRequired(steps, stepGoal) > coarseWindow) Serial.println(steps);
   }
 
   setMotorSpeed(fineSpeed); //Slowly approach
 
-  while (stepsRequired(getEncoderSteps(), stepGoal) > fineWindow) motorSafetyTest(); //Spin until fine window is closed
+  while (stepsRequired(getEncoderSteps(), stepGoal) > fineWindow); //Spin until fine window is closed
   // while (stepsRequired(steps, stepGoal) > fineWindow) Serial.println(steps);
 
   setMotorSpeed(0); //Stop
