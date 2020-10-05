@@ -337,6 +337,8 @@ boolean tryHandle()
     Serial.print(handlePosition);
   }
 
+  if (buttonWasPushed) return true;
+
   //Ok, we failed
   //Return to resting position
   handleServo.write(servoRestingPosition);
@@ -690,4 +692,9 @@ void setEncoderSteps(int steps) {
                | TC_CCR_SWTRG;       //#define TC_CCR_SWTRG (0x1u << 2) /**< \brief (TC_CCR) Software Trigger Command */
 
   offset = steps; //set offset to midway point of unsigned int (such that it mod 8400 == 0)
+}
+
+// ISR for when servo button pushed (to detect door opening)
+void buttonPushed() {
+  buttonWasPushed = true;
 }

@@ -46,7 +46,7 @@ const int encoderB = 13; // TIOB0 for onboard decoder
 const unsigned int mask_encoder_A = digitalPinToBitMask(encoderA);
 const unsigned int mask_encoder_B = digitalPinToBitMask(encoderB); 
 const int servoPosition = A1; //analog input: servo position feedback
-// const int servoPositionButton = A1;
+const int servoPositionButton = 40;
 
 
 //Settings for my personal white (20"x17"x17") cubic ft. safe
@@ -63,6 +63,7 @@ const int timeMotorStop = 1000; //ms for motor to stop spinning after stop comma
 const int stepTolerance = 84; //tolerance for the commanded vs arrived at dial position on either side
 
 int handlePosition; //Used to see how far handle moved when pulled on
+volatile boolean buttonWasPushed = false;
 
 const int takeABreakAttempts = 300; //Used to let the motor cool down after so many attempts
 //These are here to measure motor position to ensure that it doesn't burn out in case the dial gets stuck somehow
@@ -183,6 +184,9 @@ void setup()
   pinMode(servoPosition, INPUT);
 
   pinMode(photo, INPUT_PULLUP);
+
+  pinMode(servoPositionButton, INPUT);
+  attachInterrupt(digitalPinToInterrupt(servoPositionButton), buttonPushed, FALLING);
 
   // //Setup the encoder interrupts (for Arduino Uno only)
   // pinMode(encoderA, INPUT);
@@ -481,6 +485,8 @@ void loop()
   else if (incoming == 's') //Start cracking!
   {
     startTime = millis();
+
+    buttonWasPushed = false; //reset door open sensor
 
     //Set the discs to the current combinations (user can set if needed from menu)
     resetDiscsWithCurrentCombo(true); //pause to confirm for some measure of confidence that dials are operating correctly
