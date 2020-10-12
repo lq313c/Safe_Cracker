@@ -185,6 +185,7 @@ void setup()
   pinMode(servoPosition, INPUT);
 
   pinMode(photo, INPUT_PULLUP);
+  attachInterrupt(digitalPinToInterrupt(photo), calibrationCheck, FALLING);
 
   pinMode(servoPositionButton, INPUT);
   // attachInterrupt(digitalPinToInterrupt(servoPositionButton), buttonPushed, FALLING);

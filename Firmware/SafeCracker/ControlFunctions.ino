@@ -697,3 +697,8 @@ void setEncoderSteps(int steps) {
 // void buttonPushed() {
 //   buttonWasPushed = true;
 // }
+
+// ISR for checking the position of the dial during a photo-interrupter crossover event
+void calibrationCheck() {
+  Serial.println("Crossover");
+}
