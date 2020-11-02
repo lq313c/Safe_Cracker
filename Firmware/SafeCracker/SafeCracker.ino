@@ -545,6 +545,7 @@ void loop()
   {
     // Measure encoder step value at detection of photo interrupter from the CW and CCW rotation
 
+    Serial.println("Measuring encoder position at flag crossing...")
     // First measure running fineSpeed, going CCW
     int sum = 0;
     int count = 0;
@@ -573,8 +574,8 @@ void loop()
         while (flagCrossed == false);
         flagCrossed = false; // reset flag
         Serial.print("CW flag crossing at: ");
-        Serial.println(CCWFlagCrossing);
-        sum += CCWFlagCrossing;
+        Serial.println(CWFlagCrossing);
+        sum += CWFlagCrossing;
         count++;
     }
     setMotorSpeed(0);
