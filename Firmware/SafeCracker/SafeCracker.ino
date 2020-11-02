@@ -572,13 +572,13 @@ void loop()
     while (count < 10) {
         while (flagCrossed == false);
         flagCrossed = false; // reset flag
-        Serial.print("CCW flag crossing at: ");
+        Serial.print("CW flag crossing at: ");
         Serial.println(CCWFlagCrossing);
         sum += CCWFlagCrossing;
         count++;
     }
     setMotorSpeed(0);
-    Serial.print("CCW flag crossing average: ");
+    Serial.print("CW flag crossing average: ");
     Serial.println(sum / 10);
 
 
