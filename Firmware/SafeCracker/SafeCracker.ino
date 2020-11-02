@@ -90,7 +90,16 @@ volatile byte numErrorsBF = 0;
 
 volatile int encoderSteps = 0; //Keeps track of encoder counts. 8400 per revolution so this can get big.
 int lastStep = encoderSteps + 50; //Use for motor stall safety monitoring
+
 int offset = 0; //offset for adjusting the encoder value, since it's read-only
+volatile boolean positionFault = false; //flag to detect mis-reads of dial position
+const int CCW_FLAG_CROSSOVER = 6543; //this is the positon at which the flag is hit spinning in a CCW direction. Set after manual calibration.
+const int CW_FLAG_CROSSOVER = 7602; //this is the positon at which the flag is hit spinning in a CW direction. Set after manual calibration.
+const int POS_ERR_TOLERANCE = 10; //tolerance on either side before a positionFault is triggered
+// these are used for manual calibration of photo-interrupter fault detection. Option 'm' in menu.
+volatile int CCWFlagCrossing = 0;
+volatile int CWFlagCrossing = 0;
+volatile boolean flagCrossed = false;
 
 boolean direction = CW; //Commanded direction
 boolean previousDirection = CW; //Detects when direction changes to add some steps for encoder slack
@@ -186,6 +195,11 @@ void setup()
 
   pinMode(photo, INPUT_PULLUP);
   attachInterrupt(digitalPinToInterrupt(photo), calibrationCheck, FALLING);
+  // the following configures debouncing on the photo-interrupter pin
+  g_APinDescription[photo].pPort -> PIO_DIFSR |= g_APinDescription[photo].ulPin; // Input Filter Enable Register on photo pin
+  PIOB->PIO_DIFSR |= 1<<26; // Debouncing Input Filter Select Register
+  PIOB->PIO_SCDR |= 0xff; // Slow Clock Divider Register (to one second?)
+
 
   pinMode(servoPositionButton, INPUT);
   // attachInterrupt(digitalPinToInterrupt(servoPositionButton), buttonPushed, FALLING);
@@ -295,6 +309,7 @@ void loop()
   Serial.println(F("6) Set starting combos"));
   Serial.println(F("7) Calibrate handle servo"));
   Serial.println(F("8) Test handle servo tryHandle()"));
+  Serial.println(F("m) Measure positions of photo detector"));
   Serial.println(F("p) Move dial to a position"));
   Serial.println(F("f) Find flag and recenter dial"));
   Serial.println(F("s) Start cracking"));
@@ -526,40 +541,65 @@ void loop()
       Serial.println(getEncoderSteps());
     }
   }
-  // else if (incoming == 'm')
-  // {
-  //   turnCCW();
-  //   setMotorSpeed(200); //Go!
-  //   delay(1000);
-  //   setMotorSpeed(0); //stop
-  //   Serial.print(F("CCW encoder errors (AR/AF/BR/BF): "));
-  //   Serial.print(numErrorsAR);
-  //   Serial.print("/");
-  //   Serial.print(numErrorsAF);
-  //   Serial.print("/");
-  //   Serial.print(numErrorsBR);
-  //   Serial.print("/");
-  //   Serial.print(numErrorsBF);
-  //   Serial.print("/");
-  //   Serial.read(); //clear out remaining byte
-  // }
-  // else if (incoming = 'n')
-  // {
-  //   turnCW();
-  //   setMotorSpeed(200); //Go!
-  //   delay(1000);
-  //   setMotorSpeed(0); //stop
-  //   Serial.print(F("CW encoder errors (AR/AF/BR/BF): "));
-  //   Serial.print(numErrorsAR);
-  //   Serial.print("/");
-  //   Serial.print(numErrorsAF);
-  //   Serial.print("/");
-  //   Serial.print(numErrorsBR);
-  //   Serial.print("/");
-  //   Serial.print(numErrorsBF);
-  //   Serial.print("/");
-  //   Serial.read(); //clear out remaining byte
-  // }
+  else if (incoming == 'm')
+  {
+    // Measure encoder step value at detection of photo interrupter from the CW and CCW rotation
+
+    // First measure running fineSpeed, going CCW
+    int sum = 0;
+    int count = 0;
+    turnCCW();
+    setMotorSpeed(coarseSpeed); //Go!
+    while (count < 10) {
+        while (flagCrossed == false);
+        flagCrossed = false; // reset flag
+        Serial.print("CCW flag crossing at: ");
+        Serial.println(CCWFlagCrossing);
+        sum += CCWFlagCrossing;
+        count++;
+    }
+    setMotorSpeed(0);
+    Serial.print("CCW flag crossing average: ");
+    Serial.println(sum / 10);
+
+    delay(500);
+
+    // Next measure running fineSpeed, going CW
+    sum = 0;
+    count = 0;
+    turnCW();
+    setMotorSpeed(coarseSpeed); //Go!
+    while (count < 10) {
+        while (flagCrossed == false);
+        flagCrossed = false; // reset flag
+        Serial.print("CCW flag crossing at: ");
+        Serial.println(CCWFlagCrossing);
+        sum += CCWFlagCrossing;
+        count++;
+    }
+    setMotorSpeed(0);
+    Serial.print("CCW flag crossing average: ");
+    Serial.println(sum / 10);
+
+
+  }
+//   else if (incoming = 'n')
+//   {
+//     turnCW();
+//     setMotorSpeed(200); //Go!
+//     delay(1000);
+//     setMotorSpeed(0); //stop
+//     Serial.print(F("CW encoder errors (AR/AF/BR/BF): "));
+//     Serial.print(numErrorsAR);
+//     Serial.print("/");
+//     Serial.print(numErrorsAF);
+//     Serial.print("/");
+//     Serial.print(numErrorsBR);
+//     Serial.print("/");
+//     Serial.print(numErrorsBF);
+//     Serial.print("/");
+//     Serial.read(); //clear out remaining byte
+//   }
 }
 
 // These functions were written for the Uno, but are removed for the Due.

@@ -17,7 +17,7 @@ void nextCombination()
   //Because of the stickiness of my dial, the motor gets hot after a number of dials
   if (combinationsAttempted % takeABreakAttempts == 0) {
     // messagePause("Pausing for motor to cool down. Press any key to continue.");
-    delay(1800); //wait 30min for motor to take a break
+    delay(1800000); //wait 30min for motor to take a break
   }
 
   discCAttempts++; //There are as many as 12 indents to try.

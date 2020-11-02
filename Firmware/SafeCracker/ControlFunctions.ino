@@ -700,5 +700,11 @@ void setEncoderSteps(int steps) {
 
 // ISR for checking the position of the dial during a photo-interrupter crossover event
 void calibrationCheck() {
-  Serial.println("Crossover");
+  if (direction == CCW) {
+      CCWFlagCrossing = getEncoderSteps();
+      flagCrossed = true;
+  } else if (direction == CW) {
+      CWFlagCrossing = getEncoderSteps();
+      flagCrossed = true;
+  }
 }
