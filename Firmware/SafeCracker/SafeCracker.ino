@@ -100,6 +100,7 @@ const int POS_ERR_TOLERANCE = 10; //tolerance on either side before a positionFa
 volatile int CCWFlagCrossing = 0;
 volatile int CWFlagCrossing = 0;
 volatile boolean flagCrossed = false;
+volatile boolean flagCrossingToleranceExceeded = false;
 
 boolean direction = CW; //Commanded direction
 boolean previousDirection = CW; //Detects when direction changes to add some steps for encoder slack
@@ -555,7 +556,9 @@ void loop()
         while (flagCrossed == false);
         flagCrossed = false; // reset flag
         Serial.print("CCW flag crossing at: ");
-        Serial.println(CCWFlagCrossing);
+        Serial.print(CCWFlagCrossing);
+        Serial.print(" / ");
+        Serial.println(CCWFlagCrossing / 84);
         sum += CCWFlagCrossing;
         count++;
     }
@@ -574,7 +577,9 @@ void loop()
         while (flagCrossed == false);
         flagCrossed = false; // reset flag
         Serial.print("CW flag crossing at: ");
-        Serial.println(CWFlagCrossing);
+        Serial.print(CWFlagCrossing);
+        Serial.print(" / ");
+        Serial.println(CCWFlagCrossing / 84);
         sum += CWFlagCrossing;
         count++;
     }

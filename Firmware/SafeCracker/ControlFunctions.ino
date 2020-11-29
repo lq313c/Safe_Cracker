@@ -700,11 +700,14 @@ void setEncoderSteps(int steps) {
 
 // ISR for checking the position of the dial during a photo-interrupter crossover event
 void calibrationCheck() {
+  int dialSteps = ((int) REG_TC0_CV0 + offset) % 8400;
+  if (dialSteps <= 0) dialSteps + 8400; //if negative, roll it over to positive
+
   if (direction == CCW) {
-      CCWFlagCrossing = getEncoderSteps();
+      CCWFlagCrossing = dialSteps;
       flagCrossed = true;
   } else if (direction == CW) {
-      CWFlagCrossing = getEncoderSteps();
+      CWFlagCrossing = dialSteps;
       flagCrossed = true;
   }
 }
