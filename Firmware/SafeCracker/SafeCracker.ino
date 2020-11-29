@@ -558,7 +558,7 @@ void loop()
         Serial.print("CCW flag crossing at: ");
         Serial.print(CCWFlagCrossing);
         Serial.print(" / ");
-        Serial.println(CCWFlagCrossing / 84);
+        Serial.println(CCWFlagCrossing / 84.0);
         sum += CCWFlagCrossing;
         count++;
     }
@@ -579,7 +579,7 @@ void loop()
         Serial.print("CW flag crossing at: ");
         Serial.print(CWFlagCrossing);
         Serial.print(" / ");
-        Serial.println(CCWFlagCrossing / 84);
+        Serial.println(CCWFlagCrossing / 84.0);
         sum += CWFlagCrossing;
         count++;
     }
