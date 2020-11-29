@@ -550,8 +550,10 @@ void loop()
     // First measure running fineSpeed, going CCW
     int sum = 0;
     int count = 0;
+    flagCrossed = false;
     turnCCW();
     setMotorSpeed(coarseSpeed); //Go!
+    
     while (count < 10) {
         while (flagCrossed == false);
         flagCrossed = false; // reset flag
@@ -579,7 +581,7 @@ void loop()
         Serial.print("CW flag crossing at: ");
         Serial.print(CWFlagCrossing);
         Serial.print(" / ");
-        Serial.println(CCWFlagCrossing / 84.0);
+        Serial.println(CWFlagCrossing / 84.0);
         sum += CWFlagCrossing;
         count++;
     }
