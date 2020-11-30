@@ -199,7 +199,7 @@ void setup()
   // the following configures debouncing on the photo-interrupter pin
   g_APinDescription[photo].pPort -> PIO_DIFSR |= g_APinDescription[photo].ulPin; // Input Filter Enable Register on photo pin
 //   PIOB->PIO_DIFSR |= 1<<26; // Debouncing Input Filter Select Register
-  PIOB->PIO_SCDR |= 0xff; // Slow Clock Divider Register (to one second?)
+  PIOB->PIO_SCDR |= 0x63f; // Slow Clock Divider Register (to 100ms). Tdiv_slck = 2*(DIV+1)*Tslow_clock
 
 
   pinMode(servoPositionButton, INPUT);
