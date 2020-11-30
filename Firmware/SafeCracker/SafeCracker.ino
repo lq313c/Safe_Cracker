@@ -198,7 +198,7 @@ void setup()
   attachInterrupt(digitalPinToInterrupt(photo), calibrationCheck, FALLING);
   // the following configures debouncing on the photo-interrupter pin
   g_APinDescription[photo].pPort -> PIO_DIFSR |= g_APinDescription[photo].ulPin; // Input Filter Enable Register on photo pin
-  PIOB->PIO_DIFSR |= 1<<26; // Debouncing Input Filter Select Register
+//   PIOB->PIO_DIFSR |= 1<<26; // Debouncing Input Filter Select Register
   PIOB->PIO_SCDR |= 0xff; // Slow Clock Divider Register (to one second?)
 
 
@@ -553,7 +553,7 @@ void loop()
     flagCrossed = false;
     turnCCW();
     setMotorSpeed(coarseSpeed); //Go!
-    
+
     while (count < 10) {
         while (flagCrossed == false);
         flagCrossed = false; // reset flag
