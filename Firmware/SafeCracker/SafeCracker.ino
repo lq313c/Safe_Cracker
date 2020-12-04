@@ -101,6 +101,7 @@ volatile int CCWFlagCrossing = 0;
 volatile int CWFlagCrossing = 0;
 volatile boolean flagCrossed = false;
 volatile boolean flagCrossingToleranceExceeded = false;
+volatile unsigned long lastDebounceTime = 0;
 
 boolean direction = CW; //Commanded direction
 boolean previousDirection = CW; //Detects when direction changes to add some steps for encoder slack
@@ -196,10 +197,10 @@ void setup()
 
   pinMode(photo, INPUT_PULLUP);
   attachInterrupt(digitalPinToInterrupt(photo), calibrationCheck, FALLING);
-  // the following configures debouncing on the photo-interrupter pin
-  g_APinDescription[photo].pPort -> PIO_DIFSR |= g_APinDescription[photo].ulPin; // Input Filter Enable Register on photo pin
+  // the following configures debouncing on the photo-interrupter pin (THIS DOESN'T WORK, hardware debouncing doesn't exhibit the behavior we want)
+//   g_APinDescription[photo].pPort -> PIO_DIFSR |= g_APinDescription[photo].ulPin; // Input Filter Enable Register on photo pin
 //   PIOB->PIO_DIFSR |= 1<<26; // Debouncing Input Filter Select Register
-  PIOB->PIO_SCDR |= 0x63f; // Slow Clock Divider Register (to 100ms). Tdiv_slck = 2*(DIV+1)*Tslow_clock
+//   PIOB->PIO_SCDR |= 0x63f; // Slow Clock Divider Register (to 100ms). Tdiv_slck = 2*(DIV+1)*Tslow_clock
 
 
   pinMode(servoPositionButton, INPUT);
