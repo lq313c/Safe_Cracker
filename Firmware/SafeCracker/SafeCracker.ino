@@ -536,13 +536,17 @@ void loop()
   else if (incoming == 't')
   {
     // this option used for temporary tests.
-    Serial.println("Observing flag crossings. Press any key to stop.");
+    Serial.println("Observing flag crossings while spinning. Press any key to stop.");
     while (1)
     {
+      turnCCW();
+      setMotorSpeed(coarseSpeed); //Go!
+
       if (Serial.available())
       {
         // exit if any input detected
         Serial.read();
+        setMotorSpeed(0); //Stop
         break;
       }
       if (flagDetected() == true) {
