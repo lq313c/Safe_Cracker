@@ -549,10 +549,7 @@ void loop()
         setMotorSpeed(0); //Stop
         break;
       }
-      if (flagDetected() == true) {
-        Serial.println("Flag crossing detected");
-        delayMicroseconds(1);
-      }
+      Serial.println(flagDetected());
     }
   }
   else if (incoming == 'm')

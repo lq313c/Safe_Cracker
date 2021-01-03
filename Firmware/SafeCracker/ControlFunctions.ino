@@ -700,7 +700,7 @@ void setEncoderSteps(int steps) {
 
 // ISR for checking the position of the dial during a photo-interrupter crossover event
 void calibrationCheck() {
-  if ((millis() - lastDebounceTime) > 1000) {
+  if ((millis() - lastDebounceTime) > 2000) {
     lastDebounceTime = millis();
     int dialSteps = ((int) REG_TC0_CV0 + offset) % 8400;
     if (dialSteps <= 0) dialSteps = dialSteps + 8400; //if negative, roll it over to positive
