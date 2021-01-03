@@ -146,7 +146,9 @@ byte discCAttempts = 0;
 long startTime; //Used to measure amount of time taken per test
 
 // boolean indentsToTry[12] = {false, true, true, true, true, true, true, true, true, false, false, false}; //Keeps track of the indents we want to try
-boolean indentsToTry[12] = {false, false, false, false, false, false, false, false, false, true, true, true}; //Keeps track of the indents we want to try
+// boolean indentsToTry[12] = {false, false, false, false, false, false, false, false, false, true, true, true}; //Keeps track of the indents we want to try
+boolean indentsToTry[12] = {false, true, true, true, true, true, true, true, true, true, true, true}; //Keeps track of the indents we want to try
+
 int indentLocations[12] = {98, 6, 14, 23, 31, 40, 48, 56, 65, 73, 81, 90}; //indent centers as meausured. Set as appropriate
 int indentWidths[12]; //Calculated width of a given indent
 int indentDepths[12]; //Not really used
@@ -311,6 +313,7 @@ void loop()
   Serial.println(F("6) Set starting combos"));
   Serial.println(F("7) Calibrate handle servo"));
   Serial.println(F("8) Test handle servo tryHandle()"));
+  Serial.println(F("a/z) Move handle to rest/try position"));
   Serial.println(F("m) Measure positions of photo detector"));
   Serial.println(F("p) Move dial to a position"));
   Serial.println(F("f) Find flag and recenter dial"));
@@ -532,6 +535,8 @@ void loop()
   } //End incoming == 's'
   else if (incoming == 't')
   {
+    // this option used for temporary tests.
+    Serial.println("Observing flag crossings. Press any key to stop.");
     while (1)
     {
       if (Serial.available())
@@ -540,7 +545,10 @@ void loop()
         Serial.read();
         break;
       }
-      Serial.println(getEncoderSteps());
+      if (flagDetected() == true) {
+        Serial.println("Flag crossing detected");
+        delayMicroseconds(1);
+      }
     }
   }
   else if (incoming == 'm')
