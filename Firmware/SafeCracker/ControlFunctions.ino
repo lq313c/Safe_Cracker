@@ -135,7 +135,8 @@ int setDial(int dialValue, boolean extraSpin)
   Serial.print(F("Commanded "));
   direction == CCW ? Serial.print("CCW") : Serial.print("CW");
   Serial.print(F(" to "));
-  Serial.println(dialValue);
+  Serial.print(dialValue);
+  Serial.print(", ");
 
   int encoderValue = convertDialToEncoder(dialValue); //Get encoder value
 
@@ -226,6 +227,7 @@ void resetDiscsWithCurrentCombo(boolean pause)
   printEncoderToDial(getEncoderSteps());
   if (pause == true) messagePause("Verify disc position");
   
+  // if we detect a mis-actuation of the dial on the last spin, retry the combination
   if (discADelta < -stepTolerance || discADelta > stepTolerance
       || discBDelta < -stepTolerance || discBDelta > stepTolerance
       || discCDelta < -stepTolerance || discCDelta > stepTolerance)
@@ -240,6 +242,19 @@ void resetDiscsWithCurrentCombo(boolean pause)
     
     findFlag(); //Re-home the dial between large finds
     resetDiscsWithCurrentCombo(false);
+  }
+
+  // if we detect a dial fault via flag position, retry the combination
+  if (dialFaultDetected()) {
+    Serial.println();
+    Serial.print(F("Detected dial position fault. Flag did not cross at expected position. CW flag crossing at: "));
+    Serial.print(CWFlagCrossing);
+    flagCrossed = false; // reset detection flag
+    Serial.println(F("Retrying current combo after re-finding flag."));
+    
+    findFlag(); //Re-home the dial between large finds
+    resetDiscsWithCurrentCombo(false);
+
   }
 
   discCAttempts = -1; //Reset
@@ -705,12 +720,21 @@ void calibrationCheck() {
     int dialSteps = ((int) REG_TC0_CV0 + offset) % 8400;
     if (dialSteps <= 0) dialSteps = dialSteps + 8400; //if negative, roll it over to positive
 
-    if (direction == CCW) {
-        CCWFlagCrossing = dialSteps;
-        flagCrossed = true;
-    } else if (direction == CW) {
-        CWFlagCrossing = dialSteps;
-        flagCrossed = true;
-    }
+    if (direction == CCW) CCWFlagCrossing = dialSteps;
+    else if (direction == CW) CWFlagCrossing = dialSteps;
+    flagCrossed = true;
   }
+}
+
+// Checks if there is a fault in the dial position based on wheter the last flag crossing happened near the expected dial position.
+// - Returns true if off by more than a half-dial tick in either direction.
+bool dialFaultDetected() {
+    // for some reason only the CW flag crossings are recording correctly, so will use that
+    if (flagCrossed == true && direction == CW) {
+        flagCrossed = false; // reset flag
+        if (abs(CWFlagCrossing - 6654) > 42) {
+            return true;
+        }
+    }
+    return false;
 }

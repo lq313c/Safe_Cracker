@@ -130,7 +130,7 @@ void nextCombination()
   Serial.print("/");
   Serial.print(discC);
 
-  // if we detect a mis-actuation of the dial, retry the combination
+  // if we detect a mis-actuation of the dial on the last spin, retry the combination
   if (discBDelta < -stepTolerance || discBDelta > stepTolerance
       || discCDelta < -stepTolerance || discCDelta > stepTolerance)
   {
@@ -139,6 +139,18 @@ void nextCombination()
     Serial.print(discBDelta);
     Serial.print(F(" / "));
     Serial.println(discCDelta);
+    Serial.println(F("Retrying current combo after re-finding flag."));
+    
+    findFlag(); //Re-home the dial between large finds
+    resetDiscsWithCurrentCombo(false);
+  }
+
+  // if we detect a dial fault via flag position, retry the combination
+  if (dialFaultDetected()) {
+    Serial.println();
+    Serial.print(F("Detected dial position fault. Flag did not cross at expected position. CW flag crossing at: "));
+    Serial.print(CWFlagCrossing);
+    flagCrossed = false; // reset detection flag
     Serial.println(F("Retrying current combo after re-finding flag."));
     
     findFlag(); //Re-home the dial between large finds
