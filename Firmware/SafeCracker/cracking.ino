@@ -80,11 +80,11 @@ void nextCombination()
           Serial.print(F("Detected dial position fault. Flag did not cross at expected position. CW flag crossing at: "));
           Serial.print(CWFlagCrossing);
           flagCrossed = false; // reset detection flag
-          Serial.println(F("Retrying current combo after re-finding flag."));
-          
-          findFlag(); //Re-home the dial between large finds
+          Serial.println(F("Retrying previous discB combo after re-finding flag."));
           discB += 2; //go back to the last discB position that was good
           if (discB >= 100) discB -= 100;
+          
+          findFlag(); //Re-home the dial between large finds
           resetDiscsWithCurrentCombo(false);
       }
 
