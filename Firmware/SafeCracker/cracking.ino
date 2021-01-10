@@ -71,6 +71,23 @@ void nextCombination()
       //Serial.println(discBIsAt);
       //messagePause("Check dial position");
 
+      if (flagCrossed == true && direction == CW) {
+          Serial.println(F("Flag crossing, verifying positon."));
+      }
+      // if we detect a dial fault via flag position, retry the combination
+      if (dialFaultDetected()) {
+          Serial.println();
+          Serial.print(F("Detected dial position fault. Flag did not cross at expected position. CW flag crossing at: "));
+          Serial.print(CWFlagCrossing);
+          flagCrossed = false; // reset detection flag
+          Serial.println(F("Retrying current combo after re-finding flag."));
+          
+          findFlag(); //Re-home the dial between large finds
+          discB += 2; //go back to the last discB position that was good
+          if (discB >= 100) discB -= 100;
+          resetDiscsWithCurrentCombo(false);
+      }
+
       discC = getNextIndent(discB); //Get the first indent after B
 
       turnCCW();
@@ -139,18 +156,6 @@ void nextCombination()
     Serial.print(discBDelta);
     Serial.print(F(" / "));
     Serial.println(discCDelta);
-    Serial.println(F("Retrying current combo after re-finding flag."));
-    
-    findFlag(); //Re-home the dial between large finds
-    resetDiscsWithCurrentCombo(false);
-  }
-
-  // if we detect a dial fault via flag position, retry the combination
-  if (dialFaultDetected()) {
-    Serial.println();
-    Serial.print(F("Detected dial position fault. Flag did not cross at expected position. CW flag crossing at: "));
-    Serial.print(CWFlagCrossing);
-    flagCrossed = false; // reset detection flag
     Serial.println(F("Retrying current combo after re-finding flag."));
     
     findFlag(); //Re-home the dial between large finds
